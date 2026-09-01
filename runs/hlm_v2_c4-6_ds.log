@@ -1,8 +1,14 @@
 == 红楼梦：章节 4-6（3 章，1 个打包块）模型 sensenova/deepseek-v4-flash
-Building prefix dict from the default dictionary ...
-Loading model from cache /tmp/jieba.cache
-Loading model cost 0.265 seconds.
-Prefix dict has been built successfully.
-  预扫描 Phase1：85 候选
-  [HTTP 429 tpm][预扫描] 预算下调至 34000，由节流器等待窗口清空
-  [TPM节流][预扫描] 窗口内已用 24598+预估 24598 > 34000，等待约 75s
+  载入已有登记簿：44 实体
+== 抽取完成：原始关系 31 条，登记簿 44 实体
+== 别名归并：合并 1 条 李氏→李纨
+== 校验：通过 14，丢弃 17 {'无合格证据（证据不在原文或未同时提及双方）': 13, '关系不在闭集': 2, '类型不符': 1, '实体未登记': 1}
+== 聚合：13 种候选三元组
+  复核：13 候选，17 实体组，打包 1 次调用
+== 复核：{'calls': 1, 'ok': 13, 'reject': 0, 'unjudged': 0, 'additions': 0, 'additions_invalid': 0}
+== 推理补全：+1 条
+== 评估 LLM抽取：P=15.4% R=1.1% F1=2.1% (pred 13 / gold 181 / hit 2)
+== 评估 LLM抽取+模型知识：P=15.4% R=1.1% F1=2.1% (pred 13 / gold 181 / hit 2)
+== 评估 LLM抽取+模型知识+推导：P=14.3% R=1.1% F1=2.1% (pred 14 / gold 181 / hit 2)
+== 完成，输出目录 runs/hlm_v2_c4-6_ds｜LLM调用 1 次（缓存命中 1）｜输入 1641 输出 587 思考 0 tokens｜近5h 5 次 41341 tokens｜TPM预算 40000｜耗时 10s
+EXIT=0

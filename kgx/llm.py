@@ -199,7 +199,8 @@ class OpenAICompat:
     - 思考：默认 reasoning_effort=none；仅当 thinking_calls=True 且调用方 thinking="high"（复核/归并）
       时开启（不传 reasoning_effort，走模型默认），并把 max_tokens 抬到 thinking_max_tokens；
     - 配额：无日限。rpm=0 表示不设固定间隔；按 token 节流（tpm/tpm_window，撞 tpm-429 自动下调预算并落盘
-      cache/tpm_state.json）；其他 429 退避 60→300s（最多 12 次，不退出）；
+      仅避免连发大请求）；tpm-429 视为共享池瞬时限速，退避 45s×n 重试（最多 12 次≈30min，不退出）；
+      其他 429 退避 60→300s；
     - 用量：cache/usage_log.jsonl 逐次记 (时间, 模型, tokens)，report() 给近 5h 累计（对应网关 5h 窗口）。
     """
     def __init__(self, model="deepseek-v4-flash", cache_dir="runs/cache", rpm=0,
@@ -220,12 +221,11 @@ class OpenAICompat:
         self.stats = {"calls": 0, "cached": 0, "prompt_tokens": 0, "output_tokens": 0,
                       "thought_tokens": 0, "seconds": 0.0}
         self._usage_path = os.path.join(cache_dir, "usage_log.jsonl")
-        # ---- 按 token 节流：窗口内已用 token + 本次预估 ≤ tpm 才放行；tpm-429 → 预算下调 15%（落盘） ----
+        # ---- 按 token 节流：窗口内已用 token + 本次预估 ≤ tpm 才放行（避免连发大请求）；
+        #      tpm-429 视为瞬时限速，退避重试，不调预算（见 _tpm_hit）----
         self.tpm_window = tpm_window
         self._tpm_path = os.path.join(cache_dir, "tpm_state.json")
         self.tpm = tpm
-        if os.path.exists(self._tpm_path):
-            self.tpm = json.load(open(self._tpm_path)).get("tpm", tpm)
         self._recent = []       # [(完成时间, tokens)]，含 429 的幻影占用
 
     def quota_left(self):
@@ -251,12 +251,19 @@ class OpenAICompat:
             time.sleep(min(pause, 30))
             waited += min(pause, 30)
 
-    def _tpm_hit(self, need):
-        """撞到 tpm-429：把本次预估当幻影占用记入窗口，预算下调 15%（下限 20000）并落盘"""
+    def _tpm_hit(self, need, n):
+        """撞到 tpm-429。09-01 实测：出现时机与本方用量不成函数关系（闲置 90s 后小请求也会撞、
+        大请求 3–4 分钟后才过），判断为公测共享池的瞬时容量限制，不能靠下调本方预算解决。
+        处理：记一次幻影占用（让节流器至少隔一个窗口），并按 45s×n（上限 180s）退避。
+        次数落盘 cache/tpm_state.json 供事后统计。"""
         self._recent.append((time.time(), need))
-        self.tpm = max(20000, int(self.tpm * 0.85))
-        json.dump({"tpm": self.tpm, "window": self.tpm_window, "updated": time.time()},
-                  open(self._tpm_path, "w"))
+        st = {"tpm": self.tpm, "window": self.tpm_window, "hits": 0}
+        if os.path.exists(self._tpm_path):
+            st = json.load(open(self._tpm_path))
+        st["hits"] = st.get("hits", 0) + 1
+        st["last_hit"] = time.time()
+        json.dump(st, open(self._tpm_path, "w"))
+        return min(45 * n, 180)
 
     def _cache_key(self, payload):
         raw = json.dumps({"m": self.model, "p": payload}, ensure_ascii=False, sort_keys=True)
@@ -338,8 +345,9 @@ class OpenAICompat:
                 if n429 > 12:
                     raise RuntimeError(f"持续限速{tag}（已等约 40 分钟）")
                 if "tpm" in r.text.lower():
-                    self._tpm_hit(need)
-                    print(f"  [HTTP 429 tpm]{tag} 预算下调至 {self.tpm}，由节流器等待窗口清空", flush=True)
+                    pause = self._tpm_hit(need, n429)
+                    print(f"  [HTTP 429 tpm]{tag} 第{n429}次，等待{pause}s后重试", flush=True)
+                    time.sleep(pause)
                     continue
                 pause = min(60 * n429, 300)
             elif r.status_code >= 500:

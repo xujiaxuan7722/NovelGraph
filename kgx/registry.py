@@ -62,7 +62,7 @@ class Registry:
         k["mentions"] += d["mentions"]
         if not k["identity"]:
             k["identity"] = d["identity"]
-        for a in [drop] | d["aliases"]:
+        for a in {drop} | d["aliases"]:
             self.alias_index[a] = keep
         del self.entities[drop]
 
