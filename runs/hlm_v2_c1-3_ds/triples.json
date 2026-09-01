@@ -1,0 +1,674 @@
+[
+ {
+  "head": "宝玉",
+  "relation": "主仆",
+  "tail": "袭人",
+  "votes": 1,
+  "evidence": "贾母因溺爱宝玉，生恐宝玉之婢无竭力尽忠之人，素喜袭人心地纯良，克尽职任，遂与了宝玉。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "贾母因溺爱宝玉，生恐宝玉之婢无竭力尽忠之人，素喜袭人心地纯良，克尽职任，遂与了宝玉。"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾母将袭人与了宝玉，袭人成为宝玉之婢，主仆关系成立。"
+ },
+ {
+  "head": "惜春",
+  "relation": "兄妹",
+  "tail": "贾珍",
+  "votes": 1,
+  "evidence": "四小姐乃宁府珍爷之胞妹，名唤惜春。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "四小姐乃宁府珍爷之胞妹，名唤惜春。"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "惜春是宁府珍爷的胞妹，证据明确，兄妹关系，方向无关。"
+ },
+ {
+  "head": "政老",
+  "relation": "夫妻",
+  "tail": "王夫人",
+  "votes": 1,
+  "evidence": "这是你二舅母",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "这是你二舅母"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "王夫人是贾政之妻，证据“这是你二舅母”，结合登记信息，夫妻关系成立。"
+ },
+ {
+  "head": "政老",
+  "relation": "父子",
+  "tail": "贾珠",
+  "votes": 1,
+  "evidence": "这政老爹的夫人王氏，头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻，生了子，一病死了",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "这政老爹的夫人王氏，头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻，生了子，一病死了"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾珠是贾政和夫人王氏之子，证据明确，父子关系，方向正确。"
+ },
+ {
+  "head": "政老",
+  "relation": "父女",
+  "tail": "元春",
+  "votes": 1,
+  "evidence": "政老爹的长女，名元春，现因贤孝才德，选入宫作女史去了",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "政老爹的长女，名元春，现因贤孝才德，选入宫作女史去了"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "元春是政老爹长女，证据明确，父女关系，方向正确。"
+ },
+ {
+  "head": "政老",
+  "relation": "父女",
+  "tail": "探春",
+  "votes": 1,
+  "evidence": "三小姐乃政老爹之庶出，名探春。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "三小姐乃政老爹之庶出，名探春。"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "探春是政老爹庶出，证据明确，父女关系，方向正确。"
+ },
+ {
+  "head": "熙凤",
+  "relation": "夫妻",
+  "tail": "贾琏",
+  "votes": 1,
+  "evidence": "”黛玉虽不识，也曾听见母亲说过，大舅贾赦之子贾琏，娶的就是二舅母王氏之内侄女，自幼假充男儿教养的，学名叫王熙凤",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "”黛玉虽不识，也曾听见母亲说过，大舅贾赦之子贾琏，娶的就是二舅母王氏之内侄女，自幼假充男儿教养的，学名叫王熙凤"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾琏娶王熙凤，证据明确，夫妻关系成立。"
+ },
+ {
+  "head": "王夫人",
+  "relation": "母子",
+  "tail": "贾珠",
+  "votes": 1,
+  "evidence": "贾珠之妻李氏捧饭，熙凤安箸，王夫人进羹",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "贾珠之妻李氏捧饭，熙凤安箸，王夫人进羹"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "王夫人是贾珠之母，证据中王夫人进羹虽体现身份，但结合登记信息（贾珠为王氏所生），母子关系成立。"
+ },
+ {
+  "head": "贾代善",
+  "relation": "父子",
+  "tail": "贾赦",
+  "votes": 1,
+  "evidence": "自荣公死后，长子贾代善袭了官，娶的也是金陵世勋史侯家的小姐为妻，生了两个儿子：长子贾赦，次子贾政",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "自荣公死后，长子贾代善袭了官，娶的也是金陵世勋史侯家的小姐为妻，生了两个儿子：长子贾赦，次子贾政"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾代善长子贾赦，证据明确，父子关系，方向正确。"
+ },
+ {
+  "head": "贾代善",
+  "relation": "父子",
+  "tail": "政老",
+  "votes": 1,
+  "evidence": "自荣公死后，长子贾代善袭了官，娶的也是金陵世勋史侯家的小姐为妻，生了两个儿子：长子贾赦，次子贾政",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "自荣公死后，长子贾代善袭了官，娶的也是金陵世勋史侯家的小姐为妻，生了两个儿子：长子贾赦，次子贾政"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾代善次子贾政，证据明确，父子关系，方向正确。"
+ },
+ {
+  "head": "贾敏",
+  "relation": "母女",
+  "tail": "黛玉",
+  "votes": 1,
+  "evidence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "证据明确说嫡妻贾氏生得一女名黛玉，贾敏是黛玉之母，母女关系成立，方向正确。"
+ },
+ {
+  "head": "贾母",
+  "relation": "祖母",
+  "tail": "黛玉",
+  "votes": 1,
+  "evidence": "贾母因问黛玉念何书",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "贾母因问黛玉念何书"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "黛玉称贾母为外祖母，外祖母也记作祖母，证据为贾母问黛玉念何书，语境显示祖孙关系，方向正确。"
+ },
+ {
+  "head": "贾母",
+  "relation": "母子",
+  "tail": "贾赦",
+  "votes": 1,
+  "evidence": "当下贾母一一指与黛玉：“这是你大舅母",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "当下贾母一一指与黛玉：“这是你大舅母"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾母是贾赦之母，证据“这是你大舅母”虽未直接说明母子，但结合登记信息，母子关系成立，方向正确。"
+ },
+ {
+  "head": "贾母",
+  "relation": "祖母",
+  "tail": "宝玉",
+  "votes": 1,
+  "evidence": "”只见这宝玉向贾母请了安",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "”只见这宝玉向贾母请了安"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾母是宝玉的祖母，证据中宝玉向贾母请安，结合登记信息（贾政之子），方向正确。"
+ },
+ {
+  "head": "贾母",
+  "relation": "主仆",
+  "tail": "袭人",
+  "votes": 1,
+  "evidence": "原来这袭人亦是贾母之婢，本名珍珠。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "原来这袭人亦是贾母之婢，本名珍珠。"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "袭人原是贾母之婢，证据明确，主仆关系成立。"
+ },
+ {
+  "head": "贾母",
+  "relation": "主仆",
+  "tail": "鹦哥",
+  "votes": 1,
+  "evidence": "贾母见雪雁甚小，一团孩气，王嬷嬷又极老，料黛玉皆不遂心省力的，便将自己身边的一个二等丫头，名唤鹦哥者与了黛玉",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "贾母见雪雁甚小，一团孩气，王嬷嬷又极老，料黛玉皆不遂心省力的，便将自己身边的一个二等丫头，名唤鹦哥者与了黛玉"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾母将鹦哥给了黛玉，鹦哥原本是贾母的丫头，主仆关系成立。"
+ },
+ {
+  "head": "贾珍",
+  "relation": "父子",
+  "tail": "贾蓉",
+  "votes": 1,
+  "evidence": "这位珍爷也倒生了一个儿子，今年才十六岁，名叫贾蓉。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "这位珍爷也倒生了一个儿子，今年才十六岁，名叫贾蓉。"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾蓉是贾珍之子，证据明确，父子关系，方向正确。"
+ },
+ {
+  "head": "贾赦",
+  "relation": "夫妻",
+  "tail": "邢夫人",
+  "votes": 1,
+  "evidence": "当下贾母一一指与黛玉：“这是你大舅母",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "当下贾母一一指与黛玉：“这是你大舅母"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "邢夫人是贾赦之妻，证据指为“大舅母”，结合登记信息，夫妻关系成立。"
+ },
+ {
+  "head": "贾赦",
+  "relation": "父女",
+  "tail": "迎春",
+  "votes": 1,
+  "evidence": "二小姐乃赦老爹之妾所出，名迎春",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "二小姐乃赦老爹之妾所出，名迎春"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "迎春是赦老爹之妾所出，即贾赦之女，父女关系成立。"
+ },
+ {
+  "head": "贾赦",
+  "relation": "父子",
+  "tail": "贾琏",
+  "votes": 1,
+  "evidence": "”黛玉虽不识，也曾听见母亲说过，大舅贾赦之子贾琏，娶的就是二舅母王氏之内侄女，自幼假充男儿教养的，学名叫王熙凤",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "”黛玉虽不识，也曾听见母亲说过，大舅贾赦之子贾琏，娶的就是二舅母王氏之内侄女，自幼假充男儿教养的，学名叫王熙凤"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "贾琏是贾赦之子，证据明确，父子关系，方向正确。"
+ },
+ {
+  "head": "雨村",
+  "relation": "居住",
+  "tail": "葫芦庙",
+  "votes": 1,
+  "evidence": "这士隐正痴想，忽见隔壁葫芦庙内寄居的一个穷儒-姓贾名化，表字时飞，别号雨村者走了出来",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "这士隐正痴想，忽见隔壁葫芦庙内寄居的一个穷儒-姓贾名化，表字时飞，别号雨村者走了出来"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "证据说雨村是“寄居”在葫芦庙内的穷儒，“寄居”可视为长期居住，方向正确。"
+ },
+ {
+  "head": "黛玉",
+  "relation": "主仆",
+  "tail": "雪雁",
+  "votes": 1,
+  "evidence": "黛玉只带了两个人来：一个是自幼奶娘王嬷嬷，一个是十岁的小丫头，亦是自幼随身的，名唤雪雁",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "黛玉只带了两个人来：一个是自幼奶娘王嬷嬷，一个是十岁的小丫头，亦是自幼随身的，名唤雪雁"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "证据明确雪雁是黛玉自幼随身的小丫头，属黛玉的丫鬟，主仆名分成立。"
+ },
+ {
+  "head": "黛玉",
+  "relation": "主仆",
+  "tail": "王嬷嬷",
+  "votes": 1,
+  "evidence": "当下，王嬷嬷与鹦哥陪侍黛玉在碧纱橱内",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "当下，王嬷嬷与鹦哥陪侍黛玉在碧纱橱内"
+  ],
+  "chapters": [
+   1,
+   2,
+   3
+  ],
+  "source": "LLM抽取",
+  "review": "王嬷嬷是黛玉的奶娘，奶娘属仆人，证据显示陪侍黛玉，主仆关系成立。"
+ },
+ {
+  "head": "探春",
+  "relation": "兄妹",
+  "tail": "贾珠",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "政老 父子|父女 贾珠",
+   "政老 父子|父女 探春"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "兄妹",
+  "tail": "贾珠",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "政老 父子|父女 贾珠",
+   "政老 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "贾琏",
+  "relation": "兄妹",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "政老",
+  "relation": "兄妹",
+  "tail": "贾赦",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "贾代善 父子|父女 政老",
+   "贾代善 父子|父女 贾赦"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "兄妹",
+  "tail": "探春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "政老 父子|父女 探春",
+   "政老 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "贾珠",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 政老",
+   "政老 父子|父女 贾珠"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "探春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 政老",
+   "政老 父子|父女 探春"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "元春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 政老",
+   "政老 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 贾赦",
+   "贾赦 父子|父女 贾琏"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "贾母",
+  "relation": "祖母",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之母为祖母",
+  "support": [
+   "贾母 母子 贾赦",
+   "贾赦 父子|父女 贾琏"
+  ]
+ },
+ {
+  "head": "贾母",
+  "relation": "祖母",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之母为祖母",
+  "support": [
+   "贾母 母子 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "贾珠",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "政老 父子|父女 贾珠",
+   "政老 兄妹 贾赦",
+   "贾赦 父子|父女 贾琏"
+  ]
+ },
+ {
+  "head": "贾珠",
+  "relation": "堂亲",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "政老 父子|父女 贾珠",
+   "政老 兄妹 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "探春",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 政老",
+   "政老 父子|父女 探春"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 政老",
+   "政老 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "探春",
+  "relation": "堂亲",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "政老 父子|父女 探春",
+   "政老 兄妹 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "堂亲",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "政老 父子|父女 元春",
+   "政老 兄妹 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ }
+]

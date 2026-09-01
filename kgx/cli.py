@@ -47,7 +47,8 @@ def run(args):
     schema = load_schema(args.schema)
     text = open(args.text, encoding="utf-8").read()
     llm = make_llm(args.provider, model=args.model, cache_dir=os.path.join(args.out, "cache"),
-                   rpm=args.rpm, rpd=args.rpd, thinking_calls=args.review_thinking)
+                   rpm=args.rpm, rpd=args.rpd, thinking_calls=args.review_thinking,
+                   tpm=args.tpm, tpm_window=args.tpm_window)
     chapters = split_chapters(text, schema.chunking["chapter_pattern"])
     lo, hi = parse_range(args.chapters, len(chapters))
     sel = [c for c in chapters if lo <= c.index <= hi]
@@ -175,6 +176,8 @@ def main():
     r.add_argument("--model", default=None, help="默认 sensenova=deepseek-v4-flash / gemini=gemini-3.7-flash")
     r.add_argument("--rpm", type=int, default=None, help="固定每分钟调用上限；sensenova 默认 0=不限，靠 429 退避")
     r.add_argument("--rpd", type=int, default=240, help="仅 gemini：每日调用上限")
+    r.add_argument("--tpm", type=int, default=40000, help="仅 sensenova：窗口内 token 预算（撞 429 自动下调）")
+    r.add_argument("--tpm-window", type=int, default=75, help="仅 sensenova：节流窗口秒数")
     r.add_argument("--review-thinking", action="store_true", help="复核/别名归并调用开思考（默认全关）")
     r.add_argument("--gold", default=None, help="含 predefined_relations 的模块名，如 gold.hongloumeng")
     r.add_argument("--no-prescan", action="store_true")

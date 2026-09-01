@@ -1,0 +1,358 @@
+[
+ {
+  "name": "雨村",
+  "type": "人物",
+  "aliases": [
+   "贾雨村",
+   "时飞"
+  ],
+  "freq": 85,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "黛玉",
+  "type": "人物",
+  "aliases": [
+   "林姑娘",
+   "林黛玉"
+  ],
+  "freq": 85,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "士隐",
+  "type": "人物",
+  "aliases": [
+   "甄士隐"
+  ],
+  "freq": 49,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "宝玉",
+  "type": "人物",
+  "aliases": [
+   "作宝玉",
+   "就唤宝玉"
+  ],
+  "freq": 37,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾母",
+  "type": "人物",
+  "aliases": [],
+  "freq": 33,
+  "identity": "荣国府太夫人，贾赦、贾政之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "子兴",
+  "type": "人物",
+  "aliases": [
+   "冷子兴"
+  ],
+  "freq": 32,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "如海",
+  "type": "人物",
+  "aliases": [
+   "林如海"
+  ],
+  "freq": 26,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "道人",
+  "type": "人物",
+  "aliases": [
+   "那道人"
+  ],
+  "freq": 24,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "荣国",
+  "type": "地点",
+  "aliases": [
+   "荣府",
+   "荣国府"
+  ],
+  "freq": 23,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "王夫人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 20,
+  "identity": "贾政之妻",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "政老",
+  "type": "人物",
+  "aliases": [
+   "贾政"
+  ],
+  "freq": 17,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "那僧",
+  "type": "人物",
+  "aliases": [],
+  "freq": 17,
+  "identity": "僧人，与道人同行",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "封肃",
+  "type": "人物",
+  "aliases": [],
+  "freq": 13,
+  "identity": "甄士隐岳丈，务农",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "熙凤",
+  "type": "人物",
+  "aliases": [
+   "王熙凤"
+  ],
+  "freq": 11,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "金陵",
+  "type": "地点",
+  "aliases": [],
+  "freq": 10,
+  "identity": "地名",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "甄家",
+  "type": "家族",
+  "aliases": [],
+  "freq": 10,
+  "identity": "甄士隐家族",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "袭人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 9,
+  "identity": "贾母之婢，本名珍珠，后为宝玉大丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "邢夫人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 7,
+  "identity": "贾赦之妻",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "宁国",
+  "type": "地点",
+  "aliases": [
+   "宁国府"
+  ],
+  "freq": 7,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "英莲",
+  "type": "人物",
+  "aliases": [],
+  "freq": 6,
+  "identity": "甄士隐之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "探春",
+  "type": "人物",
+  "aliases": [],
+  "freq": 5,
+  "identity": "贾政庶出之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "霍启",
+  "type": "人物",
+  "aliases": [],
+  "freq": 4,
+  "identity": "甄士隐家人",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "迎春",
+  "type": "人物",
+  "aliases": [],
+  "freq": 4,
+  "identity": "贾赦之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾府",
+  "type": "家族",
+  "aliases": [],
+  "freq": 4,
+  "identity": "贾氏家族",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "封氏",
+  "type": "人物",
+  "aliases": [],
+  "freq": 3,
+  "identity": "甄士隐嫡妻",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "王嬷嬷",
+  "type": "人物",
+  "aliases": [],
+  "freq": 3,
+  "identity": "黛玉的奶娘",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾珠",
+  "type": "人物",
+  "aliases": [],
+  "freq": 2,
+  "identity": "贾政长子，已故",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "惜春",
+  "type": "人物",
+  "aliases": [],
+  "freq": 2,
+  "identity": "宁府珍爷之胞妹",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "雪雁",
+  "type": "人物",
+  "aliases": [],
+  "freq": 2,
+  "identity": "黛玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾珍",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1,
+  "identity": "宁府贾敬之子",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾蓉",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1,
+  "identity": "贾珍之子",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾敏",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1,
+  "identity": "林如海之妻，贾母之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "绛珠仙子",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1,
+  "identity": "神话人物",
+  "sources": [
+   "prescan"
+  ]
+ }
+]

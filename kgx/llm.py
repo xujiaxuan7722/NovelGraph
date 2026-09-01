@@ -50,14 +50,15 @@ def _parse_json_text(text, meta):
     return result
 
 
-def make_llm(provider, model=None, cache_dir="runs/cache", rpm=None, rpd=240, thinking_calls=False):
+def make_llm(provider, model=None, cache_dir="runs/cache", rpm=None, rpd=240, thinking_calls=False,
+             tpm=40000, tpm_window=75):
     """cli 用：按 provider 构造客户端；model/rpm 为 None 时用各自默认"""
     if provider == "gemini":
         return Gemini(model=model or "gemini-3.7-flash", cache_dir=cache_dir,
                       rpm=rpm or 9, rpd=rpd)
     if provider == "sensenova":
         return OpenAICompat(model=model or "deepseek-v4-flash", cache_dir=cache_dir,
-                            rpm=rpm or 0, thinking_calls=thinking_calls)
+                            rpm=rpm or 0, thinking_calls=thinking_calls, tpm=tpm, tpm_window=tpm_window)
     raise SystemExit(f"未知 provider: {provider}")
 
 
@@ -197,13 +198,14 @@ class OpenAICompat:
     - JSON：response_format=json_object + 把 JSON Schema 写进 prompt（网关不支持强制 schema）；
     - 思考：默认 reasoning_effort=none；仅当 thinking_calls=True 且调用方 thinking="high"（复核/归并）
       时开启（不传 reasoning_effort，走模型默认），并把 max_tokens 抬到 thinking_max_tokens；
-    - 配额：无日限。rpm=0 表示不设固定间隔，纯靠 429 退避（60→300s，最多 12 次≈40min，不退出）；
+    - 配额：无日限。rpm=0 表示不设固定间隔；按 token 节流（tpm/tpm_window，撞 tpm-429 自动下调预算并落盘
+      cache/tpm_state.json）；其他 429 退避 60→300s（最多 12 次，不退出）；
     - 用量：cache/usage_log.jsonl 逐次记 (时间, 模型, tokens)，report() 给近 5h 累计（对应网关 5h 窗口）。
     """
     def __init__(self, model="deepseek-v4-flash", cache_dir="runs/cache", rpm=0,
                  base_url="https://token.sensenova.cn/v1", env_key="SENSENOVA_API_KEY",
                  max_output_tokens=16000, thinking_calls=False, thinking_max_tokens=32000,
-                 timeout=600):
+                 timeout=600, tpm=40000, tpm_window=75):
         self.model = model
         self.key = _load_key(env_key)
         self.base_url = base_url.rstrip("/")
@@ -218,9 +220,43 @@ class OpenAICompat:
         self.stats = {"calls": 0, "cached": 0, "prompt_tokens": 0, "output_tokens": 0,
                       "thought_tokens": 0, "seconds": 0.0}
         self._usage_path = os.path.join(cache_dir, "usage_log.jsonl")
+        # ---- 按 token 节流：窗口内已用 token + 本次预估 ≤ tpm 才放行；tpm-429 → 预算下调 15%（落盘） ----
+        self.tpm_window = tpm_window
+        self._tpm_path = os.path.join(cache_dir, "tpm_state.json")
+        self.tpm = tpm
+        if os.path.exists(self._tpm_path):
+            self.tpm = json.load(open(self._tpm_path)).get("tpm", tpm)
+        self._recent = []       # [(完成时间, tokens)]，含 429 的幻影占用
 
     def quota_left(self):
         return None
+
+    # ---------- TPM 节流 ----------
+    def _window_used(self):
+        cutoff = time.time() - self.tpm_window
+        self._recent = [(t, n) for t, n in self._recent if t >= cutoff]
+        return sum(n for _, n in self._recent)
+
+    def _throttle(self, need, tag):
+        """阻塞到窗口内余量够用；返回等待秒数"""
+        waited = 0.0
+        while True:
+            used = self._window_used()
+            if used + need <= self.tpm or not self._recent:
+                return waited
+            oldest = min(t for t, _ in self._recent)
+            pause = max(1.0, oldest + self.tpm_window - time.time() + 0.5)
+            if waited == 0:
+                print(f"  [TPM节流]{tag} 窗口内已用 {used}+预估 {need} > {self.tpm}，等待约 {pause:.0f}s", flush=True)
+            time.sleep(min(pause, 30))
+            waited += min(pause, 30)
+
+    def _tpm_hit(self, need):
+        """撞到 tpm-429：把本次预估当幻影占用记入窗口，预算下调 15%（下限 20000）并落盘"""
+        self._recent.append((time.time(), need))
+        self.tpm = max(20000, int(self.tpm * 0.85))
+        json.dump({"tpm": self.tpm, "window": self.tpm_window, "updated": time.time()},
+                  open(self._tpm_path, "w"))
 
     def _cache_key(self, payload):
         raw = json.dumps({"m": self.model, "p": payload}, ensure_ascii=False, sort_keys=True)
@@ -270,11 +306,14 @@ class OpenAICompat:
             rec = json.load(open(cpath, encoding="utf-8"))
             return rec["result"], {**rec["meta"], "cached": True}
 
+        # 预估本次占用：中文约 0.8 token/字 + 预期输出（按 max_tokens 六成）
+        need = int(len(user) * 0.8 + (len(system) * 0.8 if system else 0) + max_tokens * 0.6)
         n429 = n5xx = nother = 0
         while True:
             wait = self.min_interval - (time.time() - self._last_call)
             if wait > 0:
                 time.sleep(wait)
+            self._throttle(need, tag)
             self._last_call = time.time()
             t0 = time.time()
             try:
@@ -298,6 +337,10 @@ class OpenAICompat:
                 n429 += 1
                 if n429 > 12:
                     raise RuntimeError(f"持续限速{tag}（已等约 40 分钟）")
+                if "tpm" in r.text.lower():
+                    self._tpm_hit(need)
+                    print(f"  [HTTP 429 tpm]{tag} 预算下调至 {self.tpm}，由节流器等待窗口清空", flush=True)
+                    continue
                 pause = min(60 * n429, 300)
             elif r.status_code >= 500:
                 n5xx += 1
@@ -323,6 +366,7 @@ class OpenAICompat:
         self.stats["output_tokens"] += usage["completion_tokens"]
         self.stats["thought_tokens"] += usage["reasoning_tokens"]
         self.stats["seconds"] += elapsed
+        self._recent.append((time.time(), usage["prompt_tokens"] + usage["completion_tokens"]))
         self._log_usage(usage, elapsed, tag)
         choice = (d.get("choices") or [{}])[0]
         text = (choice.get("message") or {}).get("content") or ""
@@ -339,4 +383,4 @@ class OpenAICompat:
         s, w = self.stats, self.usage_window()
         return (f"LLM调用 {s['calls']} 次（缓存命中 {s['cached']}）｜输入 {s['prompt_tokens']} "
                 f"输出 {s['output_tokens']} 思考 {s['thought_tokens']} tokens｜近5h {w['calls']} 次 "
-                f"{w['prompt_tokens'] + w['completion_tokens']} tokens")
+                f"{w['prompt_tokens'] + w['completion_tokens']} tokens｜TPM预算 {self.tpm}")
