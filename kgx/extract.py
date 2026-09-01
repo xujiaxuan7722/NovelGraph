@@ -4,8 +4,12 @@
 gleaning（借 GraphRAG）：追加一轮"还有遗漏，请补充"。
 """
 import json
+import time
 
-from .chunking import Pack
+from .chunking import Chapter, Pack, split_sentences
+
+LOW_YIELD_PER_KCHAR = 1.2      # 关系密度低于此值（条/千字）视为异常低产出，换措辞再通读一次
+MIN_SPLIT_CHARS = 1500         # 被拦文本短于此不再切半
 
 EXTRACT_SCHEMA = {
     "type": "object",
@@ -99,7 +103,21 @@ def apply_registry_updates(registry, result, pack_text, chapter_idx):
     return accepted, rejected
 
 
-def extract_pack(llm, schema, registry, pack, gleaning=True):
+def _halve(ch):
+    """把一章按句边界对半切成两个 Chapter（index 不变，title 加 [上]/[下] 标记）"""
+    sents = split_sentences(ch.text)
+    half, acc, cut = len(ch.text) // 2, 0, None
+    for sent in sents:
+        acc = ch.text.find(sent, acc) + len(sent)
+        if acc >= half:
+            cut = acc; break
+    cut = cut or half
+    tag = ch.title if ch.title.endswith("]") else ch.title
+    return (Chapter(ch.index, tag + "[上]", ch.text[:cut], ch.start),
+            Chapter(ch.index, tag + "[下]", ch.text[cut:], ch.start + cut))
+
+
+def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
     """返回 (relations_list, stats)。relations 元素: dict(head, relation, tail, evidence, confidence, pack, chapters)"""
     first_chapter = pack.chapters[0].index
     chapters = [c.index for c in pack.chapters]
@@ -122,8 +140,24 @@ def extract_pack(llm, schema, registry, pack, gleaning=True):
                     mstats[k] += sst.get(k, 0)
                 mstats["filtered_chapters"] += sst.get("filtered_chapters", [])
             return merged, mstats
-        print(f"  !! {pack.label} 单章仍被内容审查拦截，跳过该章", flush=True)
-        stats["filtered_chapters"] = [first_chapter]
+        ch = pack.chapters[0]
+        if len(ch.text) >= MIN_SPLIT_CHARS and _depth < 2:
+            # 单章被拦：触发的通常只是一段，对半切（句边界）各抽；半段仍被拦才放弃（最多切到 1/4）
+            print(f"  {pack.label}{ch.title[-6:] if _depth else ''} 被内容审查拦截，切半分别抽取", flush=True)
+            a, b = _halve(ch)
+            merged, mstats = [], {"calls": 1, "entities_added": 0, "entities_rejected": 0,
+                                  "parse_error": False, "split": True, "filtered_chapters": []}
+            for part in (a, b):
+                srels, sst = extract_pack(llm, schema, registry, Pack(pack.id, [part]),
+                                          gleaning=gleaning, _depth=_depth + 1)
+                merged.extend(srels)
+                for k in ("calls", "entities_added", "entities_rejected"):
+                    mstats[k] += sst.get(k, 0)
+                mstats["filtered_chapters"] += sst.get("filtered_chapters", [])
+            return merged, mstats
+        label = f"{first_chapter}{ch.title[ch.title.find('['):] if '[' in ch.title else ''}"
+        print(f"  !! {pack.label}{ch.title[-6:] if _depth else ''} 仍被内容审查拦截，跳过该段", flush=True)
+        stats["filtered_chapters"] = [label]
         return rels, stats
     if not result and (meta.get("truncated") or meta.get("parse_error") or meta.get("empty")):
         # 输出截断/解析失败：把输出上限加倍重试一次；仍失败则抛错让 cli 保存进度退出（不能静默记 0 条）
@@ -144,11 +178,37 @@ def extract_pack(llm, schema, registry, pack, gleaning=True):
         x["round"] = 1
         rels.append(x)
 
+    # 低产出守门：密度明显低于正常块（2.5–3 条/千字）时，换措辞再通读一次，取并集
+    density = len(rels) / max(len(pack.text), 1) * 1000
+    if len(pack.text) >= 3000 and density < LOW_YIELD_PER_KCHAR:
+        print(f"  {pack.label} 关系密度 {density:.1f} 条/千字 偏低，换措辞再通读一次", flush=True)
+        prompt_b = build_prompt(schema, registry, pack) + "\n\n（第二次通读：上一次读得太粗，请逐段仔细找全所有能引证据的关系。）"
+        result_b, meta_b = llm.generate(prompt_b, response_schema=EXTRACT_SCHEMA, tag=f"[抽取 {pack.label} 二读]")
+        stats["calls"] += 1
+        stats["low_yield_retry"] = True
+        if result_b:
+            a, r = apply_registry_updates(registry, result_b, pack.text, first_chapter)
+            stats["entities_added"] += a
+            stats["entities_rejected"] += r
+            seen = {(x["head"], x["relation"], x["tail"]) for x in rels}
+            for x in result_b.get("relations", []) or []:
+                k = (x.get("head"), x.get("relation"), x.get("tail"))
+                if k in seen:
+                    continue
+                seen.add(k)
+                x = dict(x); x.update({"pack": pack.id, "chapters": chapters, "round": 1})
+                rels.append(x)
+
     if gleaning:
         prev = [{"head": x["head"], "relation": x["relation"], "tail": x["tail"]} for x in rels]
         prompt2 = build_prompt(schema, registry, pack, gleaning_prev=prev)
         try:
-            result2, _ = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label}]")
+            result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label}]")
+            if result2 is None and (meta2.get("empty") or meta2.get("parse_error")):
+                print(f"  补抽返回空响应，30s 后重试一次", flush=True)
+                time.sleep(30)
+                result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label} 重试]")
+                stats["calls"] += 1
         except Exception as e:        # 补抽失败不应拖累第一遍结果
             if type(e).__name__ == "QuotaExhausted":
                 raise
