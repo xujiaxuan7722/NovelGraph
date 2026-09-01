@@ -1,20 +1,5 @@
 [
  {
-  "head": "贾雨村",
-  "relation": "夫妻",
-  "tail": "娇杏",
-  "evidence": "雨村便将她扶侧作正室夫人了",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾代善",
   "relation": "夫妻",
   "tail": "贾母",
@@ -230,21 +215,6 @@
   "tail": "贾府",
   "evidence": "荣国府贾府中",
   "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾雨村",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "你们同姓，岂非同宗一族？……荣国府贾府中",
-  "confidence": "medium",
   "pack": "p001",
   "chapters": [
    1,
@@ -601,21 +571,6 @@
  },
  {
   "head": "薛宝钗",
-  "relation": "主仆",
-  "tail": "莺儿",
-  "evidence": "只见薛宝钗穿著家常衣服，头上只散挽着簪儿，坐在炕里边，伏在小炕儿上同丫鬟莺儿正描花样子呢",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
- },
- {
-  "head": "薛宝钗",
   "relation": "家族",
   "tail": "薛家",
   "evidence": "薛姨妈道：姨娘不知道，宝丫头古怪着呢，她从来不爱这些花儿粉儿的",
@@ -627,22 +582,7 @@
    9
   ],
   "round": 1,
-  "reason": "实体未登记:薛宝钗"
- },
- {
-  "head": "薛姨妈",
-  "relation": "母女",
-  "tail": "薛宝钗",
-  "evidence": "薛姨妈道：姨娘不知道，宝丫头古怪着呢，她从来不爱这些花儿粉儿的",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "迎春",
@@ -763,21 +703,6 @@
   ],
   "round": 1,
   "reason": "关系不在闭集:祖孙"
- },
- {
-  "head": "薛宝钗",
-  "relation": "居住",
-  "tail": "梨香院",
-  "evidence": "周瑞家的听说，便转东角门出至东院，往梨香院来",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
  },
  {
   "head": "王夫人",
@@ -964,21 +889,6 @@
   "reason": "关系不在闭集:姨甥"
  },
  {
-  "head": "薛宝钗",
-  "relation": "母女",
-  "tail": "薛姨妈",
-  "evidence": "宝玉听说，忙下了炕，来至里间门前，只见吊着半旧的红紬软帘。宝玉掀帘一迈步进去，先就看见薛宝钗坐在炕上做针线",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
- },
- {
   "head": "薛姨妈",
   "relation": "母子",
   "tail": "薛蟠",
@@ -992,21 +902,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛宝钗",
-  "relation": "居住",
-  "tail": "梨香院",
-  "evidence": "且说宝玉来至梨香院中，先入薛姨妈室中来，正见薛姨妈打点针黹与丫鬟们呢。",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
  },
  {
   "head": "秦业",
@@ -1054,36 +949,6 @@
   "reason": "类型不符:居住(人物→人物)"
  },
  {
-  "head": "贾兰",
-  "relation": "兄弟",
-  "tail": "贾菌",
-  "evidence": "这贾菌亦系荣国府近派的重孙，其母亦少寡，独守着贾菌。这贾菌与贾兰最好，所以二人同桌而坐",
-  "confidence": "medium",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾蓉",
-  "relation": "兄弟",
-  "tail": "贾蔷",
-  "evidence": "他弟兄二人最相亲厚，常相共处。",
-  "confidence": "high",
-  "pack": "p003",
-  "chapters": [
-   7,
-   8,
-   9
-  ],
-  "round": 2,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "金氏",
   "relation": "姑侄",
   "tail": "金荣",
@@ -1112,21 +977,6 @@
   ],
   "round": 1,
   "reason": "关系不在闭集:姑嫂"
- },
- {
-  "head": "秦钟",
-  "relation": "姐弟",
-  "tail": "秦氏",
-  "evidence": "她兄弟来瞧他，谁知那小孩子家不知好歹，看见他姐姐身上不大爽快",
-  "confidence": "high",
-  "pack": "p004",
-  "chapters": [
-   10,
-   11,
-   12
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐弟"
  },
  {
   "head": "金氏",
@@ -1774,21 +1624,6 @@
   "reason": "关系不在闭集:师徒"
  },
  {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "秦钟",
-  "evidence": "宝玉因见今日人众，恐秦钟受了委曲，因默与他商议，要同他往凤姐处来坐。",
-  "confidence": "medium",
-  "pack": "p005",
-  "chapters": [
-   13,
-   14,
-   15
-  ],
-  "round": 2,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "秦钟",
   "relation": "情侣",
   "tail": "智能",
@@ -1926,21 +1761,6 @@
  {
   "head": "贾府",
   "relation": "家族",
-  "tail": "宝玉",
-  "evidence": "秦钟道：‘不瞒列位，就是荣国公的孙子，小名宝玉的。'",
-  "confidence": "high",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
   "tail": "贾琏",
   "evidence": "贾琏笑道：‘……咱们家这些所有的管家奶奶们……'",
   "confidence": "medium",
@@ -1969,51 +1789,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾宝玉",
-  "relation": "主仆",
-  "tail": "茗烟",
-  "evidence": "茗烟道：‘秦相公不中用了！'宝玉听说，吓了一跳……",
-  "confidence": "high",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 1,
-  "reason": "实体未登记:贾宝玉"
- },
- {
-  "head": "贾宝玉",
-  "relation": "主仆",
-  "tail": "袭人",
-  "evidence": "袭人倒了茶来，见身边佩物一件无存……",
-  "confidence": "high",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 1,
-  "reason": "实体未登记:贾宝玉"
- },
- {
-  "head": "贾宝玉",
-  "relation": "主仆",
-  "tail": "李贵",
-  "evidence": "李贵忙劝道：‘不可，不可！秦相公是弱症……'",
-  "confidence": "high",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 1,
-  "reason": "实体未登记:贾宝玉"
- },
- {
   "head": "妙玉",
   "relation": "居住",
   "tail": "牟尼院",
@@ -2029,40 +1804,10 @@
   "reason": "实体未登记:牟尼院"
  },
  {
-  "head": "贾元春",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "贾妃乃问：‘此殿何无匾额？'随侍太监跪启曰：‘此系正殿，外臣未敢擅拟。'",
-  "confidence": "medium",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 1,
-  "reason": "实体未登记:贾元春"
- },
- {
   "head": "贾琏",
   "relation": "家族",
   "tail": "贾府",
   "evidence": "贾琏道：“这何用说呢！不然，这会子忙的是什么？”",
-  "confidence": "medium",
-  "pack": "p006",
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "round": 2,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "宝玉",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "咱们家正在姑苏扬州一带监造海舫，修理海塘，只预备接驾一次",
   "confidence": "medium",
   "pack": "p006",
   "chapters": [
@@ -2359,21 +2104,6 @@
   "reason": "实体未登记:黛玉房"
  },
  {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "贾环",
-  "evidence": "宝钗素知他家规矩，凡作兄弟的，都怕哥哥。",
-  "confidence": "high",
-  "pack": "p007",
-  "chapters": [
-   19,
-   20,
-   21
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "多姑娘儿",
   "relation": "居住",
   "tail": "荣府",
@@ -2417,21 +2147,6 @@
   ],
   "round": 2,
   "reason": "实体未登记:花家"
- },
- {
-  "head": "贾芸",
-  "relation": "父子",
-  "tail": "贾宝玉",
-  "evidence": "贾芸笑道：“俗语说的，‘摇车里的爷爷，拄拐的孙孙’。虽然岁数大，山高高不过太阳。",
-  "confidence": "high",
-  "pack": "p008",
-  "chapters": [
-   22,
-   23,
-   24
-  ],
-  "round": 1,
-  "reason": "实体未登记:贾宝玉"
  },
  {
   "head": "贾母",
@@ -2779,64 +2494,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "薛蟠",
-  "relation": "兄弟",
-  "tail": "宝钗",
-  "evidence": "薛蟠道：“要不是我也不敢惊动，只因明儿五月初三日是我的生日，谁知古董行的程日兴，他不知哪里寻了来的这么粗、这么长粉脆的鲜藕",
-  "confidence": "high",
-  "pack": "p009",
-  "chapters": [
-   25,
-   26,
-   27
-  ],
-  "round": 2,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾政",
-  "relation": "兄弟",
-  "tail": "宝玉",
-  "evidence": "贾政道：“小儿落草时虽带了一块宝玉下来，上面说能除邪祟，谁知竟不灵验。”",
-  "confidence": "high",
-  "pack": "p009",
-  "chapters": [
-   25,
-   26,
-   27
-  ],
-  "round": 2,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "探春",
-  "evidence": "探春、惜春都笑道：“二哥哥，你成日家忙些什么？吃饭、吃茶也是这么忙碌碌的。”",
-  "confidence": "medium",
-  "pack": "p010",
-  "chapters": [
-   28,
-   29
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "惜春",
-  "evidence": "探春、惜春都笑道：“二哥哥，你成日家忙些什么？吃饭、吃茶也是这么忙碌碌的。”",
-  "confidence": "medium",
-  "pack": "p010",
-  "chapters": [
-   28,
-   29
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "冯紫英",
   "relation": "父子",
   "tail": "冯唐",
@@ -2997,21 +2654,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "黛玉",
-  "evidence": "黛玉道：‘二哥哥不告诉我，我问你就知道了。’",
-  "confidence": "high",
-  "pack": "p011",
-  "chapters": [
-   30,
-   31,
-   32
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾母",
@@ -3285,21 +2927,6 @@
  },
  {
   "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "贾环",
-  "evidence": "贾环便悄悄说道：'我母亲告诉我说，宝玉哥哥前日在太太屋里，拉着太太的丫头金钏儿强奸不遂，打了一顿。'",
-  "confidence": "high",
-  "pack": "p012",
-  "chapters": [
-   33,
-   34,
-   35
-  ],
-  "round": 2,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "宝玉",
   "relation": "主仆",
   "tail": "晴雯",
   "evidence": "因回头见晴雯、秋纹、麝月等都在一处做针黹",
@@ -3417,21 +3044,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "探春",
-  "evidence": "宝玉因道：“可是我忘了，才说要瞧瞧三妹妹去的，可好些了？你偏走来。”",
-  "confidence": "high",
-  "pack": "p013",
-  "chapters": [
-   36,
-   37,
-   38
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "王夫人",
@@ -3734,21 +3346,6 @@
   "reason": "关系不在闭集:嫂嫂"
  },
  {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "贾琏",
-  "evidence": "凤姐儿见人来了，便不似先前那般泼了，丢下众人，便哭着往贾母那边跑。贾母、邢夫人、王夫人等忙问怎么了。凤姐儿哭道：“我才家去换衣裳，不防琏二爷在家和人说话，我只当是有客来了，唬得我不敢进去。在窗户外头听了一听，原来是和鲍二家的媳妇商议，说我利害，要拿毒药给我吃了，治死我，把平儿扶了正。我原气了，又不敢和他吵，原打了平儿两下，问他为什么要害我。”",
-  "confidence": "medium",
-  "pack": "p015",
-  "chapters": [
-   42,
-   43,
-   44
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "贾母",
   "relation": "母女",
   "tail": "贾敏",
@@ -3944,21 +3541,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "柳湘莲",
-  "relation": "主仆",
-  "tail": "杏奴",
-  "evidence": "湘莲便起身出来，瞅人不防，去了，至门外，命小厮杏奴",
-  "confidence": "high",
-  "pack": "p016",
-  "chapters": [
-   45,
-   46,
-   47
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾母",
   "relation": "居住",
   "tail": "贾府",
@@ -4124,21 +3706,6 @@
  },
  {
   "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "柳湘莲",
-  "evidence": "湘莲道：'你这令姨表兄还是那样，再坐着未免有事，不如我回避了倒好。'宝玉想了一想，说道：'既是这样，倒是回避他为是。'",
-  "confidence": "medium",
-  "pack": "p016",
-  "chapters": [
-   45,
-   46,
-   47
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "宝玉",
   "relation": "朋友",
   "tail": "柳湘莲",
   "evidence": "宝玉便拉了柳湘莲到厅侧小书房中坐下，问他：'这几日可到秦钟的坟上去了？'",
@@ -4196,21 +3763,6 @@
   ],
   "round": 1,
   "reason": "关系不在闭集:祖孙"
- },
- {
-  "head": "凤姐",
-  "relation": "兄弟",
-  "tail": "贾琏",
-  "evidence": "贾母笑道：'你带了去，给琏儿放在屋里，看你那没脸的公公还要不要了！'",
-  "confidence": "medium",
-  "pack": "p016",
-  "chapters": [
-   45,
-   46,
-   47
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾珍",
@@ -5514,20 +5066,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "王夫人",
-  "relation": "姐妹",
-  "tail": "薛姨妈",
-  "evidence": "薛姨妈是王夫人之妹",
-  "confidence": "high",
-  "pack": "p020",
-  "chapters": [
-   56,
-   57
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
   "head": "贾母",
   "relation": "居住",
   "tail": "荣府",
@@ -5971,20 +5509,6 @@
   "reason": "实体未登记:大观园"
  },
  {
-  "head": "林之孝家的",
-  "relation": "主仆",
-  "tail": "柳五儿",
-  "evidence": "林之孝家的?问道：“我听见你病了，怎么跑到这里来？”五儿陪笑道：“因这两日好些，跟我妈进来散散闷。”",
-  "confidence": "medium",
-  "pack": "p022",
-  "chapters": [
-   61,
-   62
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "柳五儿",
   "relation": "居住",
   "tail": "大观园",
@@ -6053,62 +5577,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "贾环",
-  "evidence": "歇一时，贾环、贾兰等来了，袭人连忙拉住，坐了一坐，便去了。",
-  "confidence": "medium",
-  "pack": "p022",
-  "chapters": [
-   61,
-   62
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "宝玉",
-  "relation": "兄弟",
-  "tail": "贾兰",
-  "evidence": "歇一时，贾环、贾兰等来了，袭人连忙拉住，坐了一坐，便去了。",
-  "confidence": "medium",
-  "pack": "p022",
-  "chapters": [
-   61,
-   62
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "薛宝琴",
-  "relation": "堂亲",
-  "tail": "薛蝌",
-  "evidence": "宝钗带了宝琴过来与薛蝌行礼，把盏毕，宝钗因嘱薛蝌：“家里的酒也不用送过那边去，这虚套竟可收了。”",
-  "confidence": "high",
-  "pack": "p022",
-  "chapters": [
-   61,
-   62
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛宝钗",
-  "relation": "兄妹",
-  "tail": "薛蝌",
-  "evidence": "宝钗带了宝琴过来与薛蝌行礼，把盏毕，宝钗因嘱薛蝌：“家里的酒也不用送过那边去，这虚套竟可收了。”",
-  "confidence": "medium",
-  "pack": "p022",
-  "chapters": [
-   61,
-   62
-  ],
-  "round": 1,
-  "reason": "实体未登记:薛宝钗"
  },
  {
   "head": "薛宝琴",
@@ -6193,20 +5661,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾琏",
-  "relation": "兄弟",
-  "tail": "贾珍",
-  "evidence": "原来贾琏、贾珍素日亲密，又是弟兄，本无可避忌之人",
-  "confidence": "high",
-  "pack": "p023",
-  "chapters": [
-   63,
-   64
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾琏",
@@ -6305,21 +5759,6 @@
   ],
   "round": 2,
   "reason": "关系不在闭集:祖孙"
- },
- {
-  "head": "薛蟠",
-  "relation": "兄弟",
-  "tail": "柳湘莲",
-  "evidence": "不想柳二弟从那边来了，方把贼人赶散，夺回货物，还救了我们的性命。我谢他又不受，所以我们结拜了生死弟兄",
-  "confidence": "high",
-  "pack": "p024",
-  "chapters": [
-   65,
-   66,
-   67
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾琏",
@@ -6455,51 +5894,6 @@
   ],
   "round": 2,
   "reason": "实体未登记:柳家"
- },
- {
-  "head": "尤氏",
-  "relation": "姐妹",
-  "tail": "尤二姐",
-  "evidence": "尤二姐道：“任凭姐姐裁处。”那些跟车的小厮们皆是预先说明的",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "尤氏",
-  "relation": "姐妹",
-  "tail": "尤三姐",
-  "evidence": "就在尤三姐之上点了一个穴，破土埋葬",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "尤二姐",
-  "relation": "姐妹",
-  "tail": "尤三姐",
-  "evidence": "只见她小妹子手捧鸳鸯宝剑前来",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
  },
  {
   "head": "贾琏",
@@ -6890,51 +6284,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "尤氏",
-  "relation": "姐妹",
-  "tail": "尤二姐",
-  "evidence": "尤二姐道：“任凭姐姐裁处。”那些跟车的小厮们皆是预先说明的",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "尤氏",
-  "relation": "姐妹",
-  "tail": "尤三姐",
-  "evidence": "就在尤三姐之上点了一个穴，破土埋葬",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "尤二姐",
-  "relation": "姐妹",
-  "tail": "尤三姐",
-  "evidence": "只见她小妹子手捧鸳鸯宝剑前来",
-  "confidence": "high",
-  "pack": "p025",
-  "chapters": [
-   68,
-   69,
-   70
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
  },
  {
   "head": "贾琏",
@@ -8124,62 +7473,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "探春",
-  "relation": "姐妹",
-  "tail": "惜春",
-  "evidence": "探春、湘云正在惜春那边论评惜春所画大观园图",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "贾琏",
-  "relation": "兄弟",
-  "tail": "宝玉",
-  "evidence": "贾琏道：舍弟的药就是那么着了？",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾珍",
-  "relation": "兄弟",
-  "tail": "贾琏",
-  "evidence": "贾琏道：我已经打发人往太医院打听去了。一面说着，一面退出来，去找贾珍。",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾赦",
-  "relation": "兄弟",
-  "tail": "贾政",
-  "evidence": "贾赦、贾政等站着听了旨意",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾珍",
@@ -10254,62 +9547,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾琏",
-  "relation": "兄弟",
-  "tail": "宝玉",
-  "evidence": "贾琏道：舍弟的药就是那么着了？",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾珍",
-  "relation": "兄弟",
-  "tail": "贾琏",
-  "evidence": "贾琏道：我已经打发人往太医院打听去了。一面说着，一面退出来，去找贾珍。",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾赦",
-  "relation": "兄弟",
-  "tail": "贾政",
-  "evidence": "贾赦、贾政等站着听了旨意",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "探春",
-  "relation": "姐妹",
-  "tail": "惜春",
-  "evidence": "探春、湘云正在惜春那边论评惜春所画大观园图",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
   "head": "贾母",
   "relation": "母女",
   "tail": "贾敏",
@@ -10436,62 +9673,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾琏",
-  "relation": "兄弟",
-  "tail": "宝玉",
-  "evidence": "贾琏道：舍弟的药就是那么着了？",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾珍",
-  "relation": "兄弟",
-  "tail": "贾琏",
-  "evidence": "贾琏道：我已经打发人往太医院打听去了。一面说着，一面退出来，去找贾珍。",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "贾赦",
-  "relation": "兄弟",
-  "tail": "贾政",
-  "evidence": "贾赦、贾政等站着听了旨意",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
-  "head": "探春",
-  "relation": "姐妹",
-  "tail": "惜春",
-  "evidence": "探春、湘云正在惜春那边论评惜春所画大观园图",
-  "confidence": "high",
-  "pack": "p031",
-  "chapters": [
-   82,
-   83
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:姐妹"
- },
- {
   "head": "薛蟠",
   "relation": "夫妻",
   "tail": "香菱",
@@ -10505,21 +9686,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛蟠",
-  "relation": "兄弟",
-  "tail": "薛蝌",
-  "evidence": "薛蝌道：“我在外头原听见说是贾妃薨了，这么才赶回来的。”",
-  "confidence": "medium",
-  "pack": "p032",
-  "chapters": [
-   84,
-   85,
-   86
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "薛蝌",
@@ -11032,21 +10198,6 @@
   "reason": "关系不在闭集:祖孙"
  },
  {
-  "head": "薛蝌",
-  "relation": "兄弟",
-  "tail": "薛蟠",
-  "evidence": "薛姨妈才告诉了薛蝌，叫他：明日起身，一则打听审详的事，二则告诉你哥哥一个信儿。",
-  "confidence": "high",
-  "pack": "p036",
-  "chapters": [
-   96,
-   97,
-   98
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "贾母",
   "relation": "居住",
   "tail": "荣府",
@@ -11107,21 +10258,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "薛蝌",
-  "relation": "表亲",
-  "tail": "宝琴",
-  "evidence": "不然，就是她和琴妹妹也有了什么不对的地方儿",
-  "confidence": "medium",
-  "pack": "p034",
-  "chapters": [
-   90,
-   91,
-   92
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "薛姨妈",
   "relation": "家族",
   "tail": "薛家",
@@ -11165,21 +10301,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾政",
-  "relation": "兄弟",
-  "tail": "贾赦",
-  "evidence": "贾赦、贾政道：“你说什么？”",
-  "confidence": "high",
-  "pack": "p034",
-  "chapters": [
-   90,
-   91,
-   92
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "贾政",
@@ -11990,21 +11111,6 @@
   ],
   "round": 1,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾赦",
-  "relation": "兄弟",
-  "tail": "贾政",
-  "evidence": "贾政道：“大哥虽则台站效力，也是为国家办事，不致受苦，只要办得妥当，就可复职。”",
-  "confidence": "high",
-  "pack": "p039",
-  "chapters": [
-   105,
-   106,
-   107
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "宝玉",
@@ -13027,21 +12133,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾政",
-  "relation": "兄弟",
-  "tail": "贾赦",
-  "evidence": "贾政忙指贾琏道：“这是家兄名赦之子琏二侄儿。”",
-  "confidence": "high",
-  "pack": "p042",
-  "chapters": [
-   114,
-   115,
-   116
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
- },
- {
   "head": "王仁",
   "relation": "舅甥",
   "tail": "巧姐",
@@ -13280,20 +12371,6 @@
   ],
   "round": 2,
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾环",
-  "relation": "兄弟",
-  "tail": "宝玉",
-  "evidence": "如今宝玉、贾环他哥儿两个，各有一种脾气，闹得人人不理。",
-  "confidence": "high",
-  "pack": "p043",
-  "chapters": [
-   117,
-   118
-  ],
-  "round": 1,
-  "reason": "关系不在闭集:兄弟"
  },
  {
   "head": "王仁",

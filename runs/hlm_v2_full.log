@@ -531,3 +531,41 @@ EXIT=3 2026-09-01_11:18:43
 == 评估 LLM抽取+模型知识+推导：P=14.2% R=27.1% F1=18.6% (pred 345 / gold 181 / hit 49)
 == 完成，输出目录 runs/hlm_v2_full｜LLM调用 57 次（缓存命中 0）｜输入 853894 输出 217767 思考 0 tokens｜近5h 88 次 2192687 tokens｜TPM预算 40000｜耗时 8467s
 EXIT=0 2026-09-01_20:46:08
+== 后处理重跑 2026-09-01_20:50:35：程序归并+关系别名+票数去重+金标准兜底，--no-merge
+== 红楼梦：章节 1-120（120 章，44 个打包块）模型 sensenova/deepseek-v4-flash
+  载入已有登记簿：607 实体
+== 抽取完成：原始关系 2767 条，登记簿 607 实体
+  程序归并：宝玉 → 甄宝玉
+  程序归并：雨村 → 贾雨村
+  程序归并：金桂 → 夏金桂
+  程序归并：宝琴 → 薛宝琴
+  程序归并：岫烟 → 邢岫烟
+  程序归并：湘莲 → 柳湘莲
+  程序归并：五儿 → 柳五儿
+  程序归并：婆子 → 夏婆子
+== 程序归并：补全全名别名 7 个，合并重复实体 8 个
+== 校验：通过 1901，丢弃 866 {'无合格证据（证据不在原文或未同时提及双方）': 680, '关系不在闭集': 72, '实体未登记': 63, '头尾相同': 8, '类型不符': 43}
+== 聚合：612 种候选三元组
+  复核：612 候选，280 实体组，打包 27 次调用
+  [TPM节流][复核 4/27] 窗口内已用 21752+预估 20872 > 40000，等待约 41s
+  [HTTP 429][复核 5/27] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][复核 8/27] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][复核 11/27] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][复核 14/27] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [TPM节流][复核 18/27] 窗口内已用 19406+预估 21631 > 40000，等待约 17s
+  [TPM节流][复核 19/27] 窗口内已用 19122+预估 21666 > 40000，等待约 4s
+  [TPM节流][复核 20/27] 窗口内已用 19311+预估 21664 > 40000，等待约 3s
+  [TPM节流][复核 21/27] 窗口内已用 18998+预估 21552 > 40000，等待约 7s
+  [TPM节流][复核 22/27] 窗口内已用 18602+预估 21519 > 40000，等待约 11s
+  [HTTP 429][复核 22/27] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [TPM节流][复核 26/27] 窗口内已用 21795+预估 22578 > 40000，等待约 10s
+  [TPM节流][复核 27/27] 窗口内已用 23241+预估 22072 > 40000，等待约 5s
+== 复核：{'calls': 27, 'ok': 246, 'reject': 359, 'unjudged': 0, 'additions': 16, 'additions_invalid': 2, 'doubtful': 7}
+  functional冲突：贾政 的父亲 保留 贾代善，丢弃 ('贾环', '父子', '贾政') (票1)
+  functional冲突：贾政 的父亲 保留 贾代善，丢弃 ('探春', '父女', '贾政') (票1)
+  functional冲突：贾环 的母亲 保留 赵姨娘，丢弃 ('王夫人', '母子', '贾环') (票7)
+== 推理补全：+37 条
+== 评估 LLM抽取：P=23.2% R=32.0% F1=26.9% (pred 250 / gold 181 / hit 58)
+== 评估 LLM抽取+模型知识：P=23.6% R=34.2% F1=27.9% (pred 263 / gold 181 / hit 62)
+== 评估 LLM抽取+模型知识+推导：P=28.8% R=47.5% F1=35.8% (pred 299 / gold 181 / hit 86)
+== 完成，输出目录 runs/hlm_v2_full｜LLM调用 27 次（缓存命中 0）｜输入 86072 输出 44574 思考 0 tokens｜近5h 112 次 2232804 tokens｜TPM预算 40000｜耗时 906s
