@@ -1,0 +1,6 @@
+== 红楼梦：章节 1-3（3 章，1 个打包块）模型 sensenova/deepseek-v4-flash
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.301 seconds.
+Prefix dict has been built successfully.
+  预扫描 Phase1：156 候选

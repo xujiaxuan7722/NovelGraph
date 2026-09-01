@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Gemini 客户端：速率控制（RPM/RPD）、指数退避、磁盘缓存、结构化 JSON 输出、用量统计。
+"""LLM 客户端：两个 provider 同接口 generate(prompt, response_schema, ...) -> (result, meta)。
 
-免费档约束：每分钟 ~10 次、每天 ~250 次。设计为"每次调用吃得多、调用次数少"，
-且所有调用按 (模型+prompt+schema+配置) 哈希缓存——重跑下游不重复付费。
+- Gemini：generateContent，RPM/RPD（太平洋午夜重置）速率控制；免费档每日配额小，仅作备用。
+- OpenAICompat：OpenAI 兼容 chat/completions（默认商汤 Token Plan 网关 token.sensenova.cn/v1，
+  模型 deepseek-v4-flash）。无日配额，不设固定 RPM，429 休眠退避不退出；默认关思考
+  （reasoning_effort=none，否则默认思考会把 max_tokens 全烧在 reasoning 上、正文为空）。
+共同点：所有调用按 (模型+payload) 哈希落盘缓存——重跑下游不重复付费；用量统计一致。
 """
 import hashlib
 import json
@@ -29,6 +32,33 @@ def _load_key(env_key="GEMINI_API_KEY"):
     if not key:
         raise SystemExit(f"未找到 {env_key}")
     return key
+
+
+def _parse_json_text(text, meta):
+    """强制 JSON 时的解析：先整体，失败则抠 {…} 主体；仍失败 → meta.parse_error"""
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        s, e = text.find("{"), text.rfind("}")
+        try:
+            result = json.loads(text[s:e + 1]) if s != -1 else None
+        except json.JSONDecodeError:
+            result = None
+    if result is None:
+        meta["parse_error"] = True
+        meta["raw"] = text[:2000]
+    return result
+
+
+def make_llm(provider, model=None, cache_dir="runs/cache", rpm=None, rpd=240, thinking_calls=False):
+    """cli 用：按 provider 构造客户端；model/rpm 为 None 时用各自默认"""
+    if provider == "gemini":
+        return Gemini(model=model or "gemini-3.7-flash", cache_dir=cache_dir,
+                      rpm=rpm or 9, rpd=rpd)
+    if provider == "sensenova":
+        return OpenAICompat(model=model or "deepseek-v4-flash", cache_dir=cache_dir,
+                            rpm=rpm or 0, thinking_calls=thinking_calls)
+    raise SystemExit(f"未知 provider: {provider}")
 
 
 class Gemini:
@@ -149,21 +179,7 @@ class Gemini:
         parts = cand.get("content", {}).get("parts", [])
         text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
         meta = {"finish": cand.get("finishReason"), "usage": usage, "cached": False}
-        if response_schema:
-            try:
-                result = json.loads(text)
-            except json.JSONDecodeError:
-                # 截断等情况：尽力抠出 JSON 主体
-                s, e = text.find("{"), text.rfind("}")
-                try:
-                    result = json.loads(text[s:e + 1]) if s != -1 else None
-                except json.JSONDecodeError:
-                    result = None
-            if result is None:
-                meta["parse_error"] = True
-                meta["raw"] = text[:2000]
-        else:
-            result = text
+        result = _parse_json_text(text, meta) if response_schema else text
         json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
                   ensure_ascii=False)
         return result, meta
@@ -172,3 +188,155 @@ class Gemini:
         s = self.stats
         return (f"LLM调用 {s['calls']} 次（缓存命中 {s['cached']}）｜输入 {s['prompt_tokens']} "
                 f"输出 {s['output_tokens']} 思考 {s['thought_tokens']} tokens｜今日剩余配额 {self.quota_left()}")
+
+
+class OpenAICompat:
+    """OpenAI 兼容 chat/completions 客户端（默认商汤 Token Plan 网关）。
+
+    与 Gemini 同接口。差异：
+    - JSON：response_format=json_object + 把 JSON Schema 写进 prompt（网关不支持强制 schema）；
+    - 思考：默认 reasoning_effort=none；仅当 thinking_calls=True 且调用方 thinking="high"（复核/归并）
+      时开启（不传 reasoning_effort，走模型默认），并把 max_tokens 抬到 thinking_max_tokens；
+    - 配额：无日限。rpm=0 表示不设固定间隔，纯靠 429 退避（60→300s，最多 12 次≈40min，不退出）；
+    - 用量：cache/usage_log.jsonl 逐次记 (时间, 模型, tokens)，report() 给近 5h 累计（对应网关 5h 窗口）。
+    """
+    def __init__(self, model="deepseek-v4-flash", cache_dir="runs/cache", rpm=0,
+                 base_url="https://token.sensenova.cn/v1", env_key="SENSENOVA_API_KEY",
+                 max_output_tokens=16000, thinking_calls=False, thinking_max_tokens=32000,
+                 timeout=600):
+        self.model = model
+        self.key = _load_key(env_key)
+        self.base_url = base_url.rstrip("/")
+        self.cache_dir = cache_dir
+        os.makedirs(cache_dir, exist_ok=True)
+        self.min_interval = 60.0 / rpm if rpm else 0.0
+        self.max_output_tokens = max_output_tokens
+        self.thinking_calls = thinking_calls
+        self.thinking_max_tokens = thinking_max_tokens
+        self.timeout = timeout
+        self._last_call = 0.0
+        self.stats = {"calls": 0, "cached": 0, "prompt_tokens": 0, "output_tokens": 0,
+                      "thought_tokens": 0, "seconds": 0.0}
+        self._usage_path = os.path.join(cache_dir, "usage_log.jsonl")
+
+    def quota_left(self):
+        return None
+
+    def _cache_key(self, payload):
+        raw = json.dumps({"m": self.model, "p": payload}, ensure_ascii=False, sort_keys=True)
+        return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+    def _log_usage(self, usage, seconds, tag):
+        with open(self._usage_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps({"t": time.time(), "model": self.model, "tag": tag,
+                                "seconds": round(seconds, 1), **usage}, ensure_ascii=False) + "\n")
+
+    def usage_window(self, hours=5):
+        """近 hours 小时的调用次数与 token 合计（网关 5h 滚动窗口对照用）"""
+        n = pt = ct = rt = 0
+        if os.path.exists(self._usage_path):
+            cutoff = time.time() - hours * 3600
+            for line in open(self._usage_path, encoding="utf-8"):
+                rec = json.loads(line)
+                if rec["t"] >= cutoff:
+                    n += 1; pt += rec.get("prompt_tokens", 0); ct += rec.get("completion_tokens", 0)
+                    rt += rec.get("reasoning_tokens", 0)
+        return {"calls": n, "prompt_tokens": pt, "completion_tokens": ct, "reasoning_tokens": rt}
+
+    def generate(self, prompt, response_schema=None, system=None, max_tries=6,
+                 max_output_tokens=None, tag="", thinking=None):
+        """返回 (parsed_json_or_text, meta)。response_schema 非空时强制 JSON 并解析。"""
+        think_on = bool(self.thinking_calls and thinking in ("high", "medium"))
+        max_tokens = max_output_tokens or self.max_output_tokens
+        if think_on:
+            max_tokens = max(max_tokens, self.thinking_max_tokens)
+        user = prompt
+        if response_schema:
+            user += ("\n\n输出必须是且只是一个 JSON 对象，不要 markdown 代码围栏，结构须符合以下 JSON Schema：\n"
+                     + json.dumps(response_schema, ensure_ascii=False))
+        messages = ([{"role": "system", "content": system}] if system else []) + \
+                   [{"role": "user", "content": user}]
+        payload = {"model": self.model, "messages": messages, "temperature": 0.2,
+                   "max_tokens": max_tokens, "stream": False}
+        if response_schema:
+            payload["response_format"] = {"type": "json_object"}
+        if not think_on:
+            payload["reasoning_effort"] = "none"
+
+        ck = self._cache_key(payload)
+        cpath = os.path.join(self.cache_dir, ck + ".json")
+        if os.path.exists(cpath):
+            self.stats["cached"] += 1
+            rec = json.load(open(cpath, encoding="utf-8"))
+            return rec["result"], {**rec["meta"], "cached": True}
+
+        n429 = n5xx = nother = 0
+        while True:
+            wait = self.min_interval - (time.time() - self._last_call)
+            if wait > 0:
+                time.sleep(wait)
+            self._last_call = time.time()
+            t0 = time.time()
+            try:
+                r = requests.post(f"{self.base_url}/chat/completions",
+                                  headers={"Authorization": f"Bearer {self.key}",
+                                           "Content-Type": "application/json"},
+                                  json=payload, timeout=self.timeout)
+            except requests.RequestException as e:
+                nother += 1
+                print(f"  [网络重试{nother}]{tag} {str(e)[:80]}", flush=True)
+                if nother >= max_tries:
+                    raise RuntimeError(f"网络失败{tag}")
+                time.sleep(min(15 * nother, 90))
+                continue
+            elapsed = time.time() - t0
+            if r.status_code == 200:
+                d = r.json()
+                break
+            msg = r.text[:160].replace("\n", " ")
+            if r.status_code == 429:
+                n429 += 1
+                if n429 > 12:
+                    raise RuntimeError(f"持续限速{tag}（已等约 40 分钟）")
+                pause = min(60 * n429, 300)
+            elif r.status_code >= 500:
+                n5xx += 1
+                if n5xx > 10:
+                    raise RuntimeError(f"服务端持续错误{tag}")
+                pause = min(15 * n5xx, 120)
+            else:
+                nother += 1
+                if nother >= max_tries:
+                    raise RuntimeError(f"调用失败{tag} HTTP {r.status_code} {msg}")
+                pause = min(10 * nother, 60)
+            print(f"  [HTTP {r.status_code}]{tag} 等待{pause}s后重试… {msg[:100]}", flush=True)
+            time.sleep(pause)
+
+        usage_raw = d.get("usage") or {}
+        details = usage_raw.get("completion_tokens_details") or {}
+        usage = {"prompt_tokens": usage_raw.get("prompt_tokens", 0),
+                 "completion_tokens": usage_raw.get("completion_tokens", 0),
+                 "reasoning_tokens": details.get("reasoning_tokens", 0) or 0,
+                 "total_tokens": usage_raw.get("total_tokens", 0)}
+        self.stats["calls"] += 1
+        self.stats["prompt_tokens"] += usage["prompt_tokens"]
+        self.stats["output_tokens"] += usage["completion_tokens"]
+        self.stats["thought_tokens"] += usage["reasoning_tokens"]
+        self.stats["seconds"] += elapsed
+        self._log_usage(usage, elapsed, tag)
+        choice = (d.get("choices") or [{}])[0]
+        text = (choice.get("message") or {}).get("content") or ""
+        meta = {"finish": choice.get("finish_reason"), "usage": usage, "cached": False,
+                "model": d.get("model"), "seconds": round(elapsed, 1), "thinking": think_on}
+        if not text.strip():
+            meta["empty"] = True
+        result = _parse_json_text(text, meta) if response_schema else text
+        json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
+                  ensure_ascii=False)
+        return result, meta
+
+    def report(self):
+        s, w = self.stats, self.usage_window()
+        return (f"LLM调用 {s['calls']} 次（缓存命中 {s['cached']}）｜输入 {s['prompt_tokens']} "
+                f"输出 {s['output_tokens']} 思考 {s['thought_tokens']} tokens｜近5h {w['calls']} 次 "
+                f"{w['prompt_tokens'] + w['completion_tokens']} tokens")

@@ -3,9 +3,11 @@
 
 用法：
   python -m kgx.cli run --schema schemas/hongloumeng.yaml --text data/hongloumeng11.txt \
-      --out runs/hlm_v2 [--chapters 1-10] [--no-prescan] [--no-gleaning] [--no-review] \
-      [--no-additions] [--gold gold.hongloumeng]
-所有 LLM 调用有磁盘缓存；中间产物落盘，重跑自动续。
+      --out runs/hlm_v2 [--chapters 1-10] [--provider sensenova|gemini] [--model X] \
+      [--review-thinking] [--no-prescan] [--no-gleaning] [--no-review] [--no-additions] \
+      [--gold gold.hongloumeng]
+所有 LLM 调用有磁盘缓存；中间产物落盘，重跑自动续。默认 provider=sensenova（deepseek-v4-flash，
+抽取关思考）；--review-thinking 让复核/归并两类调用开思考。
 """
 import argparse
 import json
@@ -19,7 +21,7 @@ from .evaluate import eval_against_gold, sample_for_human
 from .export import export
 from .extract import extract_pack
 from .infer import infer
-from .llm import Gemini, QuotaExhausted
+from .llm import QuotaExhausted, make_llm
 from .prescan import phase1, phase2
 from .registry import Registry
 from .resolve import llm_merge
@@ -44,14 +46,15 @@ def run(args):
     os.makedirs(args.out, exist_ok=True)
     schema = load_schema(args.schema)
     text = open(args.text, encoding="utf-8").read()
-    llm = Gemini(model=args.model, cache_dir=os.path.join(args.out, "cache"),
-                 rpm=args.rpm, rpd=args.rpd)
+    llm = make_llm(args.provider, model=args.model, cache_dir=os.path.join(args.out, "cache"),
+                   rpm=args.rpm, rpd=args.rpd, thinking_calls=args.review_thinking)
     chapters = split_chapters(text, schema.chunking["chapter_pattern"])
     lo, hi = parse_range(args.chapters, len(chapters))
     sel = [c for c in chapters if lo <= c.index <= hi]
     packs = pack_chapters(sel, schema.chunking.get("chapters_per_call", 3),
                           schema.chunking.get("max_chars_per_call", 24000))
-    log(f"== {schema.name}：章节 {lo}-{hi}（{len(sel)} 章，{len(packs)} 个打包块）模型 {args.model}")
+    log(f"== {schema.name}：章节 {lo}-{hi}（{len(sel)} 章，{len(packs)} 个打包块）模型 {args.provider}/{llm.model}"
+        f"{'（复核开思考）' if args.review_thinking else ''}")
 
     # ---- 1. 预扫描 → 登记簿初始化 ----
     registry = Registry()
@@ -168,9 +171,11 @@ def main():
     r.add_argument("--text", required=True)
     r.add_argument("--out", required=True)
     r.add_argument("--chapters", default=None, help="如 1-10")
-    r.add_argument("--model", default="gemini-3.7-flash")
-    r.add_argument("--rpm", type=int, default=9)
-    r.add_argument("--rpd", type=int, default=240)
+    r.add_argument("--provider", default="sensenova", choices=["sensenova", "gemini"])
+    r.add_argument("--model", default=None, help="默认 sensenova=deepseek-v4-flash / gemini=gemini-3.7-flash")
+    r.add_argument("--rpm", type=int, default=None, help="固定每分钟调用上限；sensenova 默认 0=不限，靠 429 退避")
+    r.add_argument("--rpd", type=int, default=240, help="仅 gemini：每日调用上限")
+    r.add_argument("--review-thinking", action="store_true", help="复核/别名归并调用开思考（默认全关）")
     r.add_argument("--gold", default=None, help="含 predefined_relations 的模块名，如 gold.hongloumeng")
     r.add_argument("--no-prescan", action="store_true")
     r.add_argument("--no-gleaning", action="store_true")

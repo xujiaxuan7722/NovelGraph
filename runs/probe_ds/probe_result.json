@@ -1,0 +1,920 @@
+{
+ "meta": {
+  "finish": "stop",
+  "usage": {
+   "prompt_tokens": 19304,
+   "completion_tokens": 6731,
+   "reasoning_tokens": 0,
+   "total_tokens": 26035
+  },
+  "cached": false,
+  "model": "deepseek-v4-flash",
+  "seconds": 56.6,
+  "thinking": false
+ },
+ "measure": {
+  "json_ok": true,
+  "relations": 64,
+  "new_entities": 45,
+  "new_entities_grounded": 40,
+  "evidence_exact": "44/64 (69%)",
+  "evidence_mentions_both": "28/64 (44%)",
+  "entities_resolvable": "58/64 (91%)",
+  "relation_in_schema": "63/64 (98%)",
+  "validator_pass": "39/64 (61%)",
+  "drop_reasons": {
+   "无合格证据（证据不在原文或未同时提及双方）": 17,
+   "实体未登记": 6,
+   "关系不在闭集": 1,
+   "类型不符": 1
+  }
+ },
+ "result": {
+  "new_entities": [
+   {
+    "name": "甄费",
+    "type": "人物",
+    "aliases": [
+     "甄士隐",
+     "士隐"
+    ],
+    "identity": "姑苏阊门外十里街仁清巷葫芦庙旁的一家乡宦，字士隐，嫡妻封氏，有女英莲。"
+   },
+   {
+    "name": "封氏",
+    "type": "人物",
+    "aliases": [
+     "甄家娘子"
+    ],
+    "identity": "甄士隐之嫡妻，封肃之女，英莲之母。"
+   },
+   {
+    "name": "娇杏",
+    "type": "人物",
+    "aliases": [
+     "甄家丫鬟",
+     "大丫鬟"
+    ],
+    "identity": "甄士隐家丫鬟，曾回顾贾雨村，后被雨村纳为二房，后扶正。"
+   },
+   {
+    "name": "贾化",
+    "type": "人物",
+    "aliases": [
+     "贾雨村",
+     "雨村",
+     "时飞"
+    ],
+    "identity": "胡州人氏，寄居葫芦庙的穷儒，后中进士，官至知府，被革职后复职。"
+   },
+   {
+    "name": "林如海",
+    "type": "人物",
+    "aliases": [
+     "如海"
+    ],
+    "identity": "姓林名海，表字如海，前科探花，钦点巡盐御史，本贯姑苏人氏，黛玉之父。"
+   },
+   {
+    "name": "贾敏",
+    "type": "人物",
+    "aliases": [
+     "贾氏夫人",
+     "贾夫人"
+    ],
+    "identity": "林如海之妻，贾赦、贾政之胞妹，林黛玉之母，已亡故。"
+   },
+   {
+    "name": "林黛玉",
+    "type": "人物",
+    "aliases": [
+     "黛玉",
+     "林姑娘"
+    ],
+    "identity": "林如海与贾敏之女，贾母外孙女，年方五岁。"
+   },
+   {
+    "name": "贾母",
+    "type": "人物",
+    "aliases": [
+     "史太君",
+     "老太太",
+     "老祖宗"
+    ],
+    "identity": "史太君，贾代善之妻，贾赦、贾政之母，黛玉之外祖母。"
+   },
+   {
+    "name": "贾赦",
+    "type": "人物",
+    "aliases": [
+     "赦老",
+     "大舅",
+     "大内兄"
+    ],
+    "identity": "贾母长子，袭一等将军，迎春之父。"
+   },
+   {
+    "name": "贾政",
+    "type": "人物",
+    "aliases": [
+     "政老爹",
+     "二舅",
+     "二内兄"
+    ],
+    "identity": "贾母次子，工部员外郎，王夫人之夫，宝玉之父。"
+   },
+   {
+    "name": "贾珠",
+    "type": "人物",
+    "aliases": [
+     "珠大哥"
+    ],
+    "identity": "贾政与王夫人长子，已死，有妻李氏。"
+   },
+   {
+    "name": "贾琏",
+    "type": "人物",
+    "aliases": [
+     "琏二爷"
+    ],
+    "identity": "贾赦之子，娶王熙凤为妻。"
+   },
+   {
+    "name": "王熙凤",
+    "type": "人物",
+    "aliases": [
+     "熙凤",
+     "凤辣子",
+     "琏二奶奶",
+     "凤姐"
+    ],
+    "identity": "贾琏之妻，王夫人之内侄女，荣国府管家奶奶。"
+   },
+   {
+    "name": "贾宝玉",
+    "type": "人物",
+    "aliases": [
+     "宝玉"
+    ],
+    "identity": "贾政与王夫人之子，衔玉而诞，黛玉表兄。"
+   },
+   {
+    "name": "元春",
+    "type": "人物",
+    "aliases": [
+     "大小姐"
+    ],
+    "identity": "贾政与王夫人长女，选入宫作女史。"
+   },
+   {
+    "name": "迎春",
+    "type": "人物",
+    "aliases": [
+     "二小姐"
+    ],
+    "identity": "贾赦之妾所出，贾府二小姐。"
+   },
+   {
+    "name": "探春",
+    "type": "人物",
+    "aliases": [
+     "三小姐"
+    ],
+    "identity": "贾政之庶出女，贾府三小姐。"
+   },
+   {
+    "name": "惜春",
+    "type": "人物",
+    "aliases": [
+     "四小姐"
+    ],
+    "identity": "宁国府贾珍之胞妹，贾府四小姐。"
+   },
+   {
+    "name": "贾蓉",
+    "type": "人物",
+    "aliases": [],
+    "identity": "贾珍之子，年十六岁。"
+   },
+   {
+    "name": "贾珍",
+    "type": "人物",
+    "aliases": [
+     "珍爷"
+    ],
+    "identity": "宁国府袭爵者，贾敬之子，贾蓉之父。"
+   },
+   {
+    "name": "贾代化",
+    "type": "人物",
+    "aliases": [],
+    "identity": "宁公之子，袭官，生有二子。"
+   },
+   {
+    "name": "贾敬",
+    "type": "人物",
+    "aliases": [
+     "敬老爹"
+    ],
+    "identity": "贾代化次子，袭官后让给儿子贾珍，好道。"
+   },
+   {
+    "name": "贾敷",
+    "type": "人物",
+    "aliases": [],
+    "identity": "贾代化长子，八九岁死。"
+   },
+   {
+    "name": "贾代善",
+    "type": "人物",
+    "aliases": [],
+    "identity": "荣公之子，袭官，娶金陵史侯家小姐为妻。"
+   },
+   {
+    "name": "贾源",
+    "type": "人物",
+    "aliases": [
+     "荣国公"
+    ],
+    "identity": "荣国公，荣国府始祖。"
+   },
+   {
+    "name": "贾复",
+    "type": "人物",
+    "aliases": [],
+    "identity": "东汉人，贾府远祖。"
+   },
+   {
+    "name": "宁国公",
+    "type": "人物",
+    "aliases": [],
+    "identity": "宁国府始祖，与荣国公为兄弟。"
+   },
+   {
+    "name": "贾雨村",
+    "type": "人物",
+    "aliases": [
+     "雨村",
+     "贾化",
+     "时飞"
+    ],
+    "identity": "胡州人氏，本府太爷，曾受甄士隐资助。"
+   },
+   {
+    "name": "甄英莲",
+    "type": "人物",
+    "aliases": [
+     "英莲"
+    ],
+    "identity": "甄士隐之女，三岁时被霍启抱去看灯丢失。"
+   },
+   {
+    "name": "霍启",
+    "type": "人物",
+    "aliases": [],
+    "identity": "甄士隐家仆，元宵节抱英莲看灯，英莲丢失后逃往他乡。"
+   },
+   {
+    "name": "封肃",
+    "type": "人物",
+    "aliases": [
+     "岳丈"
+    ],
+    "identity": "甄士隐岳丈，大如州务农人氏。"
+   },
+   {
+    "name": "薛蟠",
+    "type": "人物",
+    "aliases": [
+     "薛家姨母之子"
+    ],
+    "identity": "薛家姨母之子，姨表兄，倚财仗势打死人命。"
+   },
+   {
+    "name": "王子腾",
+    "type": "人物",
+    "aliases": [
+     "母舅"
+    ],
+    "identity": "王夫人之兄，官至某职，得信息遣人来告诉薛蟠事。"
+   },
+   {
+    "name": "邢夫人",
+    "type": "人物",
+    "aliases": [
+     "邢氏"
+    ],
+    "identity": "贾赦之妻，黛玉大舅母。"
+   },
+   {
+    "name": "李纨",
+    "type": "人物",
+    "aliases": [
+     "珠大嫂子",
+     "李氏"
+    ],
+    "identity": "贾珠之妻，荣国府长孙媳妇。"
+   },
+   {
+    "name": "袭人",
+    "type": "人物",
+    "aliases": [
+     "珍珠"
+    ],
+    "identity": "贾母之婢，后与宝玉，更名袭人。"
+   },
+   {
+    "name": "雪雁",
+    "type": "人物",
+    "aliases": [],
+    "identity": "黛玉自幼随身的十岁小丫头。"
+   },
+   {
+    "name": "王嬷嬷",
+    "type": "人物",
+    "aliases": [],
+    "identity": "黛玉的自幼奶娘。"
+   },
+   {
+    "name": "鹦哥",
+    "type": "人物",
+    "aliases": [],
+    "identity": "贾母身边二等丫头，后给了黛玉。"
+   },
+   {
+    "name": "张如圭",
+    "type": "人物",
+    "aliases": [],
+    "identity": "雨村同僚，被革职，来报起复信。"
+   },
+   {
+    "name": "冷子兴",
+    "type": "人物",
+    "aliases": [
+     "子兴"
+    ],
+    "identity": "都中古董行贸易商，雨村旧友。"
+   },
+   {
+    "name": "甄府",
+    "type": "地点",
+    "aliases": [
+     "甄家"
+    ],
+    "identity": "金陵体仁院总裁甄家，与贾府是老亲。"
+   },
+   {
+    "name": "太虚幻境",
+    "type": "地点",
+    "aliases": [],
+    "identity": "警幻仙子所居的幻境。"
+   },
+   {
+    "name": "贾府",
+    "type": "家族",
+    "aliases": [
+     "贾家"
+    ],
+    "identity": "荣国府和宁国府所属宗族。"
+   },
+   {
+    "name": "甄家",
+    "type": "家族",
+    "aliases": [],
+    "identity": "金陵甄家，与贾府是老亲。"
+   }
+  ],
+  "alias_updates": [
+   {
+    "name": "贾母",
+    "aliases": [
+     "老太太",
+     "老祖宗"
+    ]
+   },
+   {
+    "name": "王熙凤",
+    "aliases": [
+     "凤辣子",
+     "琏二奶奶"
+    ]
+   },
+   {
+    "name": "林黛玉",
+    "aliases": [
+     "颦颦"
+    ]
+   },
+   {
+    "name": "雨村",
+    "aliases": [
+     "贾化"
+    ]
+   },
+   {
+    "name": "甄家娘子",
+    "aliases": [
+     "封氏"
+    ]
+   },
+   {
+    "name": "英莲",
+    "aliases": [
+     "外孙女儿"
+    ]
+   }
+  ],
+  "identity_updates": [
+   {
+    "name": "雨村",
+    "identity": "贾雨村，名化，表字时飞，胡州人氏，曾任本府太爷，因贪酷被革职，后经林如海荐书复职。"
+   },
+   {
+    "name": "如海",
+    "identity": "林如海，前科探花，今为巡盐御史，本贯姑苏，黛玉之父。"
+   },
+   {
+    "name": "贾母",
+    "identity": "史太君，贾代善之妻，贾赦、贾政之母，黛玉外祖母。"
+   },
+   {
+    "name": "王夫人",
+    "identity": "贾政之妻，王熙凤姑母，元春、贾珠、宝玉之母。"
+   },
+   {
+    "name": "熙凤",
+    "identity": "王熙凤，贾琏之妻，王夫人内侄女，荣国府管家奶奶。"
+   },
+   {
+    "name": "宝玉",
+    "identity": "贾政与王夫人之子，衔玉而诞，黛玉表兄。"
+   },
+   {
+    "name": "贾赦",
+    "identity": "贾母长子，袭一等将军，迎春之父。"
+   },
+   {
+    "name": "迎春",
+    "identity": "贾赦之妾所出，贾府二小姐。"
+   },
+   {
+    "name": "探春",
+    "identity": "贾政之庶出女，贾府三小姐。"
+   },
+   {
+    "name": "惜春",
+    "identity": "宁国府贾珍之胞妹，贾府四小姐。"
+   }
+  ],
+  "relations": [
+   {
+    "head": "贾母",
+    "relation": "祖母",
+    "tail": "黛玉",
+    "evidence": "贾母笑道：“正好，我这里正配丸药呢。叫他们多配一料就是了。”",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "祖母",
+    "tail": "宝玉",
+    "evidence": "独那史老太君还是命根一样。说来又奇，如今长了七八岁，虽然淘气异常",
+    "confidence": "high"
+   },
+   {
+    "head": "林如海",
+    "relation": "父女",
+    "tail": "黛玉",
+    "evidence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁。夫妻无子，故爱如珍宝",
+    "confidence": "high"
+   },
+   {
+    "head": "贾敏",
+    "relation": "母女",
+    "tail": "黛玉",
+    "evidence": "女学生之母贾氏夫人一疾而终。女学生侍汤奉药，守丧尽哀",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "父子",
+    "tail": "贾琏",
+    "evidence": "若问那赦公，也有二子：长名贾琏，今已二十来往了",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "父子",
+    "tail": "贾珠",
+    "evidence": "这政老爹的夫人王氏，头胎生的公子，名唤贾珠，十四岁进学",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "父子",
+    "tail": "宝玉",
+    "evidence": "不想后来又生了一位公子，说来更奇，一落胎胞，嘴里便衔下一块五彩晶莹的玉来",
+    "confidence": "high"
+   },
+   {
+    "head": "王夫人",
+    "relation": "母子",
+    "tail": "贾珠",
+    "evidence": "这政老爹的夫人王氏，头胎生的公子，名唤贾珠",
+    "confidence": "high"
+   },
+   {
+    "head": "王夫人",
+    "relation": "母子",
+    "tail": "宝玉",
+    "evidence": "王夫人因说：“你舅舅今日斋戒去了，再见罢。……我有一个孽根祸胎，是家里的‘混世魔王’”",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珠",
+    "relation": "夫妻",
+    "tail": "李纨",
+    "evidence": "这是你先珠大哥的媳妇珠大嫂子。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾琏",
+    "relation": "夫妻",
+    "tail": "王熙凤",
+    "evidence": "亲上作亲，娶的就是政老爹夫人王氏之内侄女，今已娶了二年。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "夫妻",
+    "tail": "邢夫人",
+    "evidence": "此时贾赦之妻邢氏忙亦起身，笑回道：“我带了外甥女过去，倒也便宜。”",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "夫妻",
+    "tail": "王夫人",
+    "evidence": "这政老爹的夫人王氏，头胎生的公子，名唤贾珠",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珠",
+    "relation": "兄妹",
+    "tail": "元春",
+    "evidence": "这政老爹的夫人王氏，头胎生的公子，名唤贾珠，……第二胎生了一位小姐，生在大年初一",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珠",
+    "relation": "兄妹",
+    "tail": "宝玉",
+    "evidence": "头胎生的公子，名唤贾珠……不想后来又生了一位公子，说来更奇",
+    "confidence": "high"
+   },
+   {
+    "head": "元春",
+    "relation": "兄妹",
+    "tail": "宝玉",
+    "evidence": "政老爹的长女，名元春……不想后来又生了一位公子，说来更奇",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "兄妹",
+    "tail": "贾敏",
+    "evidence": "即荣府中赦、政二公之胞妹，在家时名唤贾敏。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "兄妹",
+    "tail": "贾敏",
+    "evidence": "即荣府中赦、政二公之胞妹，在家时名唤贾敏。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "兄妹",
+    "tail": "贾政",
+    "evidence": "长子贾赦，次子贾政。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珍",
+    "relation": "兄妹",
+    "tail": "惜春",
+    "evidence": "四小姐乃宁府珍爷之胞妹，名唤惜春。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾代善",
+    "relation": "父子",
+    "tail": "贾赦",
+    "evidence": "长子贾赦，次子贾政。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾代善",
+    "relation": "父子",
+    "tail": "贾政",
+    "evidence": "长子贾赦，次子贾政。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾代化",
+    "relation": "父子",
+    "tail": "贾敷",
+    "evidence": "贾代化袭了官，也养了两个儿子：长名贾敷，至八九岁上便死了",
+    "confidence": "high"
+   },
+   {
+    "head": "贾代化",
+    "relation": "父子",
+    "tail": "贾敬",
+    "evidence": "只剩了次子贾敬袭了官，如今一味好道",
+    "confidence": "high"
+   },
+   {
+    "head": "贾敬",
+    "relation": "父子",
+    "tail": "贾珍",
+    "evidence": "幸而早年留下一子，名唤贾珍，因他父亲一心想作神仙，把官倒让他袭了",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珍",
+    "relation": "父子",
+    "tail": "贾蓉",
+    "evidence": "这位珍爷也倒生了一个儿子，今年才十六岁，名叫贾蓉。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "母女",
+    "tail": "贾敏",
+    "evidence": "贾母又伤感起来，因说：“我这些儿女，所疼者独有你母亲，今日一旦先舍我去了”",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "母子",
+    "tail": "贾赦",
+    "evidence": "此为冷子兴所云之史太君也，贾赦、贾政之母。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "母子",
+    "tail": "贾政",
+    "evidence": "此为冷子兴所云之史太君也，贾赦、贾政之母。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "父女",
+    "tail": "元春",
+    "evidence": "政老爹的长女，名元春，现因贤孝才德，选入宫作女史去了",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "父女",
+    "tail": "探春",
+    "evidence": "三小姐乃政老爹之庶出，名探春。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "父女",
+    "tail": "迎春",
+    "evidence": "二小姐乃赦老爹之妾所出，名迎春。",
+    "confidence": "high"
+   },
+   {
+    "head": "甄士隐",
+    "relation": "父女",
+    "tail": "英莲",
+    "evidence": "只有一女，乳名英莲，年方三岁。",
+    "confidence": "high"
+   },
+   {
+    "head": "封氏",
+    "relation": "母女",
+    "tail": "英莲",
+    "evidence": "嫡妻封氏，情性贤淑，深明礼义。……只有一女，乳名英莲",
+    "confidence": "high"
+   },
+   {
+    "head": "封肃",
+    "relation": "父女",
+    "tail": "封氏",
+    "evidence": "他岳丈名唤封肃……封氏闻得此信，哭个死去活来，只得与父亲商议",
+    "confidence": "high"
+   },
+   {
+    "head": "封肃",
+    "relation": "祖孙",
+    "tail": "英莲",
+    "evidence": "又问外孙女儿，我说看灯丢了。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "主仆",
+    "tail": "袭人",
+    "evidence": "原来这袭人亦是贾母之婢，本名珍珠。贾母因溺爱宝玉……遂与了宝玉。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾母",
+    "relation": "主仆",
+    "tail": "鹦哥",
+    "evidence": "贾母见雪雁甚小……便将自己身边的一个二等丫头，名唤鹦哥者与了黛玉。",
+    "confidence": "high"
+   },
+   {
+    "head": "宝玉",
+    "relation": "主仆",
+    "tail": "袭人",
+    "evidence": "宝玉之乳母李嬷嬷，并大丫鬟名唤袭人者，陪侍在外面大床上。",
+    "confidence": "high"
+   },
+   {
+    "head": "黛玉",
+    "relation": "主仆",
+    "tail": "雪雁",
+    "evidence": "黛玉只带了两个人来：一个是自幼奶娘王嬷嬷，一个是十岁的小丫头，亦是自幼随身的，名唤雪雁。",
+    "confidence": "high"
+   },
+   {
+    "head": "黛玉",
+    "relation": "主仆",
+    "tail": "王嬷嬷",
+    "evidence": "黛玉只带了两个人来：一个是自幼奶娘王嬷嬷，一个是十岁的小丫头",
+    "confidence": "high"
+   },
+   {
+    "head": "黛玉",
+    "relation": "主仆",
+    "tail": "鹦哥",
+    "evidence": "贾母……便将自己身边的一个二等丫头，名唤鹦哥者与了黛玉。",
+    "confidence": "high"
+   },
+   {
+    "head": "士隐",
+    "relation": "主仆",
+    "tail": "霍启",
+    "evidence": "士隐命家人霍启抱了英莲去看社火花灯，半夜中，霍启因要小解，便将英莲放在一家门槛上坐着。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "夫妻",
+    "tail": "娇杏",
+    "evidence": "雨村……便要那娇杏作二房。……雨村便将她扶侧作正室夫人了。",
+    "confidence": "high"
+   },
+   {
+    "head": "林如海",
+    "relation": "居住",
+    "tail": "扬州",
+    "evidence": "那日，偶又游至维扬地面，因闻得今岁鹾政点的是林如海。",
+    "confidence": "medium"
+   },
+   {
+    "head": "黛玉",
+    "relation": "居住",
+    "tail": "荣国府",
+    "evidence": "且说黛玉自那日弃舟登岸时，便有荣国府打发了轿子并拉行李的车辆久候了。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "居住",
+    "tail": "林如海家",
+    "evidence": "如今在巡盐御史林家做坐馆了。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "居住",
+    "tail": "葫芦庙",
+    "evidence": "因进京求取功名，再整基业。自前岁来此，又淹蹇住了，暂寄庙中安身",
+    "confidence": "high"
+   },
+   {
+    "head": "士隐",
+    "relation": "父女",
+    "tail": "英莲",
+    "evidence": "这阊门外有个十里街，街内有个仁清巷，巷内有个古庙……庙旁住着一家乡宦，姓甄名费，字士隐。……只有一女，乳名英莲，年方三岁。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "表亲",
+    "tail": "贾府",
+    "evidence": "子兴笑道：“你们同姓，岂非同宗一族？”……雨村笑道：“原来是他家。若论起来，寒族人丁却不少……若论荣国一支，却是同谱。”",
+    "confidence": "medium"
+   },
+   {
+    "head": "黛玉",
+    "relation": "表亲",
+    "tail": "宝玉",
+    "evidence": "黛玉亦常听得母亲说过，二舅母生的有个表兄，乃衔玉而诞",
+    "confidence": "high"
+   },
+   {
+    "head": "黛玉",
+    "relation": "表亲",
+    "tail": "探春",
+    "evidence": "探春等却都晓得是议论金陵城中所居的薛家姨母之子",
+    "confidence": "medium"
+   },
+   {
+    "head": "黛玉",
+    "relation": "表亲",
+    "tail": "迎春",
+    "evidence": "迎春姊妹三个告了座，方上来。",
+    "confidence": "medium"
+   },
+   {
+    "head": "黛玉",
+    "relation": "表亲",
+    "tail": "惜春",
+    "evidence": "惜春右第二。",
+    "confidence": "medium"
+   },
+   {
+    "head": "薛蟠",
+    "relation": "表亲",
+    "tail": "宝玉",
+    "evidence": "薛家姨母之子、姨表兄薛蟠",
+    "confidence": "medium"
+   },
+   {
+    "head": "贾琏",
+    "relation": "表亲",
+    "tail": "王熙凤",
+    "evidence": "亲上作亲，娶的就是政老爹夫人王氏之内侄女",
+    "confidence": "high"
+   },
+   {
+    "head": "贾赦",
+    "relation": "父女",
+    "tail": "迎春",
+    "evidence": "二小姐乃赦老爹之妾所出，名迎春。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾政",
+    "relation": "父女",
+    "tail": "探春",
+    "evidence": "三小姐乃政老爹之庶出，名探春。",
+    "confidence": "high"
+   },
+   {
+    "head": "贾珍",
+    "relation": "兄妹",
+    "tail": "惜春",
+    "evidence": "四小姐乃宁府珍爷之胞妹，名唤惜春。",
+    "confidence": "high"
+   },
+   {
+    "head": "林如海",
+    "relation": "夫妻",
+    "tail": "贾敏",
+    "evidence": "今只有嫡妻贾氏，生得一女，乳名黛玉",
+    "confidence": "high"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "主仆",
+    "tail": "小童",
+    "evidence": "雨村另有一只船，带两个小童，依附黛玉而行。",
+    "confidence": "medium"
+   },
+   {
+    "head": "贾雨村",
+    "relation": "家族",
+    "tail": "贾府",
+    "evidence": "子兴笑道：“你们同姓，岂非同宗一族？”……雨村笑道：“原来是他家。若论起来，寒族人丁却不少……若论荣国一支，却是同谱。”",
+    "confidence": "medium"
+   },
+   {
+    "head": "黛玉",
+    "relation": "家族",
+    "tail": "林府",
+    "evidence": "今如海年已四十，只有一个三岁之子，偏又于去岁死了。……今只有嫡妻贾氏，生得一女，乳名黛玉",
+    "confidence": "medium"
+   },
+   {
+    "head": "封氏",
+    "relation": "家族",
+    "tail": "甄家",
+    "evidence": "士隐只得将田庄都折变了，便携了妻子与两个丫鬟投他岳丈家去。",
+    "confidence": "medium"
+   }
+  ]
+ }
+}
