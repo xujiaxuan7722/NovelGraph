@@ -1,0 +1,143 @@
+# -*- coding: utf-8 -*-
+"""通读抽取：每个打包块 = 当前登记簿 + 原文 → 模型输出（实体增量 + 关系断言 + 证据）。
+过程式 prompt（借 kg-gen）：先登记本段人物 → 逐实体找关系并引证据 → 检查遗漏。
+gleaning（借 GraphRAG）：追加一轮"还有遗漏，请补充"。
+"""
+import json
+
+EXTRACT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "new_entities": {"type": "array", "items": {"type": "object", "properties": {
+            "name": {"type": "string"}, "type": {"type": "string"},
+            "aliases": {"type": "array", "items": {"type": "string"}},
+            "identity": {"type": "string"}},
+            "required": ["name", "type"]}},
+        "alias_updates": {"type": "array", "items": {"type": "object", "properties": {
+            "name": {"type": "string"},
+            "aliases": {"type": "array", "items": {"type": "string"}}},
+            "required": ["name", "aliases"]}},
+        "identity_updates": {"type": "array", "items": {"type": "object", "properties": {
+            "name": {"type": "string"}, "identity": {"type": "string"}},
+            "required": ["name", "identity"]}},
+        "relations": {"type": "array", "items": {"type": "object", "properties": {
+            "head": {"type": "string"}, "relation": {"type": "string"},
+            "tail": {"type": "string"}, "evidence": {"type": "string"},
+            "confidence": {"type": "string"}},
+            "required": ["head", "relation", "tail", "evidence"]}},
+    },
+    "required": ["new_entities", "alias_updates", "identity_updates", "relations"],
+}
+
+
+def build_prompt(schema, registry, pack, gleaning_prev=None):
+    known = registry.render()
+    head = f"""你是《{schema.name}》知识图谱的阅读抽取员。下面给出【已登记实体】和【原文】（{pack.label}），请完成两项工作。
+
+{schema.describe_for_prompt()}
+
+【已登记实体】（规范名（别名）［类型］：身份）
+{known if known else "（尚无）"}
+
+工作一：登记簿维护
+- new_entities：原文中出现、但登记簿里没有的实体（用文中最正式的称呼作 name；把文中对其的其他称呼放进 aliases；identity 写一句从文本能看出的身份）。
+- alias_updates：已登记实体在本段出现的新称呼（如"二奶奶"指王熙凤）。
+- identity_updates：本段让你更清楚某已登记实体身份时更新。
+- 只登记文中确实出现的名字；泛称（"众人""小丫头"）不登记。
+
+工作二：关系抽取（按步骤做）
+1. 逐个实体通读，找出本段文本能直接支持的关系；
+2. 每条关系的 head/tail 必须是登记簿里的规范名，或本段 new_entities 里的 name；
+3. evidence 必须是本段原文的逐字引用（20–60 字），且这句话里要同时能看出两方；
+4. 关系类型只能用上面列出的；方向按定义；拿不准类型或证据不足的不要输出；
+5. 不要凭你对这本书的记忆补充文中没有的关系——你只负责"读出来"，不负责"想起来"；
+6. 最后检查：有没有出场但一条关系都没给的重要人物？若文中确有关系就补上。
+confidence 填 high/medium。
+
+只输出 JSON。"""
+    if gleaning_prev is not None:
+        head += f"""
+
+【上一轮抽取结果】（共 {len(gleaning_prev)} 条）
+{json.dumps(gleaning_prev, ensure_ascii=False)[:6000]}
+
+上一轮很可能有遗漏。请再通读一遍原文，只输出新增的关系（不要重复上面已有的）和新增的登记信息；没有就返回空数组。"""
+    return head + f"""
+
+【原文】
+{pack.text}"""
+
+
+def _ground(name, text):
+    return bool(name) and name in text
+
+
+def apply_registry_updates(registry, result, pack_text, chapter_idx):
+    """把模型的登记簿增量并入 registry；只接受文本中真实出现的名字。"""
+    accepted, rejected = 0, 0
+    for e in result.get("new_entities", []) or []:
+        name = (e.get("name") or "").strip()
+        if not _ground(name, pack_text):
+            rejected += 1
+            continue
+        aliases = [a for a in (e.get("aliases") or []) if _ground(a, pack_text)]
+        registry.add(name, e.get("type", ""), aliases, e.get("identity", ""), chapter_idx)
+        accepted += 1
+    for u in result.get("alias_updates", []) or []:
+        canon = registry.resolve(u.get("name", ""))
+        if not canon:
+            continue
+        for a in u.get("aliases") or []:
+            if _ground(a, pack_text):
+                registry.add_alias(canon, a)
+    for u in result.get("identity_updates", []) or []:
+        canon = registry.resolve(u.get("name", ""))
+        if canon and u.get("identity"):
+            registry.entities[canon]["identity"] = u["identity"]
+    return accepted, rejected
+
+
+def extract_pack(llm, schema, registry, pack, gleaning=True):
+    """返回 (relations_list, stats)。relations 元素: dict(head, relation, tail, evidence, confidence, pack, chapters)"""
+    first_chapter = pack.chapters[0].index
+    chapters = [c.index for c in pack.chapters]
+    prompt = build_prompt(schema, registry, pack)
+    result, meta = llm.generate(prompt, response_schema=EXTRACT_SCHEMA, tag=f"[抽取 {pack.label}]")
+    rels, stats = [], {"calls": 1, "entities_added": 0, "entities_rejected": 0, "parse_error": False}
+    if not result:
+        stats["parse_error"] = True
+        return rels, stats
+    a, r = apply_registry_updates(registry, result, pack.text, first_chapter)
+    stats["entities_added"] += a
+    stats["entities_rejected"] += r
+    for x in result.get("relations", []) or []:
+        x = dict(x)
+        x["pack"] = pack.id
+        x["chapters"] = chapters
+        x["round"] = 1
+        rels.append(x)
+
+    if gleaning:
+        prev = [{"head": x["head"], "relation": x["relation"], "tail": x["tail"]} for x in rels]
+        prompt2 = build_prompt(schema, registry, pack, gleaning_prev=prev)
+        try:
+            result2, _ = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label}]")
+        except Exception as e:        # 补抽失败不应拖累第一遍结果
+            if type(e).__name__ == "QuotaExhausted":
+                raise
+            print(f"  补抽失败（{str(e)[:60]}），保留第一遍结果", flush=True)
+            result2 = None
+            stats["gleaning_failed"] = True
+        stats["calls"] += 1
+        if result2:
+            a, r = apply_registry_updates(registry, result2, pack.text, first_chapter)
+            stats["entities_added"] += a
+            stats["entities_rejected"] += r
+            seen = {(x["head"], x["relation"], x["tail"]) for x in rels}
+            for x in result2.get("relations", []) or []:
+                k = (x.get("head"), x.get("relation"), x.get("tail"))
+                if k in seen:
+                    continue
+                x = dict(x); x["pack"] = pack.id; x["chapters"] = chapters; x["round"] = 2
+                rels.append(x)
+    return rels, stats

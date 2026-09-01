@@ -1,0 +1,87 @@
+# 《红楼梦》领域 schema —— 框架里唯一允许出现"领域知识"的地方。
+# 只声明类型、方向、约束、推导规则；不允许出现任何具体人物/关系实例。
+name: 红楼梦
+language: zh
+
+chunking:
+  chapter_pattern: '^第[一二三四五六七八九十百零〇]+回[^\n]*'   # 章节标题正则（行首）
+  chapters_per_call: 3          # 每次 LLM 调用打包几章
+  max_chars_per_call: 24000     # 打包上限（字符）
+
+entity_types:
+  人物: 小说中的具体人物（含丫鬟、小厮、僧道等），不含泛称群体
+  地点: 府邸、院落、园林、城镇等具体处所
+  家族: 宗族/家族（如"X家"）
+
+# 实体预扫描用的语言线索（可按书调整）
+prescan:
+  dialogue_patterns:            # 说话人归属正则，捕获组为人名
+    - '([一-龥]{2,4})(?:笑|冷笑|叹|忙|便|因|又|只|也|方|乃|遂)?(?:道|说道|问道|答道|回道|笑道)[：:]'
+    - '[”"]([一-龥]{2,4})(?:笑|忙|便|又)?道'
+  naming_patterns:              # 命名/绰号模式，捕获组为名
+    - '(?:名唤|名叫|乳名|小名|唤作|唤做|叫作|叫做|表字|别号|绰号|外号|又名|人称|号曰)([一-龥]{1,4})'
+  min_freq: 3
+
+relations:
+  父子: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 父亲→儿子}
+  父女: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 父亲→女儿}
+  母子: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 母亲→儿子}
+  母女: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 母亲→女儿}
+  夫妻: {domain: 人物, range: 人物, symmetric: true,
+         definition: 正式婚配（含妾室），恋慕、议亲未成不算}
+  兄妹: {domain: 人物, range: 人物, symmetric: true,
+         definition: 同辈亲兄弟姐妹（含异母），表堂不算}
+  祖父: {domain: 人物, range: 人物, directed: true,
+         definition: 祖父/外祖父→孙辈}
+  祖母: {domain: 人物, range: 人物, directed: true,
+         definition: 祖母/外祖母→孙辈}
+  表亲: {domain: 人物, range: 人物, symmetric: true,
+         definition: 姑表、姨表、舅表亲}
+  堂亲: {domain: 人物, range: 人物, symmetric: true,
+         definition: 同祖父的叔伯兄弟姐妹}
+  主仆: {domain: 人物, range: 人物, directed: true,
+         definition: 主人→其名下的丫鬟/小厮/仆人；仅服侍、倒茶、传话不构成主仆名分}
+  居住: {domain: 人物, range: 地点, directed: true,
+         definition: 长期居所；到访、做客、路过不算}
+  家族: {domain: 人物, range: 家族, directed: true,
+         definition: 人物所属宗族（出嫁女仍属娘家，亦可属夫家）}
+
+# 易混判据（写进抽取与复核 prompt）
+disambiguation:
+  - 主仆 vs 服侍：只有明确"X的丫鬟/小厮"或长期专属服侍才算主仆；临时倒茶、传话不算
+  - 居住 vs 到访："来到/进了/往……去"是到访；"住在/安歇/搬进/院中"才是居住
+  - 祖母 vs 外祖母：外祖母也记作祖母（schema 不区分），但方向必须是长辈→晚辈
+  - 兄妹 vs 表亲/堂亲：同父母（含异母）为兄妹；姑舅姨之子女为表亲；叔伯之子女为堂亲
+  - 方向：父子/母女/祖孙/主仆/居住/家族一律长辈/主人/人物在前
+
+# 推导规则：从已确认关系推出新关系（结果单独标"推导"层，附推导链）
+inference:
+  - name: 同父兄妹
+    if: [["?p", "父子|父女", "?a"], ["?p", "父子|父女", "?b"]]
+    then: ["?a", "兄妹", "?b"]
+  - name: 同母兄妹
+    if: [["?m", "母子|母女", "?a"], ["?m", "母子|母女", "?b"]]
+    then: ["?a", "兄妹", "?b"]
+  - name: 父之父为祖父
+    if: [["?g", "父子", "?f"], ["?f", "父子|父女", "?c"]]
+    then: ["?g", "祖父", "?c"]
+  - name: 父之母为祖母
+    if: [["?g", "母子", "?f"], ["?f", "父子|父女", "?c"]]
+    then: ["?g", "祖母", "?c"]
+  - name: 母之父为外祖父
+    if: [["?g", "父女", "?m"], ["?m", "母子|母女", "?c"]]
+    then: ["?g", "祖父", "?c"]
+  - name: 母之母为外祖母
+    if: [["?g", "母女", "?m"], ["?m", "母子|母女", "?c"]]
+    then: ["?g", "祖母", "?c"]
+  - name: 父辈兄弟之子女为堂亲
+    if: [["?f1", "父子|父女", "?a"], ["?f1", "兄妹", "?f2"], ["?f2", "父子|父女", "?b"]]
+    then: ["?a", "堂亲", "?b"]
+  - name: 父与母之兄妹之子女为表亲
+    if: [["?x", "父子|父女|母子|母女", "?a"], ["?x", "兄妹", "?y"], ["?y", "父子|父女|母子|母女", "?b"]]
+    then: ["?a", "表亲", "?b"]
+    unless: ["?a", "堂亲", "?b"]      # 已推为堂亲的不再记表亲
