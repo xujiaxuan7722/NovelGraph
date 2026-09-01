@@ -17,6 +17,16 @@ REVIEW_SCHEMA = {
 }
 
 
+_NEG = ("不成立", "并非", "并不是", "不是同一", "无法支持", "不支持", "证据不足", "不能确定", "无法确定",
+        "关系错误", "方向错误", "应为", "实际上是", "不应", "错误")
+
+
+def _reason_contradicts(reason):
+    """ok=true 的理由里出现否定性结论词 → 视为自相矛盾"""
+    r = (reason or "").replace(" ", "")
+    return any(w in r for w in _NEG)
+
+
 def _group_by_entity(cands):
     groups = {}
     for key, c in cands.items():
@@ -103,6 +113,11 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print):
         if v is None:
             stats["unjudged"] += 1
             cands[k]["review"] = "未裁决（保留）"
+        elif v.get("ok") and _reason_contradicts(v.get("reason", "")):
+            # ok=true 但理由里写"不成立/并非/无法支持"——结论与理由打架，不采信也不删除，标存疑
+            stats["doubtful"] = stats.get("doubtful", 0) + 1
+            cands[k]["review"] = "存疑（理由与结论矛盾）：" + v.get("reason", "")
+            cands[k]["doubtful"] = True
         elif v.get("ok"):
             stats["ok"] += 1
             cands[k]["review"] = v.get("reason", "")

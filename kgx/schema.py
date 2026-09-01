@@ -38,6 +38,14 @@ class Schema:
     raw: dict = field(repr=False, default_factory=dict)
 
     @property
+    def relation_aliases(self) -> Dict[str, str]:
+        return self.raw.get("relation_aliases", {}) or {}
+
+    @property
+    def surnames(self) -> List[str]:
+        return list(self.prescan.get("surnames", []) or [])
+
+    @property
     def relation_names(self) -> List[str]:
         return list(self.relations)
 

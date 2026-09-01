@@ -109,7 +109,11 @@ def run(args):
                 f"新实体 +{st['entities_added']}（拒 {st['entities_rejected']}）｜登记簿 {len(registry.entities)}｜{llm.report()}")
     log(f"== 抽取完成：原始关系 {len(raw)} 条，登记簿 {len(registry.entities)} 实体")
 
-    # ---- 3. 别名归并（一次 LLM）----
+    # ---- 3. 别名归并：先程序化（全名补全/重复合并，零 LLM），再可选 LLM 一次 ----
+    from .resolve import program_merge
+    n_alias, n_merge = program_merge(schema, registry, "\n".join(c.text for c in sel), log=log)
+    registry.save(reg_path)
+    log(f"== 程序归并：补全全名别名 {n_alias} 个，合并重复实体 {n_merge} 个")
     if not args.no_merge:
         applied, _ = llm_merge(llm, schema, registry)
         registry.save(reg_path)

@@ -1,0 +1,39 @@
+{
+ "schema": "红楼梦",
+ "chapters": [
+  1,
+  120
+ ],
+ "packs": 44,
+ "raw": 2767,
+ "validated": 1838,
+ "dropped": {
+  "无合格证据（证据不在原文或未同时提及双方）": 687,
+  "关系不在闭集": 116,
+  "实体未登记": 75,
+  "头尾相同": 8,
+  "类型不符": 43
+ },
+ "candidates": 293,
+ "review": {
+  "calls": 27,
+  "ok": 296,
+  "reject": 294,
+  "unjudged": 0,
+  "additions": 9,
+  "additions_invalid": 5
+ },
+ "functional_dropped": 3,
+ "additions": 9,
+ "inferred": 44,
+ "registry": 607,
+ "llm": {
+  "calls": 57,
+  "cached": 0,
+  "prompt_tokens": 853894,
+  "output_tokens": 217767,
+  "thought_tokens": 0,
+  "seconds": 1931.0860986709595
+ },
+ "seconds": 8467
+}

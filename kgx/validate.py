@@ -50,6 +50,7 @@ class Validator:
             return False, None, f"实体未登记:{h_raw if not h else t_raw}"
         if h == t:
             return False, None, "头尾相同"
+        r = self.schema.relation_aliases.get(r, r)          # 兄弟/姐妹 → 兄妹 等
         if r not in self.schema.relations:
             return False, None, f"关系不在闭集:{r}"
         ht, tt = self.registry.entities[h]["type"], self.registry.entities[t]["type"]
@@ -69,7 +70,7 @@ class Validator:
                 return False, None, "无合格证据（证据不在原文或未同时提及双方）"
             ev, ev_src = found, "程序检索"
         out = dict(rel)
-        out.update({"head": h, "tail": t, "evidence": ev, "evidence_src": ev_src})
+        out.update({"head": h, "tail": t, "relation": r, "evidence": ev, "evidence_src": ev_src})
         if flipped:
             out["flipped"] = True
         return True, out, ""

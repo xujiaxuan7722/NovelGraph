@@ -17,6 +17,34 @@ MERGE_SCHEMA = {
 }
 
 
+def program_merge(schema, registry, text, log=print):
+    """零 LLM 的两步归并（全部以原文为据）：
+    1. 全名补全：已登记人物 A（2–3 字）若"姓+A"在原文出现 ≥2 次且未登记 → 作为 A 的别名（如 宝玉←贾宝玉）；
+    2. 重复实体合并：登记簿里同时有 A 与 姓+A（同类型）→ 合并，保留全名为规范名（如 凤姐+王熙凤）。
+    姓氏表来自 schema.prescan.surnames。返回 (补全别名数, 合并数)。"""
+    surnames = schema.surnames
+    if not surnames:
+        return 0, 0
+    added = merged = 0
+    for canon in list(registry.entities):
+        ent = registry.entities.get(canon)
+        if not ent or ent["type"] != "人物" or not (2 <= len(canon) <= 3):
+            continue
+        for sur in surnames:
+            full = sur + canon
+            if full == canon or canon.startswith(sur):
+                continue
+            target = registry.resolve(full)
+            if target is None:
+                if text.count(full) >= 2:
+                    registry.add_alias(canon, full); added += 1
+            elif target != canon and registry.entities[target]["type"] == ent["type"]:
+                registry.merge(target, canon); merged += 1
+                log(f"  程序归并：{canon} → {target}")
+                break
+    return added, merged
+
+
 def rule_hints(registry):
     names = list(registry.entities)
     hints = []

@@ -8,9 +8,28 @@ import random
 from collections import defaultdict
 
 
+def resolve_gold_name(schema, registry, name):
+    """金标准名字→登记簿规范名。金标准按全名/带括号写（"贾探春"、"贾家（宁国府）"），
+    文本里可能从不出现全名；依次尝试：原名 → 括号内/外 → 去单字姓 → 原样返回（不命中）。"""
+    r = registry.resolve(name)
+    if r:
+        return r
+    if "（" in name and name.endswith("）"):
+        outer, inner = name.split("（", 1)[0], name[name.index("（") + 1:-1]
+        for cand in (inner, outer):
+            r = registry.resolve(cand)
+            if r:
+                return r
+    if len(name) >= 3 and name[0] in schema.surnames:
+        r = registry.resolve(name[1:])
+        if r:
+            return r
+    return name
+
+
 def eval_against_gold(schema, registry, triples, gold_triples, layers=("LLM抽取",)):
     def canon_gold(h, r, t):
-        hh, tt = registry.resolve(h) or h, registry.resolve(t) or t
+        hh, tt = resolve_gold_name(schema, registry, h), resolve_gold_name(schema, registry, t)
         return schema.canon(hh, r, tt)
     gold = {canon_gold(*g) for g in gold_triples}
     pred = {schema.canon(t["head"], t["relation"], t["tail"])

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """聚合：规范化方向、计票、证据择优、functional 冲突检测/裁决。"""
+import re
 from collections import defaultdict
 
 
@@ -9,12 +10,20 @@ def aggregate(schema, validated):
     for r in validated:
         key = schema.canon(r["head"], r["relation"], r["tail"])
         c = cands.setdefault(key, {"head": key[0], "relation": key[1], "tail": key[2],
-                                   "votes": 0, "evidences": [], "chapters": set(), "packs": set()})
-        c["votes"] += 1
-        c["evidences"].append((r.get("evidence_src", ""), r["evidence"]))
+                                   "votes": 0, "mentions": 0, "evidences": [], "_ev_seen": set(),
+                                   "chapters": set(), "packs": set()})
+        c["mentions"] += 1
+        # 票数 = 不同证据句的数量（同一句被同一块内两轮抽取/重复输出反复引用只算一票；
+        # 09-01 全书跑曾出现一块内同一三元组重复 21 次，若按条计票会把票数灌成 ×21）
+        ev_key = re.sub(r"\s+", "", r["evidence"] or "")
+        if ev_key not in c["_ev_seen"]:
+            c["_ev_seen"].add(ev_key)
+            c["votes"] += 1
+            c["evidences"].append((r.get("evidence_src", ""), r["evidence"]))
         c["chapters"] |= set(r.get("chapters", []))
         c["packs"].add(r.get("pack"))
     for c in cands.values():
+        del c["_ev_seen"]
         # 证据择优：模型引用优先于程序检索，同档取最短
         c["evidences"].sort(key=lambda x: (x[0] != "模型引用", len(x[1])))
         c["evidence_src"], c["evidence"] = c["evidences"][0]
