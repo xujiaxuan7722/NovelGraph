@@ -178,11 +178,24 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
         x["round"] = 1
         rels.append(x)
 
-    # 低产出守门：密度明显低于正常块（2.5–3 条/千字）时，换措辞再通读一次，取并集
-    density = len(rels) / max(len(pack.text), 1) * 1000
-    if len(pack.text) >= 3000 and density < LOW_YIELD_PER_KCHAR:
-        print(f"  {pack.label} 关系密度 {density:.1f} 条/千字 偏低，换措辞再通读一次", flush=True)
-        prompt_b = build_prompt(schema, registry, pack) + "\n\n（第二次通读：上一次读得太粗，请逐段仔细找全所有能引证据的关系。）"
+    # 低产出守门：按去重后的三元组算密度，明显低于正常块（2.5–3 条/千字）→ 换措辞再通读一次取并集；
+    # 原始/去重 > 3 说明模型陷入重复输出循环（第 99–101 回曾 418 条只有 21 种），同样触发二读。
+    distinct = {(x.get("head"), x.get("relation"), x.get("tail")) for x in rels}
+    density = len(distinct) / max(len(pack.text), 1) * 1000
+    looped = len(rels) > 3 * max(len(distinct), 1) and len(rels) >= 30
+    if looped:
+        print(f"  {pack.label} 疑似重复输出循环：原始 {len(rels)} 条 / 去重 {len(distinct)} 种，去重后再通读一次", flush=True)
+        seen_ev = set(); dedup = []
+        for x in rels:
+            k = (x.get("head"), x.get("relation"), x.get("tail"), x.get("evidence"))
+            if k not in seen_ev:
+                seen_ev.add(k); dedup.append(x)
+        rels[:] = dedup
+    if len(pack.text) >= 3000 and (density < LOW_YIELD_PER_KCHAR or looped):
+        if not looped:
+            print(f"  {pack.label} 关系密度 {density:.1f} 条/千字 偏低，换措辞再通读一次", flush=True)
+        prompt_b = build_prompt(schema, registry, pack) + ("\n\n（第二次通读：上一次读得太粗，请逐段仔细找全所有能引证据的关系；"
+                                                            "每条关系只输出一次，不要重复；new_entities 仍只填本段新出现且登记簿没有的。）")
         result_b, meta_b = llm.generate(prompt_b, response_schema=EXTRACT_SCHEMA, tag=f"[抽取 {pack.label} 二读]")
         stats["calls"] += 1
         stats["low_yield_retry"] = True
