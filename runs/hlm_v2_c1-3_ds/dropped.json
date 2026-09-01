@@ -75,70 +75,10 @@
   "reason": "实体未登记:甄费"
  },
  {
-  "head": "贾雨村",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "若论荣国一支，却是同谱。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "林如海",
-  "relation": "夫妻",
-  "tail": "贾敏",
-  "evidence": "今只有嫡妻贾氏，生得一女，乳名黛玉。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "林如海",
-  "relation": "父女",
-  "tail": "黛玉",
-  "evidence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾母",
   "relation": "母女",
   "tail": "贾敏",
   "evidence": "我这些儿女，所疼者独有你母亲。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾母",
-  "relation": "母子",
-  "tail": "贾政",
-  "evidence": "此即冷子兴所云之史太君也，贾赦、贾政之母。",
   "confidence": "high",
   "pack": "p001",
   "chapters": [
@@ -165,36 +105,6 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾政",
-  "relation": "父子",
-  "tail": "宝玉",
-  "evidence": "不想后来又生了一位公子，说来更奇，一落胎胞，嘴里便衔下一块五彩晶莹的玉来。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "王夫人",
-  "relation": "母子",
-  "tail": "宝玉",
-  "evidence": "王夫人因说：“你舅舅今日斋戒去了，再见罢。只是有一句话嘱咐你：我有一个孽根祸胎。”",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾珠",
   "relation": "夫妻",
   "tail": "李纨",
@@ -208,66 +118,6 @@
   ],
   "round": 1,
   "reason": "实体未登记:李纨"
- },
- {
-  "head": "贾敬",
-  "relation": "父子",
-  "tail": "贾珍",
-  "evidence": "幸而早年留下一子，名唤贾珍。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾母",
-  "relation": "祖母",
-  "tail": "迎春",
-  "evidence": "因史老夫人极爱孙女，都跟在祖母这边一处读书。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾母",
-  "relation": "祖母",
-  "tail": "探春",
-  "evidence": "因史老夫人极爱孙女，都跟在祖母这边一处读书。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾母",
-  "relation": "祖母",
-  "tail": "惜春",
-  "evidence": "因史老夫人极爱孙女，都跟在祖母这边一处读书。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "宝玉",
@@ -297,37 +147,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
-  "tail": "贾政",
-  "evidence": "荣国府贾府中，可也玷辱了先生的门楣了？",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
-  "tail": "贾赦",
-  "evidence": "荣国府贾府中，可也玷辱了先生的门楣了？",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -342,7 +162,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -357,7 +177,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -372,7 +192,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -387,7 +207,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -407,21 +227,6 @@
  {
   "head": "贾府",
   "relation": "家族",
-  "tail": "迎春",
-  "evidence": "二小姐乃赦老爹之妾所出，名迎春。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
   "tail": "探春",
   "evidence": "三小姐乃政老爹之庶出，名探春。",
   "confidence": "high",
@@ -432,7 +237,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -447,22 +252,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
-  "tail": "元春",
-  "evidence": "政老爹的长女，名元春。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -477,7 +267,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -492,7 +282,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -507,7 +297,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾府",
@@ -522,22 +312,7 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "贾府",
-  "relation": "家族",
-  "tail": "贾雨村",
-  "evidence": "若论荣国一支，却是同谱。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "甄家",
@@ -557,21 +332,6 @@
  {
   "head": "甄家",
   "relation": "家族",
-  "tail": "封氏",
-  "evidence": "甄家娘子听了，不免心中伤感。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "甄家",
-  "relation": "家族",
   "tail": "英莲",
   "evidence": "士隐命家人霍启抱了英莲去看社火花灯。",
   "confidence": "medium",
@@ -582,88 +342,13 @@
    3
   ],
   "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
- },
- {
-  "head": "甄家",
-  "relation": "家族",
-  "tail": "娇杏",
-  "evidence": "那甄家丫鬟撷了花。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "类型不符:家族(家族→人物)"
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "宝玉",
   "relation": "居住",
   "tail": "荣国府",
   "evidence": "贾母便说：“今将宝玉挪出来，同我在套间暖阁儿里面。”",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾母",
-  "relation": "居住",
-  "tail": "荣国府",
-  "evidence": "贾母正面榻上独坐。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "王夫人",
-  "relation": "居住",
-  "tail": "荣国府",
-  "evidence": "王夫人时常居坐宴息，亦不在这正室。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾赦",
-  "relation": "居住",
-  "tail": "荣国府",
-  "evidence": "邢夫人携了黛玉坐上，众婆子们放下车帘，方命小厮们抬起，拉至宽处，方驾上驯骡，亦出了西角门，往东过荣府正门。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾蓉",
-  "relation": "居住",
-  "tail": "宁国府",
-  "evidence": "这位珍爷也倒生了一个儿子，今年才十六岁，名叫贾蓉。",
   "confidence": "medium",
   "pack": "p001",
   "chapters": [
@@ -810,55 +495,10 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
-  "head": "贾雨村",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "若论荣国一支，却是同谱。",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾母",
   "relation": "家族",
   "tail": "贾府",
   "evidence": "此即冷子兴所云之史太君也，贾赦、贾政之母。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾政",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "荣国府贾府中，可也玷辱了先生的门楣了？",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾赦",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "荣国府贾府中，可也玷辱了先生的门楣了？",
   "confidence": "high",
   "pack": "p001",
   "chapters": [
@@ -945,21 +585,6 @@
   "reason": "实体未登记:李纨"
  },
  {
-  "head": "迎春",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "二小姐乃赦老爹之妾所出，名迎春。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "探春",
   "relation": "家族",
   "tail": "贾府",
@@ -979,21 +604,6 @@
   "relation": "家族",
   "tail": "贾府",
   "evidence": "四小姐乃宁府珍爷之胞妹，名唤惜春。",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "元春",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "政老爹的长女，名元春。",
   "confidence": "high",
   "pack": "p001",
   "chapters": [
@@ -1055,21 +665,6 @@
   "tail": "贾府",
   "evidence": "即荣府中赦、政二公之胞妹。",
   "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "贾雨村",
-  "relation": "家族",
-  "tail": "贾府",
-  "evidence": "若论荣国一支，却是同谱。",
-  "confidence": "medium",
   "pack": "p001",
   "chapters": [
    1,

@@ -1,50 +1,5 @@
 [
  {
-  "head": "薛蟠",
-  "relation": "家族",
-  "tail": "薛家",
-  "evidence": "且说那买了英莲、打死冯渊的薛公子，亦系金陵人氏，本是书香继世之家",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛姨妈",
-  "relation": "母子",
-  "tail": "薛蟠",
-  "evidence": "寡母王氏……今年方四十上下年纪，只有薛蟠一子",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛姨妈",
-  "relation": "母女",
-  "tail": "宝钗",
-  "evidence": "还有一女，比薛蟠小两岁，乳名宝钗",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "王子腾",
   "relation": "兄妹",
   "tail": "王夫人",
@@ -88,21 +43,6 @@
   ],
   "round": 1,
   "reason": "关系不在闭集:姐妹"
- },
- {
-  "head": "贾珍",
-  "relation": "父子",
-  "tail": "贾蓉",
-  "evidence": "因东边宁府中花园内梅花盛开，贾珍之妻尤氏乃治酒……先携了贾蓉之妻二人来面请",
-  "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
   "head": "贾赦",
@@ -150,21 +90,6 @@
   "reason": "类型不符:居住(家族→地点)"
  },
  {
-  "head": "王夫人",
-  "relation": "母女",
-  "tail": "迎春",
-  "evidence": "喜得王夫人忙带了媳妇、女儿等接出大厅",
-  "confidence": "low",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 1,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
   "head": "贾母",
   "relation": "子孙",
   "tail": "贾兰",
@@ -196,40 +121,10 @@
  },
  {
   "head": "薛姨妈",
-  "relation": "居住",
-  "tail": "梨香院",
-  "evidence": "从此后，薛家母子就在梨香院住了",
-  "confidence": "high",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 2,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛姨妈",
   "relation": "家族",
   "tail": "薛家",
   "evidence": "寡母王氏，乃现任京营节度使王子腾之妹",
   "confidence": "medium",
-  "pack": "p001",
-  "chapters": [
-   4,
-   5,
-   6
-  ],
-  "round": 2,
-  "reason": "无合格证据（证据不在原文或未同时提及双方）"
- },
- {
-  "head": "薛蟠",
-  "relation": "居住",
-  "tail": "梨香院",
-  "evidence": "从此后，薛家母子就在梨香院住了",
-  "confidence": "high",
   "pack": "p001",
   "chapters": [
    4,

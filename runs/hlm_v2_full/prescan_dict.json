@@ -1,0 +1,618 @@
+[
+ {
+  "name": "宝玉",
+  "type": "人物",
+  "aliases": [
+   "宝二",
+   "宝二爷"
+  ],
+  "freq": 4193,
+  "identity": "荣国府贾政之子，衔玉而生",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "凤姐",
+  "type": "人物",
+  "aliases": [
+   "凤姐儿",
+   "二奶奶",
+   "凤丫头"
+  ],
+  "freq": 2492,
+  "identity": "贾琏之妻，王夫人内侄女，荣国府管家",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "黛玉",
+  "type": "人物",
+  "aliases": [
+   "林黛玉",
+   "林姑娘"
+  ],
+  "freq": 1715,
+  "identity": "林如海之女，贾母外孙女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾母",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1690,
+  "identity": "贾府老太君，贾赦、贾政之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "宝钗",
+  "type": "人物",
+  "aliases": [
+   "宝姐姐"
+  ],
+  "freq": 1161,
+  "identity": "薛姨妈之女，薛蟠之妹",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "袭人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1147,
+  "identity": "宝玉的大丫鬟，本名珍珠",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾政",
+  "type": "人物",
+  "aliases": [
+   "贾政道"
+  ],
+  "freq": 1106,
+  "identity": "贾母次子，荣国府老爷",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "王夫人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 1070,
+  "identity": "贾政之妻，宝玉之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾琏",
+  "type": "人物",
+  "aliases": [],
+  "freq": 772,
+  "identity": "贾赦之子，凤姐之夫",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "平儿",
+  "type": "人物",
+  "aliases": [],
+  "freq": 695,
+  "identity": "凤姐的通房大丫头",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "薛姨妈",
+  "type": "人物",
+  "aliases": [
+   "姨太太"
+  ],
+  "freq": 565,
+  "identity": "王夫人之妹，薛蟠、宝钗之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "湘云",
+  "type": "人物",
+  "aliases": [
+   "史湘云"
+  ],
+  "freq": 506,
+  "identity": "史湘云，贾母内侄孙女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "探春",
+  "type": "人物",
+  "aliases": [],
+  "freq": 440,
+  "identity": "贾政庶出之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "紫鹃",
+  "type": "人物",
+  "aliases": [],
+  "freq": 439,
+  "identity": "黛玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "鸳鸯",
+  "type": "人物",
+  "aliases": [],
+  "freq": 424,
+  "identity": "贾母的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾珍",
+  "type": "人物",
+  "aliases": [],
+  "freq": 388,
+  "identity": "宁府当家，贾蓉之父",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "李纨",
+  "type": "人物",
+  "aliases": [],
+  "freq": 369,
+  "identity": "贾珠之妻，贾兰之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "尤氏",
+  "type": "人物",
+  "aliases": [],
+  "freq": 344,
+  "identity": "贾珍之妻",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "晴雯",
+  "type": "人物",
+  "aliases": [],
+  "freq": 341,
+  "identity": "宝玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "周瑞家",
+  "type": "人物",
+  "aliases": [
+   "周瑞家的"
+  ],
+  "freq": 337,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "刘姥姥",
+  "type": "人物",
+  "aliases": [],
+  "freq": 288,
+  "identity": "乡下贫妇，王狗儿岳母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "邢夫人",
+  "type": "人物",
+  "aliases": [],
+  "freq": 287,
+  "identity": "贾赦之妻",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "薛蟠",
+  "type": "人物",
+  "aliases": [],
+  "freq": 285,
+  "identity": "薛姨妈之子，宝钗之兄",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "香菱",
+  "type": "人物",
+  "aliases": [],
+  "freq": 270,
+  "identity": "薛蟠之妾，原名英莲",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾赦",
+  "type": "人物",
+  "aliases": [
+   "大老爷"
+  ],
+  "freq": 261,
+  "identity": "贾母长子，袭爵",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "麝月",
+  "type": "人物",
+  "aliases": [],
+  "freq": 234,
+  "identity": "宝玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾蓉",
+  "type": "人物",
+  "aliases": [],
+  "freq": 231,
+  "identity": "贾珍之子",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾芸",
+  "type": "人物",
+  "aliases": [],
+  "freq": 192,
+  "identity": "贾族子弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "雨村",
+  "type": "人物",
+  "aliases": [],
+  "freq": 187,
+  "identity": "贾雨村，字时飞，别号雨村",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "尤二",
+  "type": "人物",
+  "aliases": [
+   "尤二姐"
+  ],
+  "freq": 185,
+  "identity": "",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾环",
+  "type": "人物",
+  "aliases": [],
+  "freq": 153,
+  "identity": "贾政之子，赵姨娘所生",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "妙玉",
+  "type": "人物",
+  "aliases": [],
+  "freq": 153,
+  "identity": "带发修行的尼姑",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "金桂",
+  "type": "人物",
+  "aliases": [],
+  "freq": 152,
+  "identity": "薛蟠之妻，夏家小姐",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "雪雁",
+  "type": "人物",
+  "aliases": [],
+  "freq": 151,
+  "identity": "黛玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "茗烟",
+  "type": "人物",
+  "aliases": [],
+  "freq": 146,
+  "identity": "宝玉的书童",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "迎春",
+  "type": "人物",
+  "aliases": [],
+  "freq": 146,
+  "identity": "贾赦之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "赵姨娘",
+  "type": "人物",
+  "aliases": [],
+  "freq": 133,
+  "identity": "贾政之妾，贾环之母",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "莺儿",
+  "type": "人物",
+  "aliases": [],
+  "freq": 131,
+  "identity": "宝钗的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "宝琴",
+  "type": "人物",
+  "aliases": [],
+  "freq": 125,
+  "identity": "薛宝琴，薛蟠的堂妹",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "紫英",
+  "type": "人物",
+  "aliases": [
+   "冯紫英"
+  ],
+  "freq": 124,
+  "identity": "冯紫英，世家子弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "宝蟾",
+  "type": "人物",
+  "aliases": [],
+  "freq": 117,
+  "identity": "金桂的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "秦钟",
+  "type": "人物",
+  "aliases": [],
+  "freq": 109,
+  "identity": "秦可卿之弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "巧姐",
+  "type": "人物",
+  "aliases": [],
+  "freq": 105,
+  "identity": "凤姐之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "薛蝌",
+  "type": "人物",
+  "aliases": [],
+  "freq": 102,
+  "identity": "薛蟠的堂弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "秋纹",
+  "type": "人物",
+  "aliases": [],
+  "freq": 99,
+  "identity": "宝玉的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "岫烟",
+  "type": "人物",
+  "aliases": [],
+  "freq": 96,
+  "identity": "邢夫人侄女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾兰",
+  "type": "人物",
+  "aliases": [],
+  "freq": 94,
+  "identity": "贾珠之子，李纨之子",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "赖大",
+  "type": "人物",
+  "aliases": [],
+  "freq": 90,
+  "identity": "贾府管家",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "湘莲",
+  "type": "人物",
+  "aliases": [],
+  "freq": 88,
+  "identity": "柳湘莲，世家子弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "五儿",
+  "type": "人物",
+  "aliases": [],
+  "freq": 85,
+  "identity": "柳五儿，柳家之女",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "怡红院",
+  "type": "地点",
+  "aliases": [],
+  "freq": 85,
+  "identity": "大观园中宝玉的居所",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "司棋",
+  "type": "人物",
+  "aliases": [],
+  "freq": 81,
+  "identity": "迎春的丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "红玉",
+  "type": "人物",
+  "aliases": [],
+  "freq": 75,
+  "identity": "林红玉，宝玉丫鬟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "秦氏",
+  "type": "人物",
+  "aliases": [],
+  "freq": 74,
+  "identity": "贾蓉之妻，秦可卿",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾瑞",
+  "type": "人物",
+  "aliases": [],
+  "freq": 73,
+  "identity": "贾府远房子弟",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "荣府",
+  "type": "地点",
+  "aliases": [],
+  "freq": 73,
+  "identity": "荣国府",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾蔷",
+  "type": "人物",
+  "aliases": [],
+  "freq": 70,
+  "identity": "宁府玄孙",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "兴儿",
+  "type": "人物",
+  "aliases": [],
+  "freq": 61,
+  "identity": "贾琏的小厮",
+  "sources": [
+   "prescan"
+  ]
+ },
+ {
+  "name": "贾府",
+  "type": "家族",
+  "aliases": [],
+  "freq": 60,
+  "identity": "宁国府、荣国府贾氏家族",
+  "sources": [
+   "prescan"
+  ]
+ }
+]

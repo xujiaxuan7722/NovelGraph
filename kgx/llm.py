@@ -181,8 +181,9 @@ class Gemini:
         text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
         meta = {"finish": cand.get("finishReason"), "usage": usage, "cached": False}
         result = _parse_json_text(text, meta) if response_schema else text
-        json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
-                  ensure_ascii=False)
+        if not meta.get("parse_error"):          # 截断/解析失败不落缓存，重跑时会重新调用
+            json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
+                      ensure_ascii=False)
         return result, meta
 
     def report(self):
@@ -205,8 +206,8 @@ class OpenAICompat:
     """
     def __init__(self, model="deepseek-v4-flash", cache_dir="runs/cache", rpm=0,
                  base_url="https://token.sensenova.cn/v1", env_key="SENSENOVA_API_KEY",
-                 max_output_tokens=16000, thinking_calls=False, thinking_max_tokens=32000,
-                 timeout=600, tpm=40000, tpm_window=75):
+                 max_output_tokens=32000, thinking_calls=False, thinking_max_tokens=48000,
+                 timeout=900, tpm=40000, tpm_window=75):
         self.model = model
         self.key = _load_key(env_key)
         self.base_url = base_url.rstrip("/")
@@ -295,8 +296,8 @@ class OpenAICompat:
             max_tokens = max(max_tokens, self.thinking_max_tokens)
         user = prompt
         if response_schema:
-            user += ("\n\n输出必须是且只是一个 JSON 对象，不要 markdown 代码围栏，结构须符合以下 JSON Schema：\n"
-                     + json.dumps(response_schema, ensure_ascii=False))
+            user += ("\n\n输出必须是且只是一个 JSON 对象，不要 markdown 代码围栏；用紧凑格式（不要缩进和换行）；"
+                     "结构须符合以下 JSON Schema：\n" + json.dumps(response_schema, ensure_ascii=False))
         messages = ([{"role": "system", "content": system}] if system else []) + \
                    [{"role": "user", "content": user}]
         payload = {"model": self.model, "messages": messages, "temperature": 0.2,
@@ -383,8 +384,11 @@ class OpenAICompat:
         if not text.strip():
             meta["empty"] = True
         result = _parse_json_text(text, meta) if response_schema else text
-        json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
-                  ensure_ascii=False)
+        if meta.get("finish") == "length":
+            meta["truncated"] = True
+        if not (meta.get("parse_error") or meta.get("empty")):   # 截断/解析失败/空输出不落缓存
+            json.dump({"result": result, "meta": meta}, open(cpath, "w", encoding="utf-8"),
+                      ensure_ascii=False)
         return result, meta
 
     def report(self):

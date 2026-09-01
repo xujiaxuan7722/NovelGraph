@@ -1,22 +1,14 @@
 == 红楼梦：章节 1-3（3 章，1 个打包块）模型 sensenova/deepseek-v4-flash
-Building prefix dict from the default dictionary ...
-Loading model from cache /tmp/jieba.cache
-Loading model cost 0.301 seconds.
-Prefix dict has been built successfully.
-  预扫描 Phase1：156 候选
-  预扫描 Phase2：词典 33 实体 → 登记簿初始化
-  [HTTP 429][补抽 第1–3章] 等待60s后重试… {"error":{"message":"inference tpm exhausted","type":"invalid_request_error","code":"429001"}}
-  [HTTP 429][补抽 第1–3章] 等待120s后重试… {"error":{"message":"inference tpm exhausted","type":"invalid_request_error","code":"429001"}}
-  抽取 第1–3章：关系 102 条（补抽 1），新实体 +101（拒 6）｜登记簿 59｜LLM调用 3 次（缓存命中 0）｜输入 51779 输出 15030 思考 0 tokens｜近5h 3 次 66809 tokens
+  载入已有登记簿：59 实体
 == 抽取完成：原始关系 102 条，登记簿 59 实体
 == 别名归并：合并 0 条 
-== 校验：通过 30，丢弃 72 {'实体未登记': 9, '无合格证据（证据不在原文或未同时提及双方）': 44, '类型不符': 19}
-== 聚合：29 种候选三元组
-  复核：29 候选，30 实体组，打包 1 次调用
-== 复核：{'calls': 1, 'ok': 23, 'reject': 6, 'unjudged': 0, 'additions': 0, 'additions_invalid': 0}
-== 推理补全：+18 条
-== 评估 LLM抽取：P=43.5% R=5.5% F1=9.8% (pred 23 / gold 181 / hit 10)
-== 评估 LLM抽取+模型知识：P=43.5% R=5.5% F1=9.8% (pred 23 / gold 181 / hit 10)
-== 评估 LLM抽取+模型知识+推导：P=36.6% R=8.3% F1=13.5% (pred 41 / gold 181 / hit 15)
-== 完成，输出目录 runs/hlm_v2_c1-3_ds｜LLM调用 5 次（缓存命中 0）｜输入 56028 输出 18285 思考 0 tokens｜近5h 5 次 74313 tokens｜耗时 355s
+== 校验：通过 57，丢弃 45 {'实体未登记': 9, '无合格证据（证据不在原文或未同时提及双方）': 36}
+== 聚合：49 种候选三元组
+  复核：49 候选，34 实体组，打包 2 次调用
+== 复核：{'calls': 2, 'ok': 41, 'reject': 8, 'unjudged': 0, 'additions': 6, 'additions_invalid': 0}
+== 推理补全：+27 条
+== 评估 LLM抽取：P=39.0% R=8.8% F1=14.4% (pred 41 / gold 181 / hit 16)
+== 评估 LLM抽取+模型知识：P=40.4% R=10.5% F1=16.7% (pred 47 / gold 181 / hit 19)
+== 评估 LLM抽取+模型知识+推导：P=35.1% R=14.4% F1=20.4% (pred 74 / gold 181 / hit 26)
+== 完成，输出目录 runs/hlm_v2_c1-3_ds｜LLM调用 2 次（缓存命中 1）｜输入 6391 输出 3643 思考 0 tokens｜近5h 7 次 84347 tokens｜TPM预算 40000｜耗时 48s
 EXIT=0

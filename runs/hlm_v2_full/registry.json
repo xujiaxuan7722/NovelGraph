@@ -1,0 +1,441 @@
+{
+ "宝玉": {
+  "type": "人物",
+  "aliases": [
+   "宝二",
+   "宝二爷"
+  ],
+  "identity": "荣国府贾政之子，衔玉而生",
+  "chapters": [],
+  "mentions": 1
+ },
+ "凤姐": {
+  "type": "人物",
+  "aliases": [
+   "二奶奶",
+   "凤丫头",
+   "凤姐儿"
+  ],
+  "identity": "贾琏之妻，王夫人内侄女，荣国府管家",
+  "chapters": [],
+  "mentions": 1
+ },
+ "黛玉": {
+  "type": "人物",
+  "aliases": [
+   "林姑娘",
+   "林黛玉"
+  ],
+  "identity": "林如海之女，贾母外孙女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾母": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾府老太君，贾赦、贾政之母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "宝钗": {
+  "type": "人物",
+  "aliases": [
+   "宝姐姐"
+  ],
+  "identity": "薛姨妈之女，薛蟠之妹",
+  "chapters": [],
+  "mentions": 1
+ },
+ "袭人": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的大丫鬟，本名珍珠",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾政": {
+  "type": "人物",
+  "aliases": [
+   "贾政道"
+  ],
+  "identity": "贾母次子，荣国府老爷",
+  "chapters": [],
+  "mentions": 1
+ },
+ "王夫人": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾政之妻，宝玉之母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾琏": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾赦之子，凤姐之夫",
+  "chapters": [],
+  "mentions": 1
+ },
+ "平儿": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "凤姐的通房大丫头",
+  "chapters": [],
+  "mentions": 1
+ },
+ "薛姨妈": {
+  "type": "人物",
+  "aliases": [
+   "姨太太"
+  ],
+  "identity": "王夫人之妹，薛蟠、宝钗之母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "湘云": {
+  "type": "人物",
+  "aliases": [
+   "史湘云"
+  ],
+  "identity": "史湘云，贾母内侄孙女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "探春": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾政庶出之女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "紫鹃": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黛玉的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "鸳鸯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾母的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾珍": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宁府当家，贾蓉之父",
+  "chapters": [],
+  "mentions": 1
+ },
+ "李纨": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾珠之妻，贾兰之母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "尤氏": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾珍之妻",
+  "chapters": [],
+  "mentions": 1
+ },
+ "晴雯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "周瑞家": {
+  "type": "人物",
+  "aliases": [
+   "周瑞家的"
+  ],
+  "identity": "",
+  "chapters": [],
+  "mentions": 1
+ },
+ "刘姥姥": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "乡下贫妇，王狗儿岳母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "邢夫人": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾赦之妻",
+  "chapters": [],
+  "mentions": 1
+ },
+ "薛蟠": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "薛姨妈之子，宝钗之兄",
+  "chapters": [],
+  "mentions": 1
+ },
+ "香菱": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "薛蟠之妾，原名英莲",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾赦": {
+  "type": "人物",
+  "aliases": [
+   "大老爷"
+  ],
+  "identity": "贾母长子，袭爵",
+  "chapters": [],
+  "mentions": 1
+ },
+ "麝月": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾蓉": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾珍之子",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾芸": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾族子弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "雨村": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾雨村，字时飞，别号雨村",
+  "chapters": [],
+  "mentions": 1
+ },
+ "尤二": {
+  "type": "人物",
+  "aliases": [
+   "尤二姐"
+  ],
+  "identity": "",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾环": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾政之子，赵姨娘所生",
+  "chapters": [],
+  "mentions": 1
+ },
+ "妙玉": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "带发修行的尼姑",
+  "chapters": [],
+  "mentions": 1
+ },
+ "金桂": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "薛蟠之妻，夏家小姐",
+  "chapters": [],
+  "mentions": 1
+ },
+ "雪雁": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黛玉的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "茗烟": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的书童",
+  "chapters": [],
+  "mentions": 1
+ },
+ "迎春": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾赦之女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "赵姨娘": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾政之妾，贾环之母",
+  "chapters": [],
+  "mentions": 1
+ },
+ "莺儿": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝钗的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "宝琴": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "薛宝琴，薛蟠的堂妹",
+  "chapters": [],
+  "mentions": 1
+ },
+ "紫英": {
+  "type": "人物",
+  "aliases": [
+   "冯紫英"
+  ],
+  "identity": "冯紫英，世家子弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "宝蟾": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "金桂的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "秦钟": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "秦可卿之弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "巧姐": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "凤姐之女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "薛蝌": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "薛蟠的堂弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "秋纹": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "岫烟": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "邢夫人侄女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾兰": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾珠之子，李纨之子",
+  "chapters": [],
+  "mentions": 1
+ },
+ "赖大": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾府管家",
+  "chapters": [],
+  "mentions": 1
+ },
+ "湘莲": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "柳湘莲，世家子弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "五儿": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "柳五儿，柳家之女",
+  "chapters": [],
+  "mentions": 1
+ },
+ "怡红院": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "大观园中宝玉的居所",
+  "chapters": [],
+  "mentions": 1
+ },
+ "司棋": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "迎春的丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "红玉": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "林红玉，宝玉丫鬟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "秦氏": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾蓉之妻，秦可卿",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾瑞": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾府远房子弟",
+  "chapters": [],
+  "mentions": 1
+ },
+ "荣府": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荣国府",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾蔷": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宁府玄孙",
+  "chapters": [],
+  "mentions": 1
+ },
+ "兴儿": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾琏的小厮",
+  "chapters": [],
+  "mentions": 1
+ },
+ "贾府": {
+  "type": "家族",
+  "aliases": [],
+  "identity": "宁国府、荣国府贾氏家族",
+  "chapters": [],
+  "mentions": 1
+ }
+}

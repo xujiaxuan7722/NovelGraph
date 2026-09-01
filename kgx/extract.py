@@ -104,9 +104,15 @@ def extract_pack(llm, schema, registry, pack, gleaning=True):
     prompt = build_prompt(schema, registry, pack)
     result, meta = llm.generate(prompt, response_schema=EXTRACT_SCHEMA, tag=f"[抽取 {pack.label}]")
     rels, stats = [], {"calls": 1, "entities_added": 0, "entities_rejected": 0, "parse_error": False}
+    if not result and (meta.get("truncated") or meta.get("parse_error") or meta.get("empty")):
+        # 输出截断/解析失败：把输出上限加倍重试一次；仍失败则抛错让 cli 保存进度退出（不能静默记 0 条）
+        big = (getattr(llm, "max_output_tokens", 16000) or 16000) * 2
+        print(f"  抽取输出截断/解析失败（finish={meta.get('finish')}），max_tokens 加倍至 {big} 重试", flush=True)
+        result, meta = llm.generate(prompt, response_schema=EXTRACT_SCHEMA, max_output_tokens=big,
+                                    tag=f"[抽取 {pack.label} 重试]")
+        stats["calls"] += 1
     if not result:
-        stats["parse_error"] = True
-        return rels, stats
+        raise RuntimeError(f"{pack.label} 抽取结果不可解析（finish={meta.get('finish')}），不记为完成")
     a, r = apply_registry_updates(registry, result, pack.text, first_chapter)
     stats["entities_added"] += a
     stats["entities_rejected"] += r
