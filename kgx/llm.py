@@ -200,7 +200,7 @@ class OpenAICompat:
     - 思考：默认 reasoning_effort=none；仅当 thinking_calls=True 且调用方 thinking="high"（复核/归并）
       时开启（不传 reasoning_effort，走模型默认），并把 max_tokens 抬到 thinking_max_tokens；
     - 配额：无日限。rpm=0 表示不设固定间隔；按 token 节流（tpm/tpm_window，撞 tpm-429 自动下调预算并落盘
-      仅避免连发大请求）；tpm-429 视为共享池瞬时限速，退避 45s×n 重试（最多 12 次≈30min，不退出）；
+      仅避免连发大请求）；tpm-429 视为共享池瞬时限速，退避 45s×n（上限 180s）重试，最多 40 次≈2h；
       其他 429 退避 60→300s；
     - 用量：cache/usage_log.jsonl 逐次记 (时间, 模型, tokens)，report() 给近 5h 累计（对应网关 5h 窗口）。
     """
@@ -343,8 +343,8 @@ class OpenAICompat:
             msg = r.text[:160].replace("\n", " ")
             if r.status_code == 429:
                 n429 += 1
-                if n429 > 12:
-                    raise RuntimeError(f"持续限速{tag}（已等约 40 分钟）")
+                if n429 > 40:
+                    raise RuntimeError(f"持续限速{tag}（已连续 40 次 429，约 2 小时）")
                 if "tpm" in r.text.lower():
                     pause = self._tpm_hit(need, n429)
                     print(f"  [HTTP 429 tpm]{tag} 第{n429}次，等待{pause}s后重试", flush=True)

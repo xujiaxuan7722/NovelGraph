@@ -3,7 +3,8 @@
   "type": "人物",
   "aliases": [
    "宝二",
-   "宝二爷"
+   "宝二爷",
+   "混世魔王"
   ],
   "identity": "荣国府贾政之子，衔玉而生",
   "chapters": [],
@@ -14,9 +15,12 @@
   "aliases": [
    "二奶奶",
    "凤丫头",
-   "凤姐儿"
+   "凤姐儿",
+   "凤辣子",
+   "熙凤",
+   "琏嫂子"
   ],
-  "identity": "贾琏之妻，王夫人内侄女，荣国府管家",
+  "identity": "贾琏之妻，王夫人内侄女，学名王熙凤，荣府管家",
   "chapters": [],
   "mentions": 1
  },
@@ -26,14 +30,20 @@
    "林姑娘",
    "林黛玉"
   ],
-  "identity": "林如海之女，贾母外孙女",
-  "chapters": [],
-  "mentions": 1
+  "identity": "林如海之女，贾母外孙女，进荣国府暂居碧纱橱",
+  "chapters": [
+   1
+  ],
+  "mentions": 2
  },
  "贾母": {
   "type": "人物",
-  "aliases": [],
-  "identity": "贾府老太君，贾赦、贾政之母",
+  "aliases": [
+   "史太君",
+   "老太太",
+   "老祖宗"
+  ],
+  "identity": "荣国公之孙贾代善之妻，贾赦、贾政之母，人称史太君",
   "chapters": [],
   "mentions": 1
  },
@@ -58,13 +68,16 @@
   "aliases": [
    "贾政道"
   ],
-  "identity": "贾母次子，荣国府老爷",
+  "identity": "贾母次子，字存周，现任工部员外郎，喜读书礼贤",
   "chapters": [],
   "mentions": 1
  },
  "王夫人": {
   "type": "人物",
-  "aliases": [],
+  "aliases": [
+   "二舅母",
+   "太太"
+  ],
   "identity": "贾政之妻，宝玉之母",
   "chapters": [],
   "mentions": 1
@@ -131,7 +144,9 @@
  },
  "李纨": {
   "type": "人物",
-  "aliases": [],
+  "aliases": [
+   "珠大嫂子"
+  ],
   "identity": "贾珠之妻，贾兰之母",
   "chapters": [],
   "mentions": 1
@@ -168,7 +183,9 @@
  },
  "邢夫人": {
   "type": "人物",
-  "aliases": [],
+  "aliases": [
+   "大舅母"
+  ],
   "identity": "贾赦之妻",
   "chapters": [],
   "mentions": 1
@@ -176,7 +193,7 @@
  "薛蟠": {
   "type": "人物",
   "aliases": [],
-  "identity": "薛姨妈之子，宝钗之兄",
+  "identity": "薛家姨母之子，姨表兄，倚财仗势打死人命在应天府案下审理",
   "chapters": [],
   "mentions": 1
  },
@@ -192,7 +209,7 @@
   "aliases": [
    "大老爷"
   ],
-  "identity": "贾母长子，袭爵",
+  "identity": "贾母长子，字恩侯，袭一等将军",
   "chapters": [],
   "mentions": 1
  },
@@ -219,8 +236,10 @@
  },
  "雨村": {
   "type": "人物",
-  "aliases": [],
-  "identity": "贾雨村，字时飞，别号雨村",
+  "aliases": [
+   "贾爷"
+  ],
+  "identity": "本名贾化，字时飞，胡州人氏，进士出身，曾任知府被革职，后起复补金陵应天府缺",
   "chapters": [],
   "mentions": 1
  },
@@ -412,7 +431,9 @@
  },
  "荣府": {
   "type": "地点",
-  "aliases": [],
+  "aliases": [
+   "荣国府"
+  ],
   "identity": "荣国府",
   "chapters": [],
   "mentions": 1
@@ -436,6 +457,390 @@
   "aliases": [],
   "identity": "宁国府、荣国府贾氏家族",
   "chapters": [],
+  "mentions": 1
+ },
+ "甄士隐": {
+  "type": "人物",
+  "aliases": [
+   "士隐"
+  ],
+  "identity": "姑苏阊门外乡宦，英莲之父，封氏之夫",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "英莲": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "甄士隐之女，乳名英莲，年方三岁，后丢失",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "封氏": {
+  "type": "人物",
+  "aliases": [
+   "封氏孺人",
+   "甄家娘子"
+  ],
+  "identity": "甄士隐之妻，英莲之母",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "封肃": {
+  "type": "人物",
+  "aliases": [
+   "他岳丈"
+  ],
+  "identity": "甄士隐岳丈，务农，家中殷实",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "娇杏": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "甄家丫鬟，曾回顾雨村，后嫁雨村为二房",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "霍启": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "甄士隐家人，抱英莲看灯将其丢失",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾雨村": {
+  "type": "人物",
+  "aliases": [
+   "时飞"
+  ],
+  "identity": "葫芦庙寄居穷儒，胡州人氏，后中进士官至知府，被革职",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "冷子兴": {
+  "type": "人物",
+  "aliases": [
+   "子兴"
+  ],
+  "identity": "都中古董行贸易者，雨村旧交",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "林如海": {
+  "type": "人物",
+  "aliases": [
+   "如海"
+  ],
+  "identity": "黛玉之父，前科探花，兰台寺大夫，钦点巡盐御史，祖上曾袭列侯",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾敏": {
+  "type": "人物",
+  "aliases": [
+   "贾氏",
+   "贾氏夫人"
+  ],
+  "identity": "林如海之妻，黛玉之母，荣府贾赦、贾政之胞妹",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾代化": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宁公之子，袭官，养了两个儿子",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾敷": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾代化长子，八九岁便死",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾敬": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾代化次子，袭官，一味好道",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾代善": {
+  "type": "人物",
+  "aliases": [
+   "代善"
+  ],
+  "identity": "荣公之子，袭官，贾母之夫已逝",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾珠": {
+  "type": "人物",
+  "aliases": [
+   "珠大哥"
+  ],
+  "identity": "贾政长子，娶妻李氏，生子贾兰后病逝",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "元春": {
+  "type": "人物",
+  "aliases": [
+   "大小姐"
+  ],
+  "identity": "贾政长女，选入宫作女史",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "惜春": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宁府珍爷之胞妹",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "贾源": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "荣国公，荣禧堂匾上名号",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张如圭": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "雨村同僚，被参革职，报信起复之信",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "王嬷嬷": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黛玉自幼奶娘",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "李嬷嬷": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "宝玉的乳母",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "鹦哥": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "贾母的二等丫头，后与黛玉",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "王子腾": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "王夫人之兄，得薛蟠打死人命信息",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "姑苏": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "东南一隅之地，林如海本贯",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "阊门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "姑苏城",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "十里街": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "阊门外街",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "仁清巷": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "十里街内巷",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "葫芦庙": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "仁清巷内古庙，贾雨村寄居之处",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "大荒山无稽崖青埂峰": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "顽石弃处",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "太虚幻境": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "僧道携石所到幻境",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "智通寺": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "郭外破庙，老僧煮粥处",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "宁国府": {
+  "type": "地点",
+  "aliases": [
+   "宁府"
+  ],
+  "identity": "街东宁国府，贾珍当家",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "金陵": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "石头城所在，贾府祖籍",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "神京": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "都城",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "维扬": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "林如海任巡盐御史之地",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "甄府": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "金陵体仁院总裁甄家",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "荣禧堂": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荣国府正堂，有荣国公贾源题匾",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "碧纱橱": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "黛玉暂居之所，贾母安排的卧处",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "甄家": {
+  "type": "家族",
+  "aliases": [],
+  "identity": "金陵甄府，和贾府是老亲世交",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "薛家": {
+  "type": "家族",
+  "aliases": [],
+  "identity": "王夫人之妹薛姨妈家",
+  "chapters": [
+   1
+  ],
   "mentions": 1
  }
 }
