@@ -51,14 +51,15 @@ def _parse_json_text(text, meta):
 
 
 def make_llm(provider, model=None, cache_dir="runs/cache", rpm=None, rpd=240, thinking_calls=False,
-             tpm=40000, tpm_window=75):
+             tpm=40000, tpm_window=75, temperature=0.2):
     """cli 用：按 provider 构造客户端；model/rpm 为 None 时用各自默认"""
     if provider == "gemini":
         return Gemini(model=model or "gemini-3.7-flash", cache_dir=cache_dir,
                       rpm=rpm or 9, rpd=rpd)
     if provider == "sensenova":
         return OpenAICompat(model=model or "deepseek-v4-flash", cache_dir=cache_dir,
-                            rpm=rpm or 0, thinking_calls=thinking_calls, tpm=tpm, tpm_window=tpm_window)
+                            rpm=rpm or 0, thinking_calls=thinking_calls, tpm=tpm, tpm_window=tpm_window,
+                            temperature=(None if (model or "").startswith("kimi") else temperature))
     raise SystemExit(f"未知 provider: {provider}")
 
 
@@ -207,8 +208,9 @@ class OpenAICompat:
     def __init__(self, model="deepseek-v4-flash", cache_dir="runs/cache", rpm=0,
                  base_url="https://token.sensenova.cn/v1", env_key="SENSENOVA_API_KEY",
                  max_output_tokens=32000, thinking_calls=False, thinking_max_tokens=48000,
-                 timeout=900, tpm=40000, tpm_window=75):
+                 timeout=900, tpm=40000, tpm_window=75, temperature=0.2):
         self.model = model
+        self.temperature = temperature      # None 表示不传（kimi-k3 只接受 1）
         self.key = _load_key(env_key)
         self.base_url = base_url.rstrip("/")
         self.cache_dir = cache_dir
@@ -300,8 +302,10 @@ class OpenAICompat:
                      "结构须符合以下 JSON Schema：\n" + json.dumps(response_schema, ensure_ascii=False))
         messages = ([{"role": "system", "content": system}] if system else []) + \
                    [{"role": "user", "content": user}]
-        payload = {"model": self.model, "messages": messages, "temperature": 0.2,
+        payload = {"model": self.model, "messages": messages,
                    "max_tokens": max_tokens, "stream": False}
+        if self.temperature is not None:
+            payload["temperature"] = self.temperature
         if response_schema:
             payload["response_format"] = {"type": "json_object"}
         if not think_on:
@@ -356,6 +360,8 @@ class OpenAICompat:
                 if n5xx > 10:
                     raise RuntimeError(f"服务端持续错误{tag}")
                 pause = min(15 * n5xx, 120)
+            elif r.status_code in (400, 401, 403, 404):     # 请求本身有问题，重试无意义
+                raise RuntimeError(f"调用失败{tag} HTTP {r.status_code} {msg}")
             else:
                 nother += 1
                 if nother >= max_tries:

@@ -5,6 +5,8 @@ gleaning（借 GraphRAG）：追加一轮"还有遗漏，请补充"。
 """
 import json
 
+from .chunking import Pack
+
 EXTRACT_SCHEMA = {
     "type": "object",
     "properties": {
@@ -104,6 +106,25 @@ def extract_pack(llm, schema, registry, pack, gleaning=True):
     prompt = build_prompt(schema, registry, pack)
     result, meta = llm.generate(prompt, response_schema=EXTRACT_SCHEMA, tag=f"[抽取 {pack.label}]")
     rels, stats = [], {"calls": 1, "entities_added": 0, "entities_rejected": 0, "parse_error": False}
+    if not result and meta.get("finish") == "content_filter":
+        # 网关内容审查拦截（确定性失败，重试无用）。多章块 → 拆成单章各抽；单章仍被拦 → 记录并跳过。
+        if len(pack.chapters) > 1:
+            print(f"  {pack.label} 被内容审查拦截，拆成单章分别抽取", flush=True)
+            merged, mstats = [], {"calls": 1, "entities_added": 0, "entities_rejected": 0,
+                                  "parse_error": False, "split": True, "filtered_chapters": []}
+            for ch in pack.chapters:
+                sub = Pack(pack.id, [ch])          # 沿用父块 id，保证 raw/校验按父块文本对齐
+                srels, sst = extract_pack(llm, schema, registry, sub, gleaning=gleaning)
+                for x in srels:
+                    x["chapters"] = chapters
+                merged.extend(srels)
+                for k in ("calls", "entities_added", "entities_rejected"):
+                    mstats[k] += sst.get(k, 0)
+                mstats["filtered_chapters"] += sst.get("filtered_chapters", [])
+            return merged, mstats
+        print(f"  !! {pack.label} 单章仍被内容审查拦截，跳过该章", flush=True)
+        stats["filtered_chapters"] = [first_chapter]
+        return rels, stats
     if not result and (meta.get("truncated") or meta.get("parse_error") or meta.get("empty")):
         # 输出截断/解析失败：把输出上限加倍重试一次；仍失败则抛错让 cli 保存进度退出（不能静默记 0 条）
         big = (getattr(llm, "max_output_tokens", 16000) or 16000) * 2
