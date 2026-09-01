@@ -34,8 +34,30 @@ def _load_key(env_key="GEMINI_API_KEY"):
     return key
 
 
+def _salvage_truncated(text):
+    """截断输出抢救：从最后一个完整对象 '}' 处截断，补上 ']}' / '}' 等收尾再解析；成功返回 dict"""
+    s = text.find("{")
+    if s == -1:
+        return None
+    body = text[s:]
+    for _ in range(40):                       # 逐个回退到上一个 '}'
+        e = body.rfind("}")
+        if e <= 0:
+            return None
+        head = body[:e + 1]
+        for tail in ("]}", "}", "]}]}", "}]}", ""):
+            try:
+                r = json.loads(head + tail)
+                if isinstance(r, dict):
+                    return r
+            except json.JSONDecodeError:
+                pass
+        body = body[:e]
+    return None
+
+
 def _parse_json_text(text, meta):
-    """强制 JSON 时的解析：先整体，失败则抠 {…} 主体；仍失败 → meta.parse_error"""
+    """强制 JSON 时的解析：先整体，失败则抠 {…} 主体，再尝试抢救截断输出；仍失败 → meta.parse_error"""
     try:
         return json.loads(text)
     except json.JSONDecodeError:
@@ -44,6 +66,10 @@ def _parse_json_text(text, meta):
             result = json.loads(text[s:e + 1]) if s != -1 else None
         except json.JSONDecodeError:
             result = None
+    if result is None:
+        result = _salvage_truncated(text)
+        if result is not None:
+            meta["salvaged"] = True
     if result is None:
         meta["parse_error"] = True
         meta["raw"] = text[:2000]
