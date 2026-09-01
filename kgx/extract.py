@@ -181,10 +181,28 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
     # 低产出守门：按去重后的三元组算密度，明显低于正常块（2.5–3 条/千字）→ 换措辞再通读一次取并集；
     # 原始/去重 > 3 说明模型陷入重复输出循环（第 99–101 回曾 418 条只有 21 种），同样触发二读。
     distinct = {(x.get("head"), x.get("relation"), x.get("tail")) for x in rels}
+    distinct_ev = {(x.get("evidence") or "").strip() for x in rels}
     density = len(distinct) / max(len(pack.text), 1) * 1000
-    looped = len(rels) > 3 * max(len(distinct), 1) and len(rels) >= 30
+    # 失控判定：关系数远超"去重三元组"或"去重证据句"（模型在做实体两两组合的笛卡尔积，同几句证据反复引用）
+    looped = len(rels) >= 30 and (len(rels) > 3 * max(len(distinct), 1) or len(rels) > 3 * max(len(distinct_ev), 1))
+    if looped and len(pack.chapters) > 1 and _depth < 2:
+        # 多章块失控 → 拆成单章分别抽（上下文变小后模型通常恢复正常），丢弃本次结果
+        print(f"  {pack.label} 疑似重复输出循环：原始 {len(rels)} 条 / 三元组 {len(distinct)} 种 / 证据 {len(distinct_ev)} 句，"
+              f"拆成单章重抽", flush=True)
+        merged, mstats = [], {"calls": stats["calls"], "entities_added": 0, "entities_rejected": 0,
+                              "parse_error": False, "split": True, "looped": True, "filtered_chapters": []}
+        for ch in pack.chapters:
+            srels, sst = extract_pack(llm, schema, registry, Pack(pack.id, [ch]), gleaning=gleaning, _depth=_depth + 1)
+            for x in srels:
+                x["chapters"] = chapters
+            merged.extend(srels)
+            for k in ("calls", "entities_added", "entities_rejected"):
+                mstats[k] += sst.get(k, 0)
+            mstats["filtered_chapters"] += sst.get("filtered_chapters", [])
+        return merged, mstats
     if looped:
-        print(f"  {pack.label} 疑似重复输出循环：原始 {len(rels)} 条 / 去重 {len(distinct)} 种，去重后再通读一次", flush=True)
+        print(f"  {pack.label} 疑似重复输出循环：原始 {len(rels)} 条 / 三元组 {len(distinct)} 种 / 证据 {len(distinct_ev)} 句，去重后再通读一次", flush=True)
+        stats["looped"] = True
         seen_ev = set(); dedup = []
         for x in rels:
             k = (x.get("head"), x.get("relation"), x.get("tail"), x.get("evidence"))

@@ -105,7 +105,7 @@ def run(args):
             if st.get("filtered_chapters"):
                 log(f"  !! {p.label} 内容审查拦截的章：{st['filtered_chapters']}（已跳过）")
             log(f"  抽取 {p.label}：关系 {len(rels)} 条（补抽 {sum(1 for r in rels if r.get('round')==2)}"
-                f"{'，二读' if st.get('low_yield_retry') else ''}），"
+                f"{'，二读' if st.get('low_yield_retry') else ''}{'，循环拆章' if st.get('looped') else ''}），"
                 f"新实体 +{st['entities_added']}（拒 {st['entities_rejected']}）｜登记簿 {len(registry.entities)}｜{llm.report()}")
     log(f"== 抽取完成：原始关系 {len(raw)} 条，登记簿 {len(registry.entities)} 实体")
 
