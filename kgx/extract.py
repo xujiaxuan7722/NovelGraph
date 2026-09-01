@@ -203,11 +203,14 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
         prev = [{"head": x["head"], "relation": x["relation"], "tail": x["tail"]} for x in rels]
         prompt2 = build_prompt(schema, registry, pack, gleaning_prev=prev)
         try:
-            result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label}]")
+            # 补抽正常输出仅数百到 4k token；上限压到 12k，模型陷入重复输出时能早点被截断
+            result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, max_output_tokens=12000,
+                                          tag=f"[补抽 {pack.label}]")
             if result2 is None and (meta2.get("empty") or meta2.get("parse_error")):
                 print(f"  补抽返回空响应，30s 后重试一次", flush=True)
                 time.sleep(30)
-                result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, tag=f"[补抽 {pack.label} 重试]")
+                result2, meta2 = llm.generate(prompt2, response_schema=EXTRACT_SCHEMA, max_output_tokens=12000,
+                                              tag=f"[补抽 {pack.label} 重试]")
                 stats["calls"] += 1
         except Exception as e:        # 补抽失败不应拖累第一遍结果
             if type(e).__name__ == "QuotaExhausted":
