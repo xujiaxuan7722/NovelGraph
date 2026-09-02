@@ -190,3 +190,42 @@ Traceback (most recent call last):
   File "/home/dwt/kgx/kgx/llm.py", line 366, in generate
     raise RuntimeError(f"网络失败{tag}")
 RuntimeError: 网络失败[复核 17/28]
+  复核：612 候选，281 实体组，打包 28 次调用
+== B_护栏: {"review": {"calls": 28, "ok": 299, "reject": 258, "unjudged": 0, "additions": 33, "additions_invalid": 10, "highvote_kept": 1, "flipped": 44, "doubtful": 10}, "triples": 408, "text": {"pred": 321, "hit": 137, "gold": 266, "precision": 0.4237, "recall": 0.515, "f1": 0.4649}, "full": {"pred": 395, "hit": 179, "gold": 266, "precision": 0.4506, "recall": 0.6729, "f1": 0.5398}}
+  复核：612 候选，281 实体组，打包 28 次调用
+  [网络重试1][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Read timed out. (read 
+  [HTTP 429 tpm][复核 17/28] 第1次，等待45s后重试
+  [TPM节流][复核 17/28] 窗口内已用 32652+预估 32652 > 40000，等待约 30s
+== 消融外壳第 1 次启动 2026-09-02_16:29:17
+  复核：612 候选，281 实体组，打包 28 次调用
+== B_护栏: {"review": {"calls": 28, "ok": 299, "reject": 258, "unjudged": 0, "additions": 33, "additions_invalid": 10, "highvote_kept": 1, "flipped": 44, "doubtful": 10}, "triples": 408, "text": {"pred": 321, "hit": 137, "gold": 266, "precision": 0.4237, "recall": 0.515, "f1": 0.4649}, "full": {"pred": 395, "hit": 179, "gold": 266, "precision": 0.4506, "recall": 0.6729, "f1": 0.5398}}
+  复核：612 候选，281 实体组，打包 28 次调用
+  [TPM节流][复核 18/28] 窗口内已用 27334+预估 32534 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 18/28] 第1次，等待45s后重试
+  [TPM节流][复核 18/28] 窗口内已用 32534+预估 32534 > 40000，等待约 30s
+  [TPM节流][复核 19/28] 窗口内已用 41799+预估 32581 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 19/28] 第1次，等待45s后重试
+  [TPM节流][复核 19/28] 窗口内已用 32581+预估 32581 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 19/28] 第2次，等待90s后重试
+  [HTTP 429 tpm][复核 19/28] 第3次，等待135s后重试
+  [TPM节流][复核 20/28] 窗口内已用 35593+预估 32581 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 20/28] 第1次，等待45s后重试
+  [TPM节流][复核 20/28] 窗口内已用 32581+预估 32581 > 40000，等待约 30s
+  [TPM节流][复核 21/28] 窗口内已用 34711+预估 32467 > 40000，等待约 75s
+  [网络重试1][复核 21/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Read timed out. (read 
+  [HTTP 429 tpm][复核 21/28] 第1次，等待45s后重试
+  [TPM节流][复核 21/28] 窗口内已用 32467+预估 32467 > 40000，等待约 30s
+  [TPM节流][复核 22/28] 窗口内已用 14155+预估 32442 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 22/28] 第1次，等待45s后重试
+  [TPM节流][复核 22/28] 窗口内已用 32442+预估 32442 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 22/28] 第2次，等待90s后重试
+  [TPM节流][复核 23/28] 窗口内已用 31538+预估 32884 > 40000，等待约 75s
+  [TPM节流][复核 24/28] 窗口内已用 28548+预估 32787 > 40000，等待约 75s
+  [TPM节流][复核 25/28] 窗口内已用 43634+预估 33256 > 40000，等待约 75s
+  [TPM节流][复核 26/28] 窗口内已用 19621+预估 33413 > 40000，等待约 75s
+  [TPM节流][复核 27/28] 窗口内已用 36160+预估 33233 > 40000，等待约 75s
+  [TPM节流][复核 28/28] 窗口内已用 47279+预估 30252 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 28/28] 第1次，等待45s后重试
+  [TPM节流][复核 28/28] 窗口内已用 30252+预估 30252 > 40000，等待约 30s
+== D_护栏+思考: {"review": {"calls": 28, "ok": 295, "reject": 275, "unjudged": 0, "additions": 67, "additions_invalid": 1, "flipped": 41, "highvote_kept": 1}, "triples": 420, "text": {"pred": 304, "hit": 142, "gold": 266, "precision": 0.4638, "recall": 0.5338, "f1": 0.4964}, "full": {"pred": 386, "hit": 185, "gold": 266, "precision": 0.4767, "recall": 0.6955, "f1": 0.5657}}
+== 消融完成

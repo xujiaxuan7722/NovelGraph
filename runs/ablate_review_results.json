@@ -1,0 +1,61 @@
+{
+ "B_护栏": {
+  "review": {
+   "calls": 28,
+   "ok": 299,
+   "reject": 258,
+   "unjudged": 0,
+   "additions": 33,
+   "additions_invalid": 10,
+   "highvote_kept": 1,
+   "flipped": 44,
+   "doubtful": 10
+  },
+  "triples": 408,
+  "text": {
+   "pred": 321,
+   "hit": 137,
+   "gold": 266,
+   "precision": 0.4237,
+   "recall": 0.515,
+   "f1": 0.4649
+  },
+  "full": {
+   "pred": 395,
+   "hit": 179,
+   "gold": 266,
+   "precision": 0.4506,
+   "recall": 0.6729,
+   "f1": 0.5398
+  }
+ },
+ "D_护栏+思考": {
+  "review": {
+   "calls": 28,
+   "ok": 295,
+   "reject": 275,
+   "unjudged": 0,
+   "additions": 67,
+   "additions_invalid": 1,
+   "flipped": 41,
+   "highvote_kept": 1
+  },
+  "triples": 420,
+  "text": {
+   "pred": 304,
+   "hit": 142,
+   "gold": 266,
+   "precision": 0.4638,
+   "recall": 0.5338,
+   "f1": 0.4964
+  },
+  "full": {
+   "pred": 386,
+   "hit": 185,
+   "gold": 266,
+   "precision": 0.4767,
+   "recall": 0.6955,
+   "f1": 0.5657
+  }
+ }
+}
