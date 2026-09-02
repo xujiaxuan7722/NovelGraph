@@ -46,6 +46,10 @@ class Schema:
         return list(self.prescan.get("surnames", []) or [])
 
     @property
+    def generic_names(self) -> List[str]:
+        return list(self.prescan.get("generic_names", []) or [])
+
+    @property
     def relation_names(self) -> List[str]:
         return list(self.relations)
 

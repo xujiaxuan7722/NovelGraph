@@ -25,23 +25,37 @@ def program_merge(schema, registry, text, log=print):
     surnames = schema.surnames
     if not surnames:
         return 0, 0
+    generic = set(schema.generic_names)
     added = merged = 0
     for canon in list(registry.entities):
         ent = registry.entities.get(canon)
-        if not ent or ent["type"] != "人物" or not (2 <= len(canon) <= 3):
+        if not ent or ent["type"] != "人物" or not (2 <= len(canon) <= 3) or canon in generic:
             continue
+        # 收集全部候选全名：登记簿里已有的 姓+名 实体，或原文出现 ≥2 次的 姓+名。
+        # 候选不止一个 → 歧义（如 宝玉 ↔ {贾宝玉, 甄宝玉} 是两个人），整体跳过——这正是
+        # 09-01 把宝玉并进甄宝玉的事故根因：同名不同姓不等于同人。
+        cands = []
         for sur in surnames:
             full = sur + canon
             if full == canon or canon.startswith(sur):
                 continue
             target = registry.resolve(full)
-            if target is None:
-                if text.count(full) >= 2:
-                    registry.add_alias(canon, full); added += 1
-            elif target != canon and registry.entities[target]["type"] == ent["type"]:
+            if target is not None:
+                cands.append(("reg", full, target))
+            elif text.count(full) >= 2:
+                cands.append(("txt", full, None))
+        if len(cands) != 1:
+            if len(cands) > 1:
+                log(f"  程序归并：{canon} 歧义 {[c[1] for c in cands]}，跳过")
+            continue
+        kind, full, target = cands[0]
+        if kind == "txt":
+            registry.add_alias(canon, full); added += 1
+        elif target != canon and registry.entities[target]["type"] == ent["type"]:
+            # 只有当 full 本身就是对方的规范名才合并；经别名间接解析到第三个名字的不动
+            if target == full:
                 registry.merge(target, canon); merged += 1
                 log(f"  程序归并：{canon} → {target}")
-                break
     return added, merged
 
 
