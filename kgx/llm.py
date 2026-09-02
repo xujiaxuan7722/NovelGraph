@@ -246,6 +246,10 @@ class OpenAICompat:
         self.thinking_calls = thinking_calls
         self.thinking_max_tokens = thinking_max_tokens
         self.timeout = timeout
+        # 商汤网关是国内服务，绕开环境里的全局代理（09-02 实测代理断连是"网络失败"的元凶之一）；
+        # Gemini 类不受影响，仍走环境代理。
+        self.session = requests.Session()
+        self.session.trust_env = False
         self._last_call = 0.0
         self.stats = {"calls": 0, "cached": 0, "prompt_tokens": 0, "output_tokens": 0,
                       "thought_tokens": 0, "seconds": 0.0}
@@ -355,7 +359,7 @@ class OpenAICompat:
             self._last_call = time.time()
             t0 = time.time()
             try:
-                r = requests.post(f"{self.base_url}/chat/completions",
+                r = self.session.post(f"{self.base_url}/chat/completions",
                                   headers={"Authorization": f"Bearer {self.key}",
                                            "Content-Type": "application/json"},
                                   json=payload, timeout=self.timeout)

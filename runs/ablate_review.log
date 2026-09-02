@@ -52,3 +52,141 @@ Traceback (most recent call last):
     cands[k]["review_reject"] = v.get("reason", "")
     ~~~~~^^^
 KeyError: ('王子腾', '兄妹', '薛姨妈')
+  复核：612 候选，281 实体组，打包 28 次调用
+== B_护栏: {"review": {"calls": 28, "ok": 299, "reject": 258, "unjudged": 0, "additions": 33, "additions_invalid": 10, "highvote_kept": 1, "flipped": 44, "doubtful": 10}, "triples": 408, "text": {"pred": 321, "hit": 137, "gold": 266, "precision": 0.4237, "recall": 0.515, "f1": 0.4649}, "full": {"pred": 395, "hit": 179, "gold": 266, "precision": 0.4506, "recall": 0.6729, "f1": 0.5398}}
+  复核：612 候选，281 实体组，打包 28 次调用
+  [HTTP 429 tpm][复核 1/28] 第1次，等待45s后重试
+  [TPM节流][复核 1/28] 窗口内已用 38438+预估 38438 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 1/28] 第2次，等待90s后重试
+  [TPM节流][复核 2/28] 窗口内已用 28257+预估 31808 > 40000，等待约 75s
+  [TPM节流][复核 3/28] 窗口内已用 33642+预估 31783 > 40000，等待约 75s
+  [TPM节流][复核 4/28] 窗口内已用 33071+预估 31791 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 4/28] 第1次，等待45s后重试
+  [TPM节流][复核 4/28] 窗口内已用 31791+预估 31791 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 4/28] 第2次，等待90s后重试
+  [TPM节流][复核 5/28] 窗口内已用 41590+预估 31615 > 40000，等待约 75s
+  [TPM节流][复核 6/28] 窗口内已用 45281+预估 31480 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 6/28] 第1次，等待45s后重试
+  [TPM节流][复核 6/28] 窗口内已用 31480+预估 31480 > 40000，等待约 30s
+  [TPM节流][复核 7/28] 窗口内已用 33508+预估 32066 > 40000，等待约 75s
+  [TPM节流][复核 8/28] 窗口内已用 43930+预估 31753 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 8/28] 第1次，等待45s后重试
+  [TPM节流][复核 8/28] 窗口内已用 31753+预估 31753 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 8/28] 第2次，等待90s后重试
+  [HTTP 429 tpm][复核 8/28] 第3次，等待135s后重试
+  [HTTP 429 tpm][复核 8/28] 第4次，等待180s后重试
+  [TPM节流][复核 9/28] 窗口内已用 31278+预估 31813 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 9/28] 第1次，等待45s后重试
+  [TPM节流][复核 9/28] 窗口内已用 31813+预估 31813 > 40000，等待约 30s
+  [TPM节流][复核 10/28] 窗口内已用 21635+预估 31752 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 10/28] 第1次，等待45s后重试
+  [TPM节流][复核 10/28] 窗口内已用 31752+预估 31752 > 40000，等待约 30s
+  [TPM节流][复核 11/28] 窗口内已用 42470+预估 31544 > 40000，等待约 75s
+  [TPM节流][复核 12/28] 窗口内已用 40871+预估 31924 > 40000，等待约 75s
+  [TPM节流][复核 13/28] 窗口内已用 36773+预估 32248 > 40000，等待约 75s
+  [TPM节流][复核 14/28] 窗口内已用 41105+预估 32019 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 14/28] 第1次，等待45s后重试
+  [TPM节流][复核 14/28] 窗口内已用 32019+预估 32019 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 14/28] 第2次，等待90s后重试
+  [HTTP 429 tpm][复核 14/28] 第3次，等待135s后重试
+  [HTTP 429 tpm][复核 14/28] 第4次，等待180s后重试
+  [TPM节流][复核 15/28] 窗口内已用 44421+预估 31934 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 15/28] 第1次，等待45s后重试
+  [TPM节流][复核 15/28] 窗口内已用 31934+预估 31934 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 15/28] 第2次，等待90s后重试
+  [HTTP 429 tpm][复核 15/28] 第3次，等待135s后重试
+  [HTTP 429 tpm][复核 15/28] 第4次，等待180s后重试
+  [TPM节流][复核 16/28] 窗口内已用 30732+预估 32436 > 40000，等待约 75s
+  [TPM节流][复核 17/28] 窗口内已用 28995+预估 32652 > 40000，等待约 75s
+  [HTTP 429 tpm][复核 17/28] 第1次，等待45s后重试
+  [TPM节流][复核 17/28] 窗口内已用 32652+预估 32652 > 40000，等待约 30s
+  [HTTP 429 tpm][复核 17/28] 第2次，等待90s后重试
+  [网络重试1][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+  [HTTP 429 tpm][复核 17/28] 第3次，等待135s后重试
+  [HTTP 429 tpm][复核 17/28] 第4次，等待180s后重试
+  [网络重试2][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+  [网络重试3][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+  [HTTP 429 tpm][复核 17/28] 第5次，等待180s后重试
+  [网络重试4][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+  [网络重试5][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+  [HTTP 429 tpm][复核 17/28] 第6次，等待180s后重试
+  [网络重试6][复核 17/28] HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded w
+Traceback (most recent call last):
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1459, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 305, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.ProxyError: ('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dwt/kgx/kgx/llm.py", line 358, in generate
+    r = requests.post(f"{self.base_url}/chat/completions",
+                      headers={"Authorization": f"Bearer {self.key}",
+                               "Content-Type": "application/json"},
+                      json=payload, timeout=self.timeout)
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/dwt/kgx/.venv/lib/python3.13/site-packages/requests/adapters.py", line 723, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='token.sensenova.cn', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/dwt/kgx/scripts/ablate_review.py", line 34, in <module>
+    adds,rstats=review(llm,schema,reg,cands,allow_additions=True,log=print,guardrails=True)
+                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dwt/kgx/kgx/review.py", line 125, in review
+    result, meta = llm.generate(prompt, response_schema=REVIEW_SCHEMA, max_output_tokens=30000,
+                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                tag=f"[复核 {bi}/{len(batches)}]", thinking="high")
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dwt/kgx/kgx/llm.py", line 366, in generate
+    raise RuntimeError(f"网络失败{tag}")
+RuntimeError: 网络失败[复核 17/28]
