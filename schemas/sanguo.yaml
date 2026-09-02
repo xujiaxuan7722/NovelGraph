@@ -1,0 +1,80 @@
+# 《三国演义》领域 schema —— 框架里唯一允许出现"领域知识"的地方。
+# 只声明类型、方向、约束、推导规则；不允许出现任何具体人物/关系实例。
+name: 三国演义
+language: zh
+
+chunking:
+  chapter_pattern: '^　*第[一二三四五六七八九十百零〇]+回[^\n]*'   # 回目行首有全角空格
+  chapters_per_call: 3
+  max_chars_per_call: 24000
+
+entity_types:
+  人物: 小说中的具体人物（含武将、谋士、帝王、僧道等），不含泛称群体
+  势力: 政权/诸侯集团（如魏、蜀、吴、袁绍军）
+  地点: 城池、州郡、关隘等具体处所
+
+prescan:
+  dialogue_patterns:
+    - '([一-龥]{2,4})(?:大|笑|叹|怒|乃|遂|又|亦|便|急|应|对|答)?曰[：:]'
+    - '([一-龥]{2,4})(?:笑|忙|便|又|大)?(?:道|说道|问道|答道|回道|喝道)[：:]'
+  naming_patterns:
+    - '(?:姓[一-龥]，?名|名唤|名叫|小字|表字|字|别号|道号|乳名|人称|号曰)([一-龥]{1,4})'
+  min_freq: 3
+  surnames: [刘, 关, 张, 曹, 孙, 吕, 赵, 马, 黄, 魏, 周, 鲁, 陆, 姜, 邓, 王, 杨, 袁, 董, 徐, 庞, 法, 许, 典, 甘, 郭, 荀, 贾, 蒋, 费, 钟, 司, 诸]
+  generic_names: [军士, 小校, 使者, 百姓, 细作, 探马, 将军, 军马, 众将, 左右, 从人, 军校]
+
+relation_aliases: {兄弟: 兄妹, 姐妹: 兄妹, 姊妹: 兄妹, 姐弟: 兄妹, 义兄弟: 结义, 拜把: 结义, 主臣: 君臣}
+
+relations:
+  父子: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 父亲→儿子（义子/养子亦可，须文本明言）}
+  父女: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 父亲→女儿}
+  母子: {domain: 人物, range: 人物, directed: true, functional_on: tail,
+         definition: 母亲→儿子}
+  夫妻: {domain: 人物, range: 人物, symmetric: true,
+         definition: 正式婚配（含妾室），许亲未成不算}
+  兄妹: {domain: 人物, range: 人物, symmetric: true,
+         definition: 同辈亲兄弟姐妹（含异母），结义、堂亲不算}
+  堂亲: {domain: 人物, range: 人物, symmetric: true,
+         definition: 同宗族同辈的叔伯/族兄弟（含从弟，如须文本明言）}
+  祖父: {domain: 人物, range: 人物, directed: true,
+         definition: 祖父→孙辈}
+  结义: {domain: 人物, range: 人物, symmetric: true,
+         definition: 结拜兄弟（如桃园三结义），须有结拜事实，普通交好不算}
+  君臣: {domain: 人物, range: 人物, directed: true,
+         definition: 主公→臣属/部将；仅指效力关系确立者，敌对阵营间的暂时归降以文本断言为准}
+  师徒: {domain: 人物, range: 人物, directed: true,
+         definition: 师→徒，须文本明言从学/传授}
+  隶属: {domain: 人物, range: 势力, directed: true,
+         definition: 人物效力的政权/集团（可随剧情变化，按文本断言）}
+  镇守: {domain: 人物, range: 地点, directed: true,
+         definition: 长期驻守/管辖某地；一次攻取、路过不算}
+
+disambiguation:
+  - 结义 vs 君臣：刘关张既结义又有君臣名分，两者可并存，各自要有文本依据
+  - 君臣方向：主公在前、臣属在后；"拜某为军师/大将"即君臣
+  - 兄妹 vs 堂亲 vs 结义：同父母（含异母）为兄妹；同族从兄弟为堂亲；结拜为结义，三者不可混
+  - 义父子（如董卓吕布）记父子，须文本有"义父/义儿"字样
+  - 隶属跟随文本当时断言；某人先后事二主，可有多条隶属，各带证据
+  - 方向：父子/祖孙/君臣/师徒/隶属/镇守一律尊长/主公/人物在前
+
+inference:
+  - name: 同父兄妹
+    if: [["?p", "父子|父女", "?a"], ["?p", "父子|父女", "?b"]]
+    then: ["?a", "兄妹", "?b"]
+  - name: 同母兄妹
+    if: [["?m", "母子", "?a"], ["?m", "母子", "?b"]]
+    then: ["?a", "兄妹", "?b"]
+  - name: 父之父为祖父
+    if: [["?g", "父子", "?f"], ["?f", "父子|父女", "?c"]]
+    then: ["?g", "祖父", "?c"]
+  - name: 父辈兄弟之子女为堂亲
+    if: [["?f1", "父子|父女", "?a"], ["?f1", "兄妹", "?f2"], ["?f2", "父子|父女", "?b"]]
+    then: ["?a", "堂亲", "?b"]
+  - name: 父辈堂亲之子女仍为堂亲
+    if: [["?f1", "父子|父女", "?a"], ["?f1", "堂亲", "?f2"], ["?f2", "父子|父女", "?b"]]
+    then: ["?a", "堂亲", "?b"]
+  - name: 主公之所属即臣属之所属
+    if: [["?lord", "君臣", "?x"], ["?lord", "隶属", "?f"]]
+    then: ["?x", "隶属", "?f"]
