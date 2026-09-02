@@ -47,7 +47,7 @@ relations:
   表亲: {domain: 人物, range: 人物, symmetric: true,
          definition: 姑表、姨表、舅表亲}
   堂亲: {domain: 人物, range: 人物, symmetric: true,
-         definition: 同祖父的叔伯兄弟姐妹}
+         definition: 同宗族同辈的叔伯/族兄弟姐妹（含隔房，不限同祖父）}
   主仆: {domain: 人物, range: 人物, directed: true,
          definition: 主人→其名下的丫鬟/小厮/仆人；仅服侍、倒茶、传话不构成主仆名分}
   居住: {domain: 人物, range: 地点, directed: true,
@@ -85,6 +85,9 @@ inference:
     then: ["?g", "祖母", "?c"]
   - name: 父辈兄弟之子女为堂亲
     if: [["?f1", "父子|父女", "?a"], ["?f1", "兄妹", "?f2"], ["?f2", "父子|父女", "?b"]]
+    then: ["?a", "堂亲", "?b"]
+  - name: 父辈堂亲之子女仍为堂亲     # 09-02 拍板：堂亲取宽口径（含隔房），递归传递
+    if: [["?f1", "父子|父女", "?a"], ["?f1", "堂亲", "?f2"], ["?f2", "父子|父女", "?b"]]
     then: ["?a", "堂亲", "?b"]
   - name: 父与母之兄妹之子女为表亲
     if: [["?x", "父子|父女|母子|母女", "?a"], ["?x", "兄妹", "?y"], ["?y", "父子|父女|母子|母女", "?b"]]

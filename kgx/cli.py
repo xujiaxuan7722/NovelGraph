@@ -140,7 +140,8 @@ def run(args):
     additions, rstats = [], {}
     if not args.no_review:
         additions, rstats = review(llm, schema, registry, cands,
-                                   allow_additions=not args.no_additions, log=log)
+                                   allow_additions=not args.no_additions, log=log,
+                                   guardrails=args.review_guardrails)
         log(f"== 复核：{rstats}")
     fdropped = resolve_functional(schema, cands, log=log)
 
@@ -187,6 +188,7 @@ def main():
     r.add_argument("--tpm", type=int, default=40000, help="仅 sensenova：窗口内 token 预算（撞 429 自动下调）")
     r.add_argument("--tpm-window", type=int, default=75, help="仅 sensenova：节流窗口秒数")
     r.add_argument("--review-thinking", action="store_true", help="复核/别名归并调用开思考（默认全关）")
+    r.add_argument("--review-guardrails", action="store_true", help="复核护栏：否决须给类别、高票保护、方向翻转")
     r.add_argument("--gold", default=None, help="含 predefined_relations 的模块名，如 gold.hongloumeng")
     r.add_argument("--no-prescan", action="store_true")
     r.add_argument("--no-gleaning", action="store_true")

@@ -6,7 +6,8 @@ REVIEW_SCHEMA = {
     "type": "object",
     "properties": {
         "verdicts": {"type": "array", "items": {"type": "object", "properties": {
-            "id": {"type": "integer"}, "ok": {"type": "boolean"}, "reason": {"type": "string"}},
+            "id": {"type": "integer"}, "ok": {"type": "boolean"}, "reason": {"type": "string"},
+            "kind": {"type": "string", "description": "否决类别：方向/类型/证据不足/逻辑矛盾/其他；ok=true 时留空"}},
             "required": ["id", "ok"]}},
         "additions": {"type": "array", "items": {"type": "object", "properties": {
             "head": {"type": "string"}, "relation": {"type": "string"}, "tail": {"type": "string"},
@@ -51,7 +52,43 @@ def _batches(groups, max_items=45):
     return batches
 
 
-def review(llm, schema, registry, cands, allow_additions=True, log=print):
+_KINDS = ("方向", "类型", "证据不足", "逻辑矛盾", "其他")
+
+
+def _guess_kind(v):
+    k = (v.get("kind") or "").strip()
+    if k in _KINDS:
+        return k
+    r = (v.get("reason") or "")
+    if "方向" in r or "应为" in r and "→" in r:
+        return "方向"
+    if "矛盾" in r or "两个父亲" in r or "并非" in r or "不是同一" in r:
+        return "逻辑矛盾"
+    if "证据" in r:
+        return "证据不足"
+    return ""
+
+
+def _flip(schema, registry, cands, k, v, log):
+    """方向类否决：事实保留、头尾翻转后重新过类型检查，并入（或合并到）翻转键"""
+    c = cands[k]
+    h, r, t = c["tail"], c["relation"], c["head"]
+    spec = schema.relations[r]
+    ht, tt = registry.entities[h]["type"], registry.entities[t]["type"]
+    if spec.symmetric or not schema.type_ok(r, ht, tt):
+        return False                      # 对称关系翻转无意义 / 类型不容许 → 视为普通否决（保留原候选交后续判定）
+    cands.pop(k)
+    nk = schema.canon(h, r, t)
+    if nk in cands:
+        cands[nk]["votes"] += c["votes"]
+        cands[nk]["evidences"] = (cands[nk]["evidences"] + c["evidences"])[:3]
+    else:
+        c.update({"head": nk[0], "tail": nk[2], "review": "方向翻转：" + v.get("reason", "")})
+        cands[nk] = c
+    return True
+
+
+def review(llm, schema, registry, cands, allow_additions=True, log=print, guardrails=False):
     """修改 cands（就地删除被否决的），返回 (additions_list, stats)"""
     groups = _group_by_entity(cands)
     batches = _batches(groups)
@@ -81,6 +118,7 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print):
 {chr(10).join(lines)}
 
 请逐条裁决（先推理再下结论）：证据是否真的支持该关系、方向是否正确、与其他候选有无矛盾（一人不会有两个父亲；辈分、身份是否讲得通）、是否把到访当居住/把服侍当主仆。ok=true 表示成立。
+否决（ok=false）时必须给 kind：方向（事实对但头尾反了）/类型/证据不足/逻辑矛盾/其他。
 {"另外，若你确知这些实体之间还有候选里没有的重要关系，可在 additions 中补充（head/tail 用上面出现过的规范名，关系类型限上面所列）。不确定的不要写。" if allow_additions else "不要补充新关系。"}
 
 只输出 JSON。"""
@@ -122,6 +160,21 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print):
             stats["ok"] += 1
             cands[k]["review"] = v.get("reason", "")
         else:
+            if guardrails:
+                kind = _guess_kind(v)
+                votes = cands[k]["votes"]
+                if kind == "方向" and _flip(schema, registry, cands, k, v, log):
+                    stats["flipped"] = stats.get("flipped", 0) + 1
+                    continue
+                if votes >= 3 and kind not in ("逻辑矛盾", "类型"):
+                    # 高票保护：多处独立证据的候选，只有逻辑矛盾/类型错误能否决
+                    stats["highvote_kept"] = stats.get("highvote_kept", 0) + 1
+                    cands[k]["review"] = f"高票保留（{votes}票，否决类别={kind or '未给'}）：" + v.get("reason", "")
+                    continue
+                if not kind:
+                    stats["reject_nokind"] = stats.get("reject_nokind", 0) + 1
+                    cands[k]["review"] = "否决未给类别（保留）：" + v.get("reason", "")
+                    continue
             stats["reject"] += 1
             cands[k]["review_reject"] = v.get("reason", "")
             del cands[k]
