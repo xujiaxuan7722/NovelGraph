@@ -32,5 +32,4 @@ python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
 Provider：默认 `sensenova`（OpenAI 兼容 chat/completions，抽取关思考 `reasoning_effort=none`——默认思考会把
 输出上限全烧在 reasoning 上；`--review-thinking` 仅让复核/归并开思考）。网关会返回 `inference tpm exhausted`
 429，客户端按 token 节流并退避重试，不退出。`gemini` 免费档每日 20 次仅作备用。
-09-01 全书结果（deepseek-v4-flash，实体完全开放、零手写先验）：对 181 条金标准 **F1 35.8%**（P28.8/R47.5，含推导层），
-漏斗 2,767→1,901→612→246→303；v1（手写实体表）为 45.4。进度、漏斗、成本与下一步见 `docs/待办-2026-09-01.md` §6；演进史见 `docs/项目现状与问题.md`。
+09-02 全书结果（deepseek-v4-flash，实体完全开放、零手写先验）：对 v2 金标准（256 条+评估别名表）**F1 47.0%**（P40.0/R57.0，含推导层；v1 旧尺 45.1），超过 v1 手写先验版的 45.4。漏斗 2,767→1,901→612→303→371。金标准 v2 组成与范围声明见 `gold/hongloumeng.py` 文件头；结果、事故复盘、审计与下一步见 `docs/待办-2026-09-01.md` §6–7。

@@ -6,35 +6,35 @@
  ],
  "packs": 44,
  "raw": 2767,
- "validated": 1901,
+ "validated": 1895,
  "dropped": {
-  "无合格证据（证据不在原文或未同时提及双方）": 680,
+  "无合格证据（证据不在原文或未同时提及双方）": 682,
   "关系不在闭集": 72,
-  "实体未登记": 63,
+  "实体未登记": 67,
   "头尾相同": 8,
   "类型不符": 43
  },
- "candidates": 250,
+ "candidates": 305,
  "review": {
-  "calls": 27,
-  "ok": 246,
-  "reject": 359,
+  "calls": 28,
+  "ok": 303,
+  "reject": 305,
   "unjudged": 0,
-  "additions": 16,
-  "additions_invalid": 2,
-  "doubtful": 7
+  "additions": 23,
+  "additions_invalid": 7,
+  "doubtful": 4
  },
- "functional_dropped": 3,
- "additions": 16,
- "inferred": 37,
- "registry": 599,
+ "functional_dropped": 2,
+ "additions": 23,
+ "inferred": 43,
+ "registry": 601,
  "llm": {
-  "calls": 27,
+  "calls": 28,
   "cached": 0,
-  "prompt_tokens": 86072,
-  "output_tokens": 44574,
+  "prompt_tokens": 90071,
+  "output_tokens": 45117,
   "thought_tokens": 0,
-  "seconds": 486.81868386268616
+  "seconds": 874.0246932506561
  },
- "seconds": 906
+ "seconds": 4589
 }
