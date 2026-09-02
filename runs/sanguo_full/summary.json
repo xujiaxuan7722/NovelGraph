@@ -1,0 +1,41 @@
+{
+ "schema": "三国演义",
+ "chapters": [
+  1,
+  120
+ ],
+ "packs": 40,
+ "raw": 4666,
+ "validated": 3703,
+ "dropped": {
+  "类型不符": 124,
+  "无合格证据（证据不在原文或未同时提及双方）": 578,
+  "头尾相同": 130,
+  "实体未登记": 93,
+  "关系不在闭集": 38
+ },
+ "candidates": 946,
+ "review": {
+  "calls": 64,
+  "ok": 860,
+  "reject": 719,
+  "unjudged": 31,
+  "additions": 103,
+  "additions_invalid": 16,
+  "flipped": 74,
+  "highvote_kept": 35
+ },
+ "functional_dropped": 3,
+ "additions": 103,
+ "inferred": 762,
+ "registry": 1971,
+ "llm": {
+  "calls": 163,
+  "cached": 0,
+  "prompt_tokens": 2394248,
+  "output_tokens": 2246981,
+  "thought_tokens": 1324541,
+  "seconds": 16652.212283611298
+ },
+ "seconds": 31419
+}
