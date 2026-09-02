@@ -162,8 +162,9 @@ def run(args):
         import importlib
         mod = importlib.import_module(args.gold)
         gold = getattr(mod, "predefined_relations")
+        gold_aliases = getattr(mod, "aliases", {})
         for layers in (("LLM抽取",), ("LLM抽取", "模型知识"), ("LLM抽取", "模型知识", "推导")):
-            ev = eval_against_gold(schema, registry, triples, gold, layers)
+            ev = eval_against_gold(schema, registry, triples, gold, layers, gold_aliases=gold_aliases)
             log(f"== 评估 {'+'.join(layers)}：P={ev['precision']:.1%} R={ev['recall']:.1%} F1={ev['f1']:.1%} "
                 f"(pred {ev['pred']} / gold {ev['gold']} / hit {ev['hit']})")
             json.dump(ev, open(os.path.join(args.out, f"eval_{len(layers)}.json"), "w", encoding="utf-8"),

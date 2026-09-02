@@ -27,26 +27,49 @@ def resolve_gold_name(schema, registry, name):
     return name
 
 
-def eval_against_gold(schema, registry, triples, gold_triples, layers=("LLM抽取",)):
-    def canon_gold(h, r, t):
-        hh, tt = resolve_gold_name(schema, registry, h), resolve_gold_name(schema, registry, t)
-        return schema.canon(hh, r, tt)
-    gold = {canon_gold(*g) for g in gold_triples}
+def _variants(schema, registry, name, gold_aliases):
+    """金标准名字的全部可接受形：本名 + 别名表各形 + 各自的登记簿解析 + 括号/去姓兜底"""
+    out = {name}
+    for form in [name] + list(gold_aliases.get(name, ())):
+        out.add(form)
+        r = registry.resolve(form)
+        if r:
+            out.add(r)
+    r = resolve_gold_name(schema, registry, name)
+    out.add(r)
+    return out
+
+
+def eval_against_gold(schema, registry, triples, gold_triples, layers=("LLM抽取",), gold_aliases=None):
+    """按条匹配：每条金标准展开成变体三元组集合，预测命中任一变体即中；
+    精度按"预测是否命中任何一条金标准的任一变体"计。gold_aliases 来自金标准模块的 aliases 表（评估专用）。"""
+    gold_aliases = gold_aliases or {}
     pred = {schema.canon(t["head"], t["relation"], t["tail"])
             for t in triples if t.get("source") in layers}
-    tp = pred & gold
-    p = len(tp) / len(pred) if pred else 0.0
-    r = len(tp) / len(gold) if gold else 0.0
+    items = []
+    all_variants = set()
+    for h, rr, t in gold_triples:
+        vs = {schema.canon(hh, rr, tt)
+              for hh in _variants(schema, registry, h, gold_aliases)
+              for tt in _variants(schema, registry, t, gold_aliases)}
+        items.append(((h, rr, t), vs))
+        all_variants |= vs
+    matched = [(g, bool(vs & pred)) for g, vs in items]
+    hit = sum(1 for _, m in matched if m)
+    tp_pred = pred & all_variants
+    p = len(tp_pred) / len(pred) if pred else 0.0
+    r = hit / len(items) if items else 0.0
     f1 = 2 * p * r / (p + r) if p + r else 0.0
     by_rel = defaultdict(lambda: [0, 0])
-    for h, rr, t in gold:
+    for (h, rr, t), m in matched:
         by_rel[rr][1] += 1
-        if (h, rr, t) in tp:
+        if m:
             by_rel[rr][0] += 1
-    return {"layers": list(layers), "pred": len(pred), "gold": len(gold), "hit": len(tp),
+    return {"layers": list(layers), "pred": len(pred), "gold": len(items), "hit": hit,
             "precision": round(p, 4), "recall": round(r, 4), "f1": round(f1, 4),
             "by_relation": {k: f"{v[0]}/{v[1]}" for k, v in sorted(by_rel.items(), key=lambda x: -x[1][1])},
-            "missed": sorted(gold - pred)[:40], "extra_sample": sorted(pred - gold)[:40]}
+            "missed": sorted(str(g) for g, m in matched if not m)[:40],
+            "extra_sample": sorted(pred - all_variants)[:40]}
 
 
 def sample_for_human(triples, n=50, seed=7, path=None):

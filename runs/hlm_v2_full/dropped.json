@@ -1761,6 +1761,21 @@
  {
   "head": "贾府",
   "relation": "家族",
+  "tail": "宝玉",
+  "evidence": "秦钟道：‘不瞒列位，就是荣国公的孙子，小名宝玉的。'",
+  "confidence": "high",
+  "pack": "p006",
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "round": 1,
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
+ },
+ {
+  "head": "贾府",
+  "relation": "家族",
   "tail": "贾琏",
   "evidence": "贾琏笑道：‘……咱们家这些所有的管家奶奶们……'",
   "confidence": "medium",
@@ -1789,6 +1804,51 @@
   "reason": "无合格证据（证据不在原文或未同时提及双方）"
  },
  {
+  "head": "贾宝玉",
+  "relation": "主仆",
+  "tail": "茗烟",
+  "evidence": "茗烟道：‘秦相公不中用了！'宝玉听说，吓了一跳……",
+  "confidence": "high",
+  "pack": "p006",
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "round": 1,
+  "reason": "实体未登记:贾宝玉"
+ },
+ {
+  "head": "贾宝玉",
+  "relation": "主仆",
+  "tail": "袭人",
+  "evidence": "袭人倒了茶来，见身边佩物一件无存……",
+  "confidence": "high",
+  "pack": "p006",
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "round": 1,
+  "reason": "实体未登记:贾宝玉"
+ },
+ {
+  "head": "贾宝玉",
+  "relation": "主仆",
+  "tail": "李贵",
+  "evidence": "李贵忙劝道：‘不可，不可！秦相公是弱症……'",
+  "confidence": "high",
+  "pack": "p006",
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "round": 1,
+  "reason": "实体未登记:贾宝玉"
+ },
+ {
   "head": "妙玉",
   "relation": "居住",
   "tail": "牟尼院",
@@ -1808,6 +1868,21 @@
   "relation": "家族",
   "tail": "贾府",
   "evidence": "贾琏道：“这何用说呢！不然，这会子忙的是什么？”",
+  "confidence": "medium",
+  "pack": "p006",
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "round": 2,
+  "reason": "无合格证据（证据不在原文或未同时提及双方）"
+ },
+ {
+  "head": "宝玉",
+  "relation": "家族",
+  "tail": "贾府",
+  "evidence": "咱们家正在姑苏扬州一带监造海舫，修理海塘，只预备接驾一次",
   "confidence": "medium",
   "pack": "p006",
   "chapters": [
@@ -2147,6 +2222,21 @@
   ],
   "round": 2,
   "reason": "实体未登记:花家"
+ },
+ {
+  "head": "贾芸",
+  "relation": "父子",
+  "tail": "贾宝玉",
+  "evidence": "贾芸笑道：“俗语说的，‘摇车里的爷爷，拄拐的孙孙’。虽然岁数大，山高高不过太阳。",
+  "confidence": "high",
+  "pack": "p008",
+  "chapters": [
+   22,
+   23,
+   24
+  ],
+  "round": 1,
+  "reason": "实体未登记:贾宝玉"
  },
  {
   "head": "贾母",
