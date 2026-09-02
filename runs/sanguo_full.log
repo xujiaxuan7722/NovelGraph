@@ -1,0 +1,87 @@
+== 外壳第 1 次启动 2026-09-02_18:51:09
+== 三国演义：章节 1-120（120 章，40 个打包块）模型 sensenova/deepseek-v4-flash（复核开思考）
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.289 seconds.
+Prefix dict has been built successfully.
+  预扫描 Phase1：400 候选
+  [HTTP 429 tpm][预扫描] 第1次，等待45s后重试
+  [TPM节流][预扫描] 窗口内已用 44029+预估 44029 > 40000，等待约 30s
+  [HTTP 429 tpm][预扫描] 第2次，等待90s后重试
+  [HTTP 429 tpm][预扫描] 第3次，等待135s后重试
+  预扫描 Phase2：词典 31 实体 → 登记簿初始化
+  [TPM节流][抽取 第1–3章] 窗口内已用 27654+预估 34220 > 40000，等待约 75s
+  [TPM节流][补抽 第1–3章] 窗口内已用 25427+预估 28462 > 40000，等待约 75s
+  [HTTP 429 tpm][补抽 第1–3章] 第1次，等待45s后重试
+  [TPM节流][补抽 第1–3章] 窗口内已用 28462+预估 28462 > 40000，等待约 30s
+  抽取 第1–3章：关系 227 条（补抽 42），新实体 +131（拒 0）｜登记簿 155｜LLM调用 3 次（缓存命中 0）｜输入 60283 输出 24405 思考 0 tokens｜近5h 3 次 84688 tokens｜TPM预算 40000
+  [TPM节流][抽取 第4–6章] 窗口内已用 31607+预估 34976 > 40000，等待约 75s
+  第4–6章 疑似重复输出循环：原始 525 条 / 三元组 99 种 / 证据 81 句，拆成单章重抽
+  [TPM节流][抽取 第4章] 窗口内已用 48394+预估 28152 > 40000，等待约 75s
+  [TPM节流][抽取 第5章] 窗口内已用 23526+预估 29400 > 40000，等待约 73s
+  [HTTP 429 tpm][抽取 第5章] 第1次，等待45s后重试
+  [TPM节流][抽取 第5章] 窗口内已用 29400+预估 29400 > 40000，等待约 30s
+  [TPM节流][补抽 第5章] 窗口内已用 24054+预估 22886 > 40000，等待约 75s
+  [HTTP 429 tpm][补抽 第5章] 第1次，等待45s后重试
+  [TPM节流][补抽 第5章] 窗口内已用 22886+预估 22886 > 40000，等待约 30s
+  [TPM节流][抽取 第6章] 窗口内已用 13606+预估 28840 > 40000，等待约 75s
+  抽取 第4–6章：关系 352 条（补抽 0，循环拆章），新实体 +193（拒 99）｜登记簿 268｜LLM调用 10 次（缓存命中 0）｜输入 142322 输出 79768 思考 0 tokens｜近5h 10 次 222090 tokens｜TPM预算 40000
+  [TPM节流][抽取 第7–9章] 窗口内已用 27822+预估 37155 > 40000，等待约 73s
+  [TPM节流][补抽 第7–9章] 窗口内已用 23371+预估 28401 > 40000，等待约 75s
+  抽取 第7–9章：关系 70 条（补抽 6），新实体 +81（拒 15）｜登记簿 312｜LLM调用 12 次（缓存命中 0）｜输入 181981 输出 88210 思考 0 tokens｜近5h 12 次 270191 tokens｜TPM预算 40000
+  [TPM节流][抽取 第10–12章] 窗口内已用 24730+预估 38194 > 40000，等待约 75s
+  第10–12章 疑似重复输出循环：原始 711 条 / 三元组 74 种 / 证据 95 句，拆成单章重抽
+  [TPM节流][抽取 第10章] 窗口内已用 51968+预估 30939 > 40000，等待约 75s
+  [HTTP 429 tpm][补抽 第10章] 第1次，等待45s后重试
+  [TPM节流][补抽 第10章] 窗口内已用 36044+预估 20924 > 40000，等待约 30s
+  [HTTP 429 tpm][补抽 第10章] 第2次，等待90s后重试
+  [HTTP 429][补抽 第10章] 等待180s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待240s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第10章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [TPM节流][抽取 第11章] 窗口内已用 15947+预估 32255 > 40000，等待约 75s
+  [HTTP 429][抽取 第11章] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第11章] 等待120s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [TPM节流][抽取 第12章] 窗口内已用 35847+预估 31449 > 40000，等待约 46s
+  抽取 第10–12章：关系 137 条（补抽 4，循环拆章），新实体 +166（拒 28）｜登记簿 387｜LLM调用 19 次（缓存命中 0）｜输入 280902 输出 138811 思考 0 tokens｜近5h 19 次 419713 tokens｜TPM预算 40000
+  [TPM节流][抽取 第13–15章] 窗口内已用 30640+预估 43400 > 40000，等待约 66s
+  第13–15章 疑似重复输出循环：原始 592 条 / 三元组 123 种 / 证据 98 句，拆成单章重抽
+  [TPM节流][抽取 第13章] 窗口内已用 57621+预估 33624 > 40000，等待约 75s
+  [TPM节流][补抽 第13章] 窗口内已用 20835+预估 24184 > 40000，等待约 75s
+  [HTTP 429][补抽 第13章] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第13章] 等待120s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第13章] 等待180s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第13章] 等待240s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][补抽 第13章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [TPM节流][抽取 第14章] 窗口内已用 21249+预估 34200 > 40000，等待约 75s
+  [HTTP 429][抽取 第14章] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第14章] 等待120s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第14章] 等待180s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第14章] 等待240s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第14章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第14章] 等待300s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  第14章 关系密度 0.0 条/千字 偏低，换措辞再通读一次
+  [TPM节流][抽取 第14章 二读] 窗口内已用 47578+预估 34288 > 40000，等待约 75s
+  [TPM节流][补抽 第14章] 窗口内已用 19937+预估 24333 > 40000，等待约 75s
+  [TPM节流][抽取 第15章] 窗口内已用 20083+预估 34984 > 40000，等待约 75s
+  第15章 疑似重复输出循环：原始 585 条 / 三元组 51 种 / 证据 38 句，去重后再通读一次
+  [TPM节流][抽取 第15章 二读] 窗口内已用 48559+预估 35536 > 40000，等待约 75s
+  [TPM节流][补抽 第15章] 窗口内已用 20719+预估 26772 > 40000，等待约 75s
+  抽取 第13–15章：关系 223 条（补抽 29，循环拆章），新实体 +343（拒 1095）｜登记簿 499｜LLM调用 28 次（缓存命中 0）｜输入 438874 输出 268281 思考 0 tokens｜近5h 28 次 707155 tokens｜TPM预算 40000
+  [TPM节流][抽取 第16–18章] 窗口内已用 30861+预估 41635 > 40000，等待约 75s
+  [HTTP 429][抽取 第16–18章] 等待60s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429][抽取 第16–18章] 等待120s后重试… {"error":{"message":"Allocated quota exceeded, please increase your quota limit.","type":"invalid_re
+  [HTTP 429 tpm][抽取 第16–18章] 第3次，等待135s后重试
+  第16–18章 关系密度 0.0 条/千字 偏低，换措辞再通读一次
+  [TPM节流][抽取 第16–18章 二读] 窗口内已用 55906+预估 44375 > 40000，等待约 75s
+  [HTTP 429 tpm][抽取 第16–18章 二读] 第1次，等待45s后重试
+  [TPM节流][抽取 第16–18章 二读] 窗口内已用 44375+预估 44375 > 40000，等待约 30s
+  [TPM节流][补抽 第16–18章] 窗口内已用 42161+预估 37243 > 40000，等待约 75s
+  抽取 第16–18章：关系 142 条（补抽 0，二读），新实体 +607（拒 845）｜登记簿 681｜LLM调用 31 次（缓存命中 0）｜输入 519188 输出 315541 思考 0 tokens｜近5h 31 次 834729 tokens｜TPM预算 40000
+  [TPM节流][抽取 第19–21章] 窗口内已用 29507+预估 45096 > 40000，等待约 75s

@@ -37,7 +37,10 @@ EXTRACT_SCHEMA = {
 
 
 def build_prompt(schema, registry, pack, gleaning_prev=None):
-    known = registry.render()
+    # 登记簿写进 prompt 时按提及数截取前 N（schema.chunking.registry_max_items，默认不截）。
+    # 三国类人物极多的书，全量渲染会让 prompt 随进度线性膨胀（09-02 实测 6 块即 681 实体）。
+    # 被截掉的实体仍在 alias_index 里：抽取端点解析、校验均不受影响，只是模型看不到其身份行。
+    known = registry.render(max_items=schema.chunking.get("registry_max_items"))
     head = f"""你是《{schema.name}》知识图谱的阅读抽取员。下面给出【已登记实体】和【原文】（{pack.label}），请完成两项工作。
 
 {schema.describe_for_prompt()}

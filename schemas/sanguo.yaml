@@ -7,6 +7,7 @@ chunking:
   chapter_pattern: '^　*第[一二三四五六七八九十百零〇]+回[^\n]*'   # 回目行首有全角空格
   chapters_per_call: 3
   max_chars_per_call: 24000
+  registry_max_items: 400      # 抽取 prompt 里登记簿最多渲染前 400 个（按提及数）
 
 entity_types:
   人物: 小说中的具体人物（含武将、谋士、帝王、僧道等），不含泛称群体
