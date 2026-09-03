@@ -70,7 +70,7 @@
   .bar-row .bar{height:8px;border-radius:2px;background:var(--cinnabar)}
   .bar-row .v{font-size:10px;color:var(--ink3)}
   .graph-card{flex:1 1 420px;display:flex;flex-direction:column;min-width:0;background:var(--card);
-              border:1px solid var(--line);border-radius:6px;overflow:hidden}
+              border:1px solid var(--line);border-radius:6px;overflow:hidden;position:relative}
   .graph-head{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line2);flex-wrap:wrap}
   .graph-head b{font-size:15px;letter-spacing:1px;margin-right:4px}
   .fchip{font-size:11px;border:1px solid var(--line3);color:var(--ink2);border-radius:12px;
@@ -91,9 +91,11 @@
   .pnode.end{background:var(--cinnabar);color:var(--card);border-color:var(--cinnabar)}
   .prel{font-size:10px;color:var(--ink2);padding:0 7px}
   .muted{font-size:11px;color:var(--ink4);margin-top:6px}
-  #entityPanel{display:none;position:fixed;top:82px;right:16px;width:330px;max-height:calc(100vh - 120px);
-    overflow-y:auto;z-index:60;box-shadow:-4px 8px 28px rgba(43,39,34,.22);border-color:var(--line3)}
-  @media (max-width:980px){#entityPanel{width:calc(100% - 32px);top:auto;bottom:12px;max-height:60vh}}
+  #entityPanel{display:none;position:absolute;top:54px;right:12px;width:330px;
+    max-height:calc(100% - 112px);overflow-y:auto;z-index:60;
+    box-shadow:-4px 8px 28px rgba(43,39,34,.22);border-color:var(--line3)}
+  @media (max-width:980px){#entityPanel{position:fixed;width:calc(100% - 32px);top:auto;right:16px;
+    bottom:12px;max-height:60vh}}
   .back{background:transparent;border:1px solid var(--indigo);color:var(--indigo);font-size:11px;
         padding:3px 10px;border-radius:3px}
   @media (max-width:980px){main{flex-direction:column;height:auto}.col-left{width:100%}#graph{height:440px}
@@ -115,8 +117,6 @@
 </header>
 <main>
   <div class="col-left">
-    <div class="card" id="entityPanel"></div>
-
     <div class="card">
       <h2>关系查询 <span class="hint">人名 + 关系词，如"贾母 丫鬟"</span></h2>
       <div class="row">
@@ -160,6 +160,7 @@
       <button class="fchip" onclick="resetGraph()">重置</button>
     </div>
     <div id="graph"></div>
+    <div class="card" id="entityPanel"></div>
     <div class="evidence" id="edgeInfo">点击连线查看该关系的证据与来源 · 点击节点聚焦人物 · 拖拽平移 · 滚轮缩放</div>
   </div>
 </main>
