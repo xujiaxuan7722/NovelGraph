@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NovelGraph 面板</title>
+<script src="echarts.min.js"></script>
+<style>
+  :root{--bg:#14161a;--panel:#1d2026;--line:#2c3038;--fg:#d8dbe2;--dim:#8a90a0;--acc:#e8b04a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 "Noto Sans SC",system-ui,sans-serif;height:100vh;display:flex;flex-direction:column}
+  header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+  header h1{font-size:16px;margin:0 12px 0 0;color:var(--acc);letter-spacing:1px}
+  select,input,button{background:#262a32;color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:13px}
+  button{cursor:pointer}button:hover{border-color:var(--acc)}
+  label.chk{color:var(--dim);font-size:13px;user-select:none;cursor:pointer}
+  #stats{padding:6px 16px;font-size:12.5px;color:var(--dim);border-bottom:1px solid var(--line)}
+  #stats b{color:var(--acc);font-weight:600}
+  main{flex:1;display:flex;min-height:0}
+  #graph{flex:1;min-width:0}
+  #side{width:320px;border-left:1px solid var(--line);background:var(--panel);padding:14px;overflow-y:auto}
+  #side h3{margin:0 0 8px;font-size:14px;color:var(--acc)}
+  #side .kv{margin:4px 0;font-size:13px}#side .kv span{color:var(--dim)}
+  .ev{background:#262a32;border-left:3px solid var(--acc);padding:6px 8px;margin:6px 0;font-size:12.5px;border-radius:0 6px 6px 0}
+  .tag{display:inline-block;background:#2c3038;border-radius:4px;padding:0 6px;margin:1px 3px 1px 0;font-size:12px;color:var(--dim)}
+  .hint{color:var(--dim);font-size:12.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>NovelGraph</h1>
+  <select id="runSel"></select>
+  <input id="q" placeholder="搜索实体（回车聚焦）" size="16" list="names"><datalist id="names"></datalist>
+  <select id="hop"><option value="1">1 跳</option><option value="2">2 跳</option></select>
+  <span style="border-left:1px solid var(--line);height:20px"></span>
+  <label class="chk"><input type="checkbox" class="layer" value="LLM抽取" checked> 文本抽取</label>
+  <label class="chk"><input type="checkbox" class="layer" value="模型知识" checked> 模型知识</label>
+  <label class="chk"><input type="checkbox" class="layer" value="推导" checked> 推导</label>
+  <select id="relSel"><option value="">全部关系</option></select>
+  <input id="minVotes" type="number" min="0" value="0" style="width:56px" title="最低票数">
+  <button id="btnTop">主要人物图</button>
+  <button id="btnAll">全图</button>
+</header>
+<div id="stats"></div>
+<main>
+  <div id="graph"></div>
+  <div id="side"><h3>说明</h3>
+    <p class="hint">点<b>边</b>看证据与推导链；点<b>节点</b>看身份并可聚焦。边样式：实线=文本抽取，虚线=模型知识，点线=推导；粗细=票数。</p>
+  </div>
+</main>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const chart=echarts.init($('#graph'),null,{renderer:'canvas'});
+const TYPE_COLORS={'人物':'#e8b04a','地点':'#5aa9e6','家族':'#9d6ee8','势力':'#e6655a'};
+const LAYER_STYLE={'LLM抽取':{type:'solid'},'模型知识':{type:'dashed'},'推导':{type:'dotted'}};
+let DATA=null, focusName=null;
+
+async function loadRuns(){
+  const runs=await (await fetch('/api/runs')).json();
+  $('#runSel').innerHTML=runs.map(r=>`<option value="${r.name}">${r.book||r.name}（${r.name}）</option>`).join('');
+  const want=new URLSearchParams(location.search).get('run');
+  if(runs.length) loadRun((want&&runs.some(r=>r.name===want))?want:(runs.find(r=>r.name.includes('full'))?.name||runs[0].name));
+}
+async function loadRun(name){
+  $('#runSel').value=name;
+  DATA=await (await fetch('/api/run?name='+encodeURIComponent(name))).json();
+  const rels=[...new Set(DATA.triples.map(t=>t.relation))];
+  $('#relSel').innerHTML='<option value="">全部关系</option>'+rels.map(r=>`<option>${r}</option>`).join('');
+  $('#names').innerHTML=Object.keys(DATA.registry).map(n=>`<option>${n}</option>`).join('');
+  const s=DATA.summary||{}, e=DATA.eval;
+  const cnt={};DATA.triples.forEach(t=>cnt[t.source]=(cnt[t.source]||0)+1);
+  $('#stats').innerHTML=`图谱 <b>${DATA.triples.length}</b> 条（文本 ${cnt['LLM抽取']||0} / 模型知识 ${cnt['模型知识']||0} / 推导 ${cnt['推导']||0}）｜实体 <b>${Object.keys(DATA.registry).length}</b>`+
+    (e?`｜对金标准 P <b>${(e.precision*100).toFixed(1)}%</b> R <b>${(e.recall*100).toFixed(1)}%</b> F1 <b>${(e.f1*100).toFixed(1)}%</b>`:'')+
+    (s.seconds?`｜跑批 ${Math.round(s.seconds/60)} 分钟`:'');
+  focusTop();
+}
+function mentions(n){return (DATA.registry[n]||{}).mentions||1}
+function currentTriples(){
+  const layers=new Set($$('.layer').filter(c=>c.checked).map(c=>c.value));
+  const rel=$('#relSel').value, mv=+$('#minVotes').value||0;
+  return DATA.triples.filter(t=>layers.has(t.source)&&(!rel||t.relation===rel)&&((t.votes||0)>=mv||t.source!=='LLM抽取'));
+}
+function neighborhood(name,hops){
+  let keep=new Set([name]);
+  for(let i=0;i<hops;i++){
+    const add=new Set();
+    currentTriples().forEach(t=>{if(keep.has(t.head)||keep.has(t.tail)){add.add(t.head);add.add(t.tail);}});
+    add.forEach(x=>keep.add(x));
+  }
+  return currentTriples().filter(t=>keep.has(t.head)&&keep.has(t.tail));
+}
+function render(triples,title){
+  const deg={};triples.forEach(t=>{deg[t.head]=(deg[t.head]||0)+1;deg[t.tail]=(deg[t.tail]||0)+1;});
+  const nNodes=Object.keys(deg).length, labelAll=nNodes<80;
+  const nodes=Object.keys(deg).map(n=>{const ty=(DATA.registry[n]||{}).type||'人物';return{
+    id:n,name:n,symbolSize:Math.min(9+Math.sqrt(deg[n])*4+(n===focusName?6:0),42),
+    itemStyle:{color:TYPE_COLORS[ty]||'#8a90a0',borderColor:n===focusName?'#fff':'transparent',borderWidth:2},
+    label:{show:deg[n]>1||labelAll,color:'#d8dbe2',fontSize:11}};});
+  const links=triples.map((t,i)=>({source:t.head,target:t.tail,_i:i,
+    lineStyle:{width:Math.min(1+Math.log2((t.votes||1)+1),5),...LAYER_STYLE[t.source],color:t.source==='推导'?'#7a8fb5':(t.source==='模型知识'?'#b58a7a':'#5f6672'),curveness:.12},
+    label:{show:triples.length<=120,formatter:t.relation,fontSize:10,color:'#8a90a0'}}));
+  chart.setOption({title:{text:title,left:12,top:8,textStyle:{color:'#8a90a0',fontSize:12,fontWeight:'normal'}},
+    tooltip:{show:false},animationDuration:400,
+    series:[{type:'graph',layout:'force',roam:true,data:nodes,links:links,
+      force:{repulsion:triples.length>400?90:220,edgeLength:triples.length>400?40:90,gravity:.12},
+      emphasis:{focus:'adjacency'},lineStyle:{opacity:.85}}]},true);
+}
+function showEdge(t){
+  let html=`<h3>${t.head} —${t.relation}→ ${t.tail}</h3>
+  <div class="kv"><span>来源层：</span>${t.source}　<span>票数：</span>${t.votes||0}</div>`;
+  (t.evidences||[t.evidence]).filter(Boolean).forEach(e=>html+=`<div class="ev">${e}</div>`);
+  if(t.evidence_src) html+=`<div class="kv"><span>证据来源：</span>${t.evidence_src}</div>`;
+  if(t.review) html+=`<div class="kv"><span>复核：</span>${t.review}</div>`;
+  if(t.reason) html+=`<div class="kv"><span>模型理由：</span>${t.reason}</div>`;
+  if(t.rule){html+=`<div class="kv"><span>推导规则：</span>${t.rule}</div>`;(t.support||[]).forEach(s=>html+=`<span class="tag">${s}</span>`);}
+  if(t.chapters&&t.chapters.length) html+=`<div class="kv"><span>章节：</span>${t.chapters.slice(0,12).join('、')}</div>`;
+  $('#side').innerHTML=html;
+}
+function showNode(n){
+  const e=DATA.registry[n]||{};
+  let html=`<h3>${n} <span class="tag">${e.type||'?'}</span></h3>`;
+  if(e.identity) html+=`<div class="kv">${e.identity}</div>`;
+  if((e.aliases||[]).length) html+=`<div class="kv"><span>别名：</span>${e.aliases.map(a=>`<span class="tag">${a}</span>`).join('')}</div>`;
+  html+=`<div class="kv"><span>提及：</span>${e.mentions||0} 次</div>
+  <button onclick="focusEntity('${n}')">以此为中心聚焦</button>`;
+  $('#side').innerHTML=html;
+}
+window.focusEntity=function(n){focusName=n;$('#q').value=n;
+  render(neighborhood(n,+$('#hop').value),`聚焦：${n}（${$('#hop').value} 跳）`);};
+function focusTop(){
+  const deg={};DATA.triples.forEach(t=>{deg[t.head]=(deg[t.head]||0)+1;deg[t.tail]=(deg[t.tail]||0)+1;});
+  const top=Object.entries(deg).filter(([n])=> (DATA.registry[n]||{}).type==='人物')
+    .sort((a,b)=>b[1]-a[1])[0];
+  if(top) focusEntity(top[0]); else showAll();
+}
+function showAll(){focusName=null;render(currentTriples(),'全图');}
+function topGraph(){focusName=null;
+  const tris=currentTriples().filter(t=>t.source!=='推导'?(t.votes||0)>=2:true);
+  const deg={};tris.forEach(t=>{deg[t.head]=(deg[t.head]||0)+1;deg[t.tail]=(deg[t.tail]||0)+1;});
+  const keep=new Set(Object.entries(deg).sort((a,b)=>b[1]-a[1]).slice(0,60).map(x=>x[0]));
+  render(tris.filter(t=>keep.has(t.head)&&keep.has(t.tail)),'主要人物图（度数前 60）');}
+chart.on('click',p=>{if(p.dataType==='edge'){const t=currentTriples()[p.data._i]||null;
+  // _i 基于渲染时的数组；聚焦模式下需按端点+关系找回
+  const cand=DATA.triples.find(x=>x.head===p.data.source&&x.tail===p.data.target)||t;
+  if(cand)showEdge(cand);}else if(p.dataType==='node'){showNode(p.data.id);}});
+$('#runSel').onchange=e=>loadRun(e.target.value);
+$('#q').addEventListener('keydown',e=>{if(e.key==='Enter'&&DATA.registry[e.target.value])focusEntity(e.target.value);});
+$('#hop').onchange=()=>focusName&&focusEntity(focusName);
+$$('.layer').forEach(c=>c.onchange=()=>focusName?focusEntity(focusName):showAll());
+$('#relSel').onchange=()=>focusName?focusEntity(focusName):showAll();
+$('#minVotes').onchange=()=>focusName?focusEntity(focusName):showAll();
+$('#btnAll').onclick=showAll;$('#btnTop').onclick=topGraph;
+window.onresize=()=>chart.resize();
+loadRuns();
+</script>
+</body>
+</html>
