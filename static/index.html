@@ -14,10 +14,10 @@
     --indigo:#3d5a66; --gold:#b8860b; --bamboo:#5a7247; --violet:#7a5aa0;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);
+  body{margin:0;background:var(--paper);color:var(--ink);overflow-x:clip;
        font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',SimSun,serif}
-  header{display:flex;align-items:center;gap:16px;padding:12px 24px;border-bottom:1px solid var(--line);
-         background:linear-gradient(180deg,var(--paper2),var(--paper))}
+  header{display:flex;align-items:center;gap:12px 16px;padding:12px 20px;border-bottom:1px solid var(--line);
+         background:linear-gradient(180deg,var(--paper2),var(--paper));flex-wrap:wrap}
   .seal{width:40px;height:40px;background:var(--cinnabar);color:var(--card);display:flex;align-items:center;
         justify-content:center;font-size:14px;line-height:1.1;text-align:center;border-radius:4px;
         box-shadow:0 1px 0 var(--cinnabar-dark);flex-shrink:0}
@@ -28,7 +28,8 @@
     border:1px solid var(--line3);border-radius:14px;background:transparent;color:var(--ink2)}
   .books button.on{background:var(--cinnabar);border-color:var(--cinnabar);color:var(--card)}
   .search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--card);
-          border:1px solid var(--line3);border-radius:20px;padding:7px 14px;width:300px;position:relative}
+          border:1px solid var(--line3);border-radius:20px;padding:7px 14px;flex:1 1 220px;
+          min-width:180px;max-width:320px;position:relative}
   .sugwrap{position:relative;flex:1;display:flex}
   .sugbox{position:absolute;top:calc(100% + 6px);left:0;min-width:100%;z-index:50;background:var(--card);
           border:1px solid var(--line);border-radius:6px;box-shadow:0 6px 18px rgba(43,39,34,.14);
@@ -38,10 +39,10 @@
   .sug-item:hover{background:var(--paper2)}
   .sug-item .tp{font-size:11px;color:var(--ink4)}
   .search input{border:0;outline:0;background:transparent;font:inherit;font-size:13px;width:100%;color:var(--ink)}
-  main{display:flex;gap:16px;padding:16px 20px;height:calc(100vh - 66px);min-height:560px}
-  .col-left{display:flex;flex-direction:column;gap:14px;width:380px;flex-shrink:0;overflow-y:auto}
+  main{display:flex;gap:16px;padding:16px 20px;height:calc(100vh - 66px);min-height:560px;min-width:0}
+  .col-left{display:flex;flex-direction:column;gap:14px;width:380px;flex-shrink:0;overflow-y:auto;overflow-x:hidden}
   .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
-  .card h2{font-size:15px;margin:0 0 10px;letter-spacing:1px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .card h2{font-size:15px;margin:0 0 10px;letter-spacing:1px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .card h2 .hint{font-size:11px;color:var(--ink3);font-weight:400}
   .row{display:flex;gap:8px}
   .row input{flex:1;background:var(--paper);border:1px solid var(--line3);border-radius:4px;
@@ -66,7 +67,7 @@
   .bar-row .nm{width:52px;flex-shrink:0}
   .bar-row .bar{height:8px;border-radius:2px;background:var(--cinnabar)}
   .bar-row .v{font-size:10px;color:var(--ink3)}
-  .graph-card{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--card);
+  .graph-card{flex:1 1 420px;display:flex;flex-direction:column;min-width:0;background:var(--card);
               border:1px solid var(--line);border-radius:6px;overflow:hidden}
   .graph-head{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line2);flex-wrap:wrap}
   .graph-head b{font-size:15px;letter-spacing:1px;margin-right:4px}
@@ -81,7 +82,7 @@
             border-radius:4px;margin-top:6px;font-size:12px}
   .rel-item .who{font-weight:600;font-size:13px;cursor:pointer}
   .rel-item .who:hover{color:var(--cinnabar)}
-  .rel-item .ev{color:var(--ink3);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .rel-item .ev{color:var(--ink3);font-size:11px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .pathline{background:var(--paper2);border-radius:4px;padding:12px;margin-top:10px;display:none;
             flex-wrap:wrap;align-items:center;row-gap:10px;font-size:13px}
   .pnode{background:var(--card);border:1px solid var(--line3);border-radius:14px;padding:3px 11px;font-weight:600}
@@ -91,7 +92,8 @@
   #entityPanel{display:none}
   .back{background:transparent;border:1px solid var(--indigo);color:var(--indigo);font-size:11px;
         padding:3px 10px;border-radius:3px}
-  @media (max-width:980px){main{flex-direction:column;height:auto}.col-left{width:100%}#graph{height:480px}}
+  @media (max-width:980px){main{flex-direction:column;height:auto}.col-left{width:100%}#graph{height:440px}
+    .books{margin-left:0}}
 </style>
 </head>
 <body>
@@ -225,8 +227,9 @@ async function loadRun(name){
   document.getElementById('qaAnswer').style.display='none';
   document.getElementById('pathResult').style.display='none';
   buildCatChips(); loadStats();
-  state.focus=topPerson();
-  renderGraph();
+  const want=new URLSearchParams(location.search).get('focus');
+  if(want&&resolve(want)){ loadEntity(want,{noscroll:true}); }
+  else { state.focus=topPerson(); renderGraph(); }
 }
 function topPerson(){
   return Object.entries(DATA.deg).filter(([n])=> (DATA.reg[n]||{}).type==='人物')
@@ -351,12 +354,12 @@ function askRel(){
     if(rows.length>=15)break;
   }
   box.innerHTML=`<b>${esc(who)}</b>${word?' 的「'+esc(word)+'」':''}：共 ${seen.size} 条${seen.size>15?'（显示前 15）':''}${rows.join('')}`;
-  state.focus=who; renderGraph();
+  loadEntity(who,{noscroll:true});
 }
 document.getElementById('qaInput').addEventListener('keydown',e=>{if(e.key==='Enter')askRel();});
 
 /* ============ 实体详情 ============ */
-function loadEntity(name){
+function loadEntity(name,opts){
   const std=resolve(name);
   if(!std){ alert('未识别实体：'+name); return; }
   state.focus=std; renderGraph();
@@ -378,7 +381,7 @@ function loadEntity(name){
       <button class="back" onclick="resetGraph()">关闭</button></h2>
     ${e.identity?`<div class="muted" style="margin-bottom:4px">${esc(e.identity)}</div>`:''}
     <div style="max-height:300px;overflow-y:auto;">${rows||'<div class="muted">暂无关系记录</div>'}</div>`;
-  panel.scrollIntoView({behavior:'smooth'});
+  if(!(opts&&opts.noscroll)) panel.scrollIntoView({behavior:'smooth'});
 }
 document.getElementById('searchBox').addEventListener('keydown',e=>{
   if(e.key==='Enter'){const v=e.target.value.trim();if(v)loadEntity(v);}});
