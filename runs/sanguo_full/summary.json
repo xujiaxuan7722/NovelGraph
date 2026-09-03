@@ -14,28 +14,28 @@
   "实体未登记": 93,
   "关系不在闭集": 38
  },
- "candidates": 946,
+ "candidates": 936,
  "review": {
   "calls": 64,
-  "ok": 860,
-  "reject": 719,
-  "unjudged": 31,
+  "ok": 865,
+  "reject": 726,
+  "unjudged": 16,
   "additions": 103,
   "additions_invalid": 16,
-  "flipped": 74,
+  "flipped": 77,
   "highvote_kept": 35
  },
  "functional_dropped": 3,
  "additions": 103,
- "inferred": 322,
+ "inferred": 245,
  "registry": 1971,
  "llm": {
   "calls": 1,
   "cached": 63,
-  "prompt_tokens": 37988,
+  "prompt_tokens": 38105,
   "output_tokens": 48000,
-  "thought_tokens": 48000,
-  "seconds": 505.02962470054626
+  "thought_tokens": 39718,
+  "seconds": 414.891973733902
  },
- "seconds": 2632
+ "seconds": 500
 }

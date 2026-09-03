@@ -83,6 +83,89 @@
   "review": "高票保留（34票，否决类别=证据不足）：证据未提及徐晃，与曹操、徐晃君臣关系无关"
  },
  {
+  "head": "刘备",
+  "relation": "君臣",
+  "tail": "孙乾",
+  "votes": 28,
+  "evidence": "命孙乾、简雍准备庆喜筵席，安排功劳簿伺候。",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "命孙乾、简雍准备庆喜筵席，安排功劳簿伺候。",
+   "人报：“刘皇叔使糜竺来见都督。”瑜唤至，问劳军如何。",
+   "使命持表回成都，奏汉中王，言孟达投魏之事。先主大怒。"
+  ],
+  "chapters": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   85,
+   86,
+   87
+  ],
+  "source": "LLM抽取",
+  "review": "孙乾为刘备臣属"
+ },
+ {
   "head": "孙权",
   "relation": "君臣",
   "tail": "甘宁",
@@ -226,89 +309,6 @@
   ],
   "source": "LLM抽取",
   "review": "张飞终身事刘备，刘备为主公。"
- },
- {
-  "head": "刘备",
-  "relation": "君臣",
-  "tail": "孙乾",
-  "votes": 25,
-  "evidence": "命孙乾、简雍准备庆喜筵席，安排功劳簿伺候。",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "命孙乾、简雍准备庆喜筵席，安排功劳簿伺候。",
-   "人报：“刘皇叔使糜竺来见都督。”瑜唤至，问劳军如何。",
-   "使命持表回成都，奏汉中王，言孟达投魏之事。先主大怒。"
-  ],
-  "chapters": [
-   10,
-   11,
-   12,
-   13,
-   14,
-   15,
-   16,
-   17,
-   18,
-   19,
-   20,
-   21,
-   22,
-   23,
-   24,
-   25,
-   26,
-   27,
-   28,
-   29,
-   30,
-   31,
-   32,
-   33,
-   34,
-   35,
-   36,
-   37,
-   38,
-   39,
-   40,
-   41,
-   42,
-   43,
-   44,
-   45,
-   49,
-   50,
-   51,
-   52,
-   53,
-   54,
-   55,
-   56,
-   57,
-   58,
-   59,
-   60,
-   61,
-   62,
-   63,
-   70,
-   71,
-   72,
-   73,
-   74,
-   75,
-   76,
-   77,
-   78,
-   79,
-   80,
-   81,
-   85,
-   86,
-   87
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "曹操",
@@ -524,6 +524,77 @@
   "review": "赵云为刘备部将，虎威将军称号也体现蜀汉中身份。"
  },
  {
+  "head": "刘备",
+  "relation": "君臣",
+  "tail": "孔明",
+  "votes": 22,
+  "evidence": "孔明曰：“既主公在涪关进退两难之际，亮不得不去。”",
+  "evidence_src": "模型引用",
+  "evidences": [
+   "孔明曰：“既主公在涪关进退两难之际，亮不得不去。”",
+   "孔明曰：“主公且宽心。前番一把火，烧了夏侯惇大半人马",
+   "臣亮言：先帝创业未半，而中道崩殂；今天下三分，益州罢敝"
+  ],
+  "chapters": [
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   100,
+   101,
+   102
+  ],
+  "source": "LLM抽取",
+  "review": "孔明为刘备臣属"
+ },
+ {
   "head": "曹操",
   "relation": "君臣",
   "tail": "张郃",
@@ -719,77 +790,6 @@
   "review": "桃园三结义，刘备与张飞为结义兄弟。"
  },
  {
-  "head": "刘备",
-  "relation": "君臣",
-  "tail": "孔明",
-  "votes": 18,
-  "evidence": "孔明曰：“既主公在涪关进退两难之际，亮不得不去。”",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "孔明曰：“既主公在涪关进退两难之际，亮不得不去。”",
-   "孔明曰：“主公且宽心。前番一把火，烧了夏侯惇大半人马",
-   "臣亮言：先帝创业未半，而中道崩殂；今天下三分，益州罢敝"
-  ],
-  "chapters": [
-   34,
-   35,
-   36,
-   37,
-   38,
-   39,
-   40,
-   41,
-   42,
-   43,
-   44,
-   45,
-   46,
-   47,
-   48,
-   49,
-   50,
-   51,
-   55,
-   56,
-   57,
-   58,
-   59,
-   60,
-   61,
-   62,
-   63,
-   70,
-   71,
-   72,
-   73,
-   74,
-   75,
-   76,
-   77,
-   78,
-   79,
-   80,
-   81,
-   82,
-   83,
-   84,
-   85,
-   86,
-   87,
-   91,
-   92,
-   93,
-   94,
-   95,
-   96,
-   100,
-   101,
-   102
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
   "head": "关羽",
   "relation": "结义",
   "tail": "张飞",
@@ -850,65 +850,6 @@
   ],
   "source": "LLM抽取",
   "review": "桃园三结义中关羽与张飞亦结拜。"
- },
- {
-  "head": "曹操",
-  "relation": "君臣",
-  "tail": "孙乾",
-  "votes": 16,
-  "evidence": "操遂加瑁为镇南侯、水军大都督",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "操遂加瑁为镇南侯、水军大都督",
-   "便教荀攸、贾诩、曹洪同许攸守大寨",
-   "长子曹丕，恐不得立，乃问计于中大夫贾诩"
-  ],
-  "chapters": [
-   4,
-   5,
-   6,
-   22,
-   23,
-   24,
-   28,
-   29,
-   30,
-   31,
-   32,
-   33,
-   40,
-   41,
-   42,
-   43,
-   44,
-   45,
-   58,
-   59,
-   60,
-   67,
-   68,
-   69,
-   70,
-   71,
-   72,
-   76,
-   77,
-   78,
-   79,
-   80,
-   81,
-   82,
-   83,
-   84,
-   85,
-   86,
-   87,
-   97,
-   98,
-   99
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "刘备",
@@ -1587,50 +1528,6 @@
   "review": "刘晔为司空仓曹掾，曹操属官"
  },
  {
-  "head": "曹操",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 10,
-  "evidence": "却说魏主曹丕，在位七年，即蜀汉建兴四年也",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "却说魏主曹丕，在位七年，即蜀汉建兴四年也",
-   "且说魏王曹丕，自即王位，将文武官僚，尽皆升赏；遂统甲兵三十万，南巡沛国谯县，大飨先茔。",
-   "”丕曰：“吴畏魏乎"
-  ],
-  "chapters": [
-   61,
-   62,
-   63,
-   64,
-   65,
-   66,
-   70,
-   71,
-   72,
-   73,
-   74,
-   75,
-   79,
-   80,
-   81,
-   82,
-   83,
-   84,
-   85,
-   86,
-   87,
-   91,
-   92,
-   93,
-   100,
-   101,
-   102
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
   "head": "孔明",
   "relation": "君臣",
   "tail": "魏延",
@@ -1996,7 +1893,7 @@
    87
   ],
   "source": "LLM抽取",
-  "review": "未裁决（保留）"
+  "review": "刘备为蜀主，隶属蜀"
  },
  {
   "head": "司马懿",
@@ -2212,7 +2109,7 @@
    99
   ],
   "source": "LLM抽取",
-  "review": "未裁决（保留）"
+  "review": "司马懿为曹操属官"
  },
  {
   "head": "魏延",
@@ -3756,35 +3653,6 @@
  {
   "head": "孔明",
   "relation": "君臣",
-  "tail": "刘备",
-  "votes": 4,
-  "evidence": "孔明谓玄德曰：“主公可于樊口屯兵，凭高而望，坐看今夜周郎成大功也。”",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "孔明谓玄德曰：“主公可于樊口屯兵，凭高而望，坐看今夜周郎成大功也。”",
-   "主公若欲亮行兵，乞假剑印",
-   "请主公亲自去一遭，留亮守绵竹"
-  ],
-  "chapters": [
-   37,
-   38,
-   39,
-   49,
-   50,
-   51,
-   64,
-   65,
-   66,
-   70,
-   71,
-   72
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
-  "head": "孔明",
-  "relation": "君臣",
   "tail": "张郃",
   "votes": 4,
   "evidence": "靳祥回见孔明，具言郝昭如此光景",
@@ -5067,29 +4935,6 @@
   ],
   "source": "LLM抽取",
   "review": "孔明令右将军高翔运粮，高翔受其统属。"
- },
- {
-  "head": "孙乾",
-  "relation": "君臣",
-  "tail": "刘备",
-  "votes": 3,
-  "evidence": "孙乾曰：“不必忧虑。再苦一番驱驰，仍往河北去报知皇叔，同至古城便了。”",
-  "evidence_src": "模型引用",
-  "evidences": [
-   "孙乾曰：“不必忧虑。再苦一番驱驰，仍往河北去报知皇叔，同至古城便了。”",
-   "却说徐晃逃回见操，说：“王平反去降刘备矣",
-   "“便教荀攸、贾诩、曹洪同许攸守大寨，夏侯惇、夏侯渊领一军伏于左，曹仁、李典领一军伏于右，以备不虞"
-  ],
-  "chapters": [
-   28,
-   29,
-   30,
-   70,
-   71,
-   72
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "孙乾",
@@ -7264,6 +7109,25 @@
  {
   "head": "曹操",
   "relation": "君臣",
+  "tail": "刘备",
+  "votes": 2,
+  "evidence": "丞相兴大师，备当为前驱",
+  "evidence_src": "程序检索",
+  "evidences": [
+   "丞相兴大师，备当为前驱",
+   "回见曹操，备述玄德之言"
+  ],
+  "chapters": [
+   16,
+   17,
+   18
+  ],
+  "source": "LLM抽取",
+  "review": "刘备曾暂奉曹操，自称前驱"
+ },
+ {
+  "head": "曹操",
+  "relation": "君臣",
   "tail": "李通",
   "votes": 2,
   "evidence": "通曰：“近守汝南，闻丞相与张绣、刘表战，特来接应",
@@ -8420,28 +8284,6 @@
  {
   "head": "袁绍",
   "relation": "君臣",
-  "tail": "刘备",
-  "votes": 2,
-  "evidence": "”昱曰：“刘备若在，必投袁绍",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "”昱曰：“刘备若在，必投袁绍",
-   "张辽曰：”袁绍屯粮之所，安得无备"
-  ],
-  "chapters": [
-   25,
-   26,
-   27,
-   28,
-   29,
-   30
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
-  "head": "袁绍",
-  "relation": "君臣",
   "tail": "辛评",
   "votes": 2,
   "evidence": "绍乃与审配、逢纪、辛评、郭图四人商议",
@@ -9389,42 +9231,6 @@
   ],
   "source": "LLM抽取",
   "review": "令凌统守汉阳郡，明确镇守"
- },
- {
-  "head": "刘备",
-  "relation": "君臣",
-  "tail": "曹操",
-  "votes": 1,
-  "evidence": "回见曹操，备述玄德之言",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "回见曹操，备述玄德之言"
-  ],
-  "chapters": [
-   19,
-   20,
-   21
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
-  "head": "刘备",
-  "relation": "师徒",
-  "tail": "孔明",
-  "votes": 1,
-  "evidence": "主公若欲亮行兵，乞假剑印",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "主公若欲亮行兵，乞假剑印"
-  ],
-  "chapters": [
-   37,
-   38,
-   39
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "刘备",
@@ -11855,24 +11661,6 @@
   ],
   "source": "LLM抽取",
   "review": "姜维在沓中屯田避祸，属长期驻守"
- },
- {
-  "head": "孔明",
-  "relation": "师徒",
-  "tail": "刘备",
-  "votes": 1,
-  "evidence": "主公若欲亮行兵，乞假剑印",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "主公若欲亮行兵，乞假剑印"
-  ],
-  "chapters": [
-   37,
-   38,
-   39
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "孔明",
@@ -14631,24 +14419,6 @@
  {
   "head": "曹操",
   "relation": "君臣",
-  "tail": "刘备",
-  "votes": 1,
-  "evidence": "丞相兴大师，备当为前驱",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "丞相兴大师，备当为前驱"
-  ],
-  "chapters": [
-   16,
-   17,
-   18
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
- },
- {
-  "head": "曹操",
-  "relation": "君臣",
   "tail": "王垕",
   "votes": 1,
   "evidence": "操乃密召王垕入曰：“吾欲问汝借一物，以压众心，汝必勿吝。”垕曰：“丞相欲用何物",
@@ -14807,24 +14577,6 @@
   ],
   "source": "LLM抽取",
   "review": "张绣后降曹操受封扬武将军，属曹操臣属"
- },
- {
-  "head": "曹操",
-  "relation": "君臣",
-  "tail": "孙权",
-  "votes": 1,
-  "evidence": "曹公钦义烈，特与建孤坟",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "曹公钦义烈，特与建孤坟"
-  ],
-  "chapters": [
-   28,
-   29,
-   30
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "曹操",
@@ -17975,24 +17727,6 @@
   ],
   "source": "LLM抽取",
   "review": "张南为袁熙部将。"
- },
- {
-  "head": "袁绍",
-  "relation": "君臣",
-  "tail": "曹操",
-  "votes": 1,
-  "evidence": "袁绍、曹操斩关入内",
-  "evidence_src": "程序检索",
-  "evidences": [
-   "袁绍、曹操斩关入内"
-  ],
-  "chapters": [
-   1,
-   2,
-   3
-  ],
-  "source": "LLM抽取",
-  "review": "未裁决（保留）"
  },
  {
   "head": "袁绍",
@@ -21167,216 +20901,6 @@
   "evidence_src": null
  },
  {
-  "head": "韩琼",
-  "relation": "兄妹",
-  "tail": "韩瑛",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩琼",
-   "韩德 父子|父女 韩瑛"
-  ]
- },
- {
-  "head": "韩班",
-  "relation": "兄妹",
-  "tail": "韩琼",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩琼",
-   "韩德 父子|父女 韩班"
-  ]
- },
- {
-  "head": "韩琼",
-  "relation": "兄妹",
-  "tail": "韩瑶",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩琼",
-   "韩德 父子|父女 韩瑶"
-  ]
- },
- {
-  "head": "袁尚",
-  "relation": "兄妹",
-  "tail": "袁谭",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "袁绍 父子|父女 袁谭",
-   "袁绍 父子|父女 袁尚"
-  ]
- },
- {
-  "head": "关兴",
-  "relation": "兄妹",
-  "tail": "关索",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "关羽 父子|父女 关索",
-   "关羽 父子|父女 关兴"
-  ]
- },
- {
-  "head": "少帝",
-  "relation": "兄妹",
-  "tail": "陈留王",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "灵帝 父子|父女 陈留王",
-   "灵帝 父子|父女 少帝"
-  ]
- },
- {
-  "head": "刘瑶",
-  "relation": "兄妹",
-  "tail": "刘璩",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘瑶",
-   "刘禅 父子|父女 刘璩"
-  ]
- },
- {
-  "head": "刘恂",
-  "relation": "兄妹",
-  "tail": "刘瑶",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘瑶",
-   "刘禅 父子|父女 刘恂"
-  ]
- },
- {
-  "head": "刘瑶",
-  "relation": "兄妹",
-  "tail": "刘璿",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘瑶",
-   "刘禅 父子|父女 刘璿"
-  ]
- },
- {
-  "head": "刘瑶",
-  "relation": "兄妹",
-  "tail": "刘谌",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘瑶",
-   "刘禅 父子|父女 刘谌"
-  ]
- },
- {
-  "head": "孙和",
-  "relation": "兄妹",
-  "tail": "孙登",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "孙权 父子|父女 孙登",
-   "孙权 父子|父女 孙和"
-  ]
- },
- {
-  "head": "孙亮",
-  "relation": "兄妹",
-  "tail": "孙登",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "孙权 父子|父女 孙登",
-   "孙权 父子|父女 孙亮"
-  ]
- },
- {
-  "head": "曹彰",
-  "relation": "兄妹",
-  "tail": "曹昂",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "曹操 父子|父女 曹彰",
-   "曹操 父子|父女 曹昂"
-  ]
- },
- {
-  "head": "曹彰",
-  "relation": "兄妹",
-  "tail": "曹贵人",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "曹操 父子|父女 曹彰",
-   "曹操 父子|父女 曹贵人"
-  ]
- },
- {
-  "head": "曹后",
-  "relation": "兄妹",
-  "tail": "曹彰",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "曹操 父子|父女 曹彰",
-   "曹操 父子|父女 曹后"
-  ]
- },
- {
   "head": "曹昂",
   "relation": "兄妹",
   "tail": "曹熊",
@@ -21388,6 +20912,20 @@
   "support": [
    "曹操 父子|父女 曹熊",
    "曹操 父子|父女 曹昂"
+  ]
+ },
+ {
+  "head": "曹后",
+  "relation": "兄妹",
+  "tail": "曹熊",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹熊",
+   "曹操 父子|父女 曹后"
   ]
  },
  {
@@ -21405,17 +20943,87 @@
   ]
  },
  {
-  "head": "曹后",
+  "head": "刘琦",
   "relation": "兄妹",
-  "tail": "曹熊",
+  "tail": "刘琮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "曹操 父子|父女 曹熊",
-   "曹操 父子|父女 曹后"
+   "刘表 父子|父女 刘琮",
+   "刘表 父子|父女 刘琦"
+  ]
+ },
+ {
+  "head": "韩班",
+  "relation": "兄妹",
+  "tail": "韩瑶",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩班",
+   "韩德 父子|父女 韩瑶"
+  ]
+ },
+ {
+  "head": "韩班",
+  "relation": "兄妹",
+  "tail": "韩琼",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩班",
+   "韩德 父子|父女 韩琼"
+  ]
+ },
+ {
+  "head": "韩班",
+  "relation": "兄妹",
+  "tail": "韩瑛",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩班",
+   "韩德 父子|父女 韩瑛"
+  ]
+ },
+ {
+  "head": "刘永",
+  "relation": "兄妹",
+  "tail": "刘禅",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘备 父子|父女 刘禅",
+   "刘备 父子|父女 刘永"
+  ]
+ },
+ {
+  "head": "刘理",
+  "relation": "兄妹",
+  "tail": "刘禅",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘备 父子|父女 刘禅",
+   "刘备 父子|父女 刘理"
   ]
  },
  {
@@ -21433,17 +21041,185 @@
   ]
  },
  {
-  "head": "刘永",
+  "head": "孙匡",
   "relation": "兄妹",
-  "tail": "刘禅",
+  "tail": "孙翊",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "刘备 父子|父女 刘永",
-   "刘备 父子|父女 刘禅"
+   "孙坚 父子|父女 孙匡",
+   "孙坚 父子|父女 孙翊"
+  ]
+ },
+ {
+  "head": "曹昂",
+  "relation": "兄妹",
+  "tail": "曹植",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹植",
+   "曹操 父子|父女 曹昂"
+  ]
+ },
+ {
+  "head": "曹后",
+  "relation": "兄妹",
+  "tail": "曹植",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹植",
+   "曹操 父子|父女 曹后"
+  ]
+ },
+ {
+  "head": "曹植",
+  "relation": "兄妹",
+  "tail": "曹贵人",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹植",
+   "曹操 父子|父女 曹贵人"
+  ]
+ },
+ {
+  "head": "少帝",
+  "relation": "兄妹",
+  "tail": "陈留王",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "灵帝 父子|父女 少帝",
+   "灵帝 父子|父女 陈留王"
+  ]
+ },
+ {
+  "head": "韩琼",
+  "relation": "兄妹",
+  "tail": "韩瑶",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩瑶",
+   "韩德 父子|父女 韩琼"
+  ]
+ },
+ {
+  "head": "韩瑛",
+  "relation": "兄妹",
+  "tail": "韩瑶",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩瑶",
+   "韩德 父子|父女 韩瑛"
+  ]
+ },
+ {
+  "head": "关兴",
+  "relation": "兄妹",
+  "tail": "关索",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "关羽 父子|父女 关索",
+   "关羽 父子|父女 关兴"
+  ]
+ },
+ {
+  "head": "刘恂",
+  "relation": "兄妹",
+  "tail": "刘璿",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璿",
+   "刘禅 父子|父女 刘恂"
+  ]
+ },
+ {
+  "head": "刘璩",
+  "relation": "兄妹",
+  "tail": "刘璿",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璿",
+   "刘禅 父子|父女 刘璩"
+  ]
+ },
+ {
+  "head": "刘璿",
+  "relation": "兄妹",
+  "tail": "刘谌",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璿",
+   "刘禅 父子|父女 刘谌"
+  ]
+ },
+ {
+  "head": "刘瑶",
+  "relation": "兄妹",
+  "tail": "刘璿",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璿",
+   "刘禅 父子|父女 刘瑶"
+  ]
+ },
+ {
+  "head": "孙亮",
+  "relation": "兄妹",
+  "tail": "孙登",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "孙权 父子|父女 孙亮",
+   "孙权 父子|父女 孙登"
   ]
  },
  {
@@ -21456,8 +21232,8 @@
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "孙权 父子|父女 孙和",
-   "孙权 父子|父女 孙亮"
+   "孙权 父子|父女 孙亮",
+   "孙权 父子|父女 孙和"
   ]
  },
  {
@@ -21475,21 +21251,175 @@
   ]
  },
  {
-  "head": "曹昂",
+  "head": "袁尚",
   "relation": "兄妹",
-  "tail": "曹植",
+  "tail": "袁谭",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "曹操 父子|父女 曹昂",
-   "曹操 父子|父女 曹植"
+   "袁绍 父子|父女 袁尚",
+   "袁绍 父子|父女 袁谭"
   ]
  },
  {
-  "head": "曹昂",
+  "head": "吉穆",
+  "relation": "兄妹",
+  "tail": "吉邈",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "吉平 父子|父女 吉邈",
+   "吉平 父子|父女 吉穆"
+  ]
+ },
+ {
+  "head": "孙和",
+  "relation": "兄妹",
+  "tail": "孙登",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "孙权 父子|父女 孙登",
+   "孙权 父子|父女 孙和"
+  ]
+ },
+ {
+  "head": "刘恂",
+  "relation": "兄妹",
+  "tail": "刘璩",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘恂",
+   "刘禅 父子|父女 刘璩"
+  ]
+ },
+ {
+  "head": "刘恂",
+  "relation": "兄妹",
+  "tail": "刘谌",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘恂",
+   "刘禅 父子|父女 刘谌"
+  ]
+ },
+ {
+  "head": "刘恂",
+  "relation": "兄妹",
+  "tail": "刘瑶",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘恂",
+   "刘禅 父子|父女 刘瑶"
+  ]
+ },
+ {
+  "head": "刘璩",
+  "relation": "兄妹",
+  "tail": "刘谌",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璩",
+   "刘禅 父子|父女 刘谌"
+  ]
+ },
+ {
+  "head": "刘瑶",
+  "relation": "兄妹",
+  "tail": "刘璩",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘璩",
+   "刘禅 父子|父女 刘瑶"
+  ]
+ },
+ {
+  "head": "韩琼",
+  "relation": "兄妹",
+  "tail": "韩瑛",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "韩德 父子|父女 韩琼",
+   "韩德 父子|父女 韩瑛"
+  ]
+ },
+ {
+  "head": "文虎",
+  "relation": "兄妹",
+  "tail": "文鸯",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "文钦 父子|父女 文鸯",
+   "文钦 父子|父女 文虎"
+  ]
+ },
+ {
+  "head": "曹彰",
+  "relation": "兄妹",
+  "tail": "曹昂",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹彰",
+   "曹操 父子|父女 曹昂"
+  ]
+ },
+ {
+  "head": "曹后",
+  "relation": "兄妹",
+  "tail": "曹彰",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "曹操 父子|父女 曹彰",
+   "曹操 父子|父女 曹后"
+  ]
+ },
+ {
+  "head": "曹彰",
   "relation": "兄妹",
   "tail": "曹贵人",
   "votes": 0,
@@ -21498,7 +21428,7 @@
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "曹操 父子|父女 曹昂",
+   "曹操 父子|父女 曹彰",
    "曹操 父子|父女 曹贵人"
   ]
  },
@@ -21517,203 +21447,7 @@
   ]
  },
  {
-  "head": "刘琦",
-  "relation": "兄妹",
-  "tail": "刘琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘表 父子|父女 刘琦",
-   "刘表 父子|父女 刘琮"
-  ]
- },
- {
-  "head": "韩班",
-  "relation": "兄妹",
-  "tail": "韩瑛",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩瑛",
-   "韩德 父子|父女 韩班"
-  ]
- },
- {
-  "head": "韩瑛",
-  "relation": "兄妹",
-  "tail": "韩瑶",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩瑛",
-   "韩德 父子|父女 韩瑶"
-  ]
- },
- {
-  "head": "孙匡",
-  "relation": "兄妹",
-  "tail": "孙翊",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "孙坚 父子|父女 孙匡",
-   "孙坚 父子|父女 孙翊"
-  ]
- },
- {
-  "head": "刘恂",
-  "relation": "兄妹",
-  "tail": "刘璩",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘璩",
-   "刘禅 父子|父女 刘恂"
-  ]
- },
- {
-  "head": "刘璩",
-  "relation": "兄妹",
-  "tail": "刘璿",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘璩",
-   "刘禅 父子|父女 刘璿"
-  ]
- },
- {
-  "head": "刘璩",
-  "relation": "兄妹",
-  "tail": "刘谌",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘璩",
-   "刘禅 父子|父女 刘谌"
-  ]
- },
- {
-  "head": "韩班",
-  "relation": "兄妹",
-  "tail": "韩瑶",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "韩德 父子|父女 韩班",
-   "韩德 父子|父女 韩瑶"
-  ]
- },
- {
-  "head": "吉穆",
-  "relation": "兄妹",
-  "tail": "吉邈",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "吉平 父子|父女 吉穆",
-   "吉平 父子|父女 吉邈"
-  ]
- },
- {
-  "head": "刘恂",
-  "relation": "兄妹",
-  "tail": "刘璿",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘恂",
-   "刘禅 父子|父女 刘璿"
-  ]
- },
- {
-  "head": "刘恂",
-  "relation": "兄妹",
-  "tail": "刘谌",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘恂",
-   "刘禅 父子|父女 刘谌"
-  ]
- },
- {
-  "head": "文虎",
-  "relation": "兄妹",
-  "tail": "文鸯",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "文钦 父子|父女 文虎",
-   "文钦 父子|父女 文鸯"
-  ]
- },
- {
-  "head": "刘理",
-  "relation": "兄妹",
-  "tail": "刘禅",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘备 父子|父女 刘理",
-   "刘备 父子|父女 刘禅"
-  ]
- },
- {
-  "head": "刘璿",
-  "relation": "兄妹",
-  "tail": "刘谌",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "刘禅 父子|父女 刘璿",
-   "刘禅 父子|父女 刘谌"
-  ]
- },
- {
-  "head": "曹植",
+  "head": "曹昂",
   "relation": "兄妹",
   "tail": "曹贵人",
   "votes": 0,
@@ -21722,22 +21456,8 @@
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "曹操 父子|父女 曹植",
+   "曹操 父子|父女 曹昂",
    "曹操 父子|父女 曹贵人"
-  ]
- },
- {
-  "head": "曹后",
-  "relation": "兄妹",
-  "tail": "曹植",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "曹操 父子|父女 曹植",
-   "曹操 父子|父女 曹后"
   ]
  },
  {
@@ -21755,6 +21475,20 @@
   ]
  },
  {
+  "head": "刘瑶",
+  "relation": "兄妹",
+  "tail": "刘谌",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "刘禅 父子|父女 刘谌",
+   "刘禅 父子|父女 刘瑶"
+  ]
+ },
+ {
   "head": "曹后",
   "relation": "兄妹",
   "tail": "曹贵人",
@@ -21764,14 +21498,84 @@
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "曹操 父子|父女 曹贵人",
-   "曹操 父子|父女 曹后"
+   "曹操 父子|父女 曹后",
+   "曹操 父子|父女 曹贵人"
+  ]
+ },
+ {
+  "head": "刘备",
+  "relation": "祖父",
+  "tail": "刘璿",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "刘备 父子 刘禅",
+   "刘禅 父子|父女 刘璿"
+  ]
+ },
+ {
+  "head": "刘备",
+  "relation": "祖父",
+  "tail": "刘恂",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "刘备 父子 刘禅",
+   "刘禅 父子|父女 刘恂"
+  ]
+ },
+ {
+  "head": "刘备",
+  "relation": "祖父",
+  "tail": "刘璩",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "刘备 父子 刘禅",
+   "刘禅 父子|父女 刘璩"
+  ]
+ },
+ {
+  "head": "刘备",
+  "relation": "祖父",
+  "tail": "刘谌",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "刘备 父子 刘禅",
+   "刘禅 父子|父女 刘谌"
+  ]
+ },
+ {
+  "head": "刘备",
+  "relation": "祖父",
+  "tail": "刘瑶",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "刘备 父子 刘禅",
+   "刘禅 父子|父女 刘瑶"
   ]
  },
  {
   "head": "袁逢",
   "relation": "祖父",
-  "tail": "袁谭",
+  "tail": "袁尚",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
@@ -21779,7 +21583,7 @@
   "rule": "父之父为祖父",
   "support": [
    "袁逢 父子 袁绍",
-   "袁绍 父子|父女 袁谭"
+   "袁绍 父子|父女 袁尚"
   ]
  },
  {
@@ -21799,7 +21603,7 @@
  {
   "head": "袁逢",
   "relation": "祖父",
-  "tail": "袁尚",
+  "tail": "袁谭",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
@@ -21807,7 +21611,7 @@
   "rule": "父之父为祖父",
   "support": [
    "袁逢 父子 袁绍",
-   "袁绍 父子|父女 袁尚"
+   "袁绍 父子|父女 袁谭"
   ]
  },
  {
@@ -21839,45 +21643,101 @@
   ]
  },
  {
-  "head": "刘弘",
+  "head": "曹嵩",
   "relation": "祖父",
-  "tail": "刘永",
+  "tail": "曹熊",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "刘弘 父子 刘备",
-   "刘备 父子|父女 刘永"
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹熊"
   ]
  },
  {
-  "head": "刘弘",
+  "head": "曹嵩",
   "relation": "祖父",
-  "tail": "刘理",
+  "tail": "曹植",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "刘弘 父子 刘备",
-   "刘备 父子|父女 刘理"
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹植"
   ]
  },
  {
-  "head": "刘弘",
+  "head": "曹嵩",
   "relation": "祖父",
-  "tail": "刘禅",
+  "tail": "曹彰",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "刘弘 父子 刘备",
-   "刘备 父子|父女 刘禅"
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹彰"
+  ]
+ },
+ {
+  "head": "曹嵩",
+  "relation": "祖父",
+  "tail": "曹昂",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹昂"
+  ]
+ },
+ {
+  "head": "曹嵩",
+  "relation": "祖父",
+  "tail": "曹后",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹后"
+  ]
+ },
+ {
+  "head": "曹嵩",
+  "relation": "祖父",
+  "tail": "曹贵人",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "曹嵩 父子 曹操",
+   "曹操 父子|父女 曹贵人"
+  ]
+ },
+ {
+  "head": "孙坚",
+  "relation": "祖父",
+  "tail": "孙亮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "孙坚 父子 孙权",
+   "孙权 父子|父女 孙亮"
   ]
  },
  {
@@ -21909,171 +21769,45 @@
   ]
  },
  {
-  "head": "孙坚",
+  "head": "刘弘",
   "relation": "祖父",
-  "tail": "孙亮",
+  "tail": "刘禅",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "孙坚 父子 孙权",
-   "孙权 父子|父女 孙亮"
+   "刘弘 父子 刘备",
+   "刘备 父子|父女 刘禅"
   ]
  },
  {
-  "head": "刘备",
+  "head": "刘弘",
   "relation": "祖父",
-  "tail": "刘瑶",
+  "tail": "刘永",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "刘备 父子 刘禅",
-   "刘禅 父子|父女 刘瑶"
+   "刘弘 父子 刘备",
+   "刘备 父子|父女 刘永"
   ]
  },
  {
-  "head": "刘备",
+  "head": "刘弘",
   "relation": "祖父",
-  "tail": "刘璩",
+  "tail": "刘理",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "刘备 父子 刘禅",
-   "刘禅 父子|父女 刘璩"
-  ]
- },
- {
-  "head": "刘备",
-  "relation": "祖父",
-  "tail": "刘恂",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "刘备 父子 刘禅",
-   "刘禅 父子|父女 刘恂"
-  ]
- },
- {
-  "head": "刘备",
-  "relation": "祖父",
-  "tail": "刘璿",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "刘备 父子 刘禅",
-   "刘禅 父子|父女 刘璿"
-  ]
- },
- {
-  "head": "刘备",
-  "relation": "祖父",
-  "tail": "刘谌",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "刘备 父子 刘禅",
-   "刘禅 父子|父女 刘谌"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹彰",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹彰"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹熊",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹熊"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹昂",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹昂"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹植",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹植"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹贵人",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹贵人"
-  ]
- },
- {
-  "head": "曹嵩",
-  "relation": "祖父",
-  "tail": "曹后",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之父为祖父",
-  "support": [
-   "曹嵩 父子 曹操",
-   "曹操 父子|父女 曹后"
+   "刘弘 父子 刘备",
+   "刘备 父子|父女 刘理"
   ]
  },
  {
@@ -22091,21 +21825,6 @@
   ]
  },
  {
-  "head": "诸葛恪",
-  "relation": "堂亲",
-  "tail": "诸葛瞻",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "孔明 父子|父女 诸葛瞻",
-   "孔明 兄妹 诸葛瑾",
-   "诸葛瑾 父子|父女 诸葛恪"
-  ]
- },
- {
   "head": "孙匡",
   "relation": "堂亲",
   "tail": "孙皎",
@@ -22115,9 +21834,9 @@
   "source": "推导",
   "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "孙坚 父子|父女 孙匡",
-   "孙坚 兄妹 孙静",
-   "孙静 父子|父女 孙皎"
+   "孙静 父子|父女 孙皎",
+   "孙静 兄妹 孙坚",
+   "孙坚 父子|父女 孙匡"
   ]
  },
  {
@@ -22136,78 +21855,18 @@
   ]
  },
  {
-  "head": "刘永",
+  "head": "诸葛恪",
   "relation": "堂亲",
-  "tail": "刘琦",
+  "tail": "诸葛瞻",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "父辈堂亲之子女仍为堂亲",
+  "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "刘备 父子|父女 刘永",
-   "刘备 堂亲 刘表",
-   "刘表 父子|父女 刘琦"
-  ]
- },
- {
-  "head": "刘永",
-  "relation": "堂亲",
-  "tail": "刘琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈堂亲之子女仍为堂亲",
-  "support": [
-   "刘备 父子|父女 刘永",
-   "刘备 堂亲 刘表",
-   "刘表 父子|父女 刘琮"
-  ]
- },
- {
-  "head": "刘理",
-  "relation": "堂亲",
-  "tail": "刘琦",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈堂亲之子女仍为堂亲",
-  "support": [
-   "刘表 父子|父女 刘琦",
-   "刘表 堂亲 刘备",
-   "刘备 父子|父女 刘理"
-  ]
- },
- {
-  "head": "刘琦",
-  "relation": "堂亲",
-  "tail": "刘禅",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈堂亲之子女仍为堂亲",
-  "support": [
-   "刘表 父子|父女 刘琦",
-   "刘表 堂亲 刘备",
-   "刘备 父子|父女 刘禅"
-  ]
- },
- {
-  "head": "刘理",
-  "relation": "堂亲",
-  "tail": "刘琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈堂亲之子女仍为堂亲",
-  "support": [
-   "刘表 父子|父女 刘琮",
-   "刘表 堂亲 刘备",
-   "刘备 父子|父女 刘理"
+   "孔明 父子|父女 诸葛瞻",
+   "孔明 兄妹 诸葛瑾",
+   "诸葛瑾 父子|父女 诸葛恪"
   ]
  },
  {
@@ -22226,357 +21885,82 @@
   ]
  },
  {
-  "head": "崔琰",
-  "relation": "隶属",
-  "tail": "魏",
+  "head": "刘永",
+  "relation": "堂亲",
+  "tail": "刘琮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "主公之所属即臣属之所属",
+  "rule": "父辈堂亲之子女仍为堂亲",
   "support": [
-   "曹操 君臣 崔琰",
-   "曹操 隶属 魏"
+   "刘表 父子|父女 刘琮",
+   "刘表 堂亲 刘备",
+   "刘备 父子|父女 刘永"
   ]
  },
  {
-  "head": "鲁芝",
-  "relation": "隶属",
-  "tail": "魏",
+  "head": "刘理",
+  "relation": "堂亲",
+  "tail": "刘琮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "主公之所属即臣属之所属",
+  "rule": "父辈堂亲之子女仍为堂亲",
   "support": [
-   "曹爽 君臣 鲁芝",
-   "曹爽 隶属 魏"
+   "刘表 父子|父女 刘琮",
+   "刘表 堂亲 刘备",
+   "刘备 父子|父女 刘理"
   ]
  },
  {
-  "head": "蒋班",
-  "relation": "隶属",
-  "tail": "魏",
+  "head": "刘琦",
+  "relation": "堂亲",
+  "tail": "刘禅",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "主公之所属即臣属之所属",
+  "rule": "父辈堂亲之子女仍为堂亲",
   "support": [
-   "诸葛诞 君臣 蒋班",
-   "诸葛诞 隶属 魏"
+   "刘备 父子|父女 刘禅",
+   "刘备 堂亲 刘表",
+   "刘表 父子|父女 刘琦"
   ]
  },
  {
-  "head": "吕通",
-  "relation": "隶属",
-  "tail": "魏",
+  "head": "刘永",
+  "relation": "堂亲",
+  "tail": "刘琦",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "主公之所属即臣属之所属",
+  "rule": "父辈堂亲之子女仍为堂亲",
   "support": [
-   "曹操 君臣 吕通",
-   "曹操 隶属 魏"
+   "刘备 父子|父女 刘永",
+   "刘备 堂亲 刘表",
+   "刘表 父子|父女 刘琦"
   ]
  },
  {
-  "head": "曹纯",
-  "relation": "隶属",
-  "tail": "魏",
+  "head": "刘理",
+  "relation": "堂亲",
+  "tail": "刘琦",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "主公之所属即臣属之所属",
+  "rule": "父辈堂亲之子女仍为堂亲",
   "support": [
-   "曹操 君臣 曹纯",
-   "曹操 隶属 魏"
+   "刘备 父子|父女 刘理",
+   "刘备 堂亲 刘表",
+   "刘表 父子|父女 刘琦"
   ]
  },
  {
-  "head": "冯习",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 冯习",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "曹彰",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 曹彰",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "焦彝",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛诞 君臣 焦彝",
-   "诸葛诞 隶属 魏"
-  ]
- },
- {
-  "head": "沙摩柯",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 沙摩柯",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "典韦",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 典韦",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "王含",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "姜维 君臣 王含",
-   "姜维 隶属 蜀"
-  ]
- },
- {
-  "head": "翟元",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 翟元",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "郤正",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘禅 君臣 郤正",
-   "刘禅 隶属 蜀"
-  ]
- },
- {
-  "head": "张虎",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 张虎",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "徐璆",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 徐璆",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "阿会喃",
-  "relation": "隶属",
-  "tail": "南蛮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孟获 君臣 阿会喃",
-   "孟获 隶属 南蛮"
-  ]
- },
- {
-  "head": "吴纲",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛诞 君臣 吴纲",
-   "诸葛诞 隶属 魏"
-  ]
- },
- {
-  "head": "王则",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 王则",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "杜琼",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 杜琼",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "刘劭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 刘劭",
-   "曹睿 隶属 魏"
-  ]
- },
- {
-  "head": "张茂",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 张茂",
-   "曹睿 隶属 魏"
-  ]
- },
- {
-  "head": "薛悌",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 薛悌",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "毛玠",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 毛玠",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "牛金",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 牛金",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "慕容烈",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "文聘 君臣 慕容烈",
-   "文聘 隶属 魏"
-  ]
- },
- {
-  "head": "眭固",
+  "head": "蔡阳",
   "relation": "隶属",
   "tail": "汉朝",
   "votes": 0,
@@ -22585,26 +21969,68 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "张杨 君臣 眭固",
-   "张杨 隶属 汉朝"
+   "曹操 君臣 蔡阳",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "单福",
+  "head": "薛悌",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 单福",
-   "曹操 隶属 魏"
+   "曹操 君臣 薛悌",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "傅士仁",
+  "head": "典韦",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 典韦",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "张绣",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 张绣",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "吕旷",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 吕旷",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "蒋斌",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -22613,40 +22039,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "关羽 君臣 傅士仁",
-   "关羽 隶属 蜀"
+   "姜维 君臣 蒋斌",
+   "姜维 隶属 蜀"
   ]
  },
  {
-  "head": "葛雍",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "毋丘俭 君臣 葛雍",
-   "毋丘俭 隶属 魏"
-  ]
- },
- {
-  "head": "张燕",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 张燕",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "邓良",
+  "head": "张绍",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -22655,68 +22053,26 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 邓良",
+   "刘禅 君臣 张绍",
    "刘禅 隶属 蜀"
   ]
  },
  {
-  "head": "田豫",
+  "head": "夏侯杰",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹睿 君臣 田豫",
-   "曹睿 隶属 魏"
+   "曹操 君臣 夏侯杰",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "刘岱",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 刘岱",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "曹宇",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 曹宇",
-   "曹睿 隶属 魏"
-  ]
- },
- {
-  "head": "荀彧",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 荀彧",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "关索",
+  "head": "胡忠",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -22725,8 +22081,36 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孔明 君臣 关索",
+   "孔明 君臣 胡忠",
    "孔明 隶属 蜀"
+  ]
+ },
+ {
+  "head": "吕通",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 吕通",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "尹大目",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "司马懿 君臣 尹大目",
+   "司马懿 隶属 魏"
   ]
  },
  {
@@ -22746,7 +22130,7 @@
  {
   "head": "吕常",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
@@ -22754,11 +22138,39 @@
   "rule": "主公之所属即臣属之所属",
   "support": [
    "曹操 君臣 吕常",
-   "曹操 隶属 魏"
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "陈矫",
+  "head": "吕凯",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孔明 君臣 吕凯",
+   "孔明 隶属 蜀"
+  ]
+ },
+ {
+  "head": "蔡中",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 蔡中",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "田豫",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -22767,36 +22179,78 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 陈矫",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "魏平",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 魏平",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯惠",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 夏侯惠",
+   "曹睿 君臣 田豫",
    "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "董昭",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 董昭",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "胡班",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "关羽 君臣 胡班",
+   "关羽 隶属 蜀"
+  ]
+ },
+ {
+  "head": "阎宇",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘禅 君臣 阎宇",
+   "刘禅 隶属 蜀"
+  ]
+ },
+ {
+  "head": "裴元绍",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "关羽 君臣 裴元绍",
+   "关羽 隶属 蜀"
+  ]
+ },
+ {
+  "head": "丁谧",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 丁谧",
+   "曹爽 隶属 魏"
   ]
  },
  {
@@ -22814,6 +22268,188 @@
   ]
  },
  {
+  "head": "王琰",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 王琰",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "王忠",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 王忠",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "黄奎",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 黄奎",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "杜睿",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孔明 君臣 杜睿",
+   "孔明 隶属 蜀"
+  ]
+ },
+ {
+  "head": "崔琰",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 崔琰",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "蒋班",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "诸葛诞 君臣 蒋班",
+   "诸葛诞 隶属 魏"
+  ]
+ },
+ {
+  "head": "冯习",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘备 君臣 冯习",
+   "刘备 隶属 蜀"
+  ]
+ },
+ {
+  "head": "任夔",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "吴兰 君臣 任夔",
+   "吴兰 隶属 蜀"
+  ]
+ },
+ {
+  "head": "高柔",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "司马懿 君臣 高柔",
+   "司马懿 隶属 魏"
+  ]
+ },
+ {
+  "head": "杨综",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 杨综",
+   "曹爽 隶属 魏"
+  ]
+ },
+ {
+  "head": "陈矫",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 陈矫",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "陈琳",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 陈琳",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "董荼那",
+  "relation": "隶属",
+  "tail": "南蛮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孟获 君臣 董荼那",
+   "孟获 隶属 南蛮"
+  ]
+ },
+ {
   "head": "樊建",
   "relation": "隶属",
   "tail": "蜀",
@@ -22828,21 +22464,21 @@
   ]
  },
  {
-  "head": "蒋显",
+  "head": "杨阜",
   "relation": "隶属",
-  "tail": "蜀",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 蒋显",
-   "刘禅 隶属 蜀"
+   "曹操 君臣 杨阜",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "田畴",
+  "head": "胡遵",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -22851,26 +22487,40 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 田畴",
-   "曹操 隶属 魏"
+   "司马懿 君臣 胡遵",
+   "司马懿 隶属 魏"
   ]
  },
  {
-  "head": "傅佥",
+  "head": "应劭",
   "relation": "隶属",
-  "tail": "蜀",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "姜维 君臣 傅佥",
-   "姜维 隶属 蜀"
+   "曹操 君臣 应劭",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "王垕",
+  "head": "王则",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 王则",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "夏侯和",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -22879,8 +22529,64 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 王垕",
-   "曹操 隶属 魏"
+   "曹睿 君臣 夏侯和",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "徐璆",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 徐璆",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "翟元",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 翟元",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "彭和",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "诸葛瞻 君臣 彭和",
+   "诸葛瞻 隶属 蜀"
+  ]
+ },
+ {
+  "head": "单福",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 单福",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -22898,21 +22604,21 @@
   ]
  },
  {
-  "head": "胡济",
+  "head": "司马孚",
   "relation": "隶属",
-  "tail": "蜀",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "姜维 君臣 胡济",
-   "姜维 隶属 蜀"
+   "曹操 君臣 司马孚",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "蔡和",
+  "head": "魏平",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -22921,12 +22627,26 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 蔡和",
-   "曹操 隶属 魏"
+   "司马懿 君臣 魏平",
+   "司马懿 隶属 魏"
   ]
  },
  {
-  "head": "张绍",
+  "head": "杨丑",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "张杨 君臣 杨丑",
+   "张杨 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "刘谌",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -22935,7 +22655,35 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 张绍",
+   "刘禅 君臣 刘谌",
+   "刘禅 隶属 蜀"
+  ]
+ },
+ {
+  "head": "慕容烈",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "文聘 君臣 慕容烈",
+   "文聘 隶属 魏"
+  ]
+ },
+ {
+  "head": "邓良",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘禅 君臣 邓良",
    "刘禅 隶属 蜀"
   ]
  },
@@ -22954,171 +22702,31 @@
   ]
  },
  {
-  "head": "蒋斌",
+  "head": "乐进",
   "relation": "隶属",
-  "tail": "蜀",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "姜维 君臣 蒋斌",
-   "姜维 隶属 蜀"
+   "曹操 君臣 乐进",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "刘备",
+  "head": "许芝",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 刘备",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "乌桓触",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 乌桓触",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "张绣",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 张绣",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "董昭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 董昭",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "丁斐",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 丁斐",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "史涣",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 史涣",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "臧霸",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 臧霸",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "伍习",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 伍习",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "蒋舒",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "姜维 君臣 蒋舒",
-   "姜维 隶属 蜀"
-  ]
- },
- {
-  "head": "朱光",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 朱光",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "董荼那",
-  "relation": "隶属",
-  "tail": "南蛮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孟获 君臣 董荼那",
-   "孟获 隶属 南蛮"
+   "曹操 君臣 许芝",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -23136,7 +22744,7 @@
   ]
  },
  {
-  "head": "杜袭",
+  "head": "夏侯兰",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -23145,194 +22753,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 杜袭",
-   "曹操 隶属 魏"
+   "夏侯惇 君臣 夏侯兰",
+   "夏侯惇 隶属 魏"
   ]
  },
  {
-  "head": "朱灵",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 朱灵",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "高柔",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 高柔",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯杰",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 夏侯杰",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "靳祥",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孔明 君臣 靳祥",
-   "孔明 隶属 蜀"
-  ]
- },
- {
-  "head": "路昭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 路昭",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "任夔",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "吴兰 君臣 任夔",
-   "吴兰 隶属 蜀"
-  ]
- },
- {
-  "head": "张郃",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孔明 君臣 张郃",
-   "孔明 隶属 蜀"
-  ]
- },
- {
-  "head": "吴质",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 吴质",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "丁谧",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹爽 君臣 丁谧",
-   "曹爽 隶属 魏"
-  ]
- },
- {
-  "head": "范成",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 范成",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "李虎",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘禅 君臣 李虎",
-   "刘禅 隶属 蜀"
-  ]
- },
- {
-  "head": "吕翔",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 吕翔",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "蔡中",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 蔡中",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "杨丑",
+  "head": "郭嘉",
   "relation": "隶属",
   "tail": "汉朝",
   "votes": 0,
@@ -23341,134 +22767,8 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "张杨 君臣 杨丑",
-   "张杨 隶属 汉朝"
-  ]
- },
- {
-  "head": "张遵",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛瞻 君臣 张遵",
-   "诸葛瞻 隶属 蜀"
-  ]
- },
- {
-  "head": "胡遵",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 胡遵",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "吕凯",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孔明 君臣 吕凯",
-   "孔明 隶属 蜀"
-  ]
- },
- {
-  "head": "任峻",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 任峻",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "董寻",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 董寻",
-   "曹睿 隶属 魏"
-  ]
- },
- {
-  "head": "韩嵩",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 韩嵩",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "王粲",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 王粲",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "庞德",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 庞德",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "黄皓",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘禅 君臣 黄皓",
-   "刘禅 隶属 蜀"
+   "曹操 君臣 郭嘉",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -23486,21 +22786,7 @@
   ]
  },
  {
-  "head": "周听",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "王朗 君臣 周听",
-   "王朗 隶属 魏"
-  ]
- },
- {
-  "head": "刘谌",
+  "head": "蒋舒",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23509,7 +22795,357 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 刘谌",
+   "姜维 君臣 蒋舒",
+   "姜维 隶属 蜀"
+  ]
+ },
+ {
+  "head": "段煨",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 段煨",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "胡济",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "姜维 君臣 胡济",
+   "姜维 隶属 蜀"
+  ]
+ },
+ {
+  "head": "臧霸",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 臧霸",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "阿会喃",
+  "relation": "隶属",
+  "tail": "南蛮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孟获 君臣 阿会喃",
+   "孟获 隶属 南蛮"
+  ]
+ },
+ {
+  "head": "向朗",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "关羽 君臣 向朗",
+   "关羽 隶属 蜀"
+  ]
+ },
+ {
+  "head": "荀彧",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 荀彧",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "杜琼",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘备 君臣 杜琼",
+   "刘备 隶属 蜀"
+  ]
+ },
+ {
+  "head": "杨锋",
+  "relation": "隶属",
+  "tail": "南蛮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孟获 君臣 杨锋",
+   "孟获 隶属 南蛮"
+  ]
+ },
+ {
+  "head": "张允",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 张允",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "何晏",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 何晏",
+   "曹爽 隶属 魏"
+  ]
+ },
+ {
+  "head": "陈震",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘备 君臣 陈震",
+   "刘备 隶属 蜀"
+  ]
+ },
+ {
+  "head": "刘琮",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 刘琮",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "程昱",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 程昱",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "关索",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "孔明 君臣 关索",
+   "孔明 隶属 蜀"
+  ]
+ },
+ {
+  "head": "董寻",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹睿 君臣 董寻",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "刘劭",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹睿 君臣 刘劭",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "夏侯存",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 夏侯存",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "耿纪",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 耿纪",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "路昭",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 路昭",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "韩嵩",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 韩嵩",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "傅彤",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘备 君臣 傅彤",
+   "刘备 隶属 蜀"
+  ]
+ },
+ {
+  "head": "辛敞",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 辛敞",
+   "曹爽 隶属 魏"
+  ]
+ },
+ {
+  "head": "李通",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 李通",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "李胜",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 李胜",
+   "曹爽 隶属 魏"
+  ]
+ },
+ {
+  "head": "刘琰",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘禅 君臣 刘琰",
    "刘禅 隶属 蜀"
   ]
  },
@@ -23528,35 +23164,7 @@
   ]
  },
  {
-  "head": "杨综",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹爽 君臣 杨综",
-   "曹爽 隶属 魏"
-  ]
- },
- {
-  "head": "许攸",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 许攸",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "陈震",
+  "head": "李虎",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23565,138 +23173,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘备 君臣 陈震",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "孙权",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 孙权",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "向朗",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "关羽 君臣 向朗",
-   "关羽 隶属 蜀"
-  ]
- },
- {
-  "head": "夏侯存",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 夏侯存",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "李胜",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹爽 君臣 李胜",
-   "曹爽 隶属 魏"
-  ]
- },
- {
-  "head": "车胄",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 车胄",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "傅彤",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 傅彤",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "李通",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 李通",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "阎宇",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘禅 君臣 阎宇",
+   "刘禅 君臣 李虎",
    "刘禅 隶属 蜀"
   ]
  },
  {
-  "head": "辛毗",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 辛毗",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "单福",
+  "head": "沙摩柯",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23705,12 +23187,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘备 君臣 单福",
+   "刘备 君臣 沙摩柯",
    "刘备 隶属 蜀"
   ]
  },
  {
-  "head": "夏侯霸",
+  "head": "邓贤",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -23719,12 +23201,152 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹睿 君臣 夏侯霸",
+   "司马懿 君臣 邓贤",
+   "司马懿 隶属 魏"
+  ]
+ },
+ {
+  "head": "眭固",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "张杨 君臣 眭固",
+   "张杨 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "戴陵",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "司马懿 君臣 戴陵",
+   "司马懿 隶属 魏"
+  ]
+ },
+ {
+  "head": "刘岱",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 刘岱",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "张虎",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "司马懿 君臣 张虎",
+   "司马懿 隶属 魏"
+  ]
+ },
+ {
+  "head": "蒋干",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 蒋干",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "张遵",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "诸葛瞻 君臣 张遵",
+   "诸葛瞻 隶属 蜀"
+  ]
+ },
+ {
+  "head": "焦彝",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "诸葛诞 君臣 焦彝",
+   "诸葛诞 隶属 魏"
+  ]
+ },
+ {
+  "head": "张茂",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹睿 君臣 张茂",
    "曹睿 隶属 魏"
   ]
  },
  {
-  "head": "王甫",
+  "head": "朱光",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 朱光",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "丁斐",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 丁斐",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "傅士仁",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23733,26 +23355,40 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "关羽 君臣 王甫",
+   "关羽 君臣 傅士仁",
    "关羽 隶属 蜀"
   ]
  },
  {
-  "head": "司马孚",
+  "head": "吕建",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 司马孚",
-   "曹操 隶属 魏"
+   "曹操 君臣 吕建",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "刘琰",
+  "head": "杜袭",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 杜袭",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "杨顒",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23761,12 +23397,96 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 刘琰",
-   "刘禅 隶属 蜀"
+   "孔明 君臣 杨顒",
+   "孔明 隶属 蜀"
   ]
  },
  {
-  "head": "师纂",
+  "head": "史涣",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "徐晃 君臣 史涣",
+   "徐晃 隶属 魏"
+  ]
+ },
+ {
+  "head": "王必",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 王必",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "葛雍",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "毋丘俭 君臣 葛雍",
+   "毋丘俭 隶属 魏"
+  ]
+ },
+ {
+  "head": "毛玠",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 毛玠",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "夏侯恩",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 夏侯恩",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "范成",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 范成",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "刘表",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23775,12 +23495,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "姜维 君臣 师纂",
-   "姜维 隶属 蜀"
+   "刘备 君臣 刘表",
+   "刘备 隶属 蜀"
   ]
  },
  {
-  "head": "宁随",
+  "head": "靳祥",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23789,12 +23509,68 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "姜维 君臣 宁随",
-   "姜维 隶属 蜀"
+   "孔明 君臣 靳祥",
+   "孔明 隶属 蜀"
   ]
  },
  {
-  "head": "蔡阳",
+  "head": "王垕",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 王垕",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "曹彰",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 曹彰",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "乌桓触",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 乌桓触",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "陈登",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘备 君臣 陈登",
+   "刘备 隶属 蜀"
+  ]
+ },
+ {
+  "head": "孙资",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -23803,36 +23579,50 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 蔡阳",
-   "曹操 隶属 魏"
+   "曹睿 君臣 孙资",
+   "曹睿 隶属 魏"
   ]
  },
  {
-  "head": "郗虑",
+  "head": "金环三结",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "南蛮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 郗虑",
-   "曹操 隶属 魏"
+   "孟获 君臣 金环三结",
+   "孟获 隶属 南蛮"
   ]
  },
  {
-  "head": "刘馥",
+  "head": "王粲",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 刘馥",
-   "曹操 隶属 魏"
+   "曹操 君臣 王粲",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "田氏",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 田氏",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -23850,35 +23640,7 @@
   ]
  },
  {
-  "head": "杨锋",
-  "relation": "隶属",
-  "tail": "南蛮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孟获 君臣 杨锋",
-   "孟获 隶属 南蛮"
-  ]
- },
- {
-  "head": "蒋干",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 蒋干",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "宗预",
+  "head": "郤正",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -23887,8 +23649,106 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘禅 君臣 宗预",
+   "刘禅 君臣 郤正",
    "刘禅 隶属 蜀"
+  ]
+ },
+ {
+  "head": "辛毗",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 辛毗",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "辛毗",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹睿 君臣 辛毗",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "车胄",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 车胄",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "宁随",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "姜维 君臣 宁随",
+   "姜维 隶属 蜀"
+  ]
+ },
+ {
+  "head": "蒋显",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘禅 君臣 蒋显",
+   "刘禅 隶属 蜀"
+  ]
+ },
+ {
+  "head": "吴纲",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "诸葛诞 君臣 吴纲",
+   "诸葛诞 隶属 魏"
+  ]
+ },
+ {
+  "head": "蔡和",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 蔡和",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -23902,90 +23762,6 @@
   "rule": "主公之所属即臣属之所属",
   "support": [
    "曹睿 君臣 郝昭",
-   "曹睿 隶属 魏"
-  ]
- },
- {
-  "head": "何晏",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹爽 君臣 何晏",
-   "曹爽 隶属 魏"
-  ]
- },
- {
-  "head": "程畿",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 程畿",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "程昱",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 程昱",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "胡班",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "关羽 君臣 胡班",
-   "关羽 隶属 蜀"
-  ]
- },
- {
-  "head": "郭嘉",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 郭嘉",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "孙资",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 孙资",
    "曹睿 隶属 魏"
   ]
  },
@@ -24004,7 +23780,7 @@
   ]
  },
  {
-  "head": "彭和",
+  "head": "程畿",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -24013,82 +23789,26 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "诸葛瞻 君臣 彭和",
-   "诸葛瞻 隶属 蜀"
-  ]
- },
- {
-  "head": "刘表",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 刘表",
+   "刘备 君臣 程畿",
    "刘备 隶属 蜀"
   ]
  },
  {
-  "head": "尹大目",
+  "head": "张燕",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "司马懿 君臣 尹大目",
-   "司马懿 隶属 魏"
+   "曹操 君臣 张燕",
+   "曹操 隶属 汉朝"
   ]
  },
  {
-  "head": "张允",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 张允",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "应劭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 应劭",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "乐进",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 乐进",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "陈登",
+  "head": "单福",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -24097,12 +23817,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "刘备 君臣 陈登",
+   "刘备 君臣 单福",
    "刘备 隶属 蜀"
   ]
  },
  {
-  "head": "赵累",
+  "head": "王含",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -24111,12 +23831,12 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "关羽 君臣 赵累",
-   "关羽 隶属 蜀"
+   "姜维 君臣 王含",
+   "姜维 隶属 蜀"
   ]
  },
  {
-  "head": "田氏",
+  "head": "夏侯惠",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -24125,68 +23845,40 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 田氏",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "裴元绍",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "关羽 君臣 裴元绍",
-   "关羽 隶属 蜀"
-  ]
- },
- {
-  "head": "曹操",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘备 君臣 曹操",
-   "刘备 隶属 蜀"
-  ]
- },
- {
-  "head": "吕旷",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 吕旷",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯威",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 夏侯威",
+   "曹睿 君臣 夏侯惠",
    "曹睿 隶属 魏"
   ]
  },
  {
-  "head": "杨顒",
+  "head": "任峻",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 任峻",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "许攸",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 许攸",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "黄皓",
   "relation": "隶属",
   "tail": "蜀",
   "votes": 0,
@@ -24195,274 +23887,22 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孔明 君臣 杨顒",
-   "孔明 隶属 蜀"
+   "刘禅 君臣 黄皓",
+   "刘禅 隶属 蜀"
   ]
  },
  {
-  "head": "段煨",
+  "head": "吕翔",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 段煨",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "王忠",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 王忠",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "许芝",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 许芝",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "金环三结",
-  "relation": "隶属",
-  "tail": "南蛮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孟获 君臣 金环三结",
-   "孟获 隶属 南蛮"
-  ]
- },
- {
-  "head": "王琰",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 王琰",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "黄奎",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 黄奎",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "杨阜",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 杨阜",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "刘琮",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 刘琮",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "吕建",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 吕建",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "杜睿",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孔明 君臣 杜睿",
-   "孔明 隶属 蜀"
-  ]
- },
- {
-  "head": "胡忠",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孔明 君臣 胡忠",
-   "孔明 隶属 蜀"
-  ]
- },
- {
-  "head": "辛敞",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹爽 君臣 辛敞",
-   "曹爽 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯兰",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "夏侯惇 君臣 夏侯兰",
-   "夏侯惇 隶属 魏"
-  ]
- },
- {
-  "head": "陈琳",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 陈琳",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯恩",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 夏侯恩",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "戴陵",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 戴陵",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "邓贤",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "司马懿 君臣 邓贤",
-   "司马懿 隶属 魏"
-  ]
- },
- {
-  "head": "耿纪",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹操 君臣 耿纪",
-   "曹操 隶属 魏"
-  ]
- },
- {
-  "head": "夏侯和",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "曹睿 君臣 夏侯和",
-   "曹睿 隶属 魏"
+   "曹操 君臣 吕翔",
+   "曹操 隶属 汉朝"
   ]
  },
  {
@@ -24480,7 +23920,7 @@
   ]
  },
  {
-  "head": "王必",
+  "head": "夏侯威",
   "relation": "隶属",
   "tail": "魏",
   "votes": 0,
@@ -24489,8 +23929,246 @@
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "曹操 君臣 王必",
-   "曹操 隶属 魏"
+   "曹睿 君臣 夏侯威",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "鲁芝",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹爽 君臣 鲁芝",
+   "曹爽 隶属 魏"
+  ]
+ },
+ {
+  "head": "朱灵",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 朱灵",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "曹宇",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹睿 君臣 曹宇",
+   "曹睿 隶属 魏"
+  ]
+ },
+ {
+  "head": "田畴",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 田畴",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "史涣",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 史涣",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "牛金",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 牛金",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "吴质",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 吴质",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "曹纯",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 曹纯",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "师纂",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "姜维 君臣 师纂",
+   "姜维 隶属 蜀"
+  ]
+ },
+ {
+  "head": "周听",
+  "relation": "隶属",
+  "tail": "魏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "王朗 君臣 周听",
+   "王朗 隶属 魏"
+  ]
+ },
+ {
+  "head": "傅佥",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "姜维 君臣 傅佥",
+   "姜维 隶属 蜀"
+  ]
+ },
+ {
+  "head": "刘馥",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 刘馥",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "宗预",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "刘禅 君臣 宗预",
+   "刘禅 隶属 蜀"
+  ]
+ },
+ {
+  "head": "王甫",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "关羽 君臣 王甫",
+   "关羽 隶属 蜀"
+  ]
+ },
+ {
+  "head": "伍习",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 伍习",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "郗虑",
+  "relation": "隶属",
+  "tail": "汉朝",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "曹操 君臣 郗虑",
+   "曹操 隶属 汉朝"
+  ]
+ },
+ {
+  "head": "赵累",
+  "relation": "隶属",
+  "tail": "蜀",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "主公之所属即臣属之所属",
+  "support": [
+   "关羽 君臣 赵累",
+   "关羽 隶属 蜀"
   ]
  },
  {
@@ -24505,580 +24183,6 @@
   "support": [
    "桓范 君臣 司蕃",
    "桓范 隶属 魏"
-  ]
- },
- {
-  "head": "王威",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘琮 君臣 王威",
-   "刘琮 隶属 魏"
-  ]
- },
- {
-  "head": "薛综",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 薛综",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "骆统",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 骆统",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "孙皎",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 孙皎",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "甘宁",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 甘宁",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "张承",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 张承",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "宋忠",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘琮 君臣 宋忠",
-   "刘琮 隶属 魏"
-  ]
- },
- {
-  "head": "潘浚",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 潘浚",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "蒯良",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘表 君臣 蒯良",
-   "刘表 隶属 蜀"
-  ]
- },
- {
-  "head": "孙静",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 孙静",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "吕公",
-  "relation": "隶属",
-  "tail": "蜀",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘表 君臣 吕公",
-   "刘表 隶属 蜀"
-  ]
- },
- {
-  "head": "吕岱",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 吕岱",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "严畯",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 严畯",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "全琮",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 全琮",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "朱然",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 朱然",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "谷利",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 谷利",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "袁绍",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 袁绍",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "傅巽",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘琮 君臣 傅巽",
-   "刘琮 隶属 魏"
-  ]
- },
- {
-  "head": "左咸",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 左咸",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "步骘",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 步骘",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "张休",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 张休",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "朱治",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 朱治",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "吾粲",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 吾粲",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "胡车儿",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "张绣 君臣 胡车儿",
-   "张绣 隶属 魏"
-  ]
- },
- {
-  "head": "凌操",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 凌操",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "诸葛恪",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 诸葛恪",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "张温",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 张温",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "诸葛瑾",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 诸葛瑾",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "鲁肃",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 鲁肃",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "吕范",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 吕范",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "朱桓",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 朱桓",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "顾雍",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 顾雍",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "邢贞",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 邢贞",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "孙桓",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 孙桓",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "董袭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 董袭",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "阚泽",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 阚泽",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "张纮",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 张纮",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "凌统",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 凌统",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "蒯越",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "刘琮 君臣 蒯越",
-   "刘琮 隶属 魏"
-  ]
- },
- {
-  "head": "程秉",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 程秉",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "潘璋",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 潘璋",
-   "孙权 隶属 魏"
   ]
  },
  {
@@ -25098,7 +24202,7 @@
  {
   "head": "雷叙",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
@@ -25106,147 +24210,49 @@
   "rule": "主公之所属即臣属之所属",
   "support": [
    "张绣 君臣 雷叙",
-   "张绣 隶属 魏"
+   "张绣 隶属 汉朝"
   ]
  },
  {
-  "head": "陈武",
+  "head": "宋忠",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孙权 君臣 陈武",
-   "孙权 隶属 魏"
+   "刘琮 君臣 宋忠",
+   "刘琮 隶属 汉朝"
   ]
  },
  {
-  "head": "周善",
+  "head": "胡车儿",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孙权 君臣 周善",
-   "孙权 隶属 魏"
+   "张绣 君臣 胡车儿",
+   "张绣 隶属 汉朝"
   ]
  },
  {
-  "head": "孙韶",
+  "head": "傅巽",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孙权 君臣 孙韶",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "张先",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "张绣 君臣 张先",
-   "张绣 隶属 魏"
-  ]
- },
- {
-  "head": "虞翻",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 虞翻",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "周鲂",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 周鲂",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "陆绩",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 陆绩",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "蒋钦",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 蒋钦",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "赵咨",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 赵咨",
-   "孙权 隶属 魏"
-  ]
- },
- {
-  "head": "周瑜",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙权 君臣 周瑜",
-   "孙权 隶属 魏"
+   "刘琮 君臣 傅巽",
+   "刘琮 隶属 汉朝"
   ]
  },
  {
@@ -25264,423 +24270,73 @@
   ]
  },
  {
-  "head": "谢旌",
+  "head": "王威",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "孙桓 君臣 谢旌",
-   "孙桓 隶属 魏"
+   "刘琮 君臣 王威",
+   "刘琮 隶属 汉朝"
   ]
  },
  {
-  "head": "赵睿",
+  "head": "蒯越",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "袁绍 君臣 赵睿",
-   "袁绍 隶属 魏"
+   "刘琮 君臣 蒯越",
+   "刘琮 隶属 汉朝"
   ]
  },
  {
-  "head": "韩莒子",
+  "head": "吕公",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "蜀",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "袁绍 君臣 韩莒子",
-   "袁绍 隶属 魏"
+   "刘表 君臣 吕公",
+   "刘表 隶属 蜀"
   ]
  },
  {
-  "head": "郭图",
+  "head": "蒯良",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "蜀",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "袁绍 君臣 郭图",
-   "袁绍 隶属 魏"
+   "刘表 君臣 蒯良",
+   "刘表 隶属 蜀"
   ]
  },
  {
-  "head": "文丑",
+  "head": "张先",
   "relation": "隶属",
-  "tail": "魏",
+  "tail": "汉朝",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "主公之所属即臣属之所属",
   "support": [
-   "袁绍 君臣 文丑",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "蒋奇",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 蒋奇",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "麴义",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 麴义",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "逢纪",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 逢纪",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "高干",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 高干",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "审配",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 审配",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "眭元进",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 眭元进",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "袁谭",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 袁谭",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "辛明",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 辛明",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "蒋义渠",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 蒋义渠",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "淳于琼",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 淳于琼",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "荀谌",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 荀谌",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "李异",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "孙桓 君臣 李异",
-   "孙桓 隶属 魏"
-  ]
- },
- {
-  "head": "韩猛",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 韩猛",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "蒋延",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛恪 君臣 蒋延",
-   "诸葛恪 隶属 魏"
-  ]
- },
- {
-  "head": "朱恩",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛恪 君臣 朱恩",
-   "诸葛恪 隶属 魏"
-  ]
- },
- {
-  "head": "沮授",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 沮授",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "张约",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛恪 君臣 张约",
-   "诸葛恪 隶属 魏"
-  ]
- },
- {
-  "head": "吕据",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛恪 君臣 吕据",
-   "诸葛恪 隶属 魏"
-  ]
- },
- {
-  "head": "田丰",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 田丰",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "留赞",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "诸葛恪 君臣 留赞",
-   "诸葛恪 隶属 魏"
-  ]
- },
- {
-  "head": "吕威璜",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 吕威璜",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "辛评",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 辛评",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "颜良",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 颜良",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "陈震",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 陈震",
-   "袁绍 隶属 魏"
-  ]
- },
- {
-  "head": "高览",
-  "relation": "隶属",
-  "tail": "魏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "主公之所属即臣属之所属",
-  "support": [
-   "袁绍 君臣 高览",
-   "袁绍 隶属 魏"
+   "张绣 君臣 张先",
+   "张绣 隶属 汉朝"
   ]
  }
 ]
