@@ -24,8 +24,14 @@ def list_runs():
         sp = os.path.join(p, "summary.json")
         if os.path.exists(sp):
             book = json.load(open(sp, encoding="utf-8")).get("schema", "")
-        out.append({"name": d, "book": book})
-    return out
+        out.append({"name": d, "book": book, "primary": d.endswith("full")})
+    # 每本书只保留一个主 run（*full 优先），测试 run 仍可通过 ?run= 直达
+    books = {}
+    for r in out:
+        cur = books.get(r["book"])
+        if cur is None or (r["primary"] and not cur["primary"]):
+            books[r["book"]] = r
+    return list(books.values())
 
 
 def load_run(name):
