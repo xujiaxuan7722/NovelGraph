@@ -1,6 +1,6 @@
-# kgx — 面向长文本的关系抽取与知识图谱构建框架
+# NovelGraph — 面向长篇小说的关系抽取与知识图谱构建框架
 
-Knowledge Graph eXtraction。从长篇小说原文抽取人物关系并构建知识图谱：schema 驱动（换书只换 `schemas/<书>.yaml`）、实体完全开放、证据强制校验、规则推导补全推理型关系、单模型（默认商汤 Token Plan 网关 deepseek-v4-flash，Gemini 备用）。以《红楼梦》验证，迁移验证计划用《三国演义》。
+代码包名沿用 `kgx`（Knowledge Graph eXtraction）。从长篇小说原文抽取人物关系并构建知识图谱：schema 驱动（换书只换 `schemas/<书>.yaml`）、实体完全开放、证据强制校验、规则推导补全推理型关系、单模型（默认商汤 Token Plan 网关 deepseek-v4-flash，Gemini 备用）。以《红楼梦》验证，迁移验证计划用《三国演义》。
 
 前身是课程项目 `~/hongloumeng-kg/`（GLM 管线 + 面板，F1 31.9%），本框架是按"可迁移"重做的第二版；演进史、实验数据、决策记录见 `docs/项目现状与问题.md`。
 
