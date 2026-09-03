@@ -257,11 +257,33 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
             a, r = apply_registry_updates(registry, result2, pack.text, first_chapter)
             stats["entities_added"] += a
             stats["entities_rejected"] += r
-            seen = {(x["head"], x["relation"], x["tail"]) for x in rels}
+            seen = {(x["head"], x["relation"], x["tail"], (x.get("evidence") or "").strip()) for x in rels}
             for x in result2.get("relations", []) or []:
-                k = (x.get("head"), x.get("relation"), x.get("tail"))
+                k = (x.get("head"), x.get("relation"), x.get("tail"), (x.get("evidence") or "").strip())
                 if k in seen:
                     continue
+                seen.add(k)
                 x = dict(x); x["pack"] = pack.id; x["chapters"] = chapters; x["round"] = 2
                 rels.append(x)
+
+    # 09-03 夜补：最终防线——(头,关系,尾,证据)全量去重；补抽循环兜底（pro 实测把
+    # "贾蓉 主仆 王夫人"重复了 46 遍——第一遍的循环守门不覆盖补抽，这里按证据句收敛）。
+    seen_q, dedup = set(), []
+    for x in rels:
+        kq = (x["head"], x["relation"], x["tail"], (x.get("evidence") or "").strip())
+        if kq not in seen_q:
+            seen_q.add(kq); dedup.append(x)
+    if len(dedup) < len(rels):
+        print(f"  {pack.label} 去重：{len(rels)} → {len(dedup)} 条", flush=True)
+    rels[:] = dedup
+    ev_n = len({(x.get("evidence") or "").strip() for x in rels})
+    if len(rels) >= 30 and len(rels) > 3 * max(ev_n, 1):
+        print(f"  !! {pack.label} 补抽后仍疑似循环（{len(rels)} 条/{ev_n} 句证据），按证据句收敛", flush=True)
+        seen_e, keep = set(), []
+        for x in rels:
+            e = (x.get("evidence") or "").strip()
+            if e not in seen_e:
+                seen_e.add(e); keep.append(x)
+        rels[:] = keep
+        stats["gleaning_looped"] = True
     return rels, stats
