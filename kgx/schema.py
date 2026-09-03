@@ -24,6 +24,7 @@ class InferenceRule:
     conclusion: List[str]
     unless: Optional[List[str]] = None
     dominant_premise: Optional[int] = None   # 该下标前提按主语只取票数最高的一条事实（如多隶属取主导势力）
+    unless_head_has: Optional[str] = None    # 结论头实体在既有事实中已有此关系 → 不推导（防噪声君臣边放大）
 
 
 @dataclass
@@ -98,7 +99,8 @@ def load_schema(path: str) -> Schema:
         )
     inference = [InferenceRule(name=r["name"], conditions=r["if"],
                                conclusion=r["then"], unless=r.get("unless"),
-                               dominant_premise=r.get("dominant_premise"))
+                               dominant_premise=r.get("dominant_premise"),
+                               unless_head_has=r.get("unless_head_has"))
                  for r in raw.get("inference", [])]
     return Schema(
         name=raw.get("name", ""), language=raw.get("language", "zh"),

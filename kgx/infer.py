@@ -55,6 +55,9 @@ def infer(schema, triples, max_rounds=3, votes=None):
     """triples: iterable of (h, r, t)（已确认的）。返回新增列表 [{head, relation, tail, rule, support}]"""
     votes = votes or {}
     known = set(triples)
+    base_heads = {}                        # relation -> 在原始（非推导）事实中作过头实体的集合
+    for (h, r, t) in known:
+        base_heads.setdefault(r, set()).add(h)
     new_all = []
     for _ in range(max_rounds):
         idx = _index(schema, known)
@@ -71,6 +74,8 @@ def infer(schema, triples, max_rounds=3, votes=None):
                 h, t = b.get(ch, ch), b.get(ct, ct)
                 if h == t:
                     continue
+                if rule.unless_head_has and h in base_heads.get(rule.unless_head_has, ()):
+                    continue               # 文本已断言该关系，不再替它推导（如曹操已有隶属，不接受"刘备阵营"推导）
                 if rule.unless:
                     uh, ur, ut = rule.unless
                     uh, ut = b.get(uh, uh), b.get(ut, ut)

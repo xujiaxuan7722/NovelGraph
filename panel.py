@@ -43,8 +43,19 @@ def load_run(name):
     def j(fn, default):
         fp = os.path.join(p, fn)
         return json.load(open(fp, encoding="utf-8")) if os.path.exists(fp) else default
+    summary = j("summary.json", {})
+    # 展示层别名表：借用 gold/<书>.py 的评估别名（如 贾宝玉→宝玉），补齐登记簿缺失的常用全名
+    gold_aliases = {}
+    mod_name = {"红楼梦": "gold.hongloumeng", "三国演义": "gold.sanguo"}.get(summary.get("schema", ""))
+    if mod_name:
+        try:
+            import importlib, sys
+            sys.path.insert(0, ROOT)
+            gold_aliases = getattr(importlib.import_module(mod_name), "aliases", {})
+        except Exception:
+            gold_aliases = {}
     return {"triples": j("triples.json", []), "registry": j("registry.json", {}),
-            "summary": j("summary.json", {}), "eval": j("eval_3.json", None)}
+            "summary": summary, "eval": j("eval_3.json", None), "gold_aliases": gold_aliases}
 
 
 class H(SimpleHTTPRequestHandler):

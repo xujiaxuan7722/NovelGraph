@@ -217,6 +217,13 @@ async function loadRun(name){
   DATA={reg:d.registry, links:d.triples, eval:d.eval, summary:d.summary};
   ALIAS={};
   for(const [n,e] of Object.entries(DATA.reg)){ ALIAS[n]=n; (e.aliases||[]).forEach(a=>ALIAS[a]=ALIAS[a]||n); }
+  // 评估别名表兜底（展示层）：如"贾宝玉"在登记簿悬空时，借 gold 表解析到 宝玉
+  for(const [gname,als] of Object.entries(d.gold_aliases||{})){
+    const target=ALIAS[gname]||als.map(a=>ALIAS[a]).find(Boolean);
+    if(!target) continue;
+    if(!ALIAS[gname]) ALIAS[gname]=target;
+    als.forEach(a=>{ if(!ALIAS[a]) ALIAS[a]=target; });
+  }
   DATA.deg={};
   DATA.links.forEach(l=>{ DATA.deg[l.head]=(DATA.deg[l.head]||0)+1; DATA.deg[l.tail]=(DATA.deg[l.tail]||0)+1; });
   ENT_INDEX=Object.entries(DATA.reg).map(([n,e])=>({key:n,label:n,tp:e.type||'',value:n}))
