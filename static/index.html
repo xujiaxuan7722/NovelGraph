@@ -31,6 +31,8 @@
           border:1px solid var(--line3);border-radius:20px;padding:7px 14px;flex:1 1 220px;
           min-width:180px;max-width:320px;position:relative}
   .sugwrap{position:relative;flex:1;display:flex}
+  .sugwrap{position:relative;flex:1;min-width:0;display:flex}
+  .row button{flex-shrink:0}
   .sugbox{position:absolute;top:calc(100% + 6px);left:0;min-width:100%;z-index:50;background:var(--card);
           border:1px solid var(--line);border-radius:6px;box-shadow:0 6px 18px rgba(43,39,34,.14);
           overflow:hidden;display:none;max-height:320px;overflow-y:auto}
@@ -45,8 +47,8 @@
   .card h2{font-size:15px;margin:0 0 10px;letter-spacing:1px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .card h2 .hint{font-size:11px;color:var(--ink3);font-weight:400}
   .row{display:flex;gap:8px}
-  .row input{flex:1;background:var(--paper);border:1px solid var(--line3);border-radius:4px;
-             padding:8px 11px;font:inherit;font-size:13px;color:var(--ink)}
+  .row input{flex:1;min-width:0;width:100%;background:var(--paper);border:1px solid var(--line3);
+             border-radius:4px;padding:8px 11px;font:inherit;font-size:13px;color:var(--ink)}
   button{font:inherit;border:0;cursor:pointer;border-radius:4px}
   .btn-red{background:var(--cinnabar);color:var(--card);padding:8px 16px;font-size:14px;letter-spacing:3px;
            box-shadow:0 1px 0 var(--cinnabar-dark)}
@@ -89,7 +91,9 @@
   .pnode.end{background:var(--cinnabar);color:var(--card);border-color:var(--cinnabar)}
   .prel{font-size:10px;color:var(--ink2);padding:0 7px}
   .muted{font-size:11px;color:var(--ink4);margin-top:6px}
-  #entityPanel{display:none}
+  #entityPanel{display:none;position:fixed;top:82px;right:16px;width:330px;max-height:calc(100vh - 120px);
+    overflow-y:auto;z-index:60;box-shadow:-4px 8px 28px rgba(43,39,34,.22);border-color:var(--line3)}
+  @media (max-width:980px){#entityPanel{width:calc(100% - 32px);top:auto;bottom:12px;max-height:60vh}}
   .back{background:transparent;border:1px solid var(--indigo);color:var(--indigo);font-size:11px;
         padding:3px 10px;border-radius:3px}
   @media (max-width:980px){main{flex-direction:column;height:auto}.col-left{width:100%}#graph{height:440px}
@@ -381,7 +385,6 @@ function loadEntity(name,opts){
       <button class="back" onclick="resetGraph()">关闭</button></h2>
     ${e.identity?`<div class="muted" style="margin-bottom:4px">${esc(e.identity)}</div>`:''}
     <div style="max-height:300px;overflow-y:auto;">${rows||'<div class="muted">暂无关系记录</div>'}</div>`;
-  if(!(opts&&opts.noscroll)) panel.scrollIntoView({behavior:'smooth'});
 }
 document.getElementById('searchBox').addEventListener('keydown',e=>{
   if(e.key==='Enter'){const v=e.target.value.trim();if(v)loadEntity(v);}});
@@ -407,6 +410,8 @@ function attachSuggest(input,onPick){
 attachSuggest(document.getElementById('searchBox'),v=>loadEntity(v));
 attachSuggest(document.getElementById('pathFrom'),null);
 attachSuggest(document.getElementById('pathTo'),null);
+['pathFrom','pathTo'].forEach(id=>document.getElementById(id)
+  .addEventListener('keydown',e=>{if(e.key==='Enter')findPath();}));
 
 /* ============ 关系路径（前端 BFS，推导边不参与寻径） ============ */
 function findPath(){
