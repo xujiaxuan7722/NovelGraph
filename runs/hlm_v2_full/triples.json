@@ -7854,36 +7854,6 @@
   "evidence_src": null
  },
  {
-  "head": "宝玉",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "source": "模型知识",
-  "reason": "贾赦与贾政为兄弟，二人为堂兄弟",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null
- },
- {
-  "head": "贾珍",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "source": "模型知识",
-  "reason": "宁荣两府同宗同辈，属族兄弟/堂亲",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null
- },
- {
-  "head": "惜春",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "source": "模型知识",
-  "reason": "宁荣两府同宗同辈，属族兄妹/堂亲",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null
- },
- {
   "head": "贾珍",
   "relation": "堂亲",
   "tail": "贾琏",
@@ -8254,16 +8224,6 @@
   "evidence_src": null
  },
  {
-  "head": "贾蓉",
-  "relation": "堂亲",
-  "tail": "贾蔷",
-  "source": "模型知识",
-  "reason": "二人同为宁府同辈族兄弟",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null
- },
- {
   "head": "多浑虫",
   "relation": "表亲",
   "tail": "晴雯",
@@ -8384,16 +8344,6 @@
   "evidence_src": null
  },
  {
-  "head": "金桂的母亲",
-  "relation": "母女",
-  "tail": "夏金桂",
-  "source": "模型知识",
-  "reason": "候选530/535方向/类型有误，正确关系是母→女。",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null
- },
- {
   "head": "恒王",
   "relation": "夫妻",
   "tail": "林四娘",
@@ -8464,14 +8414,46 @@
   "evidence_src": null
  },
  {
-  "head": "贾珍",
-  "relation": "主仆",
-  "tail": "赖升",
-  "source": "模型知识",
-  "reason": "赖升是宁府总管",
+  "head": "贾环",
+  "relation": "兄妹",
+  "tail": "贾珠",
   "votes": 0,
   "evidence": null,
-  "evidence_src": null
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "贾政 父子|父女 贾环",
+   "贾政 父子|父女 贾珠"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "兄妹",
+  "tail": "贾环",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "贾政 父子|父女 贾环",
+   "贾政 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "贾琏",
+  "relation": "兄妹",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同父兄妹",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 父子|父女 贾琮"
+  ]
  },
  {
   "head": "贾敬",
@@ -8485,34 +8467,6 @@
   "support": [
    "贾代化 父子|父女 贾敬",
    "贾代化 父子|父女 贾敷"
-  ]
- },
- {
-  "head": "贾琏",
-  "relation": "兄妹",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 父子|父女 贾琏"
-  ]
- },
- {
-  "head": "贾琮",
-  "relation": "兄妹",
-  "tail": "迎春",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 父子|父女 迎春"
   ]
  },
  {
@@ -8530,31 +8484,17 @@
   ]
  },
  {
-  "head": "贾环",
+  "head": "贾琮",
   "relation": "兄妹",
-  "tail": "贾珠",
+  "tail": "迎春",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "贾政 父子|父女 贾珠",
-   "贾政 父子|父女 贾环"
-  ]
- },
- {
-  "head": "元春",
-  "relation": "兄妹",
-  "tail": "贾珠",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同父兄妹",
-  "support": [
-   "贾政 父子|父女 贾珠",
-   "贾政 父子|父女 元春"
+   "贾赦 父子|父女 贾琮",
+   "贾赦 父子|父女 迎春"
   ]
  },
  {
@@ -8574,14 +8514,14 @@
  {
   "head": "元春",
   "relation": "兄妹",
-  "tail": "贾环",
+  "tail": "贾珠",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "贾政 父子|父女 贾环",
+   "贾政 父子|父女 贾珠",
    "贾政 父子|父女 元春"
   ]
  },
@@ -8609,8 +8549,8 @@
   "source": "推导",
   "rule": "同父兄妹",
   "support": [
-   "贾政 父子|父女 元春",
-   "贾政 父子|父女 探春"
+   "贾政 父子|父女 探春",
+   "贾政 父子|父女 元春"
   ]
  },
  {
@@ -8628,34 +8568,6 @@
   ]
  },
  {
-  "head": "大姐儿",
-  "relation": "兄妹",
-  "tail": "巧哥儿",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同母兄妹",
-  "support": [
-   "凤姐 母子|母女 大姐儿",
-   "凤姐 母子|母女 巧哥儿"
-  ]
- },
- {
-  "head": "大姐儿",
-  "relation": "兄妹",
-  "tail": "巧姐",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "同母兄妹",
-  "support": [
-   "凤姐 母子|母女 大姐儿",
-   "凤姐 母子|母女 巧姐"
-  ]
- },
- {
   "head": "巧哥儿",
   "relation": "兄妹",
   "tail": "巧姐",
@@ -8670,17 +8582,31 @@
   ]
  },
  {
-  "head": "贾代化",
-  "relation": "祖父",
-  "tail": "贾珍",
+  "head": "大姐儿",
+  "relation": "兄妹",
+  "tail": "巧哥儿",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "父之父为祖父",
+  "rule": "同母兄妹",
   "support": [
-   "贾代化 父子 贾敬",
-   "贾敬 父子|父女 贾珍"
+   "凤姐 母子|母女 巧哥儿",
+   "凤姐 母子|母女 大姐儿"
+  ]
+ },
+ {
+  "head": "大姐儿",
+  "relation": "兄妹",
+  "tail": "巧姐",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "同母兄妹",
+  "support": [
+   "凤姐 母子|母女 巧姐",
+   "凤姐 母子|母女 大姐儿"
   ]
  },
  {
@@ -8726,17 +8652,17 @@
   ]
  },
  {
-  "head": "贾代善",
+  "head": "贾代化",
   "relation": "祖父",
-  "tail": "贾琮",
+  "tail": "贾珍",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父之父为祖父",
   "support": [
-   "贾代善 父子 贾赦",
-   "贾赦 父子|父女 贾琮"
+   "贾代化 父子 贾敬",
+   "贾敬 父子|父女 贾珍"
   ]
  },
  {
@@ -8756,6 +8682,20 @@
  {
   "head": "贾代善",
   "relation": "祖父",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 贾赦",
+   "贾赦 父子|父女 贾琮"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
   "tail": "迎春",
   "votes": 0,
   "evidence": null,
@@ -8765,6 +8705,20 @@
   "support": [
    "贾代善 父子 贾赦",
    "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "贾代善",
+  "relation": "祖父",
+  "tail": "贾环",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父之父为祖父",
+  "support": [
+   "贾代善 父子 贾政",
+   "贾政 父子|父女 贾环"
   ]
  },
  {
@@ -8798,7 +8752,7 @@
  {
   "head": "贾代善",
   "relation": "祖父",
-  "tail": "贾环",
+  "tail": "探春",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
@@ -8806,7 +8760,7 @@
   "rule": "父之父为祖父",
   "support": [
    "贾代善 父子 贾政",
-   "贾政 父子|父女 贾环"
+   "贾政 父子|父女 探春"
   ]
  },
  {
@@ -8824,17 +8778,17 @@
   ]
  },
  {
-  "head": "贾代善",
-  "relation": "祖父",
-  "tail": "探春",
+  "head": "贾母",
+  "relation": "祖母",
+  "tail": "贾琮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "父之父为祖父",
+  "rule": "父之母为祖母",
   "support": [
-   "贾代善 父子 贾政",
-   "贾政 父子|父女 探春"
+   "贾母 母子 贾赦",
+   "贾赦 父子|父女 贾琮"
   ]
  },
  {
@@ -8852,20 +8806,6 @@
   ]
  },
  {
-  "head": "贾母",
-  "relation": "祖母",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父之母为祖母",
-  "support": [
-   "贾母 母子 贾赦",
-   "贾赦 父子|父女 贾琮"
-  ]
- },
- {
   "head": "李守中",
   "relation": "祖父",
   "tail": "贾兰",
@@ -8877,20 +8817,6 @@
   "support": [
    "李守中 父女 李纨",
    "李纨 母子|母女 贾兰"
-  ]
- },
- {
-  "head": "尤老娘",
-  "relation": "祖母",
-  "tail": "贾蓉",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "母之母为外祖母",
-  "support": [
-   "尤老娘 母女 尤氏",
-   "尤氏 母子|母女 贾蓉"
   ]
  },
  {
@@ -8908,82 +8834,21 @@
   ]
  },
  {
-  "head": "宝玉",
-  "relation": "堂亲",
-  "tail": "贾琮",
+  "head": "尤老娘",
+  "relation": "祖母",
+  "tail": "贾蓉",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
+  "rule": "母之母为外祖母",
   "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 宝玉"
-  ]
- },
- {
-  "head": "贾珠",
-  "relation": "堂亲",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 贾珠"
+   "尤老娘 母女 尤氏",
+   "尤氏 母子|母女 贾蓉"
   ]
  },
  {
   "head": "贾环",
-  "relation": "堂亲",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 贾环"
-  ]
- },
- {
-  "head": "元春",
-  "relation": "堂亲",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 元春"
-  ]
- },
- {
-  "head": "探春",
-  "relation": "堂亲",
-  "tail": "贾琮",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琮",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 探春"
-  ]
- },
- {
-  "head": "宝玉",
   "relation": "堂亲",
   "tail": "贾琏",
   "votes": 0,
@@ -8992,84 +8857,24 @@
   "source": "推导",
   "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "贾政 父子|父女 宝玉",
+   "贾政 父子|父女 贾环",
    "贾政 兄妹 贾赦",
    "贾赦 父子|父女 贾琏"
   ]
  },
  {
-  "head": "贾珠",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琏",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 贾珠"
-  ]
- },
- {
   "head": "贾环",
   "relation": "堂亲",
-  "tail": "贾琏",
+  "tail": "贾琮",
   "votes": 0,
   "evidence": null,
   "evidence_src": null,
   "source": "推导",
   "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "贾赦 父子|父女 贾琏",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 贾环"
-  ]
- },
- {
-  "head": "元春",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琏",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 元春"
-  ]
- },
- {
-  "head": "探春",
-  "relation": "堂亲",
-  "tail": "贾琏",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾赦 父子|父女 贾琏",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 探春"
-  ]
- },
- {
-  "head": "贾珠",
-  "relation": "堂亲",
-  "tail": "迎春",
-  "votes": 0,
-  "evidence": null,
-  "evidence_src": null,
-  "source": "推导",
-  "rule": "父辈兄弟之子女为堂亲",
-  "support": [
-   "贾政 父子|父女 贾珠",
+   "贾政 父子|父女 贾环",
    "贾政 兄妹 贾赦",
-   "贾赦 父子|父女 迎春"
+   "贾赦 父子|父女 贾琮"
   ]
  },
  {
@@ -9088,7 +8893,127 @@
   ]
  },
  {
+  "head": "宝玉",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 宝玉"
+  ]
+ },
+ {
+  "head": "贾珠",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 贾珠"
+  ]
+ },
+ {
+  "head": "探春",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 探春"
+  ]
+ },
+ {
   "head": "元春",
+  "relation": "堂亲",
+  "tail": "贾琏",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琏",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "宝玉",
+  "relation": "堂亲",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾政 父子|父女 宝玉",
+   "贾政 兄妹 贾赦",
+   "贾赦 父子|父女 贾琮"
+  ]
+ },
+ {
+  "head": "贾珠",
+  "relation": "堂亲",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琮",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 贾珠"
+  ]
+ },
+ {
+  "head": "探春",
+  "relation": "堂亲",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琮",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 探春"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "堂亲",
+  "tail": "贾琮",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾赦 父子|父女 贾琮",
+   "贾赦 兄妹 贾政",
+   "贾政 父子|父女 元春"
+  ]
+ },
+ {
+  "head": "贾珠",
   "relation": "堂亲",
   "tail": "迎春",
   "votes": 0,
@@ -9097,7 +9022,7 @@
   "source": "推导",
   "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "贾政 父子|父女 元春",
+   "贾政 父子|父女 贾珠",
    "贾政 兄妹 贾赦",
    "贾赦 父子|父女 迎春"
   ]
@@ -9112,9 +9037,24 @@
   "source": "推导",
   "rule": "父辈兄弟之子女为堂亲",
   "support": [
-   "贾赦 父子|父女 迎春",
-   "贾赦 兄妹 贾政",
-   "贾政 父子|父女 探春"
+   "贾政 父子|父女 探春",
+   "贾政 兄妹 贾赦",
+   "贾赦 父子|父女 迎春"
+  ]
+ },
+ {
+  "head": "元春",
+  "relation": "堂亲",
+  "tail": "迎春",
+  "votes": 0,
+  "evidence": null,
+  "evidence_src": null,
+  "source": "推导",
+  "rule": "父辈兄弟之子女为堂亲",
+  "support": [
+   "贾政 父子|父女 元春",
+   "贾政 兄妹 贾赦",
+   "贾赦 父子|父女 迎春"
   ]
  },
  {
@@ -9172,9 +9112,9 @@
   "source": "推导",
   "rule": "父与母之兄妹之子女为表亲",
   "support": [
-   "薛姨妈 父子|父女|母子|母女 宝钗",
-   "薛姨妈 兄妹 王夫人",
-   "王夫人 父子|父女|母子|母女 元春"
+   "王夫人 父子|父女|母子|母女 元春",
+   "王夫人 兄妹 薛姨妈",
+   "薛姨妈 父子|父女|母子|母女 宝钗"
   ]
  }
 ]

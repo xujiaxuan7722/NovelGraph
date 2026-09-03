@@ -138,6 +138,13 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print, guardr
                         not schema.type_ok(r, registry.entities[h]["type"], registry.entities[t]["type"]):
                     stats["additions_invalid"] += 1
                     continue
+                # 09-03 守卫：补充理由必须同时提及双方（任一名字形式）。三国抽检发现模型知识层 31% 错误
+                # 是"理由正确但头尾写错人"（张鲁之父写成张郃），此检查与证据校验同思路，零成本拦截。
+                reason_txt = a.get("reason", "") or ""
+                if not (any(n in reason_txt for n in registry.names_of(h)) and
+                        any(n in reason_txt for n in registry.names_of(t))):
+                    stats["additions_unref"] = stats.get("additions_unref", 0) + 1
+                    continue
                 key = schema.canon(h, r, t)
                 if key in cands:
                     continue

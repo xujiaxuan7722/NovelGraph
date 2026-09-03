@@ -20,13 +20,14 @@
   "ok": 295,
   "reject": 275,
   "unjudged": 0,
-  "additions": 67,
+  "additions": 61,
   "additions_invalid": 1,
+  "additions_unref": 6,
   "flipped": 41,
   "highvote_kept": 1
  },
  "functional_dropped": 2,
- "additions": 67,
+ "additions": 61,
  "inferred": 49,
  "registry": 601,
  "llm": {

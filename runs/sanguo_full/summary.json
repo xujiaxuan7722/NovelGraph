@@ -20,22 +20,23 @@
   "ok": 865,
   "reject": 726,
   "unjudged": 16,
-  "additions": 103,
+  "additions": 89,
   "additions_invalid": 16,
+  "additions_unref": 64,
   "flipped": 77,
   "highvote_kept": 35
  },
  "functional_dropped": 3,
- "additions": 103,
+ "additions": 89,
  "inferred": 245,
  "registry": 1971,
  "llm": {
-  "calls": 1,
-  "cached": 63,
-  "prompt_tokens": 38105,
-  "output_tokens": 48000,
-  "thought_tokens": 39718,
-  "seconds": 414.891973733902
+  "calls": 0,
+  "cached": 64,
+  "prompt_tokens": 0,
+  "output_tokens": 0,
+  "thought_tokens": 0,
+  "seconds": 0.0
  },
- "seconds": 500
+ "seconds": 9
 }

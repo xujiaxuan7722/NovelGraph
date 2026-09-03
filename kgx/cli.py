@@ -59,10 +59,12 @@ def run(args):
 
     # ---- 1. 预扫描 → 登记簿初始化 ----
     registry = Registry()
+    registry.set_guard(schema, text)
     reg_path = os.path.join(args.out, "registry.json")
     dict_path = os.path.join(args.out, "prescan_dict.json")
     if os.path.exists(reg_path):
         registry = Registry.load(reg_path)
+        registry.set_guard(schema, text)
         log(f"  载入已有登记簿：{len(registry.entities)} 实体")
     elif not args.no_prescan:
         sel_text = "\n".join(c.text for c in sel)

@@ -27,9 +27,9 @@ def list_runs():
         out.append({"name": d, "book": book, "primary": d.endswith("full")})
     # 每本书只保留一个主 run（*full 优先），测试 run 仍可通过 ?run= 直达
     books = {}
-    for r in out:
+    for r in out:                       # out 已按目录名排序：同书多个主 run 时后者(更新版本)覆盖
         cur = books.get(r["book"])
-        if cur is None or (r["primary"] and not cur["primary"]):
+        if cur is None or r["primary"]:
             books[r["book"]] = r
     return list(books.values())
 
