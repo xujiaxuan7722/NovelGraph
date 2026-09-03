@@ -1,183 +1,456 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NovelGraph</title>
+<script src="/echarts.min.js"></script>
 <style>
-  :root{--paper:#f6f1e5;--card:#fdfaf2;--ink:#2b2620;--dim:#8a7f6d;--red:#a63b2a;--line:#e3d9c4;--gold:#b8860b}
+  :root {
+    --paper:#f6f1e5; --paper2:#f3ecdc; --card:#fffdf7;
+    --ink:#2b2722; --ink2:#6b6152; --ink3:#8a7f6a; --ink4:#a99c82;
+    --line:#d8cdb4; --line2:#e6dcc6; --line3:#cbbfa3;
+    --cinnabar:#a83f2e; --cinnabar-dark:#7f2f22;
+    --indigo:#3d5a66; --gold:#b8860b; --bamboo:#5a7247; --violet:#7a5aa0;
+  }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);height:100vh;display:flex;flex-direction:column;
-       font:15px/1.85 "Noto Serif SC","Source Han Serif SC","STSong","SimSun",serif}
-  header{display:flex;flex-wrap:wrap;align-items:baseline;gap:18px;padding:18px 28px 10px;border-bottom:2px solid var(--red)}
-  header h1{margin:0;font-size:22px;letter-spacing:2px}
-  header h1 i{font-style:normal;color:var(--red)}
-  .books{display:flex;gap:8px}
-  .books button{font:inherit;font-size:14px;padding:2px 14px;border:1px solid var(--line);background:var(--card);
-    color:var(--dim);border-radius:2px;cursor:pointer;letter-spacing:2px}
-  .books button.on{background:var(--red);color:#f6f1e5;border-color:var(--red)}
-  .tabs{margin-left:auto;display:flex;gap:14px;font-size:14px}
-  .tabs a{color:var(--dim);text-decoration:none;cursor:pointer;padding-bottom:2px}
-  .tabs a.on{color:var(--red);border-bottom:2px solid var(--red)}
-  #stats{padding:6px 28px;font-size:13px;color:var(--dim);border-bottom:1px solid var(--line);letter-spacing:.5px}
-  #stats b{color:var(--red);font-weight:600}
-  main{flex:1;display:flex;min-height:0}
-  /* 左：人物列表 */
-  #roster{width:230px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:var(--card)}
-  #roster input{margin:12px 14px 8px;padding:6px 10px;font:inherit;font-size:13.5px;border:1px solid var(--line);
-    background:var(--paper);border-radius:2px;outline:none}
-  #roster input:focus{border-color:var(--red)}
-  #plist{overflow-y:auto;flex:1;padding:0 0 20px}
-  #plist div{padding:5px 18px;cursor:pointer;display:flex;justify-content:space-between;font-size:14.5px}
-  #plist div:hover{background:var(--paper)}
-  #plist div.on{color:var(--red);background:var(--paper);border-right:3px solid var(--red);font-weight:600}
-  #plist span{color:var(--dim);font-size:12px}
-  /* 中：档案 */
-  #profile{flex:1;overflow-y:auto;padding:26px 40px 60px}
-  #pname{font-size:30px;margin:0;letter-spacing:3px}
-  #pname small{font-size:13px;color:var(--dim);letter-spacing:1px;margin-left:12px}
-  #pid{color:var(--dim);margin:6px 0 2px;max-width:56em}
-  .alias{display:inline-block;border:1px solid var(--line);border-radius:2px;padding:0 8px;margin:2px 6px 2px 0;
-    font-size:12.5px;color:var(--dim);background:var(--card)}
-  .relgroups{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;align-items:start}
-  .rg{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:12px 16px 8px}
-  .rg h4{margin:0 0 6px;font-size:15px;color:var(--red);letter-spacing:2px;border-bottom:1px dashed var(--line);padding-bottom:5px}
-  .rg h4 span{float:right;color:var(--dim);font-size:12px;letter-spacing:0}
-  details{border-bottom:1px solid #efe8d6}
-  details:last-child{border-bottom:none}
-  summary{list-style:none;cursor:pointer;padding:5px 0;display:flex;align-items:baseline;gap:8px}
-  summary::-webkit-details-marker{display:none}
-  summary .who{font-size:15px}
-  summary .who:hover{color:var(--red)}
-  .badge{font-size:11px;border-radius:2px;padding:0 5px;letter-spacing:0}
-  .b-txt{background:#ece4d0;color:#6e6046}.b-mk{background:#e8d7cf;color:#8c4f3a}.b-inf{background:#dde3ea;color:#4a617e}
-  .b-v{color:var(--gold);font-size:12px;margin-left:auto}
-  .evbox{padding:2px 0 10px;font-size:13.5px;color:#5a5142}
-  .evbox .ev{border-left:3px solid var(--red);background:var(--paper);padding:5px 10px;margin:5px 0;border-radius:0 3px 3px 0}
-  .evbox .meta{color:var(--dim);font-size:12.5px}
-  .evbox .sup{display:inline-block;border:1px solid var(--line);padding:0 6px;margin:2px 4px 0 0;font-size:12px;color:var(--dim)}
-  /* 表格页 */
-  #tablePage{flex:1;overflow-y:auto;padding:20px 28px;display:none}
-  #tablePage .bar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
-  #tablePage select,#tablePage input{font:inherit;font-size:13.5px;padding:4px 8px;border:1px solid var(--line);background:var(--card);border-radius:2px}
-  table{width:100%;border-collapse:collapse;background:var(--card);font-size:13.5px}
-  th,td{border:1px solid var(--line);padding:5px 10px;text-align:left;vertical-align:top}
-  th{background:var(--paper);color:var(--dim);font-weight:600;letter-spacing:1px;position:sticky;top:0}
-  td.ev{color:#5a5142;font-size:12.5px;max-width:34em}
-  .hint{color:var(--dim);font-size:12.5px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',SimSun,serif}
+  header{display:flex;align-items:center;gap:16px;padding:12px 24px;border-bottom:1px solid var(--line);
+         background:linear-gradient(180deg,var(--paper2),var(--paper))}
+  .seal{width:40px;height:40px;background:var(--cinnabar);color:var(--card);display:flex;align-items:center;
+        justify-content:center;font-size:14px;line-height:1.1;text-align:center;border-radius:4px;
+        box-shadow:0 1px 0 var(--cinnabar-dark);flex-shrink:0}
+  h1{font-size:21px;margin:0;letter-spacing:2px;font-weight:600}
+  .sub{font-size:11px;color:var(--ink3);letter-spacing:1px}
+  .books{display:flex;gap:6px;margin-left:18px}
+  .books button{font:inherit;font-size:12.5px;letter-spacing:2px;padding:4px 13px;cursor:pointer;
+    border:1px solid var(--line3);border-radius:14px;background:transparent;color:var(--ink2)}
+  .books button.on{background:var(--cinnabar);border-color:var(--cinnabar);color:var(--card)}
+  .search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--card);
+          border:1px solid var(--line3);border-radius:20px;padding:7px 14px;width:300px;position:relative}
+  .sugwrap{position:relative;flex:1;display:flex}
+  .sugbox{position:absolute;top:calc(100% + 6px);left:0;min-width:100%;z-index:50;background:var(--card);
+          border:1px solid var(--line);border-radius:6px;box-shadow:0 6px 18px rgba(43,39,34,.14);
+          overflow:hidden;display:none;max-height:320px;overflow-y:auto}
+  .sug-item{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:8px 14px;
+            font-size:13px;cursor:pointer;white-space:nowrap}
+  .sug-item:hover{background:var(--paper2)}
+  .sug-item .tp{font-size:11px;color:var(--ink4)}
+  .search input{border:0;outline:0;background:transparent;font:inherit;font-size:13px;width:100%;color:var(--ink)}
+  main{display:flex;gap:16px;padding:16px 20px;height:calc(100vh - 66px);min-height:560px}
+  .col-left{display:flex;flex-direction:column;gap:14px;width:380px;flex-shrink:0;overflow-y:auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+  .card h2{font-size:15px;margin:0 0 10px;letter-spacing:1px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .card h2 .hint{font-size:11px;color:var(--ink3);font-weight:400}
+  .row{display:flex;gap:8px}
+  .row input{flex:1;background:var(--paper);border:1px solid var(--line3);border-radius:4px;
+             padding:8px 11px;font:inherit;font-size:13px;color:var(--ink)}
+  button{font:inherit;border:0;cursor:pointer;border-radius:4px}
+  .btn-red{background:var(--cinnabar);color:var(--card);padding:8px 16px;font-size:14px;letter-spacing:3px;
+           box-shadow:0 1px 0 var(--cinnabar-dark)}
+  .btn-blue{background:var(--indigo);color:var(--card);padding:8px 14px;font-size:13px;letter-spacing:2px}
+  .answer{background:var(--paper2);border-left:3px solid var(--cinnabar);padding:10px 12px;margin-top:10px;
+          font-size:13.5px;line-height:1.75;display:none}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chip{font-size:11px;border:1px solid var(--line3);border-radius:12px;padding:3px 10px;color:var(--ink2);background:transparent}
+  .chip:hover{border-color:var(--cinnabar);color:var(--cinnabar)}
+  .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .tile{background:var(--paper2);border-radius:4px;padding:9px 6px;text-align:center}
+  .tile b{display:block;font-size:21px;color:var(--cinnabar)}
+  .tile span{font-size:11px;color:var(--ink2)}
+  .srcbar{display:flex;height:13px;border-radius:3px;overflow:hidden;margin:6px 0 4px}
+  .lg{display:flex;flex-wrap:wrap;gap:10px;font-size:10px;color:var(--ink2)}
+  .lg i{width:8px;height:8px;display:inline-block;border-radius:2px;margin-right:4px}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-top:5px;font-size:11px}
+  .bar-row .nm{width:52px;flex-shrink:0}
+  .bar-row .bar{height:8px;border-radius:2px;background:var(--cinnabar)}
+  .bar-row .v{font-size:10px;color:var(--ink3)}
+  .graph-card{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--card);
+              border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .graph-head{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line2);flex-wrap:wrap}
+  .graph-head b{font-size:15px;letter-spacing:1px;margin-right:4px}
+  .fchip{font-size:11px;border:1px solid var(--line3);color:var(--ink2);border-radius:12px;
+         padding:3px 10px;background:transparent}
+  .fchip.on{border-color:var(--cinnabar);color:var(--cinnabar);background:var(--paper2)}
+  #graph{flex:1;min-height:0}
+  .evidence{border-top:1px solid var(--line2);padding:8px 14px;font-size:12px;color:var(--ink2);
+            min-height:38px;line-height:1.7}
+  .tag{font-size:10px;border-radius:3px;padding:1px 6px;color:var(--card);margin-right:4px}
+  .rel-item{display:flex;align-items:center;gap:8px;padding:7px 9px;background:var(--paper);
+            border-radius:4px;margin-top:6px;font-size:12px}
+  .rel-item .who{font-weight:600;font-size:13px;cursor:pointer}
+  .rel-item .who:hover{color:var(--cinnabar)}
+  .rel-item .ev{color:var(--ink3);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pathline{background:var(--paper2);border-radius:4px;padding:12px;margin-top:10px;display:none;
+            flex-wrap:wrap;align-items:center;row-gap:10px;font-size:13px}
+  .pnode{background:var(--card);border:1px solid var(--line3);border-radius:14px;padding:3px 11px;font-weight:600}
+  .pnode.end{background:var(--cinnabar);color:var(--card);border-color:var(--cinnabar)}
+  .prel{font-size:10px;color:var(--ink2);padding:0 7px}
+  .muted{font-size:11px;color:var(--ink4);margin-top:6px}
+  #entityPanel{display:none}
+  .back{background:transparent;border:1px solid var(--indigo);color:var(--indigo);font-size:11px;
+        padding:3px 10px;border-radius:3px}
+  @media (max-width:980px){main{flex-direction:column;height:auto}.col-left{width:100%}#graph{height:480px}}
 </style>
 </head>
 <body>
 <header>
-  <h1><i>Novel</i>Graph<small style="color:var(--dim);font-size:12px;letter-spacing:1px">　长篇小说人物关系图谱</small></h1>
+  <div class="seal" id="seal">红<br>楼</div>
+  <div>
+    <h1 id="title">NovelGraph</h1>
+    <div class="sub" id="subtitle">长篇小说人物关系图谱 · 零手写先验</div>
+  </div>
   <div class="books" id="books"></div>
-  <div class="tabs"><a id="tabP" class="on">人物档案</a><a id="tabT">全部关系</a></div>
+  <div class="search">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#8a7f6a" stroke-width="1.5"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14"/></svg>
+    <span class="sugwrap" style="flex:1"><input id="searchBox" placeholder="搜索人物 / 地点，如：凤姐" autocomplete="off"></span>
+  </div>
 </header>
-<div id="stats"></div>
 <main>
-  <div id="roster"><input id="q" placeholder="搜索人物…"><div id="plist"></div></div>
-  <div id="profile"></div>
-  <div id="tablePage">
-    <div class="bar">
-      <select id="fLayer"><option value="">全部来源层</option><option>LLM抽取</option><option>模型知识</option><option>推导</option></select>
-      <select id="fRel"><option value="">全部关系</option></select>
-      <input id="fQ" placeholder="按人名过滤…">
-      <span class="hint" id="fCount"></span>
+  <div class="col-left">
+    <div class="card" id="entityPanel"></div>
+
+    <div class="card">
+      <h2>关系查询 <span class="hint">人名 + 关系词，如"贾母 丫鬟"</span></h2>
+      <div class="row">
+        <input id="qaInput" placeholder="如：贾母 丫鬟">
+        <button class="btn-red" onclick="askRel()">查</button>
+      </div>
+      <div class="answer" id="qaAnswer"></div>
+      <div class="chips" id="qaChips"></div>
     </div>
-    <table><thead><tr><th>头</th><th>关系</th><th>尾</th><th>来源</th><th>票</th><th>证据 / 推导链</th></tr></thead>
-    <tbody id="tbody"></tbody></table>
+
+    <div class="card">
+      <h2>关系路径查询 <span class="hint">两个人物在图谱中如何相连</span></h2>
+      <div class="row" style="align-items:center;">
+        <span class="sugwrap"><input id="pathFrom" placeholder="" autocomplete="off"></span>
+        <span style="color:var(--ink3);">→</span>
+        <span class="sugwrap"><input id="pathTo" placeholder="" autocomplete="off"></span>
+        <button class="btn-blue" onclick="findPath()">寻径</button>
+      </div>
+      <div class="pathline" id="pathResult"></div>
+    </div>
+
+    <div class="card">
+      <h2>图谱概况</h2>
+      <div class="tiles" id="tiles"></div>
+      <div class="muted">三元组来源构成</div>
+      <div class="srcbar" id="srcBar"></div>
+      <div class="lg" id="srcLegend"></div>
+      <div class="muted">度数最高人物</div>
+      <div id="topDegree"></div>
+    </div>
+  </div>
+
+  <div class="graph-card">
+    <div class="graph-head">
+      <b>人物关系网络</b>
+      <span id="focusHint" class="hint" style="font-size:11px;color:var(--ink3);"></span>
+      <span style="flex:1"></span>
+      <span id="catChips"></span>
+      <button class="fchip on" id="confChip" onclick="toggleConf()">高置信(开)</button>
+      <button class="fchip" id="infChip" onclick="toggleInf()">推导(隐藏)</button>
+      <button class="fchip" onclick="resetGraph()">重置</button>
+    </div>
+    <div id="graph"></div>
+    <div class="evidence" id="edgeInfo">点击连线查看该关系的证据与来源 · 点击节点聚焦人物 · 拖拽平移 · 滚轮缩放</div>
   </div>
 </main>
+
 <script>
-const $=s=>document.querySelector(s);
-const LB={'LLM抽取':['文本','b-txt'],'模型知识':['补充','b-mk'],'推导':['推导','b-inf']};
-let RUNS=[],DATA=null,DEG={},me=null;
+/* ============ 每本书的展示配置（纯前端展示层，不属于抽取管线） ============ */
+const BOOKS = {
+  '红楼梦': {
+    seal:'红<br>楼', sub:'曹雪芹 · 百二十回 ｜ LLM 抽取 × 程序校验 × 规则推导',
+    cats:{ 父子:'血缘',父女:'血缘',母子:'血缘',母女:'血缘',兄妹:'血缘',祖父:'血缘',祖母:'血缘',
+           表亲:'血缘',堂亲:'血缘',夫妻:'婚姻',主仆:'主仆',居住:'居住',家族:'家族' },
+    order:['血缘','婚姻','主仆','居住','家族'], on:['血缘','婚姻','主仆'],
+    qa:['贾母 丫鬟','宝玉 表亲','贾政 儿子','黛玉 居住'], path:['贾母','宝钗'],
+    words:{ 丫鬟:'主仆',仆人:'主仆',小厮:'主仆',儿子:'父子|母子',女儿:'父女|母女',父亲:'父子|父女',
+            母亲:'母子|母女',妻子:'夫妻',丈夫:'夫妻',住:'居住',住在:'居住',哥哥:'兄妹',妹妹:'兄妹',
+            兄弟:'兄妹',姐妹:'兄妹',孙子:'祖父|祖母',孙女:'祖父|祖母' } },
+  '三国演义': {
+    seal:'三<br>国', sub:'罗贯中 · 百二十回 ｜ 同一框架换 schema 迁移',
+    cats:{ 父子:'血缘',父女:'血缘',母子:'血缘',兄妹:'血缘',堂亲:'血缘',祖父:'血缘',夫妻:'婚姻',
+           结义:'结义',君臣:'君臣',师徒:'君臣',隶属:'势力',镇守:'镇守' },
+    order:['血缘','婚姻','结义','君臣','势力','镇守'], on:['血缘','婚姻','结义','君臣'],
+    qa:['曹操 君臣','刘备 结义','孙坚 儿子','关羽 镇守'], path:['貂蝉','刘备'],
+    words:{ 部将:'君臣',手下:'君臣',臣:'君臣',大将:'君臣',谋士:'君臣',儿子:'父子|母子',女儿:'父女',
+            父亲:'父子|父女',母亲:'母子',妻子:'夫妻',丈夫:'夫妻',兄弟:'兄妹结义',义兄:'结义',
+            徒弟:'师徒',师父:'师徒',势力:'隶属',属于:'隶属',镇守:'镇守',驻守:'镇守' } },
+};
+const CAT_COLOR = { 血缘:'#a83f2e', 婚姻:'#b8860b', 主仆:'#3d5a66', 居住:'#5a7247', 家族:'#7a5aa0',
+                    结义:'#c96a4a', 君臣:'#3d5a66', 势力:'#7a5aa0', 镇守:'#5a7247' };
+const SRC_COLOR = { 'LLM抽取':'#3d5a66', '模型知识':'#7a5aa0', '推导':'#b8860b' };
+const SRC_SHORT = { 'LLM抽取':'文本', '模型知识':'补充', '推导':'推导' };
+
+let RUNS=[], RUN=null, BOOK=null, CFG=null, DATA=null, ALIAS={}, ENT_INDEX=[];
+let state={ cats:new Set(), focus:null, highConf:true, inf:false };
+const chart=echarts.init(document.getElementById('graph'));
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cat=r=>CFG.cats[r]||'其他';
+
+/* ============ 数据加载与多书切换 ============ */
 async function init(){
   RUNS=await (await fetch('/api/runs')).json();
-  $('#books').innerHTML=RUNS.map(r=>`<button data-n="${r.name}">${r.book||r.name}</button>`).join('');
-  document.querySelectorAll('#books button').forEach(b=>b.onclick=()=>load(b.dataset.n));
+  const box=document.getElementById('books');
+  box.innerHTML=RUNS.map(r=>`<button data-n="${esc(r.name)}">${esc(r.book)}</button>`).join('');
+  box.querySelectorAll('button').forEach(b=>b.onclick=()=>loadRun(b.dataset.n));
   const want=new URLSearchParams(location.search).get('run');
-  load(want&&RUNS.some(r=>r.name===want)?want:RUNS[0].name);
+  loadRun(want&&RUNS.some(r=>r.name===want)?want:RUNS[0].name);
 }
-async function load(name){
+async function loadRun(name){
+  RUN=name; BOOK=(RUNS.find(r=>r.name===name)||{}).book;
+  CFG=BOOKS[BOOK]||BOOKS['红楼梦'];
   document.querySelectorAll('#books button').forEach(b=>b.classList.toggle('on',b.dataset.n===name));
-  DATA=await (await fetch('/api/run?name='+encodeURIComponent(name))).json();
-  DEG={};DATA.triples.forEach(t=>{DEG[t.head]=(DEG[t.head]||0)+1;DEG[t.tail]=(DEG[t.tail]||0)+1;});
-  const cnt={};DATA.triples.forEach(t=>cnt[t.source]=(cnt[t.source]||0)+1);
-  const e=DATA.eval;
-  $('#stats').innerHTML=`关系 <b>${DATA.triples.length}</b> 条（文本 ${cnt['LLM抽取']||0} · 补充 ${cnt['模型知识']||0} · 推导 ${cnt['推导']||0}）　实体 <b>${Object.keys(DATA.registry).length}</b>`+
-    (e?`　对金标准：查准 <b>${(e.precision*100).toFixed(1)}%</b> 查全 <b>${(e.recall*100).toFixed(1)}%</b> F1 <b>${(e.f1*100).toFixed(1)}%</b>`:'');
-  $('#fRel').innerHTML='<option value="">全部关系</option>'+[...new Set(DATA.triples.map(t=>t.relation))].map(r=>`<option>${r}</option>`).join('');
-  roster();
-  const top=list().find(([n])=>(DATA.registry[n]||{}).type==='人物')||list()[0];
-  if(top)show(top[0]); table();
+  document.getElementById('seal').innerHTML=CFG.seal;
+  document.getElementById('subtitle').textContent=CFG.sub;
+  const d=await (await fetch('/api/run?name='+encodeURIComponent(name))).json();
+  DATA={reg:d.registry, links:d.triples, eval:d.eval, summary:d.summary};
+  ALIAS={};
+  for(const [n,e] of Object.entries(DATA.reg)){ ALIAS[n]=n; (e.aliases||[]).forEach(a=>ALIAS[a]=ALIAS[a]||n); }
+  DATA.deg={};
+  DATA.links.forEach(l=>{ DATA.deg[l.head]=(DATA.deg[l.head]||0)+1; DATA.deg[l.tail]=(DATA.deg[l.tail]||0)+1; });
+  ENT_INDEX=Object.entries(DATA.reg).map(([n,e])=>({key:n,label:n,tp:e.type||'',value:n}))
+    .concat(Object.entries(ALIAS).filter(([a,n])=>a!==n).map(([a,n])=>({key:a+n,label:a,tp:'→ '+n,value:n})));
+  state.cats=new Set(CFG.on); state.focus=null; state.highConf=true; state.inf=false;
+  document.getElementById('infChip').textContent='推导(隐藏)';
+  document.getElementById('infChip').classList.remove('on');
+  document.getElementById('qaChips').innerHTML=CFG.qa.map(q=>`<button class="chip" onclick="fillQA(this)">${q}</button>`).join('');
+  document.getElementById('qaInput').placeholder='如：'+CFG.qa[0];
+  document.getElementById('pathFrom').placeholder=CFG.path[0];
+  document.getElementById('pathTo').placeholder=CFG.path[1];
+  document.getElementById('entityPanel').style.display='none';
+  document.getElementById('qaAnswer').style.display='none';
+  document.getElementById('pathResult').style.display='none';
+  buildCatChips(); loadStats();
+  state.focus=topPerson();
+  renderGraph();
 }
-function list(){
-  const q=$('#q').value.trim();
-  return Object.entries(DEG).filter(([n])=>{const e=DATA.registry[n];return e&&(!q||n.includes(q)||(e.aliases||[]).some(a=>a.includes(q)));})
-    .sort((a,b)=>b[1]-a[1]);
+function topPerson(){
+  return Object.entries(DATA.deg).filter(([n])=> (DATA.reg[n]||{}).type==='人物')
+    .sort((a,b)=>b[1]-a[1]).map(x=>x[0])[0]||null;
 }
-function roster(){
-  $('#plist').innerHTML=list().slice(0,300).map(([n,d])=>`<div data-n="${n}" class="${n===me?'on':''}">${n}<span>${d}</span></div>`).join('');
-  document.querySelectorAll('#plist div').forEach(d=>d.onclick=()=>show(d.dataset.n));
-}
-function evHtml(t){
-  let h='<div class="evbox">';
-  (t.evidences||[t.evidence]).filter(Boolean).forEach(e=>h+=`<div class="ev">${e}</div>`);
-  const meta=[];
-  if(t.evidence_src)meta.push('证据来源：'+t.evidence_src);
-  if(t.chapters&&t.chapters.length)meta.push('章节：'+t.chapters.slice(0,10).join('、'));
-  if(meta.length)h+=`<div class="meta">${meta.join('　')}</div>`;
-  if(t.review)h+=`<div class="meta">复核：${t.review}</div>`;
-  if(t.reason)h+=`<div class="meta">模型理由：${t.reason}</div>`;
-  if(t.rule){h+=`<div class="meta">推导规则：${t.rule}</div>`;(t.support||[]).forEach(s=>h+=`<span class="sup">${s}</span>`);}
-  return h+'</div>';
-}
-function show(name){
-  me=name;$('#tabP').click();roster();
-  const e=DATA.registry[name]||{};
-  let h=`<h2 id="pname">${name}<small>${e.type||''}　关系 ${DEG[name]||0} 条</small></h2>`;
-  if(e.identity)h+=`<p id="pid">${e.identity}</p>`;
-  if((e.aliases||[]).length)h+=`<div>${e.aliases.map(a=>`<span class="alias">${a}</span>`).join('')}</div>`;
-  const groups={},seen={};   // 同一（关系,对方）跨层去重：文本 > 补充 > 推导
-  const prio={'LLM抽取':0,'模型知识':1,'推导':2};
-  [...DATA.triples].sort((a,b)=>prio[a.source]-prio[b.source]).forEach(t=>{
-    if(t.head!==name&&t.tail!==name)return;
-    const other=t.head===name?t.tail:t.head;
-    const k=t.relation+'|'+other;
-    if(seen[k])return; seen[k]=1;
-    const dir=t.head===name?'→':'←';
-    (groups[t.relation]=groups[t.relation]||[]).push({t,other,dir});
+const resolve=n=>ALIAS[n]||null;
+
+/* ============ 图谱渲染（v1 的治杂乱配方：类别筛选+高置信+聚焦一跳） ============ */
+function filteredLinks(){
+  return DATA.links.filter(l=>{
+    if(l.source==='推导'&&!state.inf) return false;
+    if(!state.cats.has(cat(l.relation))) return false;
+    if(state.highConf&&l.source==='LLM抽取'&&(l.votes||1)<2) return false;
+    return true;
   });
-  h+='<div class="relgroups">';
-  Object.entries(groups).sort((a,b)=>b[1].length-a[1].length).forEach(([rel,items])=>{
-    h+=`<div class="rg"><h4>${rel}<span>${items.length}</span></h4>`;
-    items.sort((a,b)=>(b.t.votes||0)-(a.t.votes||0)).forEach(({t,other,dir})=>{
-      const [lb,cls]=LB[t.source]||['?',''];
-      h+=`<details><summary><span class="who" onclick="event.preventDefault();show('${other}')">${other}</span>
-        <span class="hint">${dir==='→'?'':'（对方为主位）'}</span>
-        <span class="badge ${cls}">${lb}</span><span class="b-v">${t.votes?('票 '+t.votes):''}</span></summary>${evHtml(t)}</details>`;
-    });
-    h+='</div>';
-  });
-  $('#profile').innerHTML=h+'</div>';$('#profile').scrollTop=0;
 }
-function table(){
-  const L=$('#fLayer').value,R=$('#fRel').value,Q=$('#fQ').value.trim();
-  const rows=DATA.triples.filter(t=>(!L||t.source===L)&&(!R||t.relation===R)&&(!Q||t.head.includes(Q)||t.tail.includes(Q)))
+function renderGraph(){
+  if(!DATA) return;
+  let links=filteredLinks(), keep=null;
+  if(state.focus){
+    keep=new Set([state.focus]); const next=new Set(keep);
+    links.forEach(l=>{ if(keep.has(l.head))next.add(l.tail); if(keep.has(l.tail))next.add(l.head); });
+    keep=next; links=links.filter(l=>keep.has(l.head)&&keep.has(l.tail));
+  }
+  const used=new Set(); links.forEach(l=>{used.add(l.head);used.add(l.tail);});
+  if(state.focus) used.add(state.focus);
+  const nodes=[...used].map(n=>{
+    const ty=(DATA.reg[n]||{}).type||'人物', deg=DATA.deg[n]||1, me=n===state.focus;
+    return { id:n,name:n,
+      symbol:ty==='地点'?'rect':(ty==='家族'||ty==='势力')?'diamond':'circle',
+      symbolSize:me?46:Math.min(14+Math.sqrt(deg)*3.2,40),
+      itemStyle: me?{color:'#a83f2e',borderColor:'#7f2f22',borderWidth:1.5}
+        :{color:ty==='地点'?'#eef0e4':(ty==='家族'||ty==='势力')?'#efe6f5':'#fffdf7',
+          borderColor:ty==='地点'?'#5a7247':(ty==='家族'||ty==='势力')?'#7a5aa0':'#2b2722',borderWidth:1.3},
+      label:{color:me?'#f6f1e5':'#2b2722'} };
+  });
+  chart.setOption({backgroundColor:'#fffdf7',tooltip:{show:false},
+    series:[{type:'graph',layout:'force',roam:true,draggable:true,data:nodes,
+      edges:links.map(l=>({source:l.head,target:l.tail,
+        lineStyle:{color:CAT_COLOR[cat(l.relation)]||'#a99c82',
+          width:l.source==='推导'?1:1.6, type:l.source==='推导'?'dashed':'solid',
+          opacity:l.source==='推导'?.55:.9, curveness:.08},
+        label:{show:links.length<=130,formatter:l.relation,fontSize:10,color:'#8a7f6a'}, raw:l})),
+      label:{show:true,fontSize:links.length>250?11:12,fontFamily:'Noto Serif SC, Songti SC, SimSun, serif'},
+      zoom:.85,
+      force:{repulsion:links.length>250?620:340,edgeLength:links.length>250?170:110,
+             gravity:links.length>250?.16:.08},
+      emphasis:{focus:'adjacency',lineStyle:{width:3}}}]},true);
+  document.getElementById('focusHint').textContent=
+    state.focus?`聚焦：${state.focus} · 直接关系`:`全图 · ${nodes.length} 实体 / ${links.length} 关系`;
+}
+chart.on('click',p=>{
+  if(p.dataType==='node'){ loadEntity(p.data.id); }
+  else if(p.dataType==='edge'){
+    const l=p.data.raw, box=document.getElementById('edgeInfo');
+    let tags=`<span class="tag" style="background:${SRC_COLOR[l.source]||'#8a7f6a'}">${SRC_SHORT[l.source]||l.source}${l.source==='LLM抽取'&&l.votes?' · '+l.votes+'票':''}</span>`;
+    let extra='';
+    if(l.evidence) extra=`<br>证据「${esc(l.evidence)}」`;
+    else if(l.rule) extra=`<br>推导规则「${esc(l.rule)}」：${(l.support||[]).map(esc).join('；')}`;
+    if(l.review) extra+=`<br><span style="color:var(--ink4)">复核：${esc(l.review)}</span>`;
+    box.innerHTML=`<b>${esc(l.head)} —${esc(l.relation)}→ ${esc(l.tail)}</b>　${tags}${extra}`;
+  }
+});
+window.addEventListener('resize',()=>chart.resize());
+
+function buildCatChips(){
+  const box=document.getElementById('catChips'); box.innerHTML='';
+  for(const c of CFG.order){
+    const b=document.createElement('button');
+    b.className='fchip'+(state.cats.has(c)?' on':''); b.textContent=c;
+    if(state.cats.has(c)){ b.style.borderColor=CAT_COLOR[c]; b.style.color=CAT_COLOR[c]; }
+    b.onclick=()=>{ state.cats.has(c)?state.cats.delete(c):state.cats.add(c); buildCatChips(); renderGraph(); };
+    box.appendChild(b);
+  }
+}
+function toggleConf(){
+  state.highConf=!state.highConf;
+  const c=document.getElementById('confChip');
+  c.textContent=state.highConf?'高置信(开)':'高置信(关)'; c.classList.toggle('on',state.highConf);
+  renderGraph();
+}
+function toggleInf(){
+  state.inf=!state.inf;
+  const c=document.getElementById('infChip');
+  c.textContent=state.inf?'推导(显示)':'推导(隐藏)'; c.classList.toggle('on',state.inf);
+  renderGraph();
+}
+function resetGraph(){
+  state.focus=state.focus?null:topPerson();
+  document.getElementById('entityPanel').style.display='none';
+  renderGraph();
+}
+
+/* ============ 关系查询（人名 + 关系词） ============ */
+function fillQA(el){ document.getElementById('qaInput').value=el.textContent; askRel(); }
+function askRel(){
+  const q=document.getElementById('qaInput').value.trim();
+  const box=document.getElementById('qaAnswer'); if(!q) return;
+  box.style.display='block';
+  const parts=q.split(/[\s的]+/).filter(Boolean);
+  const who=resolve(parts[0]);
+  if(!who){ box.innerHTML=`未识别人物「${esc(parts[0]||q)}」`; return; }
+  const word=parts[1]||'';
+  let rels=null;
+  if(word){
+    const direct=Object.keys(CFG.cats).filter(r=>word.includes(r));
+    const mapped=CFG.words[word];
+    rels=new Set(direct.length?direct:(mapped?mapped.split('|'):[]));
+    if(!rels.size){ box.innerHTML=`不认识关系词「${esc(word)}」。可用：${Object.keys(CFG.words).join('、')}或关系名`; return; }
+  }
+  const hits=DATA.links.filter(l=>(l.head===who||l.tail===who)&&(!rels||rels.has(l.relation)))
     .sort((a,b)=>(b.votes||0)-(a.votes||0));
-  $('#fCount').textContent=`${rows.length} 条`+(rows.length>500?'（显示前 500）':'');
-  $('#tbody').innerHTML=rows.slice(0,500).map(t=>{const[lb,cls]=LB[t.source]||['?',''];
-    return `<tr><td>${t.head}</td><td style="color:var(--red)">${t.relation}</td><td>${t.tail}</td>
-    <td><span class="badge ${cls}">${lb}</span></td><td>${t.votes||''}</td>
-    <td class="ev">${t.evidence||(t.rule?('['+t.rule+'] '+(t.support||[]).join('；')):'')}</td></tr>`;}).join('');
+  if(!hits.length){ box.innerHTML=`图谱里没有 ${esc(who)} 的${word?'「'+esc(word)+'」':''}关系记录`; return; }
+  const seen=new Set(), rows=[];
+  for(const l of hits){
+    const other=l.head===who?l.tail:l.head, k=l.relation+other;
+    if(seen.has(k))continue; seen.add(k);
+    rows.push(`<div class="rel-item"><span class="tag" style="background:${CAT_COLOR[cat(l.relation)]||'#8a7f6a'}">${esc(l.relation)}</span>
+      <span class="who" onclick="loadEntity('${esc(other)}')">${esc(other)}</span>
+      <span class="ev">${l.evidence?'「'+esc(l.evidence)+'」':''}</span>
+      <span class="tag" style="background:${SRC_COLOR[l.source]}">${SRC_SHORT[l.source]}${l.source==='LLM抽取'&&l.votes?'·'+l.votes+'票':''}</span></div>`);
+    if(rows.length>=15)break;
+  }
+  box.innerHTML=`<b>${esc(who)}</b>${word?' 的「'+esc(word)+'」':''}：共 ${seen.size} 条${seen.size>15?'（显示前 15）':''}${rows.join('')}`;
+  state.focus=who; renderGraph();
 }
-$('#q').oninput=roster;
-['fLayer','fRel','fQ'].forEach(id=>$('#'+id).oninput=table);
-$('#tabP').onclick=()=>{$('#tabP').classList.add('on');$('#tabT').classList.remove('on');
-  $('#profile').style.display='block';$('#roster').style.display='flex';$('#tablePage').style.display='none';};
-$('#tabT').onclick=()=>{$('#tabT').classList.add('on');$('#tabP').classList.remove('on');
-  $('#profile').style.display='none';$('#roster').style.display='none';$('#tablePage').style.display='block';};
+document.getElementById('qaInput').addEventListener('keydown',e=>{if(e.key==='Enter')askRel();});
+
+/* ============ 实体详情 ============ */
+function loadEntity(name){
+  const std=resolve(name);
+  if(!std){ alert('未识别实体：'+name); return; }
+  state.focus=std; renderGraph();
+  const e=DATA.reg[std]||{};
+  const rels=DATA.links.filter(l=>l.head===std||l.tail===std)
+    .sort((a,b)=>(b.votes||0)-(a.votes||0)).slice(0,60);
+  const rows=rels.map(x=>{
+    const other=x.head===std?x.tail:x.head;
+    return `<div class="rel-item"><span class="tag" style="background:${CAT_COLOR[cat(x.relation)]||'#8a7f6a'}">${esc(x.relation)}</span>
+      <span class="who" onclick="loadEntity('${esc(other)}')">${esc(other)}</span>
+      <span class="ev">${x.evidence?'「'+esc(x.evidence)+'」':''}</span>
+      <span class="tag" style="background:${SRC_COLOR[x.source]||'#8a7f6a'}">${SRC_SHORT[x.source]||''}${x.source==='LLM抽取'&&x.votes?'·'+x.votes+'票':''}</span></div>`;
+  }).join('');
+  const panel=document.getElementById('entityPanel');
+  panel.style.display='block';
+  panel.innerHTML=`<h2><span style="color:var(--cinnabar);font-size:19px;">${esc(std)}</span>
+      <span class="hint">${(e.aliases||[]).length?'别名：'+e.aliases.slice(0,6).map(esc).join(' · '):''}</span>
+      <span style="flex:1"></span><span class="hint">关系 ${DATA.deg[std]||0} 条</span>
+      <button class="back" onclick="resetGraph()">关闭</button></h2>
+    ${e.identity?`<div class="muted" style="margin-bottom:4px">${esc(e.identity)}</div>`:''}
+    <div style="max-height:300px;overflow-y:auto;">${rows||'<div class="muted">暂无关系记录</div>'}</div>`;
+  panel.scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('searchBox').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){const v=e.target.value.trim();if(v)loadEntity(v);}});
+
+/* ============ 搜索建议 ============ */
+function attachSuggest(input,onPick){
+  const box=document.createElement('div'); box.className='sugbox';
+  input.parentElement.appendChild(box);
+  const hide=()=>{box.style.display='none';};
+  input.addEventListener('input',()=>{
+    const q=input.value.trim(); if(!q){hide();return;}
+    const hits=ENT_INDEX.filter(x=>x.key.includes(q)).slice(0,12);
+    if(!hits.length){hide();return;}
+    box.innerHTML=hits.map(x=>`<div class="sug-item" data-v="${esc(x.value)}"><span>${esc(x.label)}</span><span class="tp">${esc(x.tp)}</span></div>`).join('');
+    box.style.display='block';
+    box.querySelectorAll('.sug-item').forEach(el=>{
+      el.addEventListener('mousedown',ev=>{ev.preventDefault();input.value=el.dataset.v;hide();if(onPick)onPick(el.dataset.v);});
+    });
+  });
+  input.addEventListener('blur',()=>setTimeout(hide,120));
+  input.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+}
+attachSuggest(document.getElementById('searchBox'),v=>loadEntity(v));
+attachSuggest(document.getElementById('pathFrom'),null);
+attachSuggest(document.getElementById('pathTo'),null);
+
+/* ============ 关系路径（前端 BFS，推导边不参与寻径） ============ */
+function findPath(){
+  const from=resolve(document.getElementById('pathFrom').value.trim()||CFG.path[0]);
+  const to=resolve(document.getElementById('pathTo').value.trim()||CFG.path[1]);
+  const box=document.getElementById('pathResult'); box.style.display='flex';
+  if(!from||!to){ box.innerHTML='<span class="muted">起点或终点无法识别</span>'; return; }
+  if(from===to){ box.innerHTML='<span class="muted">起点与终点相同</span>'; return; }
+  const adj={};
+  DATA.links.forEach(l=>{ if(l.source==='推导')return;
+    (adj[l.head]=adj[l.head]||[]).push([l.tail,l.relation,'→']);
+    (adj[l.tail]=adj[l.tail]||[]).push([l.head,l.relation,'←']); });
+  const prev={[from]:null}; const q=[from];
+  while(q.length){ const cur=q.shift(); if(cur===to)break;
+    for(const [o,r,d] of (adj[cur]||[])) if(!(o in prev)){prev[o]=[cur,r,d];q.push(o);} }
+  if(!(to in prev)){ box.innerHTML='<span class="muted">两者在图谱中不连通</span>'; return; }
+  const steps=[]; let cur=to;
+  while(prev[cur]){ const [p,r,d]=prev[cur]; steps.push({to:cur,relation:r,arrow:d}); cur=p; }
+  steps.reverse();
+  let html=`<span class="pnode end">${esc(from)}</span>`;
+  steps.forEach(s=>{ html+=`<span class="prel">${esc(s.relation)} ${s.arrow}</span><span class="pnode${s.to===to?' end':''}">${esc(s.to)}</span>`; });
+  html+=`<span class="muted" style="width:100%;">最短路径 ${steps.length} 跳（不计推导边）</span>`;
+  box.innerHTML=html;
+}
+
+/* ============ 统计（前端计算） ============ */
+function loadStats(){
+  const rels=new Set(DATA.links.map(l=>l.relation));
+  const src={}; DATA.links.forEach(l=>src[l.source]=(src[l.source]||0)+1);
+  const ents=new Set(); DATA.links.forEach(l=>{ents.add(l.head);ents.add(l.tail);});
+  document.getElementById('tiles').innerHTML=
+    `<div class="tile"><b>${DATA.links.length}</b><span>三元组</span></div>
+     <div class="tile"><b>${ents.size}</b><span>实体</span></div>
+     <div class="tile"><b>${rels.size}</b><span>关系类型</span></div>`;
+  const total=DATA.links.length||1, order=['LLM抽取','模型知识','推导'];
+  document.getElementById('srcBar').innerHTML=order.filter(s=>src[s]).map(s=>
+    `<div style="width:${(100*src[s]/total).toFixed(1)}%;background:${SRC_COLOR[s]}"></div>`).join('');
+  document.getElementById('srcLegend').innerHTML=order.filter(s=>src[s]).map(s=>
+    `<span><i style="background:${SRC_COLOR[s]}"></i>${SRC_SHORT[s]}（${s==='LLM抽取'?'带证据':s==='模型知识'?'复核补充':'规则推理'}） ${(100*src[s]/total).toFixed(0)}%</span>`).join('');
+  const persons=Object.entries(DATA.deg).filter(([n])=>(DATA.reg[n]||{}).type==='人物')
+    .sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxDeg=persons.length?persons[0][1]:1;
+  document.getElementById('topDegree').innerHTML=persons.map(([n,d],i)=>
+    `<div class="bar-row"><span class="nm">${esc(n)}</span>
+     <div class="bar" style="width:${(170*d/maxDeg).toFixed(0)}px;opacity:${1-i*0.09}"></div>
+     <span class="v">${d}</span></div>`).join('');
+}
 init();
 </script>
 </body>
