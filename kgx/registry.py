@@ -45,6 +45,10 @@ class Registry:
         # 强名抢注检查。人物只对"带姓氏结构的独立人名"启用——字/号/俗称（玄德/孔明/凤姐）
         # 在古典小说里常比本名更高频，属正当别名；地点/势力/家族一律启用。
         surnamed = alias[0] in g["surnames"] or alias[:2] in g["compound"]
+        canon_sur = canon[:2] if canon[:2] in g["compound"] else (canon[0] if canon[0] in g["surnames"] else None)
+        alias_sur = alias[:2] if alias[:2] in g["compound"] else (alias[0] if alias[0] in g["surnames"] else None)
+        if ct == "人物" and canon_sur and alias_sur and canon_sur != alias_sur:
+            return False                                    # 双方均带姓且姓不同（董卓←李傕）：换姓别名不存在
         strength = (lambda fa: fa >= 20 and fa >= 0.5 * max(self._freq(canon), 1)
                     and not canon.endswith(alias))
         if (ct != "人物" or surnamed) and strength(self._freq(alias)):
