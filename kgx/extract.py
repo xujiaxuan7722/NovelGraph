@@ -266,8 +266,8 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
                 x = dict(x); x["pack"] = pack.id; x["chapters"] = chapters; x["round"] = 2
                 rels.append(x)
 
-    # 09-03 夜补：最终防线——(头,关系,尾,证据)全量去重；补抽循环兜底（pro 实测把
-    # "贾蓉 主仆 王夫人"重复了 46 遍——第一遍的循环守门不覆盖补抽，这里按证据句收敛）。
+    # 09-03 夜补：最终防线——(头,关系,尾,证据)全量去重；补抽笛卡尔循环 → 只丢弃补抽子集，
+    # 第一遍原样保留（先前"按证据句收敛"会误杀一句多关系的合法条目，如一句点出四个丫鬟）。
     seen_q, dedup = set(), []
     for x in rels:
         kq = (x["head"], x["relation"], x["tail"], (x.get("evidence") or "").strip())
@@ -276,14 +276,10 @@ def extract_pack(llm, schema, registry, pack, gleaning=True, _depth=0):
     if len(dedup) < len(rels):
         print(f"  {pack.label} 去重：{len(rels)} → {len(dedup)} 条", flush=True)
     rels[:] = dedup
-    ev_n = len({(x.get("evidence") or "").strip() for x in rels})
-    if len(rels) >= 30 and len(rels) > 3 * max(ev_n, 1):
-        print(f"  !! {pack.label} 补抽后仍疑似循环（{len(rels)} 条/{ev_n} 句证据），按证据句收敛", flush=True)
-        seen_e, keep = set(), []
-        for x in rels:
-            e = (x.get("evidence") or "").strip()
-            if e not in seen_e:
-                seen_e.add(e); keep.append(x)
-        rels[:] = keep
+    r2 = [x for x in rels if x.get("round") == 2]
+    ev2 = len({(x.get("evidence") or "").strip() for x in r2})
+    if len(r2) >= 30 and len(r2) > 3 * max(ev2, 1):
+        print(f"  !! {pack.label} 补抽疑似笛卡尔循环（{len(r2)} 条/{ev2} 句证据），丢弃本块补抽、保留第一遍", flush=True)
+        rels[:] = [x for x in rels if x.get("round") != 2]
         stats["gleaning_looped"] = True
     return rels, stats
