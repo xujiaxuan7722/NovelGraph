@@ -36,8 +36,24 @@ def _match(idx, conditions, binding=None):
                 yield from _match(idx, rest, b)
 
 
-def infer(schema, triples, max_rounds=3):
+def _dominant_filter(idx, premise, votes):
+    """对 dominant_premise 指向的前提：同一主语在该前提关系上只保留票数最高的一条事实。
+    返回覆盖了这些关系的 idx 副本（09-03 拍板 A：曹操双隶属只传票数最高的势力）。"""
+    idx2 = dict(idx)
+    _, rels, _ = premise
+    for r in rels.split("|"):
+        best = {}
+        for (h, t) in idx.get(r, ()):
+            v = votes.get((h, r, t), votes.get((t, r, h), 1))
+            if h not in best or v > best[h][1]:
+                best[h] = (t, v)
+        idx2[r] = {(h, tv[0]) for h, tv in best.items()}
+    return idx2
+
+
+def infer(schema, triples, max_rounds=3, votes=None):
     """triples: iterable of (h, r, t)（已确认的）。返回新增列表 [{head, relation, tail, rule, support}]"""
+    votes = votes or {}
     known = set(triples)
     new_all = []
     for _ in range(max_rounds):
@@ -48,7 +64,10 @@ def infer(schema, triples, max_rounds=3):
             return (h, t) in idx.get(r, ()) or (h, t) in added_pairs.get(r, set())
         for rule in schema.inference:
             ch, cr, ct = rule.conclusion
-            for b in _match(idx, rule.conditions):
+            rule_idx = idx
+            if rule.dominant_premise is not None:
+                rule_idx = _dominant_filter(idx, rule.conditions[rule.dominant_premise], votes)
+            for b in _match(rule_idx, rule.conditions):
                 h, t = b.get(ch, ch), b.get(ct, ct)
                 if h == t:
                     continue

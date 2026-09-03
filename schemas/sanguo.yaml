@@ -79,3 +79,4 @@ inference:
   - name: 主公之所属即臣属之所属
     if: [["?lord", "君臣", "?x"], ["?lord", "隶属", "?f"]]
     then: ["?x", "隶属", "?f"]
+    dominant_premise: 1      # 主公多隶属时只传票数最高的主导势力（09-03 拍板 A）

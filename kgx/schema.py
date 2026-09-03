@@ -23,6 +23,7 @@ class InferenceRule:
     conditions: List[List[str]]     # [[h, rel_alternatives, t], ...]，以 "?x" 表示变量
     conclusion: List[str]
     unless: Optional[List[str]] = None
+    dominant_premise: Optional[int] = None   # 该下标前提按主语只取票数最高的一条事实（如多隶属取主导势力）
 
 
 @dataclass
@@ -96,7 +97,8 @@ def load_schema(path: str) -> Schema:
             definition=spec.get("definition", ""),
         )
     inference = [InferenceRule(name=r["name"], conditions=r["if"],
-                               conclusion=r["then"], unless=r.get("unless"))
+                               conclusion=r["then"], unless=r.get("unless"),
+                               dominant_premise=r.get("dominant_premise"))
                  for r in raw.get("inference", [])]
     return Schema(
         name=raw.get("name", ""), language=raw.get("language", "zh"),

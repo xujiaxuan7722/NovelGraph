@@ -147,7 +147,8 @@ def run(args):
 
     # ---- 7. 推理补全 ----
     confirmed = [(c["head"], c["relation"], c["tail"]) for c in cands.values()]
-    inferred = infer(schema, confirmed)
+    vote_map = {(c["head"], c["relation"], c["tail"]): c["votes"] for c in cands.values()}
+    inferred = infer(schema, confirmed, votes=vote_map)
     log(f"== 推理补全：+{len(inferred)} 条")
 
     # ---- 8. 导出 + 评估 ----
