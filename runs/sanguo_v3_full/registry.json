@@ -1,0 +1,4282 @@
+{
+ "荆州": {
+  "type": "地点",
+  "aliases": [
+   "京城",
+   "冀州",
+   "南郡",
+   "徐州",
+   "成都",
+   "樊城",
+   "江夏",
+   "洛阳",
+   "祁山",
+   "襄阳",
+   "西凉",
+   "许昌",
+   "许都",
+   "豫州",
+   "长安",
+   "阳明皇帝"
+  ],
+  "identity": "会稽妖贼，自称阳明皇帝，被孙坚斩杀",
+  "chapters": [
+   1,
+   4,
+   12
+  ],
+  "mentions": 9
+ },
+ "玄德": {
+  "type": "人物",
+  "aliases": [
+   "刘玄德",
+   "平原令刘备",
+   "平原相",
+   "贤弟"
+  ],
+  "identity": "刘备，汉景帝阁下玄孙，平原县令，后为平原相，讨董诸侯之一",
+  "chapters": [],
+  "mentions": 1
+ },
+ "孔明": {
+  "type": "人物",
+  "aliases": [
+   "诸葛亮"
+  ],
+  "identity": "诸葛亮，字孔明",
+  "chapters": [],
+  "mentions": 1
+ },
+ "曹操": {
+  "type": "人物",
+  "aliases": [
+   "吉利",
+   "孟德",
+   "操",
+   "明公",
+   "曹孟德",
+   "曹孟穗",
+   "镇东将军",
+   "阿瞒",
+   "骁骑校尉曹操"
+  ],
+  "identity": "东郡太守，后加镇东将军，据兖州招贤纳士，濮阳之战中计被火烧伤",
+  "chapters": [
+   12
+  ],
+  "mentions": 2
+ },
+ "魏兵": {
+  "type": "势力",
+  "aliases": [
+   "中原",
+   "吴兵",
+   "曹兵",
+   "江东",
+   "江南",
+   "蜀中",
+   "西川"
+  ],
+  "identity": "程普建议孙坚速回之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 2
+ },
+ "关公": {
+  "type": "人物",
+  "aliases": [
+   "云长",
+   "关、张",
+   "关云长"
+  ],
+  "identity": "关羽，字云长，刘备结义兄弟，马弓手，斩华雄",
+  "chapters": [],
+  "mentions": 1
+ },
+ "孙乾": {
+  "type": "人物",
+  "aliases": [
+   "公祐",
+   "子仲",
+   "孟达",
+   "廖化",
+   "糜竺",
+   "蔡瑁",
+   "襄阳人蔡瑁"
+  ],
+  "identity": "东海朐县人，字子仲，陶谦别驾从事，后为刘备辅臣",
+  "chapters": [
+   4,
+   10,
+   11,
+   12
+  ],
+  "mentions": 7
+ },
+ "甘宁": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字兴霸",
+  "chapters": [],
+  "mentions": 1
+ },
+ "张郃": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字儁乂",
+  "chapters": [],
+  "mentions": 1
+ },
+ "魏延": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字文长",
+  "chapters": [],
+  "mentions": 1
+ },
+ "姜维": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字伯约",
+  "chapters": [],
+  "mentions": 1
+ },
+ "司马懿": {
+  "type": "人物",
+  "aliases": [
+   "司马师",
+   "司马昭"
+  ],
+  "identity": "字仲达",
+  "chapters": [],
+  "mentions": 1
+ },
+ "孙权": {
+  "type": "人物",
+  "aliases": [
+   "仲谋",
+   "权"
+  ],
+  "identity": "孙坚次子，字仲谋",
+  "chapters": [],
+  "mentions": 1
+ },
+ "徐晃": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字公明",
+  "chapters": [],
+  "mentions": 1
+ },
+ "张飞": {
+  "type": "人物",
+  "aliases": [
+   "张冀德",
+   "张将军",
+   "张翼德",
+   "步弓手",
+   "燕人张飞",
+   "翼德"
+  ],
+  "identity": "刘备结义兄弟，字翼德，战于禁",
+  "chapters": [],
+  "mentions": 1
+ },
+ "赵云": {
+  "type": "人物",
+  "aliases": [
+   "云",
+   "子龙",
+   "赵子龙"
+  ],
+  "identity": "常山真定人，字子龙，随刘备救徐州，后辞去",
+  "chapters": [],
+  "mentions": 1
+ },
+ "马超": {
+  "type": "人物",
+  "aliases": [
+   "少年将军"
+  ],
+  "identity": "马腾之子，字孟起，年方十七岁，英勇无敌，刺死王方、生擒李蒙",
+  "chapters": [],
+  "mentions": 1
+ },
+ "吕布": {
+  "type": "人物",
+  "aliases": [
+   "三姓家奴",
+   "吕将军",
+   "吕温侯",
+   "吾儿奉先",
+   "奉先",
+   "布",
+   "温侯"
+  ],
+  "identity": "字奉先，先后投袁术、袁绍、张杨、张邈，袭破兖州进据濮阳，后弃濮阳投定陶",
+  "chapters": [
+   12
+  ],
+  "mentions": 2
+ },
+ "袁绍": {
+  "type": "人物",
+  "aliases": [
+   "本初",
+   "渤海太守",
+   "盟主",
+   "祁乡侯渤海太守",
+   "祁乡侯渤海太守袁绍",
+   "绍",
+   "袁本初"
+  ],
+  "identity": "据冀州，纳吕布共破张燕，后欲杀吕布",
+  "chapters": [],
+  "mentions": 1
+ },
+ "周瑜": {
+  "type": "人物",
+  "aliases": [
+   "公瑾"
+  ],
+  "identity": "字公瑾",
+  "chapters": [],
+  "mentions": 1
+ },
+ "董卓": {
+  "type": "人物",
+  "aliases": [
+   "仲颖",
+   "卓",
+   "尚父",
+   "相国",
+   "老贼",
+   "董丞相",
+   "董太师",
+   "董相国"
+  ],
+  "identity": "字仲颖，陇西临洮人，后为相国太师，自号尚父，被吕布刺杀",
+  "chapters": [],
+  "mentions": 1
+ },
+ "关兴": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "关羽次子",
+  "chapters": [],
+  "mentions": 1
+ },
+ "魏主": {
+  "type": "势力",
+  "aliases": [],
+  "identity": "魏国君主",
+  "chapters": [],
+  "mentions": 1
+ },
+ "刘表": {
+  "type": "人物",
+  "aliases": [
+   "刺史刘表",
+   "景升",
+   "荆州刺史刘表",
+   "表"
+  ],
+  "identity": "荆州刺史，字景升，山阳高平人，汉室宗亲，江夏八俊之一",
+  "chapters": [],
+  "mentions": 1
+ },
+ "庞德": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "字令明",
+  "chapters": [],
+  "mentions": 1
+ },
+ "鲁肃": {
+  "type": "人物",
+  "aliases": [
+   "子敬"
+  ],
+  "identity": "字子敬",
+  "chapters": [],
+  "mentions": 1
+ },
+ "夏侯惇": {
+  "type": "人物",
+  "aliases": [
+   "元让",
+   "惇"
+  ],
+  "identity": "字元让，沛国谯人，夏侯婴之后，曹操族弟，引荐典韦",
+  "chapters": [
+   12
+  ],
+  "mentions": 2
+ },
+ "孟获": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "南蛮王",
+  "chapters": [],
+  "mentions": 1
+ },
+ "韩遂": {
+  "type": "人物",
+  "aliases": [
+   "并州刺史",
+   "镇西将军"
+  ],
+  "identity": "并州刺史，后受密诏封镇西将军，讨贼",
+  "chapters": [],
+  "mentions": 1
+ },
+ "貂蝉": {
+  "type": "人物",
+  "aliases": [
+   "公女",
+   "吾之女",
+   "孩儿",
+   "小女",
+   "小女貂蝉",
+   "歌伎"
+  ],
+  "identity": "王允府中歌伎，王允以亲女待之，后献与董卓",
+  "chapters": [],
+  "mentions": 1
+ },
+ "文丑": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍部将，上将",
+  "chapters": [
+   4
+  ],
+  "mentions": 2
+ },
+ "张角": {
+  "type": "人物",
+  "aliases": [
+   "大贤良师",
+   "天公将军",
+   "太平道人"
+  ],
+  "identity": "巨鹿郡人，黄巾起义首领，号天公将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张宝": {
+  "type": "人物",
+  "aliases": [
+   "地公将军"
+  ],
+  "identity": "张角之弟，号地公将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张梁": {
+  "type": "人物",
+  "aliases": [
+   "人公将军"
+  ],
+  "identity": "张角之弟，号人公将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "卢植": {
+  "type": "人物",
+  "aliases": [
+   "卢中郎",
+   "卢尚书"
+  ],
+  "identity": "中郎将，刘备曾师事之",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "皇甫嵩": {
+  "type": "人物",
+  "aliases": [
+   "皇甫"
+  ],
+  "identity": "中郎将，后为车骑将军，领冀州牧",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "朱儁": {
+  "type": "人物",
+  "aliases": [
+   "太仆"
+  ],
+  "identity": "被李傕郭汜宣入朝封为太仆，同领朝政，保举曹操破山东群贼",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘焉": {
+  "type": "人物",
+  "aliases": [
+   "幽州太守"
+  ],
+  "identity": "幽州太守，江夏竟陵人，汉鲁恭王之后",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "邹靖": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "幽州校尉",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "何进": {
+  "type": "人物",
+  "aliases": [
+   "何国舅"
+  ],
+  "identity": "大将军，何皇后之兄，被何太后骂引贼入京",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "袁术": {
+  "type": "人物",
+  "aliases": [
+   "公路",
+   "后将军南阳太守袁术",
+   "吾弟袁术",
+   "袁公路",
+   "袁绍之弟"
+  ],
+  "identity": "袁绍之弟，据寿春，拒纳吕布",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "丁原": {
+  "type": "人物",
+  "aliases": [
+   "丁刺史",
+   "丁建阳",
+   "建阳"
+  ],
+  "identity": "字建阳，荆州刺史",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "李肃": {
+  "type": "人物",
+  "aliases": [
+   "虎贲中郎将",
+   "骑都尉"
+  ],
+  "identity": "吕布同郡骑都尉，因董卓不迁其官怀怨，后诱董卓入朝被杀",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "李儒": {
+  "type": "人物",
+  "aliases": [
+   "卓婿谋士",
+   "恩相"
+  ],
+  "identity": "董卓女婿，谋士，为董卓谋划废立迁都等事",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "陈留王": {
+  "type": "人物",
+  "aliases": [
+   "伯和",
+   "少帝",
+   "弘农王",
+   "皇子协",
+   "皇帝",
+   "陈留王协"
+  ],
+  "identity": "灵帝中子，名协，字伯和，被董卓立为献帝，时年九岁",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "董太后": {
+  "type": "人物",
+  "aliases": [
+   "永乐太后"
+  ],
+  "identity": "灵帝之母，解渎亭侯刘苌之妻，永乐太后",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "何太后": {
+  "type": "人物",
+  "aliases": [
+   "太后",
+   "皇太后"
+  ],
+  "identity": "何进之妹，灵帝皇后，被董卓废后困于永安宫",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "王允": {
+  "type": "人物",
+  "aliases": [
+   "司徒",
+   "王司徒"
+  ],
+  "identity": "司徒，与曹操谋刺董卓，后使连环计诛董卓，被李傕郭汜所杀",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "孙坚": {
+  "type": "人物",
+  "aliases": [
+   "乌程侯长沙太守孙坚",
+   "孙文台",
+   "文台",
+   "长沙太守孙坚"
+  ],
+  "identity": "乌程侯长沙太守，讨董先锋，得传国玺后归江东，后被刘表部将吕公设伏射死于岘山，寿止三十七岁",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘虞": {
+  "type": "人物",
+  "aliases": [
+   "幽州牧"
+  ],
+  "identity": "刘虞，幽州牧",
+  "chapters": [
+   1
+  ],
+  "mentions": 2
+ },
+ "公孙瓒": {
+  "type": "人物",
+  "aliases": [
+   "北平太守公孙瓒",
+   "白马将军"
+  ],
+  "identity": "北平太守，刘备之友，借兵与刘备救徐州",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张让": {
+  "type": "人物",
+  "aliases": [
+   "阿父"
+  ],
+  "identity": "十常侍之一，灵帝呼为阿父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "段珪": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "曹节": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "侯览": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "蹇硕": {
+  "type": "人物",
+  "aliases": [
+   "中常侍"
+  ],
+  "identity": "中常侍",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "封谞": {
+  "type": "人物",
+  "aliases": [
+   "中涓"
+  ],
+  "identity": "中常侍，十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "赵忠": {
+  "type": "人物",
+  "aliases": [
+   "车骑将军"
+  ],
+  "identity": "十常侍之一，后封车骑将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "程旷": {
+  "type": "人物",
+  "aliases": [
+   "十常侍"
+  ],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "夏恽": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "郭胜": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "十常侍之一",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘陶": {
+  "type": "人物",
+  "aliases": [
+   "谏议大夫"
+  ],
+  "identity": "谏议大夫",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "陈耽": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "司徒",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "蔡邕": {
+  "type": "人物",
+  "aliases": [
+   "伯喈",
+   "侍中",
+   "议郎"
+  ],
+  "identity": "侍中，因哭董卓被王允下狱缢死",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "董旻": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓之弟，左将军、鄠侯，被斩首号令",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "牛辅": {
+  "type": "人物",
+  "aliases": [
+   "中郎将",
+   "董卓女婿"
+  ],
+  "identity": "董卓女婿，中郎将，被胡赤儿谋杀",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "李傕": {
+  "type": "人物",
+  "aliases": [
+   "车骑将军池阳侯"
+  ],
+  "identity": "董卓部将，斩庞舒，写书教张杨杀吕布",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "郭汜": {
+  "type": "人物",
+  "aliases": [
+   "后将军美阳侯"
+  ],
+  "identity": "董卓部将，斩庞舒，写书教张杨杀吕布",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张济": {
+  "type": "人物",
+  "aliases": [
+   "骠骑将军平阳侯"
+  ],
+  "identity": "张济，董卓部将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "樊稠": {
+  "type": "人物",
+  "aliases": [
+   "右将军万年侯"
+  ],
+  "identity": "樊稠，董卓部将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "吴匡": {
+  "type": "人物",
+  "aliases": [
+   "何进部将"
+  ],
+  "identity": "何进部将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "何苗": {
+  "type": "人物",
+  "aliases": [
+   "何进弟"
+  ],
+  "identity": "何进之弟",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "舞阳君": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "何苗之母",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "董重": {
+  "type": "人物",
+  "aliases": [
+   "骠骑将军"
+  ],
+  "identity": "董太后之侄，骠骑将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "崔毅": {
+  "type": "人物",
+  "aliases": [
+   "庄主"
+  ],
+  "identity": "先朝司徒崔烈之弟",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "闵贡": {
+  "type": "人物",
+  "aliases": [
+   "河南中部掾吏"
+  ],
+  "identity": "河南中部掾吏",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "鲍信": {
+  "type": "人物",
+  "aliases": [
+   "后军校尉",
+   "济北相鲍信",
+   "鲍将军"
+  ],
+  "identity": "后军校尉，济北相，讨董诸侯第九镇，被贼所害",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "袁隗": {
+  "type": "人物",
+  "aliases": [
+   "太傅袁隗",
+   "绍叔袁隗"
+  ],
+  "identity": "太傅，袁绍之叔，被董卓诛杀",
+  "chapters": [
+   1
+  ],
+  "mentions": 2
+ },
+ "王美人": {
+  "type": "人物",
+  "aliases": [
+   "美人"
+  ],
+  "identity": "灵帝宠妃，皇子协之母",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘苌": {
+  "type": "人物",
+  "aliases": [
+   "解渎亭侯"
+  ],
+  "identity": "解渎亭侯，董太后之夫",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘雄": {
+  "type": "人物",
+  "aliases": [
+   "玄德祖"
+  ],
+  "identity": "刘备祖父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘弘": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "刘备之父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘元起": {
+  "type": "人物",
+  "aliases": [
+   "元起",
+   "叔父"
+  ],
+  "identity": "刘备叔父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘贞": {
+  "type": "人物",
+  "aliases": [
+   "涿鹿亭侯"
+  ],
+  "identity": "刘胜之子，涿鹿亭侯",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘胜": {
+  "type": "人物",
+  "aliases": [
+   "中山靖王"
+  ],
+  "identity": "中山靖王，汉景帝之子",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "曹嵩": {
+  "type": "人物",
+  "aliases": [
+   "尊父",
+   "操父",
+   "父亲",
+   "父曹嵩"
+  ],
+  "identity": "曹操之父，被张闿所杀",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "曹腾": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "中常侍，曹嵩养父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "郑玄": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "刘备曾师事之",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "南华老仙": {
+  "type": "人物",
+  "aliases": [
+   "老人"
+  ],
+  "identity": "授张角《太平要术》的仙人",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "马元义": {
+  "type": "人物",
+  "aliases": [
+   "元义"
+  ],
+  "identity": "张角党羽",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "唐周": {
+  "type": "人物",
+  "aliases": [
+   "弟子"
+  ],
+  "identity": "张角弟子，后告变",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "程远志": {
+  "type": "人物",
+  "aliases": [
+   "远志"
+  ],
+  "identity": "黄巾贼将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "邓茂": {
+  "type": "人物",
+  "aliases": [
+   "副将"
+  ],
+  "identity": "程远志副将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "高升": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "张宝副将",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "严政": {
+  "type": "人物",
+  "aliases": [
+   "贼将"
+  ],
+  "identity": "黄巾贼将，刺杀张宝",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "赵弘": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黄巾余党",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "韩忠": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黄巾余党",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "孙仲": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黄巾余党",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张钧": {
+  "type": "人物",
+  "aliases": [
+   "郎中"
+  ],
+  "identity": "郎中",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "刘恢": {
+  "type": "人物",
+  "aliases": [
+   "代州刘恢"
+  ],
+  "identity": "代州人，汉室宗亲",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "龚景": {
+  "type": "人物",
+  "aliases": [
+   "青州太守"
+  ],
+  "identity": "青州太守",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张世平": {
+  "type": "人物",
+  "aliases": [
+   "世平",
+   "中山大商"
+  ],
+  "identity": "中山大商",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "苏双": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "中山大商",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "许劭": {
+  "type": "人物",
+  "aliases": [
+   "汝南许劭"
+  ],
+  "identity": "汝南人，有知人之名",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "桥玄": {
+  "type": "人物",
+  "aliases": [
+   "时人"
+  ],
+  "identity": "时人，谓曹操能安天下",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "何顒": {
+  "type": "人物",
+  "aliases": [
+   "南阳何顒"
+  ],
+  "identity": "南阳人，谓曹操安天下",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "陈琳": {
+  "type": "人物",
+  "aliases": [
+   "主簿"
+  ],
+  "identity": "主簿",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "郑泰": {
+  "type": "人物",
+  "aliases": [
+   "侍御史"
+  ],
+  "identity": "侍御史",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "荀攸": {
+  "type": "人物",
+  "aliases": [
+   "公达",
+   "大臣"
+  ],
+  "identity": "荀彧之侄，字公达，海内名士，曾拜黄门侍郎，后弃官归乡，与叔同投曹操，任行军教授",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "潘隐": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "司马",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "左丰": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "朝廷差遣体探卢植的黄门，因索贿不成挟恨回奏",
+  "chapters": [
+   1
+  ],
+  "mentions": 2
+ },
+ "张举": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "渔阳反贼，自称天子",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "张纯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "渔阳反贼，自称大将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "区星": {
+  "type": "人物",
+  "aliases": [
+   "长沙贼"
+  ],
+  "identity": "长沙贼",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "许韶": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "许昌之子",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "臧旻": {
+  "type": "人物",
+  "aliases": [
+   "刺史"
+  ],
+  "identity": "刺史",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "窦武": {
+  "type": "人物",
+  "aliases": [
+   "大将军"
+  ],
+  "identity": "大将军",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "陈蕃": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "太傅",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "灵帝": {
+  "type": "人物",
+  "aliases": [
+   "孝灵皇帝"
+  ],
+  "identity": "汉灵帝，孝灵皇帝",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "桓帝": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "汉桓帝",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "献帝": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "灵帝中子，名协，字伯和，被董卓立为献帝，时年九岁",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "袁逢": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "司徒，袁绍之父",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "崔烈": {
+  "type": "人物",
+  "aliases": [
+   "先朝司徒"
+  ],
+  "identity": "城门校尉，死于国难",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "杨彪": {
+  "type": "人物",
+  "aliases": [
+   "司徒杨彪",
+   "太尉"
+  ],
+  "identity": "司徒，因谏阻迁都被罢为庶民",
+  "chapters": [
+   1,
+   4
+  ],
+  "mentions": 2
+ },
+ "淳于琼": {
+  "type": "人物",
+  "aliases": [
+   "左军校尉"
+  ],
+  "identity": "左军校尉",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "赵萌": {
+  "type": "人物",
+  "aliases": [
+   "右军校尉"
+  ],
+  "identity": "右军校尉",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "彭伯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "议郎",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "督邮": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "到安喜县巡查的督邮，逼勒县吏欲害刘备",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "孙武子": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孙坚之祖，春秋时军事家",
+  "chapters": [
+   1
+  ],
+  "mentions": 1
+ },
+ "周毖": {
+  "type": "人物",
+  "aliases": [
+   "侍中周毖"
+  ],
+  "identity": "侍中，劝董卓赦袁绍拜郡守，后因谏迁都被斩",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "伍琼": {
+  "type": "人物",
+  "aliases": [
+   "城门校尉伍琼",
+   "校尉伍琼"
+  ],
+  "identity": "校尉，劝董卓拜袁绍郡守，后因谏迁都被斩",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "丁管": {
+  "type": "人物",
+  "aliases": [
+   "尚书丁管"
+  ],
+  "identity": "尚书，因怒斥董卓废帝被斩",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "唐妃": {
+  "type": "人物",
+  "aliases": [
+   "帝妃唐氏"
+  ],
+  "identity": "少帝妃子，被李儒绞死",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "伍孚": {
+  "type": "人物",
+  "aliases": [
+   "德瑜",
+   "越骑校尉伍孚"
+  ],
+  "identity": "越骑校尉，字德瑜，刺杀董卓未遂被剖剐",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "陈宫": {
+  "type": "人物",
+  "aliases": [
+   "公台",
+   "陈县令"
+  ],
+  "identity": "东郡从事，后投张邈，为吕布辅佐，献计守濮阳",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "吕伯奢": {
+  "type": "人物",
+  "aliases": [
+   "伯奢"
+  ],
+  "identity": "曹操父结义弟兄，被曹操误杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "卫弘": {
+  "type": "人物",
+  "aliases": [
+   "孝廉卫弘"
+  ],
+  "identity": "陈留孝廉，疏财仗义资助曹操起兵",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "乐进": {
+  "type": "人物",
+  "aliases": [
+   "文谦"
+  ],
+  "identity": "阳平卫国人，字文谦，投曹操为帐前吏",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "李典": {
+  "type": "人物",
+  "aliases": [
+   "曼成"
+  ],
+  "identity": "山阳巨鹿人，字曼成，投曹操为帐前吏",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "夏侯渊": {
+  "type": "人物",
+  "aliases": [
+   "族弟夏侯渊"
+  ],
+  "identity": "夏侯惇族弟，与夏侯惇同引兵会曹操",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "曹仁": {
+  "type": "人物",
+  "aliases": [
+   "子孝"
+  ],
+  "identity": "曹操族弟，屡战吕布不胜，告急曹操",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "曹洪": {
+  "type": "人物",
+  "aliases": [
+   "子廉"
+  ],
+  "identity": "曹操族弟，字子廉，引兵助曹操，曾救曹操",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "韩馥": {
+  "type": "人物",
+  "aliases": [
+   "冀州刺史韩馥",
+   "冀州牧韩馥",
+   "太守韩馥"
+  ],
+  "identity": "冀州牧，后让冀州与袁绍，弃家小投陈留太守张邈",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孔伷": {
+  "type": "人物",
+  "aliases": [
+   "豫州刺史孔伷"
+  ],
+  "identity": "豫州刺史，讨董诸侯第三镇",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "刘岱": {
+  "type": "人物",
+  "aliases": [
+   "兖州刺史刘岱",
+   "兖州太守刘岱"
+  ],
+  "identity": "兖州刺史，讨董诸侯第四镇，后杀乔瑁",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "王匡": {
+  "type": "人物",
+  "aliases": [
+   "太守王匡",
+   "河内郡太守王匡"
+  ],
+  "identity": "河内郡太守，讨董诸侯第五镇",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "张邈": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "陈留太守，与吕布共袭兖州，后投袁术",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "乔瑁": {
+  "type": "人物",
+  "aliases": [
+   "东郡太守乔瑁"
+  ],
+  "identity": "东郡太守，讨董诸侯第七镇，被刘岱所杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "袁遗": {
+  "type": "人物",
+  "aliases": [
+   "山阳太守袁遗"
+  ],
+  "identity": "山阳太守，讨董诸侯第八镇",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孔融": {
+  "type": "人物",
+  "aliases": [
+   "北海太守",
+   "北海太守孔融",
+   "孔北海",
+   "孔文举",
+   "文举"
+  ],
+  "identity": "北海太守，字文举，鲁国曲阜人，孔子二十世孙，泰山都尉孔宙之子",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "张超": {
+  "type": "人物",
+  "aliases": [
+   "广陵太守张超",
+   "张邈弟张超"
+  ],
+  "identity": "张邈之弟，与吕布共守定陶，后自刎",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "陶谦": {
+  "type": "人物",
+  "aliases": [
+   "太守陶谦",
+   "府君",
+   "徐州刺史陶谦",
+   "恭祖",
+   "陶使君",
+   "陶府君",
+   "陶恭祖"
+  ],
+  "identity": "徐州刺史，字恭祖，时年六十三岁，病重让徐州与刘备后去世",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "马腾": {
+  "type": "人物",
+  "aliases": [
+   "征西将军",
+   "西凉太守马腾"
+  ],
+  "identity": "西凉太守，后受密诏封征西将军，讨贼",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "张杨": {
+  "type": "人物",
+  "aliases": [
+   "上党太守张杨"
+  ],
+  "identity": "上党太守，纳吕布",
+  "chapters": [
+   4,
+   11
+  ],
+  "mentions": 2
+ },
+ "华雄": {
+  "type": "人物",
+  "aliases": [
+   "骁骑校尉"
+  ],
+  "identity": "董卓部将，关西人，骁骑校尉，被关羽斩杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "胡轸": {
+  "type": "人物",
+  "aliases": [
+   "华雄副将胡轸"
+  ],
+  "identity": "华雄副将，被程普刺死",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "赵岑": {
+  "type": "人物",
+  "aliases": [
+   "卓将赵岑"
+  ],
+  "identity": "董卓部将，后献汜水关",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "鲍忠": {
+  "type": "人物",
+  "aliases": [
+   "其弟鲍忠"
+  ],
+  "identity": "鲍信之弟，被华雄斩杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "程普": {
+  "type": "人物",
+  "aliases": [
+   "德谋"
+  ],
+  "identity": "孙坚部将，字德谋，使铁脊蛇矛",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "黄盖": {
+  "type": "人物",
+  "aliases": [
+   "公覆"
+  ],
+  "identity": "孙坚部将，字公覆，零陵人，使铁鞭",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "韩当": {
+  "type": "人物",
+  "aliases": [
+   "义公"
+  ],
+  "identity": "孙坚部将，字义公，辽西令支人，使大刀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "祖茂": {
+  "type": "人物",
+  "aliases": [
+   "大荣"
+  ],
+  "identity": "孙坚部将，字大荣，吴郡富春人，被华雄斩杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "俞涉": {
+  "type": "人物",
+  "aliases": [
+   "骁将俞涉"
+  ],
+  "identity": "袁术部将，被华雄斩杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "潘凤": {
+  "type": "人物",
+  "aliases": [
+   "上将潘凤"
+  ],
+  "identity": "韩馥部将，被华雄斩杀",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "方悦": {
+  "type": "人物",
+  "aliases": [
+   "河内名将方悦"
+  ],
+  "identity": "王匡部将，被吕布刺死",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "穆顺": {
+  "type": "人物",
+  "aliases": [
+   "上党太守张杨部将穆顺"
+  ],
+  "identity": "张杨部将，被吕布刺死",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "武安国": {
+  "type": "人物",
+  "aliases": [
+   "北海太守孔融部将武安国"
+  ],
+  "identity": "孔融部将，被吕布砍断手腕",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "黄琬": {
+  "type": "人物",
+  "aliases": [
+   "司隶校尉",
+   "太尉黄琬"
+  ],
+  "identity": "司隶校尉，与王允士孙瑞共谋诛董卓",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "荀爽": {
+  "type": "人物",
+  "aliases": [
+   "司徒荀爽"
+  ],
+  "identity": "司徒，因谏阻迁都被罢为庶民",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "徐荣": {
+  "type": "人物",
+  "aliases": [
+   "太守徐荣"
+  ],
+  "identity": "荥阳太守，伏击曹操，被夏侯惇刺死",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "蒯良": {
+  "type": "人物",
+  "aliases": [
+   "子柔",
+   "延平人蒯良"
+  ],
+  "identity": "刘表辅臣，延平人，字子柔",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "蒯越": {
+  "type": "人物",
+  "aliases": [
+   "蒯异度"
+  ],
+  "identity": "刘表辅臣，字异度",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "陈翔": {
+  "type": "人物",
+  "aliases": [
+   "仲麟",
+   "汝南陈翔"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "范滂": {
+  "type": "人物",
+  "aliases": [
+   "同郡范滂",
+   "孟博"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孔昱": {
+  "type": "人物",
+  "aliases": [
+   "世元",
+   "鲁国孔昱"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "范康": {
+  "type": "人物",
+  "aliases": [
+   "仲真",
+   "渤海范康"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "檀敷": {
+  "type": "人物",
+  "aliases": [
+   "山阳檀敷",
+   "文友"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "张俭": {
+  "type": "人物",
+  "aliases": [
+   "元节",
+   "同郡张俭"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "岑咥": {
+  "type": "人物",
+  "aliases": [
+   "公孝",
+   "南阳岑咥"
+  ],
+  "identity": "刘表之友，江夏八俊之一",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "颜良": {
+  "type": "人物",
+  "aliases": [
+   "上将颜良"
+  ],
+  "identity": "袁绍部将，上将",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "夏侯婴": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "夏侯惇之祖",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "卞和": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "荆山得玉献楚文王之人",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "楚文王": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "楚文王，受卞和献玉",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "李斯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "秦臣，篆八字于传国玺",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "始皇": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "秦始皇，巡狩时投玺于湖",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "子婴": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "秦末君主，献玉玺与汉高祖",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "汉高祖": {
+  "type": "人物",
+  "aliases": [
+   "高祖"
+  ],
+  "identity": "汉高祖，受子婴献玉玺",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "王莽": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "篡逆者，孝元皇太后以玺打王寻苏献",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孝元皇太后": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "以传国玺打王寻苏献，崩其一角",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "王寻": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "王莽时人，被孝元皇太后以玺打",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "苏献": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "王莽时人，被孝元皇太后以玺打",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "光武": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "光武帝，得传国玺于宜阳",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孙融": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "讨董诸侯之一，分兵迎战吕布",
+  "chapters": [
+   4
+  ],
+  "mentions": 2
+ },
+ "孙坚军": {
+  "type": "势力",
+  "aliases": [],
+  "identity": "孙坚所率江东军势力",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "汜水关": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "讨董联军进攻的关隘",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "虎牢关": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓屯兵迎敌的关隘，离洛阳五十里",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "荥阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓设伏曹操之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "中牟县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操被擒之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "成皋": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操陈宫投宿吕伯奢庄之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "渤海": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁绍任渤海太守之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 2
+ },
+ "平原县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "刘备任平原县令之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "东郡": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "陈宫老母妻子所在之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "陈留": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操父避居及起兵之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "梁东": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚屯兵之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "阳城": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓屠杀村民之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "扬州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操引军投往之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "关东": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁绍领兵投往之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "长沙": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚欲归之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "孟津": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁绍进兵之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "酸枣": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁绍进兵之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "敖仓": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议固守之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "轘辕": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议固守之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "太谷": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议固守之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "丹": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁术驻军之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "析": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁术驻军之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "武关": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁术入武关以震三辅",
+  "chapters": [
+   4,
+   11
+  ],
+  "mentions": 2
+ },
+ "三辅": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操建议袁术震慑之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "荆山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "卞和得玉之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "洞庭湖": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "始皇投玉玺之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "华阴": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "始皇巡狩得玺之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "宜阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "光武得传国玺之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "北邙": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "十常侍劫少帝出北邙",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "建章殿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚设帐及得玉玺之处",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "太庙": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚草创殿屋祭列圣之处",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "长乐宫": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓焚烧的宫室",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "永安宫": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "少帝何太后唐妃被囚之处",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "嘉德殿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓大会文武废帝之处",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "相府": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓府邸，王允送貂蝉至此处",
+  "chapters": [
+   4,
+   8
+  ],
+  "mentions": 2
+ },
+ "东门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操逃出洛阳的城门",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "西村": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕伯奢沽酒之处",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "山阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕布引兵出屯就食之地",
+  "chapters": [
+   4,
+   12
+  ],
+  "mentions": 2
+ },
+ "高平": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "刘表籍贯山阳高平",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "鲁国": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孔昱籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "南阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "岑咥籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "汝南": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧建议曹操使军就食之地",
+  "chapters": [
+   4,
+   10,
+   12
+  ],
+  "mentions": 3
+ },
+ "延平": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "蒯良蒯越籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "零陵": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "黄盖籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "辽西令支": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "韩当籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "右北平土垠": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "程普籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "阳平卫国": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "乐进籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "山阳巨鹿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "李典籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "沛国谯": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "夏侯惇籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "吴郡富春": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "祖茂籍贯",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "谯郡": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操逃奔之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "德州平原县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "公孙瓒路经之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "河内": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操兵败后回河内",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "陇右": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓称长安近陇右",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "崤函": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "长安险要之地",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "关中": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "杨彪称关中残破",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "皇陵": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "杨彪谏勿弃皇陵",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "宗庙": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓焚烧宗庙",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "南北两宫": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓焚烧的宫室",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "紫微垣": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚仰观天文所见",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "井": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "建章殿南井中捞起玉玺",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "刘协": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "灵帝中子，被董卓立为献帝",
+  "chapters": [
+   4
+  ],
+  "mentions": 1
+ },
+ "逢纪": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "荀谌": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "韩馥谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "辛评": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "韩馥谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "关纯": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "韩馥别驾，欲刺杀袁绍被文丑砍死",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "耿武": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "韩馥长史，欲刺杀袁绍被颜良斩杀",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "田丰": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "沮授": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "许攸": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍谋士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "公孙越": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "公孙瓒之弟，被董卓家将乱箭射死",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "麴义": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍部将，被赵云刺死",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "严纲": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "公孙瓒大将，被麴义斩杀",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "马日磾": {
+  "type": "人物",
+  "aliases": [
+   "日磾"
+  ],
+  "identity": "太傅，劝王允赦蔡邕",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "赵岐": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "太仆，赍诏和解袁绍公孙瓒",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "吴夫人": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孙坚正妻，生孙策孙权孙翊孙匡四子",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "孙策": {
+  "type": "人物",
+  "aliases": [
+   "伯符",
+   "策"
+  ],
+  "identity": "孙坚长子，字伯符，孙坚死后引军居江都招贤纳士",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "黄祖": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "刘表部将，领江夏之兵",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "张虎": {
+  "type": "人物",
+  "aliases": [
+   "江夏张虎"
+  ],
+  "identity": "黄祖部将，江夏人，被韩当斩杀",
+  "chapters": [
+   7
+  ],
+  "mentions": 2
+ },
+ "陈生": {
+  "type": "人物",
+  "aliases": [
+   "襄阳陈生"
+  ],
+  "identity": "襄阳将，黄祖部将，被孙策射死",
+  "chapters": [
+   7
+  ],
+  "mentions": 2
+ },
+ "吕公": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "刘表健将，设伏射死孙坚",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "桓阶": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孙策军吏，入城为使换孙坚尸首",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "董晃": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓之弟，被封为左将军、鄠侯",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "董璜": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓之侄，侍中，总领禁军，被斩首号令",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "张温": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "司空，被董卓命吕布斩首",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "士孙瑞": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "仆射，与王允共谋诛董卓",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "李蒙": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓余党，在长安为贼内应偷开城门，后被马超擒斩",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "王方": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓余党，在长安为贼内应偷开城门，后被马超刺死",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "种拂": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "太常卿，死于国难",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "鲁馗": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "太仆，死于国难",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "周奂": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "大鸿胪，死于国难",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "王颀": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "越骑校尉，死于国难",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "胡赤儿": {
+  "type": "人物",
+  "aliases": [
+   "赤儿"
+  ],
+  "identity": "牛辅心腹人，杀牛辅夺金珠，后被吕布诛杀",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "贾诩": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "李傕谋士，有先见之明，劝李傕抚安百姓结纳贤豪",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "曲阿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙策葬父孙坚之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "江都": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙策引军居住招贤纳士之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "郿坞": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓在长安城外二百五十里所筑城郭",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "横门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "长安城门，公卿候送董卓之处",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "北地": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓招安降卒来源地",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "凤仪亭": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓府后园中亭子",
+  "chapters": [
+   7,
+   8
+  ],
+  "mentions": 2
+ },
+ "未央殿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "李肃诈称天子会文武议禅位之处",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "北掖门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "董卓入朝被伏兵诛杀之门",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "青琐门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕布呼王允同出关之门",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "宣平门": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "献帝止乱、王允跳楼之处",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "陕西": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "李傕郭汜等逃居之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "西凉州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "李傕等流言煽动之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "凉州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "李傕等闻董卓死连夜奔逃之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "邓城": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "黄祖弃樊城后走入之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "岘山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "蔡瑁布阵及孙坚中伏身亡之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "汉水": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孙坚掩杀败军直到之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "汉江": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "黄盖将船只进泊之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "界桥": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁绍公孙瓒交战之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "磐河": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁绍公孙瓒会战之地",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "常山真定": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "赵云籍贯",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "俞氏": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孙坚过房孙韶之生父/母族",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "吴夫人之妹": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孙坚次妻，生孙朗孙仁",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "刘表军": {
+  "type": "势力",
+  "aliases": [
+   "刘表军士"
+  ],
+  "identity": "刘表所率荆州军队",
+  "chapters": [
+   7
+  ],
+  "mentions": 1
+ },
+ "蒋雄": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "楚庄王绝缨之会中被不究戏爱姬之罪的臣子",
+  "chapters": [
+   9
+  ],
+  "mentions": 2
+ },
+ "楚庄王": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "春秋时楚国君主，有绝缨之会典故",
+  "chapters": [
+   9
+  ],
+  "mentions": 2
+ },
+ "飞熊军": {
+  "type": "势力",
+  "aliases": [],
+  "identity": "董卓麾下由李傕郭汜张济樊稠统领的军队",
+  "chapters": [
+   9
+  ],
+  "mentions": 1
+ },
+ "司马迁": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "汉武帝时史官，因作史记被王允引为典故",
+  "chapters": [
+   9
+  ],
+  "mentions": 2
+ },
+ "孝武": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "汉武帝，王允提及的帝王",
+  "chapters": [
+   9
+  ],
+  "mentions": 2
+ },
+ "彭越": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "楚汉时名将，李傕引其挠楚之法为计",
+  "chapters": [
+   9
+  ],
+  "mentions": 2
+ },
+ "卓母": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "董卓之母，年九十余，被皇甫嵩诛杀",
+  "chapters": [
+   9
+  ],
+  "mentions": 1
+ },
+ "马宇": {
+  "type": "人物",
+  "aliases": [
+   "侍中马宇"
+  ],
+  "identity": "侍中，与马腾韩遂结连为内应",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "种邵": {
+  "type": "人物",
+  "aliases": [
+   "谏议大夫种邵"
+  ],
+  "identity": "谏议大夫，与马腾韩遂结连为内应",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "刘范": {
+  "type": "人物",
+  "aliases": [
+   "左中郎将刘范"
+  ],
+  "identity": "左中郎将，与马腾韩遂结连为内应",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "李别": {
+  "type": "人物",
+  "aliases": [
+   "李傕之侄"
+  ],
+  "identity": "李傕之侄，见樊稠放走韩遂回报其叔",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "荀彧": {
+  "type": "人物",
+  "aliases": [
+   "文若"
+  ],
+  "identity": "曹操谋士，与程昱设计死守鄄城、东阿、范县",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "荀绲": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "荀彧之父",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "程昱": {
+  "type": "人物",
+  "aliases": [
+   "仲德"
+  ],
+  "identity": "曹操谋士，与荀彧设计死守鄄城、东阿、范县",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "郭嘉": {
+  "type": "人物",
+  "aliases": [
+   "奉孝"
+  ],
+  "identity": "曹操谋士，劝曹操退军复兖州",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "刘晔": {
+  "type": "人物",
+  "aliases": [
+   "子阳"
+  ],
+  "identity": "光武嫡派子孙，淮南成德人，字子阳，郭嘉推荐给曹操",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "满宠": {
+  "type": "人物",
+  "aliases": [
+   "伯宁"
+  ],
+  "identity": "山阳昌邑人，字伯宁，刘晔推荐给曹操，任军中从事",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "吕虔": {
+  "type": "人物",
+  "aliases": [
+   "子恪"
+  ],
+  "identity": "武城人，字子恪，刘晔推荐给曹操，任军中从事",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "毛玠": {
+  "type": "人物",
+  "aliases": [
+   "孝先"
+  ],
+  "identity": "陈留平邱人，字孝先，满宠吕虔共荐给曹操，任从事",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "于禁": {
+  "type": "人物",
+  "aliases": [
+   "文则"
+  ],
+  "identity": "曹操部将，与张飞交战败走，后献计袭吕布西寨",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "典韦": {
+  "type": "人物",
+  "aliases": [
+   "领军都尉"
+  ],
+  "identity": "曹操帐前都尉，濮阳之战救曹操脱险",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "应劭": {
+  "type": "人物",
+  "aliases": [
+   "泰山太守应劭"
+  ],
+  "identity": "泰山太守，奉命往瑯琊郡取曹嵩，曹嵩遇害后死命逃脱投袁绍",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "曹德": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "曹嵩之弟，被张闿军士搠死",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "张闿": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "陶谦都尉，原黄巾余党，杀曹嵩全家",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "边让": {
+  "type": "人物",
+  "aliases": [
+   "九江太守边让"
+  ],
+  "identity": "九江太守，与陶谦交厚，引兵救徐州被夏侯惇截杀",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "曹豹": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "陶谦部将，迎战夏侯惇",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "陈登": {
+  "type": "人物",
+  "aliases": [
+   "元龙",
+   "陈元龙"
+  ],
+  "identity": "广陵人，字元龙，陶谦幕官，后为刘备幕官",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "田楷": {
+  "type": "人物",
+  "aliases": [
+   "青州田楷"
+  ],
+  "identity": "青州太守，领兵救徐州",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "孔宙": {
+  "type": "人物",
+  "aliases": [
+   "泰山都尉孔宙"
+  ],
+  "identity": "泰山都尉，孔融之父",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "李膺": {
+  "type": "人物",
+  "aliases": [
+   "河南尹李膺"
+  ],
+  "identity": "河南尹，孔融十岁时往谒",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "陈炜": {
+  "type": "人物",
+  "aliases": [
+   "太中大夫陈炜"
+  ],
+  "identity": "太中大夫，称孔融为奇童",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "管亥": {
+  "type": "人物",
+  "aliases": [
+   "黄巾贼党管亥"
+  ],
+  "identity": "黄巾贼党首领，围北海借粮，被关羽斩杀",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "宗宝": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "孔融部将，被管亥砍死",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "太史慈": {
+  "type": "人物",
+  "aliases": [
+   "子义"
+  ],
+  "identity": "东莱黄县人，字子义，为报孔融恩顾单马救北海，后应刘繇之召往扬州",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "刘繇": {
+  "type": "人物",
+  "aliases": [
+   "扬州刺史刘繇"
+  ],
+  "identity": "扬州刺史，与太史慈同郡，有书召太史慈",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "薛兰": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布副将，奉命守兖州",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "李封": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布副将，奉命守兖州",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "张辽": {
+  "type": "人物",
+  "aliases": [
+   "文远"
+  ],
+  "identity": "吕布健将，字文远，雁门马邑人",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "臧霸": {
+  "type": "人物",
+  "aliases": [
+   "宣高"
+  ],
+  "identity": "吕布健将，字宣高，泰山华阴人",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "郝萌": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "曹性": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "成廉": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将，被乐进射死",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "魏续": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "宋宪": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "侯成": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布健将",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "高顺": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "吕布部将，奉命守西寨",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "田氏": {
+  "type": "人物",
+  "aliases": [
+   "富户田氏"
+  ],
+  "identity": "濮阳城中富户，为吕布设诈降计诱曹操，后降曹操",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 3
+ },
+ "何仪": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黄巾余党首领，被曹操斩杀",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "黄劭": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "黄巾余党首领，被曹操斩杀",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "何曼": {
+  "type": "人物",
+  "aliases": [
+   "截天夜叉"
+  ],
+  "identity": "黄巾余党，被曹洪杀死",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 3
+ },
+ "许褚": {
+  "type": "人物",
+  "aliases": [
+   "仲康",
+   "壮士"
+  ],
+  "identity": "谯国谯县人，聚宗族守坞，后降曹操任都尉",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 3
+ },
+ "商": {
+  "type": "人物",
+  "aliases": [
+   "长子商"
+  ],
+  "identity": "陶谦长子",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "应": {
+  "type": "人物",
+  "aliases": [
+   "次子应"
+  ],
+  "identity": "陶谦次子",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "庞舒": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "在长安私藏吕布妻小，被李傕郭汜斩首",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "张燕": {
+  "type": "人物",
+  "aliases": [],
+  "identity": "袁绍与吕布共破于常山",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "寿阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操与鲍信击贼之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "兖州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操任东郡太守后招贤纳士之地，后被吕布袭破",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "濮阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕布袭破兖州后进据之地",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "鄄城": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧程昱死守三县之一",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "范县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧程昱死守三县之一",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "东阿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧程昱死守三县之一",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "小沛": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "徐州近邑，陶谦请刘备暂驻军之地",
+  "chapters": [
+   10,
+   11,
+   12
+  ],
+  "mentions": 3
+ },
+ "瑯琊郡": {
+  "type": "地点",
+  "aliases": [
+   "瑯琊"
+  ],
+  "identity": "曹嵩避难隐居之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "华": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹嵩遇害前经过之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "费": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹嵩遇害前经过之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "淮南": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "张闿逃奔之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "北海郡": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孔融任太守之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "青州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "田楷处，糜竺陈登求救之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "辽东": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "太史慈回家省亲前所在之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "常山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁绍与吕布共破张燕之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "滕县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕布知曹操回兵已过之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "泰山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "陈宫建议伏兵之地",
+  "chapters": [
+   10,
+   11
+  ],
+  "mentions": 2
+ },
+ "黎阳": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "陈宫诈称吕布移兵之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "马陵山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操设伏兵破吕布之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "陈地": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧建议曹操东略之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "颍川": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧建议曹操使军就食之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "羊山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操与黄巾何仪黄劭会战之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "葛陂": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "何仪奔走及许褚擒黄巾之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "定陶": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕布弃濮阳后投奔之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "巨野": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "薛兰投奔之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "商州": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操引军径奔之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "济郡": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操割麦为食之地",
+  "chapters": [
+   10,
+   12
+  ],
+  "mentions": 2
+ },
+ "陈留平邱": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "毛玠籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "泰山巨平": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "于禁籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "颍川颍阴": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "荀彧籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "东郡东阿": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "程昱籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "淮南成德": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "刘晔籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "山阳昌邑": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "满宠籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "武城": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "吕虔籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "东海朐县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "糜竺籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "鲁国曲阜": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "孔融籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "东莱黄县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "太史慈籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "雁门马邑": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "张辽籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "泰山华阴": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "臧霸籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "谯国谯县": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "许褚籍贯",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "青州兵": {
+  "type": "势力",
+  "aliases": [],
+  "identity": "曹操招安青州黄巾降兵后择精锐所号之军",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "弘农": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "张济领兵屯驻之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "盩厔山": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "长安西二百里处险峻山岭，贾诩建议张济樊稠屯兵于此",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "陈仓": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "樊稠追赶韩遂相近之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "济北": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹操追赶贼兵所到之地",
+  "chapters": [
+   10
+  ],
+  "mentions": 2
+ },
+ "华、费": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "曹嵩率家小行经之地，遇雨投古寺歇宿",
+  "chapters": [
+   10
+  ],
+  "mentions": 1
+ },
+ "寿春": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "袁术所在之地",
+  "chapters": [
+   11
+  ],
+  "mentions": 1
+ },
+ "刘备": {
+  "type": "人物",
+  "aliases": [
+   "刘使君"
+  ],
+  "identity": "汉景帝阁下玄孙，平原县令，后为平原相，讨董诸侯之一，后权领徐州事",
+  "chapters": [
+   12
+  ],
+  "mentions": 1
+ },
+ "黄河": {
+  "type": "地点",
+  "aliases": [],
+  "identity": "陶谦葬于黄河之原",
+  "chapters": [
+   12
+  ],
+  "mentions": 1
+ }
+}

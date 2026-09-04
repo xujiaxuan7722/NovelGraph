@@ -1,0 +1,62 @@
+[
+ {
+  "head": "贾政",
+  "relation": "堂亲",
+  "tail": "贾珍",
+  "reason": "文字辈vs玉字辈，堂叔侄非同辈堂亲；其推导链5条将随之消失"
+ },
+ {
+  "head": "贾母",
+  "relation": "主仆",
+  "tail": "平儿",
+  "reason": "平儿是凤姐名下"
+ },
+ {
+  "head": "贾母",
+  "relation": "主仆",
+  "tail": "丰儿",
+  "reason": "丰儿是凤姐名下"
+ },
+ {
+  "head": "贾母",
+  "relation": "主仆",
+  "tail": "宝玉",
+  "reason": "祖孙误判主仆"
+ },
+ {
+  "head": "宝玉",
+  "relation": "主仆",
+  "tail": "紫鹃",
+  "reason": "紫鹃是黛玉名下"
+ },
+ {
+  "head": "宝玉",
+  "relation": "主仆",
+  "tail": "莺儿",
+  "reason": "莺儿是宝钗名下"
+ },
+ {
+  "head": "贾政",
+  "relation": "主仆",
+  "tail": "李贵",
+  "reason": "李贵是宝玉跟班"
+ },
+ {
+  "head": "善姐",
+  "relation": "主仆",
+  "tail": "凤姐",
+  "reason": "方向颠倒，善姐是凤姐名下"
+ },
+ {
+  "head": "贾母",
+  "relation": "居住",
+  "tail": "稻香村",
+  "reason": "游园到访误判居住"
+ },
+ {
+  "head": "贾琏",
+  "relation": "堂亲",
+  "tail": "雨村",
+  "reason": "联宗同谱非堂亲（模型知识层）"
+ }
+]

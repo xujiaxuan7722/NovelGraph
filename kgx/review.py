@@ -96,6 +96,7 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print, guardr
     all_keys = list(cands)
     id_of = {k: i + 1 for i, k in enumerate(all_keys)}
     verdicts, additions = {}, []
+    seen_add = set()                     # 跨批补充去重（同一条曾在多批各出一次）
     stats = {"calls": 0, "ok": 0, "reject": 0, "unjudged": 0, "additions": 0, "additions_invalid": 0}
 
     for bi, batch in enumerate(batches, 1):
@@ -146,8 +147,9 @@ def review(llm, schema, registry, cands, allow_additions=True, log=print, guardr
                     stats["additions_unref"] = stats.get("additions_unref", 0) + 1
                     continue
                 key = schema.canon(h, r, t)
-                if key in cands:
+                if key in cands or key in seen_add:
                     continue
+                seen_add.add(key)
                 additions.append({"head": key[0], "relation": key[1], "tail": key[2],
                                   "source": "模型知识", "reason": a.get("reason", ""),
                                   "votes": 0, "evidence": None, "evidence_src": None})

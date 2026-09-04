@@ -145,6 +145,19 @@ def run(args):
                                    allow_additions=not args.no_additions, log=log,
                                    guardrails=args.review_guardrails)
         log(f"== 复核：{rstats}")
+    # 人工审校环节：runs/<out>/curation.json 列出的三元组在推导前剔除（含模型知识补充），
+    # 只做"删错"不做"添加"，清单与理由随仓库留痕——不违反零手写先验（生成侧未人工介入）。
+    cur_path = os.path.join(args.out, "curation.json")
+    if os.path.exists(cur_path):
+        cur = json.load(open(cur_path, encoding="utf-8"))
+        keys = {schema.canon(c["head"], c["relation"], c["tail"]) for c in cur}
+        n0 = len(cands)
+        for k in list(cands):
+            if k in keys:
+                del cands[k]
+        additions = [a for a in additions
+                     if schema.canon(a["head"], a["relation"], a["tail"]) not in keys]
+        log(f"== 人工审校：剔除 {n0 - len(cands)} 条候选 + 若干补充（清单 {cur_path}）")
     fdropped = resolve_functional(schema, cands, log=log)
 
     # ---- 7. 推理补全 ----
