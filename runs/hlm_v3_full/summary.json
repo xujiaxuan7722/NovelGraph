@@ -14,29 +14,29 @@
   "类型不符": 89,
   "头尾相同": 5
  },
- "candidates": 482,
+ "candidates": 473,
  "review": {
   "calls": 42,
   "ok": 458,
   "reject": 596,
   "unjudged": 0,
-  "additions": 54,
+  "additions": 42,
   "additions_invalid": 0,
   "additions_unref": 1,
   "flipped": 51,
   "highvote_kept": 13
  },
  "functional_dropped": 2,
- "additions": 54,
- "inferred": 56,
+ "additions": 41,
+ "inferred": 51,
  "registry": 1016,
  "llm": {
-  "calls": 186,
-  "cached": 0,
-  "prompt_tokens": 4450206,
-  "output_tokens": 2124932,
-  "thought_tokens": 750370,
-  "seconds": 23541.203604459763
+  "calls": 0,
+  "cached": 42,
+  "prompt_tokens": 0,
+  "output_tokens": 0,
+  "thought_tokens": 0,
+  "seconds": 0.0
  },
- "seconds": 45872
+ "seconds": 15
 }
