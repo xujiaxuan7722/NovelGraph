@@ -1,35 +1,59 @@
-# NovelGraph — 面向长篇小说的关系抽取与知识图谱构建框架
+# NovelGraph
 
-代码包名沿用 `kgx`（Knowledge Graph eXtraction）。从长篇小说原文抽取人物关系并构建知识图谱：schema 驱动（换书只换 `schemas/<书>.yaml`）、实体完全开放、证据强制校验、规则推导补全推理型关系、单模型（默认商汤 Token Plan 网关 deepseek-v4-flash，Gemini 备用）。以《红楼梦》验证，迁移验证计划用《三国演义》。
+**面向长篇小说的人物关系抽取与知识图谱构建框架。** Schema 驱动、证据强制、零手写人物先验——换一份 YAML 即迁移一本新书。以《红楼梦》《三国演义》全书验证。
 
-前身是课程项目 `~/hongloumeng-kg/`（GLM 管线 + 面板，F1 31.9%），本框架是按"可迁移"重做的第二版；演进史、实验数据、决策记录见 `docs/项目现状与问题.md`。
+代码包名沿用 `kgx`（Knowledge Graph eXtraction）；前身为课程项目 [hongloumeng-kg](https://github.com/xujiaxuan7722/hongloumeng-kg)（手写实体表版，F1 45.4）。
 
-## 目录
+## 效果
 
-| 路径 | 说明 |
-|---|---|
-| `kgx/` | 框架包：schema / llm / chunking / prescan / registry / extract / validate / resolve / aggregate / review / infer / evaluate / export / cli |
-| `schemas/` | 每本书一个 yaml（实体类型、关系定义与约束、易混判据、推导规则） |
-| `gold/` | 评估金标准（`hongloumeng.py` 181 条手工三元组） |
-| `data/` | 原文 `hongloumeng11.txt` |
-| `runs/` | 每次运行一个目录：登记簿、原始抽取、缓存、评估、人工抽检样本 |
-| `docs/` | 项目现状与问题、参考项目借鉴笔记 |
-| `scripts/` | `probe_pack.py` 单块探针（JSON 合规 / 证据命中率 / 用量，可与另一 run 的缓存对照） |
-| `.env` | `SENSENOVA_API_KEY`（默认）、`GEMINI_API_KEY`（备用），勿提交 |
+| | 红楼梦（120回） | 三国演义（120回） |
+|---|---|---|
+| 图谱 | 565 关系 / 1,016 实体 | 1,495 关系 / 1,920 实体 |
+| 召回（对人工金标准） | 76.3% | **83.3%**（君臣 83%、结义 3/3） |
+| **真实精度**（随机抽检，Wilson CI） | **96%**（48/50） | **95.9%**（47/49） |
+| 迁移成本 | — | 仅新增 2 个数据文件，`kgx/` 包零修改 |
+
+零手写人物先验，两项指标均反超手写先验基线（F1 45.4）。
+
+![红楼梦人物关系面板](docs/images/panel-hongloumeng.png)
+![三国演义人物关系面板](docs/images/panel-sanguo.png)
+
+## 方法
+
+九步管线，**领域知识只从 `schemas/<书>.yaml` 单点进入**：
+
+```
+切章打包 → 实体预扫描 → 滚动登记簿(别名守卫) → 整块抽取+补抽 → 程序校验(证据逐字/闭集/类型/方向翻转)
+→ 程序化归并 → 聚合计票 → LLM分组复核(护栏+思考) → 规则推导(带推导链+置信度) → 图谱(三层来源标注)
+```
+
+**防幻觉三板斧**：关系闭集约束、证据强制（每条关系逐字引用原文并程序验证）、投票聚合。
+**三层可解释来源**：文本抽取（带证据句）/ 模型知识（复核补充）/ 推导（带前提链）——分层精度实测 96% / 100% / 94%。
 
 ## 运行
 
 ```bash
 python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
-./.venv/bin/python -m kgx.cli run --schema schemas/hongloumeng.yaml \
-    --text data/hongloumeng11.txt --out runs/hlm_v2 \
-    [--chapters 1-10] --gold gold.hongloumeng      # 断点续跑、磁盘缓存
-    [--provider sensenova|gemini] [--model deepseek-v4-flash] [--review-thinking]
-./.venv/bin/python scripts/probe_pack.py --out runs/probe_ds \
-    --ref-cache runs/hlm_v2_c1-3/cache/<hash>.json     # 单块探针 + 对照
+# 全书抽取+评估（provider 默认商汤 OpenAI 兼容网关，见 kgx/llm.py）
+./.venv/bin/python -m kgx.cli run --schema schemas/hongloumeng.yaml --text data/hongloumeng11.txt \
+    --out runs/hlm --gold gold.hongloumeng --review-guardrails --review-thinking
+# 关系图谱面板
+./.venv/bin/python panel.py    # → http://127.0.0.1:8020
 ```
 
-Provider：默认 `sensenova`（OpenAI 兼容 chat/completions，抽取关思考 `reasoning_effort=none`——默认思考会把
-输出上限全烧在 reasoning 上；`--review-thinking` 仅让复核/归并开思考）。网关会返回 `inference tpm exhausted`
-429，客户端按 token 节流并退避重试，不退出。`gemini` 免费档每日 20 次仅作备用。
-09-02 最终结果（deepseek-v4-flash，实体完全开放、零手写先验；复核护栏+思考，消融见文档 §8）：对 v2 金标准（266 条+评估别名表）**F1 56.6%**（P47.7/R69.5，含推导层），显著超过 v1 手写先验版的 45.4。漏斗 2,767→1,895→612→295→386。金标准组成与范围声明见 `gold/hongloumeng.py` 文件头；结果、消融、事故复盘见 `docs/待办-2026-09-01.md` §6–8。
+## 文档
+
+- `docs/项目总结-2026-09-02.md`：方法 / 消融 / 含金量 / 局限（面试用）
+- `docs/待办-2026-09-01.md`：全流程实录（模型选型、13 类问题的现象→根因→方案→效果、消融数据、双书终表）
+- `docs/参考项目借鉴笔记.md`：kg-gen / GraphRAG / AI-Reader-V2 / OneKE 借鉴清单
+
+## 布局
+
+| 路径 | 说明 |
+|---|---|
+| `kgx/` | 框架包（14 模块：schema/llm/chunking/prescan/registry/extract/validate/resolve/aggregate/review/infer/evaluate/export/cli） |
+| `schemas/` | 每本书一个 YAML（实体类型、关系闭集、易混判据、推导规则） |
+| `gold/` | 评估金标准 + 评估别名表（仅供 evaluate，绝不进管线） |
+| `runs/<书>_v3_full/` | 最终图谱、评估、抽检、审校记录 |
+| `panel.py` + `static/` | 零依赖关系图谱面板 |
+| `scripts/` | 单块探针 / 消融 / 字号归并 |
