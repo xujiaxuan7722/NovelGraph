@@ -4,6 +4,7 @@
 - 无金标准时：抽样输出供人工核对（面板可勾选）。
 """
 import json
+import os
 import random
 from collections import defaultdict
 
@@ -79,5 +80,13 @@ def sample_for_human(triples, n=50, seed=7, path=None):
     rows = [{"head": t["head"], "relation": t["relation"], "tail": t["tail"],
              "evidence": t["evidence"], "chapters": t.get("chapters"), "人工判定": ""} for t in sample]
     if path:
+        # 已有人工判定的抽检文件不覆盖（曾在定稿重放时把填好的判定冲掉），改写到 .new.json
+        if os.path.exists(path):
+            try:
+                old = json.load(open(path, encoding="utf-8"))
+                if any(r.get("人工判定") for r in old):
+                    path = path[:-5] + ".new.json" if path.endswith(".json") else path + ".new"
+            except Exception:
+                pass
         json.dump(rows, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     return rows
