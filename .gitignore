@@ -2,4 +2,14 @@
 .venv/
 __pycache__/
 *.pyc
+# runs/：只跟踪两本书最终结果与关键实验数据，其余（中间版本/日志/探针/缓存）不入库
+runs/*
+!runs/hlm_v3_full/
+!runs/sanguo_v3_full/
+!runs/layer_audit_2026-09-03.json
+!runs/ablate_review_results.json
 runs/*/cache/
+runs/*/raw.jsonl
+runs/*/dropped.json
+runs/*/prescan_dict.json
+runs/*/*.log
