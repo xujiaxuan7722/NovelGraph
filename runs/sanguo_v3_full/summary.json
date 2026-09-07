@@ -14,7 +14,7 @@
   "头尾相同": 41,
   "关系不在闭集": 3
  },
- "candidates": 1228,
+ "candidates": 1223,
  "review": {
   "calls": 70,
   "ok": 1209,
@@ -27,9 +27,9 @@
   "highvote_kept": 18,
   "doubtful": 1
  },
- "functional_dropped": 4,
+ "functional_dropped": 2,
  "additions": 50,
- "inferred": 218,
+ "inferred": 222,
  "registry": 1920,
  "llm": {
   "calls": 0,

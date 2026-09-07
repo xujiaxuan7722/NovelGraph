@@ -158,6 +158,28 @@ def run(args):
         additions = [a for a in additions
                      if schema.canon(a["head"], a["relation"], a["tail"]) not in keys]
         log(f"== 人工审校：剔除 {n0 - len(cands)} 条候选 + 若干补充（清单 {cur_path}）")
+    # 字号/别称归并（复核后应用，复核缓存不失效）：merge_map.json {别名:正名} 重映射候选与补充，去重并票
+    mm_path = os.path.join(args.out, "merge_map.json")
+    if os.path.exists(mm_path):
+        mm = json.load(open(mm_path, encoding="utf-8"))
+        def _rm(n): return mm.get(n, n)
+        newc, folded = {}, 0
+        for c in cands.values():
+            h, t = _rm(c["head"]), _rm(c["tail"])
+            if h == t:
+                continue
+            k = schema.canon(h, c["relation"], t)
+            c = dict(c); c["head"], c["tail"] = k[0], k[2]
+            if k in newc:
+                newc[k]["votes"] += c.get("votes", 0)
+                newc[k]["evidences"] = (newc[k].get("evidences", []) + c.get("evidences", []))[:3]
+                folded += 1
+            else:
+                newc[k] = c
+        cands.clear(); cands.update(newc)
+        for a in additions:
+            a["head"], a["tail"] = _rm(a["head"]), _rm(a["tail"])
+        log(f"== 字号归并：应用 {len(mm)} 条映射，折叠 {folded} 条候选")
     fdropped = resolve_functional(schema, cands, log=log)
 
     # ---- 7. 推理补全 ----
